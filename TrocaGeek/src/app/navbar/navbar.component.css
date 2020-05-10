@@ -1,0 +1,29 @@
+.cabecalho{
+    background-color: #232323;
+}
+.menuNav li a{
+    color: #bebebe;
+}
+.menuNav li a:hover{
+    color: #ed3263;
+}
+.pesquisar{
+    background-color: #ed3263;
+    border: 1px solid #c4224d;
+}
+
+
+/*Query para ativar o Menu Hamburguer*/
+@media(min-width:992px){
+    .desktop-collapse{
+        flex-basis: initial; 
+        flex-grow: initial;
+    }
+    
+}
+/*Query para desativar o campo busca no Menu Hamburguer*/
+@media(max-width:992px){
+    form{
+        display: none;
+    }
+}
