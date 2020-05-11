@@ -11,6 +11,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ContatoComponent } from './contato/contato.component';
+import { FAQComponent } from './faq/faq.component';
+import { TermosDeUsoComponent } from './termos-de-uso/termos-de-uso.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CadastrarComponent,
     NavbarComponent,
     FooterComponent,
-    SobreNosComponent
+    SobreNosComponent,
+    ContatoComponent,
+    FAQComponent,
+    TermosDeUsoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,71 @@
+.rodape{
+    background-color: #232323;
+}
+
+a{
+    color: #bebebe;
+    text-decoration: none;
+}
+
+
+.list{
+    font-size: 16px !important;
+}
+
+a:hover{
+
+    color: #ed3263 !important;
+    
+}
+
+.copyright{
+
+    font-size: 12px;
+    background-color: #232323;
+    color: #bebebe;
+}
+
+.icons{
+
+    display: inline;
+    margin: 0;
+    padding: 5px;
+}
+
+.faFacebook, .faGithubAlt, .faInstagram{
+    
+    color: white;
+    padding: 0, 5px;
+}
+
+.faFacebook:hover{
+
+    color: #ed3263 !important;
+}
+
+.faGithubAlt:hover{
+
+    color: #ed3263 !important;
+}
+
+.faInstagram:hover{
+
+    color: #ed3263 !important;
+
+}
+
+/*Media Query*/
+
+@media(max-width:768px){
+    .list{
+        display: flex;
+        flex-direction: column;   
+    }
+
+.icons{
+
+display: inline;
+justify-content: center;
+
+    }
+}
