@@ -2,6 +2,10 @@
     background-color: #232323;
 }
 
+a{
+    text-decoration: none;
+}
+
 .pesquisar{
     background-color: #ed3263;
     color: #bebebe;
