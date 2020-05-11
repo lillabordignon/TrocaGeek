@@ -1,15 +1,40 @@
 .cabecalho{
     background-color: #232323;
 }
+
+.pesquisar{
+    background-color: #ed3263;
+    color: #bebebe;
+    border: 1px solid #c4224d;
+}
+.pesquisar:hover{
+    color: #232323;
+}
+
 .menuNav li a{
     color: #bebebe;
 }
+
 .menuNav li a:hover{
     color: #ed3263;
 }
-.pesquisar{
+
+.dropdown-menu a{
+    color: #232323 !important;
+}
+
+.dropdown-menu a:hover{
+    color: #ed3263 !important;
+}
+
+.botaocadastrar{
     background-color: #ed3263;
+    color: #bebebe !important;
     border: 1px solid #c4224d;
+}
+
+.botaocadastrar:hover{
+    color: #232323 !important;
 }
 
 
