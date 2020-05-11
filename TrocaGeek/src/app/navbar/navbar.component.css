@@ -12,7 +12,8 @@ a{
     border: 1px solid #c4224d;
 }
 .pesquisar:hover{
-    color: #232323;
+   background-color:#5C5099;
+   border: 1px solid #5C5099;
 }
 
 .menuNav li a{
@@ -38,7 +39,8 @@ a{
 }
 
 .botaocadastrar:hover{
-    color: #232323 !important;
+    background-color:#5C5099 !important;
+    border: 1px solid #5C5099;
 }
 
 
@@ -55,4 +57,6 @@ a{
     form{
         display: none;
     }
+
+   
 }

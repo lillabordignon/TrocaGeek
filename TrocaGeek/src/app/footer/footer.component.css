@@ -1,5 +1,5 @@
 .rodape{
-    background-color: #232323;
+    background-color: #000205;
 }
 
 a{
@@ -14,14 +14,14 @@ a{
 
 a:hover{
 
-    color: #ed3263 !important;
+    color: #2E284C!important;
     
 }
 
 .copyright{
 
     font-size: 12px;
-    background-color: #232323;
+    background-color: black;
     color: #bebebe;
 }
 
@@ -40,17 +40,17 @@ a:hover{
 
 .faFacebook:hover{
 
-    color: #ed3263 !important;
+    color: #2E284C !important;
 }
 
 .faGithubAlt:hover{
 
-    color: #ed3263 !important;
+    color: #2E284C !important;
 }
 
 .faInstagram:hover{
 
-    color: #ed3263 !important;
+    color: #2E284C !important;
 
 }
 
