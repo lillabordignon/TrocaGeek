@@ -43,6 +43,18 @@ a{
     border: 1px solid #5C5099;
 }
 
+/* botão Menu Hamburguer */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(190, 190, 190, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  
+  .navbar-toggler {
+    border-color:#bebebe;
+  } 
+
+/* FIM botão Menu Hamburguer */
+
+
 
 /*Query para ativar o Menu Hamburguer*/
 @media(min-width:992px){
@@ -50,13 +62,59 @@ a{
         flex-basis: initial; 
         flex-grow: initial;
     }
+
+
+    
     
 }
+
+
+@media(max-width: 992px) {
+   
+    .menu{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .logo{
+        order: 1;
+    }
+    .pesquisa{
+        order: 2;
+    }
+    .hamburguer{
+        order: 3;
+    }
+ 
+}
+
+@media(max-width: 506px) {
+    .menu{
+     display: flex;
+     flex-direction: row;
+    }
+
+    .logo{
+        order: 1;
+    }
+
+    .hamburguer{
+        order: 2;
+    }
+
+    .pesquisa{
+        order: 3;
+    }
+
+}
+
+
+
 /*Query para desativar o campo busca no Menu Hamburguer*/
-@media(max-width:992px){
+/* @media(max-width:992px){
     form{
         display: none;
     }
 
    
-}
+} */

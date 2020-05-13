@@ -126,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "TrocaGeek"
+  "defaultProject": "TrocaGeek",
+  "cli": {
+    "analytics": false
+  }
 }

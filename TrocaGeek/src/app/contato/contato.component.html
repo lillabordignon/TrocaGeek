@@ -1,7 +1,7 @@
 <div class="container">
     <div id="input" class="jumbotron faleConosco">
         <h1>Fale Conosco</h1>
-        <form>
+        <div>
             <div class="form-group">
                 <label for="nomeCompleto">Nome Completo</label>
                 <input type="text" class="form-control" id="nomeCompleto" aria-describedby="emailHelp"
@@ -23,16 +23,15 @@
             </div>
             <div class="form-group">
                 <label for="telValid">Telefone</label>
-                <input type="text" class="form-control" id="telValid"
-                    placeholder="(xx) xxxx-xxxx ou (xx) xxxx-xxxxx"
+                <input type="text" class="form-control" id="telValid" placeholder="(xx) xxxx-xxxx ou (xx) xxxx-xxxxx"
                     onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="11">
-                <div style="visibility: hidden;" class="alert alert-danger alertColor" role="alert-tel"
-                    id="alert-tel">
+                <div style="visibility: hidden;" class="alert alert-danger alertColor" role="alert-tel" id="alert-tel">
                 </div>
             </div>
             <div class="form-group">
-                <label for="textArea">Exemplo de textarea</label>
-                <textarea class="form-control" id="textArea" rows="5"></textarea>
+                <label for="textArea">Mensagem</label>
+                <textarea class="form-control" id="textArea" placeholder="Escreva aqui sua mensagem"
+                    rows="5"></textarea>
                 <div style="visibility: hidden;" class="alert alert-danger alertColor" role="alert-textArea"
                     id="alert-textArea">
                 </div>
@@ -40,6 +39,6 @@
             <button type="button" class="btn btn-info" id="btnEnviar">Enviar</button>
             <br />
             <br />
-        </form>
+        </div>
     </div>
 </div>
