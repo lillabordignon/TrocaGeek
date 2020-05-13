@@ -1,0 +1,42 @@
+.hub{
+
+    background-color: #06CCAB;
+    color:white;
+
+}
+
+.linkedin{
+
+    background-color: #07C7FF;
+    color:white
+}
+
+.icons{
+
+    display: inline;
+    margin: 0;
+    padding: 5px;
+    
+}
+
+.faFacebook, .faGithubAlt, .faInstagram{
+    
+    color:  #2E284C !important;
+    padding: 0, 5px;
+}
+
+.faFacebook:hover{
+
+    color: #ed3263 !important;
+}
+
+.faGithubAlt:hover{
+
+    color: #ed3263 !important;
+}
+
+.faInstagram:hover{
+
+    color: #ed3263 !important;
+
+}
