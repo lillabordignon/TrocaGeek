@@ -14,6 +14,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ContatoComponent } from './contato/contato.component';
 import { FAQComponent } from './faq/faq.component';
 import { TermosDeUsoComponent } from './termos-de-uso/termos-de-uso.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { HttpClientModule } from '@angular/common/http'
+
 
 @NgModule({
   declarations: [
@@ -27,12 +30,14 @@ import { TermosDeUsoComponent } from './termos-de-uso/termos-de-uso.component';
     SobreNosComponent,
     ContatoComponent,
     FAQComponent,
-    TermosDeUsoComponent
+    TermosDeUsoComponent,
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

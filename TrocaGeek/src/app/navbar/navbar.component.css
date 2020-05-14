@@ -12,8 +12,10 @@ a{
     border: 1px solid #c4224d;
 }
 .pesquisar:hover{
-   background-color:#5C5099;
-   border: 1px solid #5C5099;
+   background-color:#06CCAB;
+   border: 1px solid #06CCAB;
+   font-weight: bold;
+
 }
 
 .menuNav li a{
@@ -39,8 +41,9 @@ a{
 }
 
 .botaocadastrar:hover{
-    background-color:#5C5099 !important;
-    border: 1px solid #5C5099;
+    background-color:#06CCAB !important;
+    border: 1px solid #06CCAB;
+    font-weight: bold;
 }
 
 /* botão Menu Hamburguer */
