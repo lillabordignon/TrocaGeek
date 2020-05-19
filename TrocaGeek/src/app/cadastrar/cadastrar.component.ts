@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CadastroService } from 'src/app/service/cadastro.service'
-import { Cadastrar } from '../Model/cadastrar';
+import { Usuario } from '../Model/usuario';
 import { Router } from '@angular/router';
+import { UsuarioService } from '../service/usuario.service'
+
 
 @Component({
   selector: 'app-cadastrar',
@@ -10,25 +11,28 @@ import { Router } from '@angular/router';
 })
 export class CadastrarComponent implements OnInit {
 
-  cadastrar : Cadastrar = new Cadastrar
+  usuario: Usuario = new Usuario;
+  senhaErrada: boolean = false;
+  alerta: boolean = false;
 
-  constructor(private CadastroService : CadastroService , private router : Router) { }
+  constructor(private UsuarioService: UsuarioService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
 
-  cadastro(){
+  cadastro() {
 
-    if(this.cadastrar.senha === this.cadastrar.confirmarSenha){
-
-    this.CadastroService.postCadastro(this.cadastrar).subscribe((resp: Cadastrar) =>{
-      this.cadastrar = resp
-      this.router.navigate(['/usuarios']) 
-    })
-  }else{
-    console.log("Senha Errada")
-  }
+    if (this.usuario.senha === this.usuario.confirmarSenha) {
+      this.alerta = false;
+      this.UsuarioService.postCadastro(this.usuario).subscribe((resp: Usuario) => {
+        this.usuario = resp;
+        this.router.navigate(['/usuarios']);
+      })
+    } else {
+      this.alerta = true;
+      setTimeout(() => { this.alerta = false }, 5000)
+    }
 
   }
 
