@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CadastroService } from 'src/app/service/cadastro.service'
 
 @Component({
   selector: 'app-cadastrar',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastrarComponent implements OnInit {
 
+  cadastro : CadastroService
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  cadastrar(){
+    this.cadastro.postCadastro(this.cadastro).subscribe((resp: CadastroService) =>{
+
+      
+    })
+
   }
 
 }

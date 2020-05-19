@@ -15,6 +15,7 @@ a{
    background-color:#06CCAB;
    border: 1px solid #06CCAB;
    font-weight: bold;
+   color: white;
 
 }
 
@@ -36,7 +37,7 @@ a{
 
 .botaocadastrar{
     background-color: #ed3263;
-    color: #bebebe !important;
+    color: #bebebe;
     border: 1px solid #c4224d;
 }
 
@@ -44,6 +45,7 @@ a{
     background-color:#06CCAB !important;
     border: 1px solid #06CCAB;
     font-weight: bold;
+    color: white !important;
 }
 
 /* botão Menu Hamburguer */

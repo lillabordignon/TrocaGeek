@@ -8,11 +8,20 @@
 
 .botao{
     background-color: #ed3263;
-    color: #bebebe;
+    color: white;
     border: 1px solid #c4224d;
 }
 
 .botao:hover{
     background-color:#06CCAB;
     border: 1px solid #06CCAB;
+    color: white;
+}
+
+.recuperarSenha{
+
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+   
 }
