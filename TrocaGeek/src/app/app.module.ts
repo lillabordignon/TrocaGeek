@@ -15,9 +15,8 @@ import { ContatoComponent } from './contato/contato.component';
 import { FAQComponent } from './faq/faq.component';
 import { TermosDeUsoComponent } from './termos-de-uso/termos-de-uso.component';
 import { AdmComponent } from './adm/adm.component';
-import { UsuariosComponent } from './usuarios/usuarios.component';
 import { HttpClientModule } from '@angular/common/http'
-
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
