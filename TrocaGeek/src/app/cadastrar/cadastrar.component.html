@@ -2,16 +2,16 @@
     <h1 class="mt-5 text-center"><img src="../../assets/img/logo-white.png" class="img-fluid logo mt-5" alt="Logo"></h1>
     <div class="mt-5 w-50 mx-auto">
         <div class="form-group pb-5">
-        <input type="text" class="form-control mb-4" id="name" maxlength="80" placeholder="Nome">
-        <input type="email" class="form-control mb-4" id="email" maxlength="50" placeholder="Email">
-        <input type="password" class="form-control mb-4" id="senha" maxlength="25" placeholder="Senha">
-        <input type="password" class="form-control mb-4" id="confirmaSenha" maxlength="25" placeholder="Confirmar senha">
+        <input type="text" class="form-control mb-4" id="name" maxlength="80" placeholder="Nome" [(ngModel)] ="cadastrar.nome">
+        <input type="email" class="form-control mb-4" id="email" maxlength="50" placeholder="Email" [(ngModel)] ="cadastrar.email">
+    <input type="password" class="form-control mb-4" id="senha" maxlength="25" placeholder="Senha" [(ngModel)] ="cadastrar.senha">
+        <input type="password" class="form-control mb-4" id="confirmaSenha" maxlength="25" placeholder="Confirmar senha" [(ngModel)] ="cadastrar.confirmarSenha">
         <div class="form-check">
             <input class="form-check-input" type="checkbox" name="termos" id="">
             <p class="text-light">Ao clicar, você estará de acordo com nossos  <a routerLink="/termos-de-uso"> Termos de Uso.</a> </p> 
            
         </div>
-        <button type="button" id="cadastrar" class="btn btn-primary btn-block botao">Cadastre-se!</button>
+        <button type="button" id="cadastrar" class="btn btn-primary btn-block botao" (click)="cadastro()">Cadastre-se!</button>
         </div>
         
     </div>

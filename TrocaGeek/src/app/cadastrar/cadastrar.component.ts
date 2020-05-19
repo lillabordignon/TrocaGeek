@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CadastroService } from 'src/app/service/cadastro.service'
+import { Cadastrar } from '../Model/cadastrar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar',
@@ -8,18 +10,25 @@ import { CadastroService } from 'src/app/service/cadastro.service'
 })
 export class CadastrarComponent implements OnInit {
 
-  cadastro : CadastroService
+  cadastrar : Cadastrar = new Cadastrar
 
-  constructor() { }
+  constructor(private CadastroService : CadastroService , private router : Router) { }
 
   ngOnInit(): void {
   }
 
-  cadastrar(){
-    this.cadastro.postCadastro(this.cadastro).subscribe((resp: CadastroService) =>{
 
-      
+  cadastro(){
+
+    if(this.cadastrar.senha === this.cadastrar.confirmarSenha){
+
+    this.CadastroService.postCadastro(this.cadastrar).subscribe((resp: Cadastrar) =>{
+      this.cadastrar = resp
+      this.router.navigate(['/usuarios']) 
     })
+  }else{
+    console.log("Senha Errada")
+  }
 
   }
 
