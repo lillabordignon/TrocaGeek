@@ -16,14 +16,27 @@ export class UsuarioService {
     return this.http.get('http://93.188.161.223:9000/user');
   }
 
-  //Cadastrar usuarios
-  postCadastro(usuario: Usuario) {
-    return this.http.post('http://93.188.161.223:9000/user', usuario)
+
+  //Listar usuario pelo ID
+  getByIdUsuario(id: number) {
+    return this.http.get(`http://93.188.161.223:9000/user/${id}`)
   }
 
 
+  //Cadastrar usuarios
+  postCadastro(usuario: Usuario) {
+    return this.http.post('http://93.188.161.223:9000/user', usuario);
+  }
 
+  //Deletar Usuarios
+  deleteUsuario(id: number) {
+    return this.http.delete(`http://93.188.161.223:9000/user/${id}`);
+  }
 
+  //Atualizar Usuarios
+  putUsuario(usuario: Usuario) {
+    return this.http.put('http://93.188.161.223:9000/user', usuario)
+  }
 
 
 

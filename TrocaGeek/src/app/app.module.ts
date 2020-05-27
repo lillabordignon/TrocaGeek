@@ -13,9 +13,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ContatoComponent } from './contato/contato.component';
 import { FAQComponent } from './faq/faq.component';
 import { TermosDeUsoComponent } from './termos-de-uso/termos-de-uso.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
 import { UsuariosComponent } from './usuarios/usuarios.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { DeletarComponent } from './usuarios/deletar/deletar.component';
+import { EditarComponent } from './usuarios/editar/editar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { FormsModule } from '@angular/forms'
     ContatoComponent,
     FAQComponent,
     TermosDeUsoComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    DeletarComponent,
+    EditarComponent
   ],
   imports: [
     BrowserModule,

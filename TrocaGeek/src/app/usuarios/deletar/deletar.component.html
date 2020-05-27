@@ -1,17 +1,9 @@
 <div class="container my-4">
 
-    <h1 class="text-center my-3">Usuários Cadastrados</h1>
-
-    <!-- Alerta de confirmação que o usuario foi deletado com sucesso -->
-    <div *ngIf='alerta'>
-        <div class="alert alert-success text-center" role="alert">
-            Usuário deletado com sucesso!
-        </div>
-    </div>
-    <!-- FIM alerta -->
+    <h1 class="text-center my-3">Deletar Usuário</h1>
 
     <div class="row">
-        <div class="col-12" *ngFor="let usuario of listaUsuarios">
+        <div class="col-12">
             <div class="card mb-2" style="width: 100%">
                 <div class="card-body d-flex justify-content-between">
                     <h5 class="card-title text-center">{{usuario.nome}}</h5>
@@ -22,10 +14,8 @@
                     <p>|</p>
                     <p class="card-text">Senha: {{usuario.senha}}</p>
                     <div class="d-flex justify-content-between">
-                        <a class="btn btn-outline-success mr-3 editar"
-                            [routerLink]="['/usuarios/editar', usuario.id]">Editar</a>
-                        <a class="btn btn-outline-danger excluir"
-                            [routerLink]="['/usuarios/deletar', usuario.id]">Excluir</a>
+                        <a class="btn btn-outline-success mr-3 editar" (click)="btnNao()">Não</a>
+                        <a class="btn btn-outline-danger excluir" (click)=btnSim()>Sim</a>
                     </div>
                 </div>
             </div>

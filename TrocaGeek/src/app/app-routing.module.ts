@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
@@ -8,6 +8,8 @@ import { ContatoComponent } from './contato/contato.component';
 import { TermosDeUsoComponent } from './termos-de-uso/termos-de-uso.component';
 import { FAQComponent } from './faq/faq.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { DeletarComponent } from './usuarios/deletar/deletar.component';
+import { EditarComponent } from './usuarios/editar/editar.component';
 
 
 const routes: Routes = [
@@ -20,7 +22,9 @@ const routes: Routes = [
   { path: 'contato', component: ContatoComponent },
   { path: 'termos-de-uso', component: TermosDeUsoComponent },
   { path: 'faq', component: FAQComponent },
-  { path: 'usuarios', component: UsuariosComponent }
+  { path: 'usuarios', component: UsuariosComponent },
+  { path: 'usuarios/deletar/:id', component: DeletarComponent },
+  { path: 'usuarios/editar/:id', component: EditarComponent }
 
 ];
 
