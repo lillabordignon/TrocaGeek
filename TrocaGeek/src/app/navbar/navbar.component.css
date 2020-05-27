@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
+
+*{
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.navbar{
+    flex-wrap: nowrap !important;
+}
+
 .cabecalho{
     background-color: #232323;
 }
@@ -7,28 +17,35 @@ a{
 }
 
 .pesquisar{
-    background-color: #ed3263;
-    color: #bebebe;
-    border: 1px solid #c4224d;
-}
-.pesquisar:hover{
-   background-color:#06CCAB;
-   border: 1px solid #06CCAB;
-   font-weight: bold;
-   color: white;
+    background-color: #05a4c4;
+    color: #fff;
 
+}
+
+.pesquisa{
+    flex-wrap: nowrap !important;
+    margin-right: .5rem;
+
+}
+
+.pesquisar:hover{
+   background-color:#ed3263;
 }
 
 .menuNav li a{
-    color: #bebebe;
+    color: #c5c5c5;
 }
 
 .menuNav li a:hover{
     color: #ed3263;
 }
 
+.dropdown-menu{
+    background-color: #232323;
+}
+
 .dropdown-menu a{
-    color: #232323 !important;
+    background-color: #232323;
 }
 
 .dropdown-menu a:hover{
@@ -36,45 +53,40 @@ a{
 }
 
 .botaocadastrar{
-    background-color: #ed3263;
-    color: #bebebe;
-    border: 1px solid #c4224d;
+    background-color: #05a4c4;
+    color: #fff !important
 }
 
 .botaocadastrar:hover{
-    background-color:#06CCAB !important;
-    border: 1px solid #06CCAB;
-    font-weight: bold;
-    color: white !important;
+    background-color:#ed3263;
 }
 
 /* botão Menu Hamburguer */
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(190, 190, 190, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(5, 164, 196, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+
   }
   
   .navbar-toggler {
-    border-color:#bebebe;
+    border-color:#05a4c4;
   } 
-
 /* FIM botão Menu Hamburguer */
 
-
-
-/*Query para ativar o Menu Hamburguer*/
+/* Media Query para ativar o Menu Hamburguer */
 @media(min-width:992px){
     .desktop-collapse{
         flex-basis: initial; 
         flex-grow: initial;
     }
-
-
-    
-    
 }
+/* Fim da Media Query que ativa o Menu Hamburguer */
 
-
+/* Media para ordenar os elementos */
 @media(max-width: 992px) {
+
+    .cabecalho{
+        
+    }
    
     .menu{
         display: flex;
@@ -90,36 +102,26 @@ a{
     .hamburguer{
         order: 3;
     }
+
  
 }
-
-@media(max-width: 506px) {
-    .menu{
-     display: flex;
-     flex-direction: row;
-    }
-
-    .logo{
-        order: 1;
-    }
-
-    .hamburguer{
-        order: 2;
-    }
-
-    .pesquisa{
-        order: 3;
-    }
-
-}
-
-
-
-/*Query para desativar o campo busca no Menu Hamburguer*/
-/* @media(max-width:992px){
-    form{
+/* Altera o logo no desktop e mobile */
+@media (max-width: 768px){
+    .logo-desktop{
         display: none;
     }
 
-   
-} */
+}
+
+@media (min-width: 769px){
+    .logo-mobile{
+        display: none;
+    }
+    
+}
+
+@media (max-width: 768px){
+    .pesquisa input[type="search"]{
+        margin-right: .5rem!important;
+    }
+}
