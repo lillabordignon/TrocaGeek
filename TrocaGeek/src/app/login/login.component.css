@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
+
+*{
+    font-family: 'Libre Franklin', sans-serif;
+}
+
 .container{
     background-color: #232323;
 }
@@ -6,22 +12,35 @@
     width: 200px;
 }
 
+.login{
+    font-size: 22px;
+    color: #c5c5c5;
+}
+
+label{
+    margin: 0;
+    color: #232323;
+}
+
 .botao{
-    background-color: #ed3263;
-    color: white;
-    border: 1px solid #c4224d;
+    background-color: #05a4c4;
+    color: #fff;
+    border: none;
 }
 
 .botao:hover{
-    background-color:#06CCAB;
-    border: 1px solid #06CCAB;
-    color: white;
+    background-color:#ed3263;
+    color: #fff;
 }
 
 .recuperarSenha{
-
-    color: white;
+    color: #05a4c4;
     text-decoration: none;
     font-size: 14px;
+   
+}
+
+.recuperarSenha:hover{
+    color: #ed3263;
    
 }

@@ -1,26 +1,31 @@
 <div class=" container mb-5">
     <h1 class="mt-5 text-center"><img src="../../assets/img/logo-white.png" class="img-fluid logo mt-5" alt="Logo"></h1>
-    <div class="mt-5 w-50 mx-auto">
+    <div class="mt-4 w-50 mx-auto">
         <div class="form-group pb-5">
-            <input type="text" class="form-control mb-4" id="name" maxlength="80" placeholder="Nome"
+            <label for="name">Nome Completo</label>
+            <input type="text" class="form-control mb-3" id="name" maxlength="80" placeholder="Nome"
                 [(ngModel)]="usuario.nome">
-            <input type="email" class="form-control mb-4" id="email" maxlength="50" placeholder="Email"
+            <label for="email">Email</label>
+            <input type="email" class="form-control mb-3" id="email" maxlength="50" placeholder="Email"
                 [(ngModel)]="usuario.email">
-            <input type="password" class="form-control mb-4" id="senha" maxlength="25" placeholder="Senha"
+            <label for="senha">Senha</label>
+            <input type="password" class="form-control mb-3" id="senha" maxlength="25" placeholder="Senha"
                 [(ngModel)]="usuario.senha">
+            <label for="confirmaSenha">Confirmar Senha</label>
             <input type="password" class="form-control mb-4" id="confirmaSenha" maxlength="25"
                 placeholder="Confirmar senha" [(ngModel)]="usuario.confirmarSenha">
 
             <!-- *ngIf espera uma condição True ou False da variavel -->
             <div *ngIf='alerta'>
                 <div class="alert alert-danger" role="alert">
-                    Senha errada Favor conferir ;)
+                    Senha errada Favor conferir
                 </div>
             </div>
 
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="termos" id="">
-                <p class="text-light">Ao clicar, você estará de acordo com nossos <a routerLink="/termos-de-uso"> Termos
+                <p class="text-light check-box">Ao clicar, você estará de acordo com nossos <a class="checkBox"
+                        routerLink="/termos-de-uso"> Termos
                         de Uso.</a> </p>
 
             </div>

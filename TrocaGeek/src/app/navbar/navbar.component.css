@@ -83,10 +83,6 @@ a{
 
 /* Media para ordenar os elementos */
 @media(max-width: 992px) {
-
-    .cabecalho{
-        
-    }
    
     .menu{
         display: flex;
