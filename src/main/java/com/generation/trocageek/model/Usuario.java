@@ -22,15 +22,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "usuario")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-
-	private BigInteger cpf;
+	@NotNull
+	private String cpf;
 	
 	@NotNull
 	@Size(min = 2, max = 100)
@@ -45,11 +44,11 @@ public class Usuario {
 	private String senha;
 	
 	
-	private BigInteger telefone;
+	private String telefone;
 	
 	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="codigo_permissao")
+	@ManyToOne
+	@JoinColumn(name = "codigo_permissao")
 	private Permissao permissao;
 	
 
@@ -74,12 +73,12 @@ public class Usuario {
 	}
 
 
-	public BigInteger getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
 
-	public void setCpf(BigInteger cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
@@ -114,12 +113,12 @@ public class Usuario {
 	}
 
 
-	public BigInteger getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
 
-	public void setTelefone(BigInteger telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 

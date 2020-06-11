@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -30,20 +31,24 @@ public class Produto {
 	private String descricao;
 	
 	@NotNull
-	@Size(min = 2, max = 100)
 	private float preco;
 	
 	@NotNull
 	@Size(min = 2, max = 500)
 	private String urlImg;
 	
-	@NotNull
-	@Size(min = 2, max = 100)
-	private boolean ativo;
+	private boolean ativo = true;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date = new java.sql.Date(System.currentTimeMillis());
 	
+	@ManyToOne
+	@JoinColumn(name = "id_usuario")
+	private Usuario idUsuario;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_categoria")
+	private Categoria idCategoria;
 
 
 	public Long getCodigo() {
@@ -115,6 +120,27 @@ public class Produto {
 		this.date = date;
 	}
 
+
+	public Usuario getIdUsuario() {
+		return idUsuario;
+	}
+
+
+	public void setIdUsuario(Usuario idUsuario) {
+		this.idUsuario = idUsuario;
+	}
+
+
+	public Categoria getIdCategoria() {
+		return idCategoria;
+	}
+
+
+	public void setIdCategoria(Categoria idCategoria) {
+		this.idCategoria = idCategoria;
+	}
+	
+	
 	
 
 }

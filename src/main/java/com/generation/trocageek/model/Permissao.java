@@ -11,7 +11,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "permissao")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Permissao {
 	
 	@Id
@@ -20,8 +19,6 @@ public class Permissao {
 	
 	private String nome;
 	
-	@OneToOne(mappedBy = "permissao")
-	private Usuario usuario;
 
 	public Integer getCodigoPermissao() {
 		return codigoPermissao;
@@ -37,14 +34,6 @@ public class Permissao {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
 	}
 
 

@@ -18,11 +18,11 @@ public class Categoria {
 
 
 
-	public int getCodigoCategoria() {
+	public Integer getCodigoCategoria() {
 		return codigoCategoria;
 	}
 
-	public void setCodigoCategoria(int codigoCategoria) {
+	public void setCodigoCategoria(Integer codigoCategoria) {
 		this.codigoCategoria = codigoCategoria;
 	}
 

@@ -8,5 +8,9 @@ import com.generation.trocageek.model.Produto;
 
 public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 	
+	public List<Produto> findBynomeContainingIgnoreCase(String nome);
+	
+	public List<Produto> findByidCategoria_nomeCategoriaContainingIgnoreCase(String nome);
+	
 
 }
