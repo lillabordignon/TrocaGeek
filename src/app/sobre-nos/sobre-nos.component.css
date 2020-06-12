@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
+
+*{
+    font-family: 'Libre Franklin', sans-serif;
+}
+.devResponsivo img {
+   height: 150px;
+   width: 150px;
+}
+
+.faFacebook, .faGithubAlt, .faInstagram{
+    
+    color:  #05a4c4 !important;
+    padding: 0, 5px;
+}
+
+.faFacebook:hover{
+
+    color: #ed3263 !important;
+}
+
+.faGithubAlt:hover{
+
+    color: #ed3263 !important;
+}
+
+.faInstagram:hover{
+
+    color: #ed3263 !important;
+
+}
+@media screen and (max-width:813px) {
+    .devResponsivo {
+        display: inline-block !important;
+        justify-content: center;
+        margin: 0 auto !important;
+     
+    }
+}
