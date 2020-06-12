@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-center py-2">
+    <aside>
+        <button type="button" class="btn btn-primary">Filtrar</button>
+    </aside>
+</div>
+
+<div class="row row-cols-12">
+    <div class="row-cols-1 card mb-4 produto mx-4 " *ngFor="let produto of listaProdutos">
+        <div class="card-body">
+        <div class="card-title text-center"><h4>{{produto.nome}}</h4></div>
+        <hr>
+
+        <div>
+           <img class="img" src="{{produto.urlImg}}" alt="">
+
+        </div>
+        <hr>
+        <div>
+            <span>Preço: {{produto.preco}} R$</span>
+        </div>
+        <hr>
+        <div>
+            <span>Usuario: {{produto.descricao}}</span>
+
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between"> 
+            <button class="btn btn-outline-success" >Ver mais</button>
+            <button class="btn btn-success" >Negociar</button>
+        </div>
+        
+    </div>
+    </div>
+
+    
+</div>

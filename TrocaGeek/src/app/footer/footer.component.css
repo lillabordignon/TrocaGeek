@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
+
+*{
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.rodape{
+    background-color: #232323;
+}
+
+a{
+    color: #c5c5c5;
+    text-decoration: none;
+}
+
+
+.list{
+    font-size: 16px !important;
+}
+
+a:hover{
+
+    color: #ed3263!important;
+    
+}
+
+.copyright{
+
+    font-size: 12px;
+    background-color: black;
+    color: #c5c5c5;
+}
+
+.copyright p{
+    margin-bottom: -2px;
+}
+
+.icons{
+
+    display: inline;
+    margin: 0;
+    padding: 5px;
+}
+
+.faFacebook, .faGithubAlt, .faInstagram{
+    
+    color: #c5c5c5;
+    margin: 5px;
+}
+
+.faFacebook:hover{
+
+    color: #ed3263 !important;
+}
+
+.faGithubAlt:hover{
+
+    color: #ed3263 !important;
+}
+
+.faInstagram:hover{
+
+    color: #ed3263 !important;
+
+}
+
+/*Media Query*/
+
+@media(max-width:768px){
+    .list{
+        display: flex;
+        flex-direction: column;   
+    }
+
+.icons{
+
+display: inline;
+justify-content: center;
+
+    }
+}
