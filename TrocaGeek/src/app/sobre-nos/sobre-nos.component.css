@@ -3,6 +3,10 @@
 *{
     font-family: 'Libre Franklin', sans-serif;
 }
+.devResponsivo img {
+   height: 150px;
+   width: 150px;
+}
 
 .faFacebook, .faGithubAlt, .faInstagram{
     
@@ -24,4 +28,12 @@
 
     color: #ed3263 !important;
 
+}
+@media screen and (max-width:813px) {
+    .devResponsivo {
+        display: inline-block !important;
+        justify-content: center;
+        margin: 0 auto !important;
+     
+    }
 }
