@@ -45,6 +45,10 @@ label{
    
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:992px) {
+
+    .loginpai{
+        width: 100%;
+    }
     
 }

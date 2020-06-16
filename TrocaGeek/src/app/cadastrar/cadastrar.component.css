@@ -12,6 +12,11 @@
     width: 200px;
 }
 
+.login{
+    font-size: 22px;
+    color: #c5c5c5;
+}
+
 label{
     margin: 0;
     color: #232323;
@@ -40,3 +45,9 @@ label{
 .checkBox:hover{
     color: #ed3263;
 }
+
+@media screen and (max-width: 992px) {
+    .cadastrarpai {
+      width: 100%;
+    }
+  }
