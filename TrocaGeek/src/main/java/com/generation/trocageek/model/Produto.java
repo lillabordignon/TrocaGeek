@@ -23,7 +23,7 @@ public class Produto {
 	private Long codigo;
 	
 	@NotNull
-	@Size(min = 2, max = 100)
+	@Size(min = 2, max = 40)
 	private String nome;
 	
 	@NotNull

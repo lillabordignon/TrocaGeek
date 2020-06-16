@@ -1,24 +1,19 @@
 package com.generation.trocageek.model;
 
-import java.math.BigInteger;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.springframework.beans.factory.annotation.Value;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "usuario")
@@ -29,6 +24,7 @@ public class Usuario {
 	private Long id;
 	
 	@NotNull
+	@Size(min = 5, max = 14)
 	private String cpf;
 	
 	@NotNull
@@ -37,13 +33,14 @@ public class Usuario {
 	
 	@NotNull
 	@Size(min = 2, max = 100)
+	@Email
 	private String email;
 	
 	@NotNull
 	@Size(min = 6, max = 100)
 	private String senha;
 	
-	
+	@Size(min = 8, max = 15)
 	private String telefone;
 	
 	

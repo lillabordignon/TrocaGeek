@@ -5,7 +5,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,16 +25,20 @@ import com.generation.trocageek.model.Produto;
 import com.generation.trocageek.repository.ProdutoRepository;
 
 @RestController
-@RequestMapping("/produto")
+@RequestMapping("/produtos")
+@CrossOrigin("*")
 public class ProdutoController {
 	
 	@Autowired
 	private ProdutoRepository repository;
 	
+	//Pageable default define o padrão de paginacao caso o usuario não escolhe nada,
+	//sera de 10 itens, ordenado por data de criacao em descresente
 	@GetMapping
-	public List<Produto> listar () {
-		return repository.findAll();
+	public Page<Produto> listar (@PageableDefault(page = 0,
+		size = 10, sort = "date" ,direction = Direction.DESC) Pageable paginacao) {
 		
+		return repository.findAll(paginacao);
 	}
 	
 	@GetMapping("/{codigo}")
@@ -43,16 +52,20 @@ public class ProdutoController {
 	
 	//find by nome 
 	@GetMapping("/nome/{nome}")
-	public List<Produto> buscarPorNome(@PathVariable String nome) {
-		return repository.findBynomeContainingIgnoreCase(nome);
+	public Page<Produto> buscarPorNome(@PathVariable String nome,@PageableDefault(page = 0,
+		size = 10, sort = "date" ,direction = Direction.DESC)
+			Pageable paginacao) {
+		
+		return repository.findBynomeContainingIgnoreCase(nome, paginacao);
 		
 	}
 	
 	//find by categoria 
 	@GetMapping("/categoria/{nome}")
-	public List<Produto> buscarPorNomeCategoria(@PathVariable String nome) {
-		return repository.findByidCategoria_nomeCategoriaContainingIgnoreCase(nome);
-			
+	public Page<Produto> buscarPorNomeCategoria(@PathVariable String nome, @PageableDefault(page = 0,
+		size = 10, sort = "date" ,direction = Direction.DESC) Pageable paginacao) {
+		
+		return repository.findByidCategoria_nomeCategoriaContainingIgnoreCase(nome, paginacao);
 	}
 	
 	@PostMapping
