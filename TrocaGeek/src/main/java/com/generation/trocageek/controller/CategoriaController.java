@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -22,13 +24,14 @@ import com.generation.trocageek.repository.CategoriaRepository;
 
 @RestController
 @RequestMapping("/categoria")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CategoriaController {
 	
 	@Autowired
 	private CategoriaRepository repository;
 	
 	@GetMapping
+	@Cacheable(value = "categorias")
 	public List<Categoria> listar () {
 		return repository.findAll();
 	}
@@ -45,16 +48,19 @@ public class CategoriaController {
 	}
 	
 	@PostMapping
+	@CacheEvict(value = "categorias",allEntries = true)
 	public ResponseEntity<Categoria> cadastrar (@RequestBody Categoria categoria) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(categoria));
 	}
 	
 	@PutMapping
+	@CacheEvict(value = "categorias",allEntries = true)
 	public ResponseEntity<Categoria> atualizar (@RequestBody Categoria categoria) {
 		return ResponseEntity.ok(repository.save(categoria));
 	}
 	
 	@DeleteMapping("/{id}")
+	@CacheEvict(value = "categorias",allEntries = true)
 	public ResponseEntity<Categoria> deletar (@PathVariable Integer id) {
 		Optional<Categoria> categoria = repository.findById(id);
 		if(categoria.isPresent()) {

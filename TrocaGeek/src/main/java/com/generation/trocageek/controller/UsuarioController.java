@@ -17,15 +17,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.generation.trocageek.model.Usuario;
+import com.generation.trocageek.model.UsuarioLogin;
 import com.generation.trocageek.repository.UsuarioRepository;
+import com.generation.trocageek.service.UsuarioService;
 
 @RestController
 @RequestMapping("/usuario")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UsuarioController {
 	
 	@Autowired
 	private UsuarioRepository repository;
+	
+	@Autowired
+	private UsuarioService usuarioService;
 	
 	@GetMapping
 	public List<Usuario> listar () {
@@ -41,9 +46,17 @@ public class UsuarioController {
 		 return ResponseEntity.notFound().build();
 	}
 	
-	@PostMapping
+	@PostMapping("/cadastrar")
 	public ResponseEntity<Usuario> cadastrar (@RequestBody Usuario usuario) {
-		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(usuario));
+		return ResponseEntity.status(HttpStatus.CREATED)
+				.body(usuarioService.cadastrarUsuario(usuario));
+	}
+	
+	@PostMapping("/logar")
+	public ResponseEntity<UsuarioLogin> Autentication (@RequestBody Optional<UsuarioLogin> usuario) {
+		System.out.println(usuario.get().getEmail());
+		return usuarioService.logar(usuario).map(resp -> ResponseEntity.ok(resp))
+				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}
 	
 	@PutMapping

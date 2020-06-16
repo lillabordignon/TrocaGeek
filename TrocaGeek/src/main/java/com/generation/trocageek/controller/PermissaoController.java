@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,13 +23,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/permissao")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PermissaoController {
 	
 	@Autowired
 	private PermissaoRepository repository;
 	
 	@GetMapping
+	@Cacheable(value = "permissoes")
 	public List<Permissao> listar () {
 		return repository.findAll();
 	}
@@ -42,16 +45,19 @@ public class PermissaoController {
 	}
 
 	@PostMapping
+	@CacheEvict(value = "permissoes",allEntries = true)
 	public ResponseEntity<Permissao> cadastrar (@RequestBody Permissao permissao) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(permissao));
 	}
 	
 	@PutMapping
+	@CacheEvict(value = "permissoes",allEntries = true)
 	public ResponseEntity<Permissao> atualizar (@RequestBody Permissao permissao) {
 		return ResponseEntity.ok(repository.save(permissao));
 	}
 	
 	@DeleteMapping("/{codigo}")
+	@CacheEvict(value = "permissoes",allEntries = true)
 	public ResponseEntity<Permissao> deletar (@PathVariable Integer codigo) {
 		Optional<Permissao> permissao = repository.findById(codigo);
 		if(permissao.isPresent()) {

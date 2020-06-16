@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort.Direction;
@@ -26,7 +28,7 @@ import com.generation.trocageek.repository.ProdutoRepository;
 
 @RestController
 @RequestMapping("/produtos")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ProdutoController {
 	
 	@Autowired
@@ -35,6 +37,7 @@ public class ProdutoController {
 	//Pageable default define o padrão de paginacao caso o usuario não escolhe nada,
 	//sera de 10 itens, ordenado por data de criacao em descresente
 	@GetMapping
+	@Cacheable(value = "listaProdutos")
 	public Page<Produto> listar (@PageableDefault(page = 0,
 		size = 10, sort = "date" ,direction = Direction.DESC) Pageable paginacao) {
 		
@@ -69,6 +72,7 @@ public class ProdutoController {
 	}
 	
 	@PostMapping
+	@CacheEvict(value = "listaProdutos", allEntries = true)
 	public ResponseEntity<Produto> cadastrar (@RequestBody Produto produto, UriComponentsBuilder uriBuilder) {
 		repository.save(produto);
 		URI uri = uriBuilder.path("/produto/{codigo}").buildAndExpand(produto.getCodigo()).toUri();
@@ -77,11 +81,13 @@ public class ProdutoController {
 	}
 	
 	@PutMapping
+	@CacheEvict(value = "listaProdutos", allEntries = true)
 	public ResponseEntity<Produto> atualizar (@RequestBody Produto produto) {
 		return ResponseEntity.ok(repository.save(produto));
 	}
 	
 	@DeleteMapping("/{codigo}")
+	@CacheEvict(value = "listaProdutos", allEntries = true)
 	public ResponseEntity<Produto> deletar (@PathVariable Long codigo) {
 		Optional<Produto> produto = repository.findById(codigo);
 		if(produto.isPresent()) {
