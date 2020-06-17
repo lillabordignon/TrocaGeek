@@ -10,6 +10,11 @@ import { FAQComponent } from './faq/faq.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { DeletarComponent } from './usuarios/deletar/deletar.component';
 import { EditarComponent } from './usuarios/editar/editar.component';
+import { JogosComponent } from './jogos/jogos.component';
+import { ConsolesComponent } from './consoles/consoles.component';
+import { CardgameComponent } from './cardgame/cardgame.component';
+import { ActionfigureComponent } from './actionfigure/actionfigure.component';
+import { AcessorioComponent } from './acessorio/acessorio.component';
 
 
 const routes: Routes = [
@@ -24,7 +29,13 @@ const routes: Routes = [
   { path: 'faq', component: FAQComponent },
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'usuarios/deletar/:id', component: DeletarComponent },
-  { path: 'usuarios/editar/:id', component: EditarComponent }
+  { path: 'usuarios/editar/:id', component: EditarComponent },
+  {path: 'produtos/jogos', component: JogosComponent},
+  {path: 'produtos/consoles', component: ConsolesComponent},
+  {path: 'produtos/actionfigures', component: ActionfigureComponent},
+  {path: 'produtos/cardgame', component: CardgameComponent},
+  {path: 'produtos/acessorios',component: AcessorioComponent}
+
 
 ];
 
