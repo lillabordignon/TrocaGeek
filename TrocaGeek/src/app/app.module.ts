@@ -18,7 +18,11 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { FormsModule } from '@angular/forms';
 import { DeletarComponent } from './usuarios/deletar/deletar.component';
 import { EditarComponent } from './usuarios/editar/editar.component';
-import { DetalharComponent } from './produtos/detalhar/detalhar.component';
+import { AcessorioComponent } from './acessorio/acessorio.component';
+import { ConsolesComponent } from './consoles/consoles.component';
+import { ActionfigureComponent } from './actionfigure/actionfigure.component';
+import { CardgameComponent } from './cardgame/cardgame.component';
+import { JogosComponent } from './jogos/jogos.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { DetalharComponent } from './produtos/detalhar/detalhar.component';
     UsuariosComponent,
     DeletarComponent,
     EditarComponent,
-    DetalharComponent
+    AcessorioComponent,
+    ConsolesComponent,
+    ActionfigureComponent,
+    CardgameComponent,
+    JogosComponent
   ],
   imports: [
     BrowserModule,
