@@ -1,0 +1,26 @@
+<section class="d-flex justify-content-around flex-wrap my-3">
+    <div class="card text-center my-4 mx-3 caixas">
+        <div class="card-body">
+            <div>
+                <h4>{{produto.nome}}</h4>
+            </div>
+            <hr>
+            <div>
+                <img class="img-fluid img" src="{{produto.urlImg}}" alt="">
+            </div>
+            <hr>
+            <div>
+                <span>Preço: R$ {{produto.preco}}</span>
+            </div>
+            <hr>
+            <div>
+                <span>Usuario: {{produto.idUsuario.nome}}</span>
+            </div>
+            <div>
+                <span>Data: {{produto.data}}</span>
+            </div>
+            <hr>
+            <button class="btn verMais" [routerLink]="['/detalhar', produto.codigo]">Ver mais</button>
+        </div>
+    </div>
+</section>

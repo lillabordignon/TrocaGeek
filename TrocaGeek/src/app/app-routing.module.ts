@@ -10,6 +10,7 @@ import { FAQComponent } from './faq/faq.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { DeletarComponent } from './usuarios/deletar/deletar.component';
 import { EditarComponent } from './usuarios/editar/editar.component';
+import { DetalharComponent } from './produtos/detalhar/detalhar.component';
 
 
 const routes: Routes = [
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'faq', component: FAQComponent },
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'usuarios/deletar/:id', component: DeletarComponent },
-  { path: 'usuarios/editar/:id', component: EditarComponent }
+  { path: 'usuarios/editar/:id', component: EditarComponent },
+  {path: 'produtos/detalhar/:codigo', component: DetalharComponent}
 
 ];
 

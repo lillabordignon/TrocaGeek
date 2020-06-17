@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Produto } from '../Model/Produto';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -7,14 +6,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProdutoService {
 
-  produto : Produto = new Produto;
-
   constructor(private http: HttpClient) { }
 
 
-  getAllProdutos () {
-    return this.http.get('https://api-produtos-genera.herokuapp.com/produtos')
+  getAllProdutos (pagina:number, quantidade:number) {
+    return this.http.get(`https://apitrocageek.herokuapp.com/produtos?page=${pagina}&size=${quantidade}`)
   }
 
+  getProdutoEspecifico(codigo:number) {
+    return this.http.get(`https://apitrocageek.herokuapp.com/produtos/${codigo}`)
+  }
 
 }
