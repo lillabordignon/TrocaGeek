@@ -17,6 +17,9 @@
 
 
 <section class="d-flex justify-content-around flex-wrap my-3">
+
+
+
     <form class="d-flex pt-3 flex-wrap w-100 filtros" action="">
 
         <div class="form-group d-flex justify-content-center">
@@ -65,10 +68,22 @@
             </form>
         </div>
 
-        <button class="btn btn-orange mx-3 mb-3" type="submit" name="btFiltrar" id="filtrar" value="Filtrar"
-            (click)="filtrar(8)">Filtrar</button>
+        <button class="btn btn-orange mx-3 mb-3" type="submit" name="btFiltrar" id="filtrar" value="Filtrar">Filtrar
+        </button>
+
+
+
+        <div class="d-flex justify-content-end mr-5">
+
+            <div class="form-inline my-2 my-lg-0 d-flex justify-content-center pesquisa">
+                <input class="form-control mr-sm-2 pesquisaMobile" type="search" placeholder="Pesquisar"
+                    aria-label="Search" [(ngModel)]="barraPesquisa">
+                <button class="btn btn-outline-success" (click)="buttonPesquisar()">Pesquisar</button>
+            </div>
+        </div>
 
     </form>
+
 
     <section class="d-flex justify-content-around flex-wrap my-3">
         <div class="card text-center my-4 mx-3 caixas" *ngFor="let produto of listaProdutos">
