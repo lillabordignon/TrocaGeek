@@ -10,14 +10,15 @@ import { FAQComponent } from './faq/faq.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { DeletarComponent } from './usuarios/deletar/deletar.component';
 import { EditarComponent } from './usuarios/editar/editar.component';
-import { JogosComponent } from './jogos/jogos.component';
-import { ConsolesComponent } from './consoles/consoles.component';
-import { CardgameComponent } from './cardgame/cardgame.component';
-import { ActionfigureComponent } from './actionfigure/actionfigure.component';
-import { AcessorioComponent } from './acessorio/acessorio.component';
+
 import { DetalharComponent } from './produtos/detalhar/detalhar.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { JogosComponent } from './categorias/jogos/jogos.component';
+import { ConsolesComponent } from './consoles/consoles.component';
+import { ActionfigureComponent } from './categorias/actionfigure/actionfigure.component';
+import { CardgameComponent } from './categorias/cardgame/cardgame.component';
+import { AcessoriosComponent } from './categorias/acessorios/acessorios.component';
 
 
 const routes: Routes = [
@@ -39,7 +40,8 @@ const routes: Routes = [
   { path: 'produtos/consoles', component: ConsolesComponent },
   { path: 'produtos/actionfigures', component: ActionfigureComponent },
   { path: 'produtos/cardgame', component: CardgameComponent },
-  { path: 'produtos/acessorios', component: AcessorioComponent }
+  { path: 'produtos/acessorios', component: AcessoriosComponent },
+  { path: 'produtos/detalhar/:codigo', component: DetalharComponent }
 
 
 ];

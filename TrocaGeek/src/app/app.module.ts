@@ -18,11 +18,12 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { FormsModule } from '@angular/forms';
 import { DeletarComponent } from './usuarios/deletar/deletar.component';
 import { EditarComponent } from './usuarios/editar/editar.component';
-import { AcessorioComponent } from './acessorio/acessorio.component';
-import { ConsolesComponent } from './consoles/consoles.component';
-import { ActionfigureComponent } from './actionfigure/actionfigure.component';
-import { CardgameComponent } from './cardgame/cardgame.component';
-import { JogosComponent } from './jogos/jogos.component';
+import { ActionfigureComponent } from './categorias/actionfigure/actionfigure.component';
+import { CardgameComponent } from './categorias/cardgame/cardgame.component';
+import { JogosComponent } from './categorias/jogos/jogos.component';
+import { AcessoriosComponent } from './categorias/acessorios/acessorios.component';
+import { ConsoleComponent } from './categorias/console/console.component';
+import { DetalharComponent } from './produtos/detalhar/detalhar.component';
 
 @NgModule({
   declarations: [
@@ -40,11 +41,12 @@ import { JogosComponent } from './jogos/jogos.component';
     UsuariosComponent,
     DeletarComponent,
     EditarComponent,
-    AcessorioComponent,
-    ConsolesComponent,
     ActionfigureComponent,
     CardgameComponent,
-    JogosComponent
+    JogosComponent,
+    AcessoriosComponent,
+    ConsoleComponent,
+    DetalharComponent
   ],
   imports: [
     BrowserModule,
