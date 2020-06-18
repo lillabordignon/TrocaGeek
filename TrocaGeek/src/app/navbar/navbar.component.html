@@ -9,12 +9,12 @@
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon "></span>
         </button>
-        <form class="form-inline my-2 my-lg-0 d-flex justify-content-center pesquisa">
+        <div class="form-inline my-2 my-lg-0 d-flex justify-content-center pesquisa">
             <input class="form-control mr-sm-2 pesquisaMobile" type="search" placeholder="Pesquisar"
-                aria-label="Search">
+                aria-label="Search" [(ngModel)]="barraPesquisa">
             <button class="btn my-2 my-sm-0 pesquisar" type="button"><img class="img-fluid" width="20"
-                    src="../../assets/img/busca.png" alt="Buscar"></button>
-        </form>
+                    src="../../assets/img/busca.png" (click)="pesquisarProdutos()" alt="Buscar"></button>
+            </div>
         <div class="collapse navbar-collapse desktop-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto menuNav">
                 <li class="nav-item">
@@ -38,11 +38,17 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink='/sobre-nos'>Sobre</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" *ngIf="deslogado">
                     <a class="nav-link" routerLink='/login'>Login</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" *ngIf="deslogado">
                     <a class="nav-link btn botaocadastrar" routerLink='/cadastrar'>Cadastrar</a>
+                </li>
+                <li class="nav-item" *ngIf="logado">
+                    <a class="nav-link btn botaocadastrar" routerLink='/usuarios'>Minha área</a>
+                </li>
+                <li class="nav-item ml-2" *ngIf="logado">
+                    <a class="nav-link btn btn-danger" (click)="deslogar()">Logout</a>
                 </li>
             </ul>
         </div>

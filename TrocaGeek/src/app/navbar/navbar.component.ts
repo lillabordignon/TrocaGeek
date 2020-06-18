@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProdutoService } from '../service/produto.service';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +9,43 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  deslogado: boolean = true;
+  logado : boolean = false;
 
-  constructor() { }
+  nomeUsuario:string;
 
-  ngOnInit(): void {
+  barraPesquisa:string;
+
+  verificar:string
+
+  constructor(private router:Router) { }
+
+  ngOnInit() {
+    this.verificarNavBar();
+  }
+
+  public verificarNavBar(){
+    this.verificar = localStorage.getItem("logado");
+    if(this.verificar == "true"){
+      this.nomeUsuario = localStorage.getItem("nomeUsuario");
+      this.deslogado = false;
+      this.logado = true;
+    } else {
+      this.deslogado = true;
+      this.logado = false;
+    }
+
+  }
+  deslogar() {
+    localStorage.clear();
+    location.reload(true);
+  }
+
+  pesquisarProdutos() {
+    this.router.navigate(["/home"]);
+    localStorage.setItem("pesquisaBarra", this.barraPesquisa);
+
+    
   }
 
 }

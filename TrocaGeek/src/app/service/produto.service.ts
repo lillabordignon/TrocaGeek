@@ -10,11 +10,15 @@ export class ProdutoService {
 
 
   getAllProdutos (pagina:number, quantidade:number) {
-    return this.http.get(`https://apitrocageek.herokuapp.com/produtos?page=${pagina}&size=${quantidade}`)
+    return this.http.get(`http://localhost:8080/produtos?page=${pagina}&size=${quantidade}`)
   }
 
   getProdutoEspecifico(codigo:number) {
-    return this.http.get(`https://apitrocageek.herokuapp.com/produtos/${codigo}`)
+    return this.http.get(`http://localhost:8080/produtos/${codigo}` )
+  }
+
+  getByNomeprodutos(nome:string){
+    return this.http.get(`http://localhost:8080/produtos/nome/${nome}`)
   }
 
 }
