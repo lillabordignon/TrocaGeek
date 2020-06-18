@@ -1,115 +1,108 @@
 <section class="d-flex justify-content-around flex-wrap my-3">
 
+    <div class="d-flex justify-content-between responsivo">
 
+        <div class="d-flex pt-3 flex-wrap filtros" action="">
 
-    <form class="d-flex pt-3 flex-wrap w-100 filtros" action="">
+            <div class="form-group d-flex justify-content-center">
+                <label class="control-label mx-2">Categoria:</label>
+                <div method="dflex flex-row" action="">
 
-        <div class="form-group d-flex justify-content-center">
-            <label class="control-label mx-2">Categoria:</label>
-            <form method="dflex flex-row" action="">
+                    <select name="txt_order mx-3" size="1" class="fFiltro form-control input-sm">
+                        <option value="1" selected=""></option>
+                        <option value="2">Jogos</option>
+                        <option value="3">Consoles</option>
+                        <option value="4">Action Figures</option>
+                        <option value="5">Card Game</option>
+                        <option value="6">Acessórios</option>
+                    </select>
 
-                <select name="txt_order mx-3" size="1" class="fFiltro form-control input-sm">
-                    <option value="1" selected=""></option>
-                    <option value="2">Jogos</option>
-                    <option value="3">Consoles</option>
-                    <option value="4">Action Figures</option>
-                    <option value="5">Card Game</option>
-                    <option value="6">Acessórios</option>
-                </select>
-
-            </form>
-        </div>
-
-        <div class="form-group d-flex justify-content-center">
-            <label class="control-label mx-2">Preço:</label>
-            <form method="get" action="./?view=ecom/itens">
-
-                <select name="txt_order" size="1" class="fFiltro form-control input-sm">
-                    <option value="1" selected=""></option>
-                    <option value="2">Maior para Menor</option>
-                    <option value="3">Menor para Maior</option>
-
-                </select>
-
-            </form>
-
-        </div>
-
-        <div class="form-group d-flex justify-content-center">
-            <label class="control-label mx-2">Quantidade:</label>
-            <form method="get dflex flex-row" action="./?view=ecom/itens">
-
-                <select name="txt_order" size="1" id="quantidade" class="fFiltro form-control input-sm">
-                    <option value="1" selected=""></option>
-                    <option value="2">4</option>
-                    <option value="3">8</option>
-                    <option value="4">16</option>
-
-                </select>
-
-            </form>
-        </div>
-
-        <button class="btn btn-orange mx-3 mb-3" type="submit" name="btFiltrar" id="filtrar" value="Filtrar">Filtrar
-        </button>
-
-
-
-        <div class="d-flex justify-content-end mr-5">
-
-            <div class="form-inline my-2 my-lg-0 d-flex justify-content-center pesquisa">
-                <input class="form-control mr-sm-2 pesquisaMobile" type="search" placeholder="Pesquisar"
-                    aria-label="Search" [(ngModel)]="barraPesquisa">
-                <button class="btn btn-outline-success" (click)="buttonPesquisar()">Pesquisar</button>
+                </div>
             </div>
-        </div>
 
-    </form>
+            <div class="form-group d-flex justify-content-center">
+                <label class="control-label mx-2">Preço:</label>
+                <div>
 
+                    <select name="txt_order" size="1" class="fFiltro form-control input-sm">
+                        <option value="1" selected=""></option>
+                        <option value="2">Maior para Menor</option>
+                        <option value="3">Menor para Maior</option>
 
-    <section class="d-flex justify-content-around flex-wrap my-3">
-        <div class="card text-center my-4 mx-3 caixas" *ngFor="let produto of listaProdutos">
-            <div class="card-body">
-                <div>
-                    <h4>{{produto.nome}}</h4>
+                    </select>
+
                 </div>
-                <hr>
-                <div>
-                    <img class="img-fluid img" src="{{produto.urlImg}}" alt="">
-                </div>
-                <hr>
-                <div>
-                    <span>Preço: R$ {{produto.preco}}</span>
-                </div>
-                <hr>
-                <div>
-                    <span>Usuario: {{produto.descricao}}</span>
-                </div>
-                <hr>
-                <button class="btn verMais" [routerLink]="['/produtos/detalhar', produto.codigo]">Ver mais</button>
+
             </div>
+
+            <div class="form-group d-flex justify-content-center">
+                <label class="control-label mx-2">Quantidade:</label>
+                <div >
+
+                    <select name="txt_order" size="1" id="quantidade" class="fFiltro form-control input-sm">
+                        <option value="1" selected=""></option>
+                        <option value="2">4</option>
+                        <option value="3">8</option>
+                        <option value="4">16</option>
+
+                    </select>
+
+                </div>
+            </div>
+
+            <button class="btn btn-outline-primary mx-3 mb-3" type="button" name="btFiltrar" id="filtrar" value="Filtrar">Filtrar
+            </button>
         </div>
-    </section>
-
-
-    <div class="d-flex justify-content-center py-2">
-
-        <div class="d-flex justify-content-center">
-            <nav aria-label="Page navigation shadow-lg">
-                <button class="btn btn-outline-primary" (click)="paginar(0)">
-                    <- </button>
-                        <button class="btn btn-primary" (click)="paginar(0)">1</button>
-                        <button class="btn btn-primary" (click)="paginar(1)">2</button>
-                        <button class="btn btn-primary" (click)="paginar(2)">3</button>
-                        <button class="btn btn-primary" (click)="paginar(3)">4</button>
-                        <button class="btn btn-outline-primary" (click)="paginar(3)"> -> </button>
-            </nav>
-
-        </div>
-
-
+        
     </div>
+            <div class="d-flex justify-content-end ">
 
-
-
+                <div class="form-inline my-2 my-lg-0 d-flex justify-content-center pesquisa">
+                    <input class="form-control mr-sm-2 pesquisaMobile" type="search" placeholder="Pesquisar"
+                        aria-label="Search" [(ngModel)]="barraPesquisa">
+                    <button class="btn btn-outline-success" (click)="buttonPesquisar()">Pesquisar</button>
+                </div>
+            </div>
+           
 </section>
+        
+
+
+        <section class="d-flex justify-content-around flex-wrap my-3">
+            <div class="card text-center my-4 mx-3 caixas" *ngFor="let produto of listaProdutos">
+                <div class="card-body">
+                    <div>
+                        <h4>{{produto.nome}}</h4>
+                    </div>
+                    <hr>
+                    <div>
+                        <img class="img-fluid img" src="{{produto.urlImg}}" alt="">
+                    </div>
+                    <hr>
+                    <div>
+                        <span>Preço: R$ {{produto.preco}}</span>
+                    </div>
+                    <hr>
+                    <div>
+                        <span>Usuario: {{produto.descricao}}</span>
+                    </div>
+                    <hr>
+                    <button class="btn verMais" [routerLink]="['/produtos/detalhar', produto.codigo]">Ver mais</button>
+                </div>
+            </div>
+        </section>
+
+
+        
+
+            <div class="d-flex justify-content-center py-5">
+                <nav aria-label="Page navigation shadow-lg">
+                    <button class="btn btn-outline-primary" (click)="paginar(0)">
+                        <- </button>
+                            <button class="btn btn-primary" (click)="paginar(0)">1</button>
+                            <button class="btn btn-primary" (click)="paginar(1)">2</button>
+                            <button class="btn btn-primary" (click)="paginar(2)">3</button>
+                            <button class="btn btn-primary" (click)="paginar(3)">4</button>
+                            <button class="btn btn-outline-primary" (click)="paginar(3)"> -> </button>
+                </nav>
+            </div>

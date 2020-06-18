@@ -10,15 +10,14 @@ import { FAQComponent } from './faq/faq.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { DeletarComponent } from './usuarios/deletar/deletar.component';
 import { EditarComponent } from './usuarios/editar/editar.component';
-
 import { DetalharComponent } from './produtos/detalhar/detalhar.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { JogosComponent } from './categorias/jogos/jogos.component';
-import { ConsolesComponent } from './consoles/consoles.component';
 import { ActionfigureComponent } from './categorias/actionfigure/actionfigure.component';
 import { CardgameComponent } from './categorias/cardgame/cardgame.component';
 import { AcessoriosComponent } from './categorias/acessorios/acessorios.component';
+import { ConsoleComponent } from './categorias/console/console.component';
 
 
 const routes: Routes = [
@@ -37,7 +36,7 @@ const routes: Routes = [
   { path: 'usuarios/deletar/:id', component: DeletarComponent },
   { path: 'usuarios/editar/:id', component: EditarComponent },
   { path: 'produtos/jogos', component: JogosComponent },
-  { path: 'produtos/consoles', component: ConsolesComponent },
+  { path: 'produtos/consoles', component: ConsoleComponent },
   { path: 'produtos/actionfigures', component: ActionfigureComponent },
   { path: 'produtos/cardgame', component: CardgameComponent },
   { path: 'produtos/acessorios', component: AcessoriosComponent },
