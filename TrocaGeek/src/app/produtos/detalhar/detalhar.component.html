@@ -1,26 +1,64 @@
-<section class="d-flex justify-content-around flex-wrap my-3">
-    <div class="card text-center my-4 mx-3 caixas">
-        <div class="card-body">
-            <div>
-                <h4>{{produto.nome}}</h4>
-            </div>
-            <hr>
-            <div>
+<div class="conteiner my-3">
+
+    <div class="card-body border border-dark my-4 mx-3 caixas">
+
+        <div class="d-flex d-flex justify-content-around flex-wrap">
+
+
+            <div class="justify-content-center mx-3 my-3">
                 <img class="img-fluid img" src="{{produto.urlImg}}" alt="">
             </div>
-            <hr>
-            <div>
-                <span>Preço: R$ {{produto.preco}}</span>
+
+
+            <div class="infoproduto justify-content-around w-50">
+                <div class="py-2">
+                    <h1>{{produto.nome}}</h1>
+                </div>
+
+                <div class="py-2">
+                    <h2> <span>Valor: R$ {{produto.preco}}</span> </h2>
+                </div>
+
+                <div class="py-2">
+                    <h2><span>Publicado por: {{produto.idUsuario.nome}}</span></h2>
+                </div>
+
+                <div class="py-2">
+                    <h2><span>Data de publicação: {{produto.data}}</span></h2>
+                </div>
+
+                <div class="d-flex flex-wrap">
+                    <div class="d-flex py-2 mr-5">
+                        <button class="btn negociar">Negociar</button>
+                    </div>
+
+                    <div class="d-flex py-2">
+                        <button class="btn negociar" routerLink="/home">Voltar</button>
+                    </div>
+
+                </div>
+
+                <div class="py-2">
+
+                    <div class="py-2">
+                        <h2>Descrição do Produto</h2>
+                    </div>
+
+
+                    <div>
+                        <div>
+                            <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi culpa molestias
+                                deserunt voluptatem ad quam aut similique ea illo et, tempora officia est commodi!
+                                Expedita libero aut molestiae! Omnis, quia?<span>{{produto.descricao}}</span></h4>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <hr>
-            <div>
-                <span>Usuario: {{produto.idUsuario.nome}}</span>
-            </div>
-            <div>
-                <span>Data: {{produto.data}}</span>
-            </div>
-            <hr>
-            <button class="btn verMais" [routerLink]="['/detalhar', produto.codigo]">Ver mais</button>
+
+
         </div>
+
     </div>
-</section>
+
+
+</div>

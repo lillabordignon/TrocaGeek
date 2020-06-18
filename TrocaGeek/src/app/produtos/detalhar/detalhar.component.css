@@ -1,0 +1,24 @@
+h4{
+   font-weight: normal;
+}
+
+.negociar{
+
+   background-color:#05a4c4;
+   color: #fff !important
+}
+
+.negociar:hover{
+
+
+   background-color: #ed3263 !important;
+   color: #867e80
+}
+
+@media only screen and (max-width: 859px) {
+
+.infoproduto{
+   width: 100% !important;
+}
+
+}
