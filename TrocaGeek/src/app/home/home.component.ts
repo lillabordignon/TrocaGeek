@@ -35,4 +35,8 @@ export class HomeComponent implements OnInit {
     this.findAllProdutos(pagina, this.quantidade);
   }
 
+  filtrar(qnt: any) {
+    this.quantidade = qnt;
+    this.findAllProdutos(this.pagina, this.quantidade);
+  }
 }
