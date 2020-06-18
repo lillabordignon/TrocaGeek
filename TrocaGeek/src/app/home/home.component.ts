@@ -18,10 +18,14 @@ export class HomeComponent implements OnInit {
   barraPesquisa: string;
 
   private pagina: number = 0;
-  private quantidade: number = 10;
+  private quantidade: number = 12;
   numeroDePaginas:number ;
+  arrayDePaginas:number[] =[0];
+  ultimaPagina:boolean;
 
   pesquisaBarra: string;
+
+  teste:number;
 
 
 
@@ -29,7 +33,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.findAllProdutos(this.pagina, this.quantidade);
-    console.log(this.conteudo.totalPages)
 
   }
 
@@ -38,19 +41,24 @@ export class HomeComponent implements OnInit {
       this.conteudo = resp;
       this.listaProdutos = this.conteudo.content;
       this.numeroDePaginas = this.conteudo.totalPages;
-      console.log(resp);
-      
+      this.ultimaPagina = this.conteudo.last;
+      this.verificarNumeroDePaginas()
+      console.log(this.teste);
+
     })
   }
   buscarPorNomeProduto(nome) {
     this.produtoService.getByNomeprodutos(nome).subscribe((resp: Conteudo) => {
       this.conteudo = resp;
       this.listaProdutos = this.conteudo.content;
+      this.numeroDePaginas = this.conteudo.totalPages;
+      this.verificarNumeroDePaginas()
     })
   }
 
   buttonPesquisar() {
-    if(this.barraPesquisa == "") {
+    // se a barra de pesquisa for vazia ou menor que 1 ele mostra todos os produtos
+    if(this.barraPesquisa == "" || this.barraPesquisa.length < 1 || this.barraPesquisa == null) {
       this.findAllProdutos(this.pagina, this.quantidade)
     }else {
     this.buscarPorNomeProduto(this.barraPesquisa);
@@ -64,7 +72,11 @@ export class HomeComponent implements OnInit {
   }
 
   verificarNumeroDePaginas(){
-
+    for(let i = 0; i < this.numeroDePaginas; i++){
+      this.arrayDePaginas[i] = i;
+    }  
   }
+
+  
 }
 

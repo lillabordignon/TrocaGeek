@@ -5,29 +5,25 @@
         <div class="d-flex pt-3 flex-wrap filtros" action="">
 
             <div class="form-group d-flex justify-content-center">
-                <label class="control-label mx-2">Categoria:</label>
-                <div method="dflex flex-row" action="">
-
-                    <select name="txt_order mx-3" size="1" class="fFiltro form-control input-sm">
-                        <option value="1" selected=""></option>
-                        <option value="2">Jogos</option>
-                        <option value="3">Consoles</option>
-                        <option value="4">Action Figures</option>
-                        <option value="5">Card Game</option>
-                        <option value="6">Acessórios</option>
-                    </select>
-
-                </div>
-            </div>
-
-            <div class="form-group d-flex justify-content-center">
-                <label class="control-label mx-2">Preço:</label>
+                <label class="control-label mx-2">Ordenar:</label>
                 <div>
 
-                    <select name="txt_order" size="1" class="fFiltro form-control input-sm">
-                        <option value="1" selected=""></option>
-                        <option value="2">Maior para Menor</option>
-                        <option value="3">Menor para Maior</option>
+                    <select name="txt_order mx-3" id="ordenarPor" size="1" class="fFiltro form-control input-sm">
+                        <option value="date" selected="Data">Data</option>
+                        <option value="preco">Preço</option>
+                        <option value="nome">Nome</option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="form-group d-flex justify-content-center">
+                <label class="control-label mx-2">Ordem:</label>
+                <div>
+
+                    <select name="txt_order" id="ordem" size="1" class="fFiltro form-control input-sm">
+                        <option value="desc" selected="">Decrescente</option>
+                        <option value="asc">Crescente</option>
 
                     </select>
 
@@ -36,14 +32,14 @@
             </div>
 
             <div class="form-group d-flex justify-content-center">
-                <label class="control-label mx-2">Quantidade:</label>
+                <label class="control-label mx-2">Quantidade por página:</label>
                 <div >
 
                     <select name="txt_order" size="1" id="quantidade" class="fFiltro form-control input-sm">
-                        <option value="1" selected=""></option>
-                        <option value="2">4</option>
-                        <option value="3">8</option>
-                        <option value="4">16</option>
+                        <option value="12" selected="12">12</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="40">40</option>
 
                     </select>
 
@@ -97,12 +93,8 @@
 
             <div class="d-flex justify-content-center py-5">
                 <nav aria-label="Page navigation shadow-lg">
-                    <button class="btn btn-outline-primary" (click)="paginar(0)">
-                        <- </button>
-                            <button class="btn btn-primary" (click)="paginar(0)">1</button>
-                            <button class="btn btn-primary" (click)="paginar(1)">2</button>
-                            <button class="btn btn-primary" (click)="paginar(2)">3</button>
-                            <button class="btn btn-primary" (click)="paginar(3)">4</button>
+                    <button class="btn btn-outline-primary" (click)="paginar(0)"><-</button>
+                            <button class="btn btn-primary" *ngFor="let pagina of arrayDePaginas" (click)="paginar(pagina)">{{pagina}}</button>
                             <button class="btn btn-outline-primary" (click)="paginar(3)"> -> </button>
                 </nav>
             </div>
