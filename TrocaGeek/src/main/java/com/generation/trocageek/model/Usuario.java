@@ -1,6 +1,7 @@
 package com.generation.trocageek.model;
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 import javax.persistence.GeneratedValue;
@@ -34,6 +35,7 @@ public class Usuario {
 	@NotNull
 	@Size(min = 2, max = 100)
 	@Email
+	@Column(unique = true)
 	private String email;
 	
 	@NotNull
