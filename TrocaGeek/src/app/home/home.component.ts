@@ -13,9 +13,15 @@ export class HomeComponent implements OnInit {
 listaProdutos: Produto []
 produto: Produto = new Produto;
 conteudo: Conteudo = new Conteudo;
+conteudoPesquisa: Conteudo = new Conteudo;
+
+barraPesquisa:string;
 
 private pagina:number = 0;
-private quantidade:number= 4;
+private quantidade:number= 10;
+
+pesquisaBarra:string ;
+
 
 
   constructor(private produtoService: ProdutoService) { }
@@ -30,6 +36,18 @@ private quantidade:number= 4;
       this.listaProdutos = this.conteudo.content;
     })
   }
+  buscarPorNomeProduto(nome){
+    this.produtoService.getByNomeprodutos(nome).subscribe((resp: Conteudo)=> {
+      this.conteudoPesquisa = resp;
+      this.listaProdutos = this.conteudoPesquisa.content;
+    })
+  }
+
+  buttonPesquisar(){
+    this.buscarPorNomeProduto(this.barraPesquisa);
+   
+  }
+
   paginar(pagina:any) {
     this.pagina = pagina;
     this.findAllProdutos(pagina, this.quantidade);

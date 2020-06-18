@@ -6,14 +6,14 @@
                 <h3 class="login">Olá! Digite seu E-mail e Senha.</h3>
             </div>
             <label for="email">Email</label>
-            <input type="email" class="form-control mb-3" id="email" maxlength="50" placeholder="Email">
+            <input type="email" [(ngModel)]="usuario.email" class="form-control mb-3" id="email" maxlength="50" placeholder="Email">
             <label for="senha">Senha</label>
-            <input type="password" class="form-control mb-2" id="senha" maxlength="25" placeholder="Senha">
+            <input type="password" [(ngModel)]="usuario.senha" class="form-control mb-2" id="senha" maxlength="25" placeholder="Senha">
 
             <div class=" mb-3 d-flex justify-content-end">
                 <a class="recuperarSenha" href="#">Esqueceu sua senha?</a>
             </div>
-            <button type="submit" class="btn btn-primary btn-block botao">Entrar</button>
+            <button type="submit" class="btn btn-primary btn-block botao" (click)="logar()">Entrar</button>
         </div>
     </div>
 </div>

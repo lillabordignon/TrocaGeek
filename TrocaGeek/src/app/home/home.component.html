@@ -2,8 +2,8 @@
 
 
     <nav aria-label="Page navigation shadow-lg">
-        <button class="btn btn-outline-primary"> <- </button>
-        <button class="btn btn-primary" (click)="paginar(0)">1</button>
+        <button class="btn btn-outline-primary"> - </button>
+        <button class="btn btn-primary" (click)="paginar(0)" >1</button>
         <button class="btn btn-primary" (click)="paginar(1)">2</button>
         <button class="btn btn-primary"(click)="paginar(2)">3</button>
         <button class="btn btn-outline-primary"(click)="paginar(3)">-></button>
@@ -12,17 +12,11 @@
     </div>
     <div class="d-flex justify-content-end mr-5">
        
-         
-          <div class="btn-group" role="group">
-            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
-            </button>
-            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-              <a class="dropdown-item" href="#">Dropdown link</a>
-              <a class="dropdown-item" href="#">Dropdown link</a>
+          <div class="form-inline my-2 my-lg-0 d-flex justify-content-center pesquisa">
+            <input class="form-control mr-sm-2 pesquisaMobile" type="search" placeholder="Pesquisar"
+                aria-label="Search" [(ngModel)]="barraPesquisa">
+            <button class="btn btn-outline-success" (click)="buttonPesquisar()">Pesquisar</button>
             </div>
-  
-        </div>
     </div>
 <section class="d-flex justify-content-around flex-wrap my-3">
     <div class="card text-center my-4 mx-3 caixas" *ngFor="let produto of listaProdutos">
