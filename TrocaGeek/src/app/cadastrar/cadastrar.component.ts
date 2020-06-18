@@ -20,7 +20,6 @@ export class CadastrarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   cadastro() {
 
     if (this.usuario.senha === this.usuario.confirmarSenha) {

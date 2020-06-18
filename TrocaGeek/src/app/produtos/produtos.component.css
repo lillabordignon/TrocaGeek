@@ -1,0 +1,22 @@
+.img{
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.card-body{
+    width: 300px;
+}
+
+.caixas{
+    border: none;
+    box-shadow: -2px -2px 8px #dbdbdb, 2px 2px 8px #dbdbdb
+}
+
+.verMais{
+    background-color: #05a4c4;
+    color: #fff !important
+}
+
+.verMais:hover{
+    background-color: #ed3263;
+}

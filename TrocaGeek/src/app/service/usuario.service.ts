@@ -25,7 +25,11 @@ export class UsuarioService {
 
   //Cadastrar usuarios
   postCadastro(usuario: Usuario) {
-    return this.http.post('http://93.188.161.223:9000/user', usuario);
+    return this.http.post('http://localhost:8080/usuario/cadastrar', usuario);
+  }
+
+  postLogar(usuario: Usuario) {
+    return this.http.post('http://localhost:8080/usuario/logar', usuario);
   }
 
   //Deletar Usuarios

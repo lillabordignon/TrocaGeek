@@ -1,1 +1,53 @@
-<p>produtos works!</p>
+<div class="d-flex justify-content-center py-2">
+
+
+    <nav aria-label="Page navigation shadow-lg">
+        <button class="btn btn-outline-primary"> - </button>
+        <button class="btn btn-primary" (click)="paginar(0)">1</button>
+        <button class="btn btn-primary" (click)="paginar(1)">2</button>
+        <button class="btn btn-primary"(click)="paginar(2)">3</button>
+        <button class="btn btn-outline-primary"(click)="paginar(3)">-></button>
+      </nav>
+    
+    </div>
+    <div class="d-flex justify-content-end mr-5">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Botão dropdown
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Alguma ação</a>
+              <a class="dropdown-item" href="#">Outra ação</a>
+              <a class="dropdown-item" href="#">Alguma coisa aqui</a>
+            </div>
+          </div>
+    </div>
+<section class="d-flex justify-content-around flex-wrap my-3">
+    <div class="card text-center my-4 mx-3 caixas" *ngFor="let produto of listaProdutos">
+        <div class="card-body">
+            <div>
+                <h4>{{produto.nome}}</h4>
+            </div>
+            <hr>
+            <div>
+                <img class="img-fluid img" src="{{produto.urlImg}}" alt="">
+            </div>
+            <hr>
+            <div>
+                <span>Preço: R$ {{produto.preco}}</span>
+            </div>
+            <hr>
+            <div>
+                <span>Descricao: {{produto.descricao}}</span>
+            </div>
+            <hr>
+            <div>
+                <span>Usuario: {{produto.idUsuario.nome}}</span>
+            </div>
+            <hr>
+            <button class="btn verMais" [routerLink]="['/produtos/detalhar', produto.codigo]">Ver mais</button>
+        </div>
+    </div>
+
+
+</section>
