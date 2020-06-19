@@ -46,7 +46,7 @@
                 </div>
             </div>
 
-            <button class="btn btn-outline-primary mx-3 mb-3" type="button" name="btFiltrar" id="filtrar" value="Filtrar">Filtrar
+            <button class="btn btn-outline-primary mx-3 mb-3" type="button" (click)="filtrarProdutos()" name="btFiltrar" id="filtrar" value="Filtrar">Filtrar
             </button>
         </div>
         
@@ -95,6 +95,10 @@
                 <nav aria-label="Page navigation shadow-lg">
                     <button class="btn btn-outline-primary" (click)="paginar(0)"><-</button>
                             <button class="btn btn-primary" *ngFor="let pagina of arrayDePaginas" (click)="paginar(pagina)">{{pagina}}</button>
-                            <button class="btn btn-outline-primary" (click)="paginar(3)"> -> </button>
+                            <button class="btn btn-outline-primary" (click)="paginar(3)"> -> </button> 
                 </nav>
+                
             </div>
+                <div class="d-flex justify-content-center py-1">
+                <span class="text-muted "> Página atual {{pagina}}</span>
+                </div>
