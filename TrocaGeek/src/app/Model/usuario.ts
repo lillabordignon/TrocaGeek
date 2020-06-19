@@ -4,8 +4,9 @@ export class Usuario {
     public email: string;
     public senha: string;
     public confirmarSenha: string;
-    public cpf:string;
-    public token:string;
-    public permissao:number
+    public cpf: string;
+    public token: string;
+    public permissao: number;
+    public telefone: string
 
 }

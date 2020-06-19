@@ -33,7 +33,7 @@
 
             <div class="form-group d-flex justify-content-center">
                 <label class="control-label mx-2">Quantidade por página:</label>
-                <div >
+                <div>
 
                     <select name="txt_order" size="1" id="quantidade" class="fFiltro form-control input-sm">
                         <option value="12" selected="12">12</option>
@@ -46,55 +46,58 @@
                 </div>
             </div>
 
-            <button class="btn btn-outline-primary mx-3 mb-3" type="button" name="btFiltrar" id="filtrar" value="Filtrar">Filtrar
+            <button class="btn btn-outline-primary mx-3 mb-3" type="button" name="btFiltrar" id="filtrar"
+                value="Filtrar">Filtrar
             </button>
         </div>
-        
+
     </div>
-            <div class="d-flex justify-content-end ">
+    <div class="d-flex justify-content-end ">
 
-                <div class="form-inline my-2 my-lg-0 d-flex justify-content-center pesquisa">
-                    <input class="form-control mr-sm-2 pesquisaMobile" type="search" placeholder="Pesquisar"
-                        aria-label="Search" [(ngModel)]="barraPesquisa">
-                    <button class="btn btn-outline-success" (click)="buttonPesquisar()">Pesquisar</button>
-                </div>
-            </div>
-           
+        <div class="form-inline my-2 my-lg-0 d-flex justify-content-center pesquisa">
+            <input class="form-control mr-sm-2 pesquisaMobile" type="search" placeholder="Pesquisar" aria-label="Search"
+                [(ngModel)]="barraPesquisa">
+            <button class="btn btn-outline-success" (click)="buttonPesquisar()">Pesquisar</button>
+        </div>
+    </div>
+
 </section>
-        
 
 
-        <section class="d-flex justify-content-around flex-wrap my-3">
-            <div class="card text-center my-4 mx-3 caixas" *ngFor="let produto of listaProdutos">
-                <div class="card-body">
-                    <div>
-                        <h4>{{produto.nome}}</h4>
-                    </div>
-                    <hr>
-                    <div>
-                        <img class="img-fluid img" src="{{produto.urlImg}}" alt="">
-                    </div>
-                    <hr>
-                    <div>
-                        <span>Preço: R$ {{produto.preco}}</span>
-                    </div>
-                    <hr>
-                    <div>
-                        <span>Usuario: {{produto.descricao}}</span>
-                    </div>
-                    <hr>
-                    <button class="btn verMais" [routerLink]="['/produtos/detalhar', produto.codigo]">Ver mais</button>
-                </div>
+
+<section class="d-flex justify-content-around flex-wrap my-3">
+    <div class="card text-center my-4 mx-3 caixas" *ngFor="let produto of listaProdutos">
+        <div class="card-body">
+            <div>
+                <h4>{{produto.nome}}</h4>
             </div>
-        </section>
-
-
-        
-
-            <div class="d-flex justify-content-center py-5">
-                <nav aria-label="Page navigation shadow-lg">
-                    <button class="btn btn-outline-primary" (click)="paginar(0)"><-</button>
-                            <button class="btn btn-primary" *ngFor="let pagina of arrayDePaginas" (click)="paginar(pagina)">{{pagina}}</button>
-                            <button class="btn btn-outline-primary" (click)="paginar(3)"> -> </button>
-                </nav>
+            <hr>
+            <div>
+                <img class="img-fluid img" src="{{produto.urlImg}}" alt="">
             </div>
+            <hr>
+            <div>
+                <span>Preço: R$ {{produto.preco}}</span>
+            </div>
+            <hr>
+            <div>
+                <span>Usuario: {{produto.descricao}}</span>
+            </div>
+            <hr>
+            <button class="btn verMais" [routerLink]="['/produtos/detalhar', produto.codigo]">Ver mais</button>
+        </div>
+    </div>
+</section>
+
+
+
+
+<div class="d-flex justify-content-center py-5">
+    <nav aria-label="Page navigation shadow-lg">
+        <button class="btn btn-outline-primary" (click)="paginar(0)">
+        </button>
+        <button class="btn btn-primary" *ngFor="let pagina of arrayDePaginas"
+            (click)="paginar(pagina)">{{pagina}}</button>
+        <button class="btn btn-outline-primary" (click)="paginar(3)"> -> </button>
+    </nav>
+</div>

@@ -13,14 +13,14 @@
                 <span>Preço: R$ {{produto.preco}}</span>
             </div>
             <hr>
-            <div>
+            <!-- <div>
                 <span>Usuario: {{produto.idUsuario.nome}}</span>
-            </div>
+            </div> -->
             <div>
                 <span>Data: {{produto.data}}</span>
             </div>
             <hr>
-            <button class="btn verMais" [routerLink]="['/detalhar', produto.codigo]">Ver mais</button>
+            <button class="btn verMais" [routerLink]="['/negociacao', produto.codigo]">Ver mais</button>
         </div>
     </div>
 </section>
