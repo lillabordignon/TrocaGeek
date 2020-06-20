@@ -19,13 +19,13 @@ export class HomeComponent implements OnInit {
 
   private pagina: number = 0;
   private quantidade: number = 12;
-  numeroDePaginas:number ;
-  arrayDePaginas:number[] =[0];
-  ultimaPagina:boolean;
+  numeroDePaginas: number;
+  arrayDePaginas: number[] = [0];
+  ultimaPagina: boolean;
 
   pesquisaBarra: string;
 
-  teste:number;
+  teste: number;
 
 
 
@@ -58,25 +58,25 @@ export class HomeComponent implements OnInit {
 
   buttonPesquisar() {
     // se a barra de pesquisa for vazia ou menor que 1 ele mostra todos os produtos
-    if(this.barraPesquisa == "" || this.barraPesquisa.length < 1 || this.barraPesquisa == null) {
+    if (this.barraPesquisa == "" || this.barraPesquisa.length < 1 || this.barraPesquisa == null) {
       this.findAllProdutos(this.pagina, this.quantidade)
-    }else {
-    this.buscarPorNomeProduto(this.barraPesquisa);
-  }
+    } else {
+      this.buscarPorNomeProduto(this.barraPesquisa);
+    }
   }
 
   paginar(pagina: any) {
     this.pagina = pagina;
     this.findAllProdutos(pagina, this.quantidade);
-    window.scroll(0,0)
+    window.scroll(0, 0)
   }
 
-  verificarNumeroDePaginas(){
-    for(let i = 0; i < this.numeroDePaginas; i++){
+  verificarNumeroDePaginas() {
+    for (let i = 0; i < this.numeroDePaginas; i++) {
       this.arrayDePaginas[i] = i;
-    }  
+    }
   }
 
-  
+
 }
 
