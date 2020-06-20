@@ -13,6 +13,7 @@
     border: none;
     box-shadow: 0px 0px 10px 2px #dbdbdb;
     transition: box-shadow 0.3s;
+    background-color: #f1f0f0;
 }
 
 .caixas:hover{
