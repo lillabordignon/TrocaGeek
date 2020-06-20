@@ -9,13 +9,13 @@ import { Usuario } from '../Model/usuario';
 })
 export class UsuariosComponent implements OnInit {
   nomeUsuario: string;
+  nomeEndereco: string;
 
   constructor(private usuarioService: UsuarioService) { }
 
 
   ngOnInit(): void {
     this.nomeUsuario = localStorage.getItem("nomeUsuario");
-
   }
 
 

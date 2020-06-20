@@ -10,23 +10,23 @@ import { HomeComponent } from '../home/home.component';
 })
 export class NavbarComponent implements OnInit {
   deslogado: boolean = true;
-  logado : boolean = false;
+  logado: boolean = false;
 
-  nomeUsuario:string;
+  nomeUsuario: string;
 
-  barraPesquisa:string;
+  barraPesquisa: string;
 
-  verificar:string
+  verificar: string
 
-  constructor(private router:Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.verificarNavBar();
   }
 
-  public verificarNavBar(){
+  public verificarNavBar() {
     this.verificar = localStorage.getItem("logado");
-    if(this.verificar == "true"){
+    if (this.verificar == "true") {
       this.nomeUsuario = localStorage.getItem("nomeUsuario");
       this.deslogado = false;
       this.logado = true;
@@ -45,7 +45,7 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(["/home"]);
     localStorage.setItem("pesquisaBarra", this.barraPesquisa);
 
-    
+
   }
 
 }

@@ -78,6 +78,11 @@ a{
         flex-basis: initial; 
         flex-grow: initial;
     }
+
+    .minhainfo{
+        display: none;
+    }
+
 }
 /* Fim da Media Query que ativa o Menu Hamburguer */
 
@@ -98,7 +103,6 @@ a{
     .hamburguer{
         order: 3;
     }
-
  
 }
 /* Altera o logo no desktop e mobile */

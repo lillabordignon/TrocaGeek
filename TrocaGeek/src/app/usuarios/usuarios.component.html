@@ -3,58 +3,70 @@
     <div class="wrapper">
         <!-- Sidebar -->
         <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Bootstrap Sidebar</h3>
+            <div class="sidebar-header pb-5">
+                <h3>Minhas Informações</h3>
             </div>
 
             <ul class="list-unstyled components">
-                <p>Dummy Heading</p>
 
-                <li>
-                    <a href="#">Alterar Cadastro</a>
+                <li class="my-3">
+                    <a [routerLink]="">Alterar Cadastro</a>
                 </li>
-                <li>
-                    <a href="#pageSubmenu">Minhas Negociações</a>
+                <li class="my-3">
+                    <a [routerLink]="">Minhas Negociações</a>
                 </li>
-                <li>
-                    <a href="#">Meus Produtos</a>
+                <li class="my-3">
+                    <a [routerLink]="">Meus Produtos</a>
                 </li>
+
             </ul>
 
         </nav>
-        <!-- Page Content -->
 
     </div>
 
-
     <div class="card w-100">
         <div class="card-body">
-            <div class="">
+            <div class="d-flex justify-content-center">
                 <h1 class="">Olá {{nomeUsuario}}</h1>
             </div>
 
 
             <div class="card-body">
+                <h3 class="py-4">Informações de Cadastro</h3>
+                <div class="my-3 d-flex flex-wrap">
+                    <label class="mr-3" for="">Nome Completo:</label>
+                    <p class="ml-1" type="text">Cassiano da Silva Sauro</p>
 
-                <div class="my-3">
-                    <label for="">Nome Completo: </label>
-                    <input class=" mx-3" type="text">
+                    <label class="mr-3 ml-5" for="">CPF:</label>
+                    <p class=" mx-3" type="text">CPF USUARIO</p>
                 </div>
 
-                <div class="my-3">
-                    <label for="">Endereço</label>
-                    <input class=" mx-3" type="text">
+
+
+                <div class="my-3 d-flex flex-wrap">
+                    <div class="d-flex ">
+                        <label class="mr-3" for="">Cidade:</label>
+                        <p class="ml-1" type="text">Cidade do Usuario</p>
+                    </div>
+
+                    <div class="d-flex ">
+                        <label class="mr-3 ml-5" for="">Estado:</label>
+                        <p class="ml-1" type="text">Estado do Usuario</p>
+                    </div>
                 </div>
 
-                <div class="my-3">
-                    <label for="">Telefone</label>
-                    <input class=" mx-3" type="text">
+
+
+                <div class="my-3 d-flex flex-wrap">
+                    <label class="mr-3" for="">Telefone:</label>
+                    <p class="ml-1" type="text">{{nomeUsuario}}</p>
+
+                    <label class="mr-3 ml-5" for="">E-mail:</label>
+                    <p class="ml-1" type="text">{{nomeUsuario}}</p>
                 </div>
 
-                <div class="my-3">
-                    <label for="">Email</label>
-                    <input class=" mx-3" type="text">
-                </div>
+
             </div>
         </div>
 

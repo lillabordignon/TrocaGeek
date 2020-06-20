@@ -26,7 +26,8 @@ export class CadastrarComponent implements OnInit {
       this.alerta = false;
       this.UsuarioService.postCadastro(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp;
-        this.router.navigate(['/usuarios']);
+        alert("Usuario cadastrado com sucesso !")
+        this.router.navigate(['/login']);
       })
     } else {
       this.alerta = true;
