@@ -21,7 +21,6 @@ import { ConsoleComponent } from './categorias/console/console.component';
 import { NegociacaoComponent } from './negociacao/negociacao.component';
 
 
-
 const routes: Routes = [
 
   { path: '', redirectTo: 'home', pathMatch: 'full' },
