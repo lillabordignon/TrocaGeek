@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   //variaveis de opcoes do usuario
   barraPesquisa: string;
   pagina: number = 0;
-  private quantidade: number = 12;
+  private quantidade: number = 8;
   numeroDePaginas: number;
   arrayDePaginas: number[] = [0];
   ultimaPagina: boolean;
