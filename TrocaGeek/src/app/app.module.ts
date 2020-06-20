@@ -24,6 +24,7 @@ import { JogosComponent } from './categorias/jogos/jogos.component';
 import { AcessoriosComponent } from './categorias/acessorios/acessorios.component';
 import { ConsoleComponent } from './categorias/console/console.component';
 import { DetalharComponent } from './produtos/detalhar/detalhar.component';
+import { NegociacaoComponent } from './negociacao/negociacao.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { DetalharComponent } from './produtos/detalhar/detalhar.component';
     JogosComponent,
     AcessoriosComponent,
     ConsoleComponent,
-    DetalharComponent
+    DetalharComponent,
+    NegociacaoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,85 @@
+<div class="container">
+
+    <div class="card text-center mt-5">
+        <h4 class="card-header">
+            Negociação
+        </h4>
+
+        <div class="card-body">
+            <div class="card-title">
+                <p>Negociação Nº 1</p>
+                <p>Início da Negociação: 21/06/2020</p>
+            </div>
+            <p class="card-text">Sabemos que esta ansioso para adquirir esse belo produto.
+                <br>Para Prosseguir com sua negociação, favor entrar em contato com dono dele para melhor negociarem ;)
+            </p>
+        </div>
+        <div class="card-footer text-muted">
+            2 dias atrás
+        </div>
+    </div>
+
+
+
+
+    <!-- Dados do Produto -->
+    <!-- // <div class="container "> -->
+
+    <div class="row border my-2 py-5">
+
+        <div class="col-4">
+            <img src="{{produto.urlImg}}" class="card-img-top img-fluid " alt="imagem do produto">
+        </div>
+
+        <div class="col-8">
+            <div>
+
+                <div class="d-flex">
+                    <h5 class="mr-1"> Produto:</h5>
+                    <p id="nome"> {{produto.nome}}</p>
+                </div>
+
+                <div class="d-flex">
+                    <h5 class="mr-1"> Preço R$:</h5>
+                    <p id="preco"> {{produto.preco}}</p>
+                </div>
+
+                <div class="d-flex">
+                    <h5 class="mr-1"> Descrição:</h5>
+                    <p id="descricao"> {{produto.descricao}}</p>
+                </div>
+                <!-- <button type="submit" class="btn btn-primary  mb-5" (click)="salvar()">Atualizar</button> -->
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Dados Fornecedor e Interessado -->
+    <div class="row my-2">
+        <div class="col-sm-6">
+            <div class="card border">
+                <div class="card-body">
+                    <h5 class="card-title">Dados do Fornecedor</h5>
+                    <p class="card-text">Nome: {{produto.idUsuario.nome}}</p>
+                    <p class="card-text">Telefone: {{produto.idUsuario.telefone}}</p>
+                    <p class="card-text">Email: {{produto.idUsuario.email}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card border">
+                <div class="card-body">
+                    <h5 class="card-title">Dados do Interessado</h5>
+                    <p class="card-text">Nome:</p>
+                    <p class="card-text">Telefone:</p>
+                    <p class="card-text">Email:</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-arround justify-content-end my-4">
+        <a class="btn btn-outline-success mr-3 negociado">Negociado</a>
+        <a class="btn btn-outline-danger cancelar">Cancelar</a>
+    </div>
+</div>
