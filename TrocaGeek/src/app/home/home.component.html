@@ -1,23 +1,104 @@
 <section class="d-flex justify-content-around flex-wrap my-3">
-    <div class="card text-center my-4 mx-3 caixas" *ngFor="let produto of listaProdutos">
-        <div class="card-body">
-            <div>
-                <h4>{{produto.nome}}</h4>
+
+    <div class="d-flex justify-content-between responsivo">
+
+        <div class="d-flex pt-3 flex-wrap filtros" action="">
+
+            <div class="form-group d-flex justify-content-center">
+                <label class="control-label mx-2">Ordenar:</label>
+                <div>
+
+                    <select name="txt_order mx-3" id="ordenarPor" size="1" class="fFiltro form-control input-sm">
+                        <option value="date" selected="Data">Data</option>
+                        <option value="preco">Preço</option>
+                        <option value="nome">Nome</option>
+                    </select>
+
+                </div>
             </div>
-            <hr>
-            <div>
-                <img class="img-fluid img" src="{{produto.urlImg}}" alt="">
+
+            <div class="form-group d-flex justify-content-center">
+                <label class="control-label mx-2">Ordem:</label>
+                <div>
+
+                    <select name="txt_order" id="ordem" size="1" class="fFiltro form-control input-sm">
+                        <option value="desc" selected="">Decrescente</option>
+                        <option value="asc">Crescente</option>
+
+                    </select>
+
+                </div>
+
             </div>
-            <hr>
-            <div>
-                <span>Preço: R$ {{produto.preco}}</span>
+
+            <div class="form-group d-flex justify-content-center">
+                <label class="control-label mx-2">Quantidade por página:</label>
+                <div >
+
+                    <select name="txt_order" size="1" id="quantidade" class="fFiltro form-control input-sm">
+                        <option value="12" selected="12">12</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="40">40</option>
+
+                    </select>
+
+                </div>
             </div>
-            <hr>
-            <div>
-                <span>Usuario: {{produto.descricao}}</span>
-            </div>
-            <hr>
-            <button class="btn verMais">Ver mais</button>
+
+            <button class="btn btn-outline-primary mx-3 mb-3" type="button" (click)="filtrarProdutos()" name="btFiltrar" id="filtrar" value="Filtrar">Filtrar
+            </button>
         </div>
+        
     </div>
+            <div class="d-flex justify-content-end ">
+
+                <div class="form-inline my-2 my-lg-0 d-flex justify-content-center pesquisa">
+                    <input class="form-control mr-sm-2 pesquisaMobile" type="search" placeholder="Pesquisar"
+                        aria-label="Search" [(ngModel)]="barraPesquisa">
+                    <button class="btn btn-outline-success" (click)="buttonPesquisar()">Pesquisar</button>
+                </div>
+            </div>
+           
 </section>
+        
+
+
+        <section class="d-flex justify-content-around flex-wrap my-3">
+            <div class="card text-center my-4 mx-3 caixas" *ngFor="let produto of listaProdutos">
+                <div class="card-body">
+                    <div>
+                        <h4>{{produto.nome}}</h4>
+                    </div>
+                    <hr>
+                    <div>
+                        <img class="img-fluid img" src="{{produto.urlImg}}" alt="">
+                    </div>
+                    <hr>
+                    <div>
+                        <span>Preço: R$ {{produto.preco}}</span>
+                    </div>
+                    <hr>
+                    <div>
+                        <span>Usuario: {{produto.descricao}}</span>
+                    </div>
+                    <hr>
+                    <button class="btn verMais" [routerLink]="['/produtos/detalhar', produto.codigo]">Ver mais</button>
+                </div>
+            </div>
+        </section>
+
+
+        
+
+            <div class="d-flex justify-content-center py-5">
+                <nav aria-label="Page navigation shadow-lg">
+                    <button class="btn btn-outline-primary" (click)="paginar(0)"><-</button>
+                            <button class="btn btn-primary" *ngFor="let pagina of arrayDePaginas" (click)="paginar(pagina)">{{pagina}}</button>
+                            <button class="btn btn-outline-primary" (click)="paginar(3)"> -> </button> 
+                </nav>
+                
+            </div>
+                <div class="d-flex justify-content-center py-1">
+                <span class="text-muted "> Página atual {{pagina}}</span>
+                </div>
