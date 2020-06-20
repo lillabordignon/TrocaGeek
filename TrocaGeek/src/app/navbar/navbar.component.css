@@ -66,10 +66,6 @@ a{
     border-color:#05a4c4;
   }
 
-  .form-control{
-      max-width: 230px;
-  }
-
   /* Media Query para ativar o Menu Hamburguer
 @media(min-width:992px){
     .desktop-collapse{
@@ -130,3 +126,65 @@ Altera o logo no desktop e mobile
 .navbar{
     flex-wrap: nowrap !important;
 }*/
+
+#conteudoNavbarSuportado{
+    justify-content: space-between;
+}
+
+@media(min-width:769px) and (max-width:1366px){
+    .cabecalho .collapse:not(.show){
+        display: flex !important;
+    }
+    .navbar-light .navbar-toggler{
+        display: none;
+    }
+    .navbar-collapse{
+        flex-basis: initial !important;
+    }
+    .cabecalho .navbar{
+        flex-wrap: initial;
+    }
+    .cabecalho .navbar-nav{
+        flex-direction: row;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
+    .cabecalho .navbar-nav .dropdown-menu{
+        position: absolute;
+    }
+
+    .c-search{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+        .c-search input[type='search']{
+            width: 100%;
+        }
+
+        .c-search button{
+            width: 100%;
+            max-width: 45px;
+        }
+}
+
+.has-mobile-hidden{
+    display: none !important;
+}
+
+@media(min-width:536px) and (max-width:769px){
+    .has-mobile-hidden{
+        display: flex !important;
+        flex-wrap: nowrap !important;
+    }
+    .has-mobile-hamburguer{
+        display: none;
+    }
+}
+
+@media(min-width:320px) and (max-width:480px){
+    .c-search{
+       flex-wrap: nowrap;
+    }
+}

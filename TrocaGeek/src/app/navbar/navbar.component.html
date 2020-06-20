@@ -63,18 +63,24 @@
             <img src="../../assets/img/logoBlack.png" class="img-fluid logo logo-desktop" alt="Logo">
             <!-- <img src="../../assets/img/logo-black-mobile.png" class="img-fluid logo logo-mobile" alt="Logo"> -->
         </a>
+        <form class="form-inline my-2 my-lg-0 c-search has-mobile-hidden">
+            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+            <button class="btn my-2 my-sm-0 pesquisar pesquisa-mobile" type="button">
+                <img class="img-fluid" width="20" src="../../assets/img/busca.png" alt="Buscar">
+            </button>
+        </form>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
             aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-            <form class="form-inline my-2 my-lg-0">
+            <form class="form-inline my-2 my-lg-0 c-search has-mobile-hamburguer">
                 <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
                 <button class="btn my-2 my-sm-0 pesquisar pesquisa-mobile" type="button">
                     <img class="img-fluid" width="20" src="../../assets/img/busca.png" alt="Buscar">
                 </button>
             </form>
-            <ul class="navbar-nav mr-auto menuNav">
+            <ul class="navbar-nav menuNav">
                 <li class="nav-item active">
                     <a class="nav-link" routerLink="/home">Home<span class="sr-only">(página atual)</span></a>
                 </li>
