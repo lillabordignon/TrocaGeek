@@ -26,13 +26,19 @@ export class CadastrarComponent implements OnInit {
       this.alerta = false;
       this.UsuarioService.postCadastro(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp;
-        alert("Usuario cadastrado com sucesso !")
+        alert("Cadastrado com sucesso !")
         this.router.navigate(['/login']);
+      }, (err) => {
+        alert("Erro, email já existente !")
       })
     } else {
       this.alerta = true;
       setTimeout(() => { this.alerta = false }, 5000)
     }
+
+  }
+
+  verificar() {
 
   }
 

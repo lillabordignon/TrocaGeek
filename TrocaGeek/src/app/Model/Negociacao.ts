@@ -1,3 +1,5 @@
+import { Produto } from './Produto';
+
 export class Negociacao {
     public numero: number;
     public idVendedor: number;
