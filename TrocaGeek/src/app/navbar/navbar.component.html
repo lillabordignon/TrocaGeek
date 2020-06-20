@@ -1,4 +1,6 @@
-<header class="cabecalho">
+<!-- NAVBAR ANTIGA TODA BUGADA -->
+
+<!-- <header class="cabecalho">
     <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-around ">
         <a class="navbar-brand" routerLink="/home">
             <img src="../../assets/img/logoBlack.png" class="img-fluid logo logo-desktop" alt="Logo">
@@ -19,6 +21,56 @@
             <ul class="navbar-nav mr-auto menuNav">
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/home">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" routerLink="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Produtos
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" routerLink="#">Acessórios</a>
+                        <a class="dropdown-item" routerLink="#">Consoles</a>
+                        <a class="dropdown-item" routerLink="#">Figure Action</a>
+                        <a class="dropdown-item" routerLink="#">Cartas</a>
+                        <a class="dropdown-item" routerLink="#">Jogos</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" routerLink="#">Outros</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink='/sobre-nos'>Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink='/login'>Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn botaocadastrar" routerLink='/cadastrar'>Cadastrar</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header> -->
+
+<header class="cabecalho">
+    <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-between">
+        <a class="navbar-brand espaco" routerLink="/home">
+            <img src="../../assets/img/logoBlack.png" class="img-fluid logo logo-desktop" alt="Logo">
+            <!-- <img src="../../assets/img/logo-black-mobile.png" class="img-fluid logo logo-mobile" alt="Logo"> -->
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                <button class="btn my-2 my-sm-0 pesquisar pesquisa-mobile" type="button">
+                    <img class="img-fluid" width="20" src="../../assets/img/busca.png" alt="Buscar">
+                </button>
+            </form>
+            <ul class="navbar-nav mr-auto menuNav">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/home">Home<span class="sr-only">(página atual)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" routerLink="#" id="navbarDropdown" role="button"
