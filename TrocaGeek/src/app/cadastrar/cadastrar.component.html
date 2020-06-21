@@ -6,7 +6,7 @@
         </div>
         <div class="form-group pb-5">
             <label for="name">Nome Completo</label>
-            <input type="text" class="form-control mb-3" id="name" maxlength="80" placeholder="Nome"
+            <input type="text" class="form-control mb-3" id="nome" maxlength="80" placeholder="Nome"
                 [(ngModel)]="usuario.nome">
             <label for="email">Email</label>
             <input type="email" class="form-control mb-3" id="email" maxlength="50" placeholder="Email"
@@ -39,7 +39,7 @@
 
             </div>
             <button type="button" id="cadastrar" class="btn btn-primary btn-block botao"
-                (click)="cadastro()">Cadastre-se!</button>
+                (click)="verificar()">Cadastre-se!</button>
         </div>
 
     </div>

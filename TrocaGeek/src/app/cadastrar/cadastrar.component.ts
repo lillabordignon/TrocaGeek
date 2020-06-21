@@ -12,8 +12,13 @@ import { UsuarioService } from '../service/usuario.service'
 export class CadastrarComponent implements OnInit {
 
   usuario: Usuario = new Usuario;
+
   senhaErrada: boolean = false;
   alerta: boolean = false;
+  nome:string;
+  email:string;
+  cpf:string
+  telefone:string;
 
   constructor(private UsuarioService: UsuarioService, private router: Router) { }
 
@@ -39,7 +44,22 @@ export class CadastrarComponent implements OnInit {
   }
 
   verificar () {
+    this.nome = (<HTMLInputElement>document.getElementById("nome")).value;
+    this.email = (<HTMLInputElement>document.getElementById("email")).value;
+    this.telefone = (<HTMLInputElement>document.getElementById("tel")).value;
+
+    this.nome.trim();
+    this.email.trim()
+
+    if(this.nome.length < 3 || this.nome == null) {
+      return  alert("Digite um nome válido")
+    } 
+    else if (!this.email.endsWith(".com") || !this.email.endsWith(".net") || !this.email.endsWith(".br")
+     && !this.email.includes("@") ) {
+        return alert("Digite um EMAIL válido !")
+               }
     
+      this.cadastro();
   }
 
 }
