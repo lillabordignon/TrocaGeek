@@ -9,7 +9,7 @@ import { Conteudo } from '../Model/Conteudo';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-// variaveis para resposta da api
+  // variaveis para resposta da api
   listaProdutos: Produto[]
   produto: Produto = new Produto;
   conteudo: Conteudo = new Conteudo;
@@ -17,22 +17,22 @@ export class HomeComponent implements OnInit {
   //variaveis de opcoes do usuario
   barraPesquisa: string;
   pagina: number = 0;
-  private quantidade: number = 12;
-  numeroDePaginas:number;
-  arrayDePaginas:number[] =[0];
-  ultimaPagina:boolean;
+  private quantidade: number = 8;
+  numeroDePaginas: number;
+  arrayDePaginas: number[] = [0];
+  ultimaPagina: boolean;
 
   //variaveis ordenacao produto
-  ordenar:string;
+  ordenar: string;
   ordem: string;
-  quantidadePorPagina:string;
+  quantidadePorPagina: string;
 
   constructor(private produtoService: ProdutoService) { }
 
   ngOnInit() {
     this.findAllProdutos(this.pagina, this.quantidade);
     this.verificarNumeroDePaginas();
-    
+
     // ao iniciar seta as variaveis com os valores do filtro
     this.ordenar = (<HTMLInputElement>document.getElementById("ordenarPor")).value;
     this.ordem = (<HTMLInputElement>document.getElementById("ordem")).value;
@@ -58,18 +58,17 @@ export class HomeComponent implements OnInit {
       this.verificarNumeroDePaginas()
     })
   }
-  buscarPorNomeProdutoOrdenados(nome,pagina, quantidade, ordenacao, ordem ) {
-    this.produtoService.getByNomeprodutosOrdenados(nome,pagina,quantidade,ordenacao,ordem).subscribe((resp: Conteudo)=> {
+  buscarPorNomeProdutoOrdenados(nome, pagina, quantidade, ordenacao, ordem) {
+    this.produtoService.getByNomeprodutosOrdenados(nome, pagina, quantidade, ordenacao, ordem).subscribe((resp: Conteudo) => {
       this.conteudo = resp;
       this.listaProdutos = this.conteudo.content;
       this.numeroDePaginas = this.conteudo.totalPages;
       this.verificarNumeroDePaginas()
-
     })
   }
 
-  buscarProdutosOrdenados(pagina,quantidade,ordenacao,ordem) {
-    this.produtoService.getByProdutosOrdenados(pagina,quantidade,ordenacao, ordem).subscribe((resp: Conteudo) => {
+  buscarProdutosOrdenados(pagina, quantidade, ordenacao, ordem) {
+    this.produtoService.getByProdutosOrdenados(pagina, quantidade, ordenacao, ordem).subscribe((resp: Conteudo) => {
       this.conteudo = resp;
       this.listaProdutos = this.conteudo.content;
       this.numeroDePaginas = this.conteudo.totalPages;
@@ -82,40 +81,40 @@ export class HomeComponent implements OnInit {
 
   buttonPesquisar() {
     // se a barra de pesquisa for vazia ou menor que 1 ele mostra todos os produtos
-    if(this.barraPesquisa == "" || this.barraPesquisa.length < 1 || this.barraPesquisa == null) {
+    if (this.barraPesquisa == "" || this.barraPesquisa.length < 1 || this.barraPesquisa == null) {
       this.findAllProdutos(0, this.quantidade)
       this.pagina = 0;
       this.verificarNumeroDePaginas()
     } else {
-    this.buscarPorNomeProdutoOrdenados(this.barraPesquisa, 0, this.quantidade, this.ordenar, this.ordem);
-    this.pagina = 0;
-    this.verificarNumeroDePaginas()
-  }
+      this.buscarPorNomeProdutoOrdenados(this.barraPesquisa, 0, this.quantidade, this.ordenar, this.ordem);
+      this.pagina = 0;
+      this.verificarNumeroDePaginas()
+    }
   }
 
   paginar(pagina: any) {
     this.pagina = pagina;
-    if(this.barraPesquisa != null) {
+    if (this.barraPesquisa != null) {
       this.buscarPorNomeProdutoOrdenados(this.barraPesquisa, this.pagina, this.quantidade, this.ordenar, this.ordem)
-      window.scroll(0,0)
+      window.scroll(0, 0)
     } else {
       this.findAllProdutos(pagina, this.quantidade);
-      window.scroll(0,0)
+      window.scroll(0, 0)
     }
-   
+
   }
 
-  verificarNumeroDePaginas(){
-    if(this.numeroDePaginas == 0) {
+  verificarNumeroDePaginas() {
+    if (this.numeroDePaginas == 0) {
       this.arrayDePaginas.splice(0, this.arrayDePaginas.length)
     }
     this.arrayDePaginas.splice(0, this.numeroDePaginas)
-    for(let i = 0; i < this.numeroDePaginas; i++){
+    for (let i = 0; i < this.numeroDePaginas; i++) {
       this.arrayDePaginas[i] = i;
     }
   }
 
-  filtrarProdutos () {
+  filtrarProdutos() {
     this.ordenar = (<HTMLInputElement>document.getElementById("ordenarPor")).value;
     this.ordem = (<HTMLInputElement>document.getElementById("ordem")).value;
     this.quantidade = parseInt((<HTMLInputElement>document.getElementById("quantidade")).value);
@@ -123,6 +122,6 @@ export class HomeComponent implements OnInit {
     this.verificarNumeroDePaginas()
   }
 
-  
+
 }
 

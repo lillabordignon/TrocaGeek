@@ -11,32 +11,32 @@ import { NavbarComponent } from '../navbar/navbar.component';
 })
 export class LoginComponent implements OnInit {
 
-usuario:Usuario = new Usuario;
+  usuario: Usuario = new Usuario;
 
-  constructor(private usuarioService:UsuarioService, private router: Router) { }
+  constructor(private usuarioService: UsuarioService, private router: Router) { }
 
   ngOnInit(): void {
   }
-  logar(){
-    
+  logar() {
+
     this.usuarioService.postLogar(this.usuario).subscribe((resp: Usuario) => {
       this.usuario = resp;
 
       localStorage.setItem("token", resp.token);
-      localStorage.setItem("nomeUsuario", resp.nome )
-      localStorage.setItem("logado", "true" )
-          alert("Logado com sucesso !")
+      localStorage.setItem("nomeUsuario", resp.nome)
+      localStorage.setItem("logado", "true")
+      alert("Logado com sucesso !")
       this.router.navigate(['/home']);
       let navbar = new NavbarComponent(this.router);
       navbar.verificarNavBar();
-      setTimeout(()=> {
-        location.reload(true),2000
+      setTimeout(() => {
+        location.reload(true), 2000
       })
-      
-    },(err)=>{
-        alert("Usuário ou senha inválidos")
+
+    }, (err) => {
+      alert("Usuário ou senha inválidos")
     })
-   
+
   }
 
 }

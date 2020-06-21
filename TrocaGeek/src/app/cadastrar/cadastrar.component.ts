@@ -57,9 +57,11 @@ export class CadastrarComponent implements OnInit {
     else if (!this.email.endsWith(".com") || !this.email.endsWith(".net") || !this.email.endsWith(".br")
      && !this.email.includes("@") ) {
         return alert("Digite um EMAIL válido !")
+               } else {
+                this.cadastro();
                }
     
-      this.cadastro();
+    
   }
 
 }
