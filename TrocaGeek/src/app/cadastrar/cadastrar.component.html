@@ -8,18 +8,23 @@
             <label for="name">Nome Completo</label>
             <input type="text" class="form-control mb-3" id="nome" maxlength="80" placeholder="Nome"
                 [(ngModel)]="usuario.nome">
+
             <label for="email">Email</label>
             <input type="email" class="form-control mb-3" id="email" maxlength="50" placeholder="Email"
                 [(ngModel)]="usuario.email">
-                <label for="email">Cpf</label>
+
+            <label for="email">Cpf</label>
             <input type="number" class="form-control mb-3" id="cpf" maxlength="50" placeholder="Cpf/Cnpj"
                 [(ngModel)]="usuario.cpf">
-                <label for="email">Telefone</label>
+
+            <label for="email">Telefone</label>
             <input type="phone" class="form-control mb-3" id="tel" maxlength="13" placeholder="Telefone"
-                [(ngModel)]="usuario.cpf">
+                [(ngModel)]="usuario.telefone">
+
             <label for="senha">Senha</label>
             <input type="password" class="form-control mb-3" id="senha" maxlength="25" placeholder="Senha"
                 [(ngModel)]="usuario.senha">
+
             <label for="confirmaSenha">Confirmar Senha</label>
             <input type="password" class="form-control mb-4" id="confirmaSenha" maxlength="25"
                 placeholder="Confirmar senha" [(ngModel)]="usuario.confirmarSenha">
@@ -39,7 +44,7 @@
 
             </div>
             <button type="button" id="cadastrar" class="btn btn-primary btn-block botao"
-                (click)="verificar()">Cadastre-se!</button>
+                (click)="cadastro()">Cadastre-se!</button>
         </div>
 
     </div>

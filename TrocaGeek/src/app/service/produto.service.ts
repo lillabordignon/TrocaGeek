@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Produto } from '../Model/Produto';
 
 @Injectable({
   providedIn: 'root'
@@ -29,12 +30,21 @@ export class ProdutoService {
     return this.http.get(`http://localhost:8080/produtos/nome/${nome}?page=${pagina}&size=${quantidade}&sort=${ordenacao},${ordem}`)
   }
 
-  getProdutosByIdUsuario(id:number){
+  getProdutosByIdUsuario(id: number) {
     return this.http.get(`http://localhost:8080/produtos/meusprodutos/${id}`, {
       headers: {
         "Authorization": localStorage.getItem('token')
       }
     })
+  }
+
+  //cadastrar produtos
+  postProduto(produto: Produto) {
+    return this.http.post('http://localhost:8080/produtos', produto, {
+      headers: {
+        "Authorization": localStorage.getItem('token')
+      }
+    });
   }
 
 }
