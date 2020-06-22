@@ -4,19 +4,20 @@
         <!-- Sidebar -->
         <nav id="sidebar">
             <div class="sidebar-header pb-5">
-                <h3>Minhas Informações</h3>
+                <h4 class="d-flex justify-content-around ">Minhas Informações</h4>
             </div>
 
             <ul class="list-unstyled components">
 
-                <li class="my-3">
-                    <a [routerLink]="['/usuarios/editar',usuario.id]">Alterar Cadastro</a>
+                <li class="my-4 liwrapper">
+                    <a class="d-flex justify-content-center" [routerLink]="['/usuarios/editar',usuario.id]">Alterar
+                        Cadastro</a>
                 </li>
-                <li class="my-3">
-                    <a routerLink="">Minhas Negociações</a>
+                <li class="my-4 liwrapper">
+                    <a class="d-flex justify-content-center" routerLink="">Minhas Negociações</a>
                 </li>
-                <li class="my-3">
-                    <a routerLink="/usuarios/meusprodutos">Meus Produtos</a>
+                <li class="my-4 liwrapper">
+                    <a class="d-flex justify-content-center" routerLink="/usuarios/meusprodutos">Meus Produtos</a>
                 </li>
 
             </ul>

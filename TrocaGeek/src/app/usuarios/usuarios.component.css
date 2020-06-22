@@ -6,11 +6,23 @@
 #sidebar {
     width: 250px;
     height: 100%;
-    background: black;
-    color: white;
-    padding-left: 10px;
+    color: black;
+    padding-left: 1px;
 
 }
+
+.liwrapper{
+    border-style: solid;
+    border-color: black;
+}
+
+.sidebar-header{
+
+padding-top: 2em;
+
+}
+
+
 
 a{
     text-decoration: none;
