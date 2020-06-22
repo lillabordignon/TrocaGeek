@@ -45,7 +45,11 @@ export class UsuarioService {
 
   //Atualizar Usuarios
   putUsuario(usuario: Usuario) {
-    return this.http.put(this.urlApi + `/usuario`, usuario)
+    return this.http.put(this.urlApi + `/usuario`, usuario, {
+      headers: {
+        "Authorization": localStorage.getItem('token')
+      }
+    })
   }
 
 

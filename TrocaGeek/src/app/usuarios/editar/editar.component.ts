@@ -13,7 +13,7 @@ export class EditarComponent implements OnInit {
   constructor(private usuarioService: UsuarioService, private route: ActivatedRoute, private router: Router) { }
 
   usuario: Usuario = new Usuario;
-  senhateste: string;
+  senhaAtual: string;
   senhaErrada: boolean = false;
   alerta: boolean = false;
   confirmarSenha: string;
@@ -22,6 +22,7 @@ export class EditarComponent implements OnInit {
   nome: string;
   telefone: string;
   email: string;
+  emailusuario: string;
 
 
   ngOnInit(): void {
@@ -37,18 +38,15 @@ export class EditarComponent implements OnInit {
 
   verificar() {
 
-
     this.nome = (<HTMLInputElement>document.getElementById("name")).value;
     this.email = (<HTMLInputElement>document.getElementById("email")).value;
     this.telefone = (<HTMLInputElement>document.getElementById("tel")).value;
 
-    this.senhateste = (<HTMLInputElement>document.getElementById("senhateste")).value;
+    this.senhaAtual = (<HTMLInputElement>document.getElementById("senhaAtual")).value;
     this.confirmarSenha = (<HTMLInputElement>document.getElementById("confirmarSenha")).value;
     this.novaSenha = (<HTMLInputElement>document.getElementById("novaSenha")).value;
     this.novaConfirmaSenha = (<HTMLInputElement>document.getElementById("novaConfirmaSenha")).value;
-
-
-    this.usuario.senha = this.senhateste;
+    this.emailusuario = this.usuario.email;
 
     this.salvar();
 
@@ -57,38 +55,46 @@ export class EditarComponent implements OnInit {
 
   salvar() {
 
-    // if (this.usuario.senha === this.confirmarSenha) {
-    this.alerta = false;
+    if ((this.usuario.senha === this.confirmarSenha) || (this.novaSenha == null)) {
+      this.alerta = false;
+
+      if (this.nome != null) {
+
+        this.usuario.nome = this.nome
+
+      }
+
+      else if (this.email != null) {
+        this.usuario.email = this.email
+      }
+
+      else if (this.telefone != null) {
+        this.usuario.telefone = this.telefone
+      }
+
+      else if ((this.novaSenha === this.novaConfirmaSenha) && (this.usuario.senha === this.senhaAtual)) {
+        this.usuario.senha = this.novaSenha
+
+      }
 
 
-    if (this.nome != null) {
+      this.usuarioService.putUsuario(this.usuario).subscribe((resp: Usuario) => {
+        this.usuario = resp;
+        this.router.navigate(['/usuarios/editar/:id'])
+        console.log(this.usuario);
 
-      this.usuario.nome = this.nome
+        if (this.usuario.email != this.emailusuario) {
+          setTimeout(() => { alert("Cadastro Alterado, você será redirecionado"); this.router.navigate(['/login']) }, 1000)
+        } else {
+          setTimeout(() => { alert("Cadastro Alterado, você será redirecionado"); this.router.navigate(['/usuario']) }, 1000)
+        }
+      })
+
+
+    } else {
+      this.alerta = true;
+      setTimeout(() => { this.alerta = false }, 5000)
     }
-
-    else if (this.email != null) {
-      this.usuario.email = this.email
-    }
-
-    else if (this.telefone != null) {
-      this.usuario.telefone = this.telefone
-    }
-
-    else if ((this.novaSenha === this.novaConfirmaSenha) && (this.novaSenha.length > 8)) {
-      this.usuario.senha = this.novaSenha
-
-    }
-
-
-    this.usuarioService.putUsuario(this.usuario).subscribe((resp: Usuario) => {
-      this.usuario = resp;
-      this.router.navigate(['/usuarios/editar/:id'])
-      console.log(this.usuario);
-    })
-    //   } else {
-    //   this.alerta = true;
-    //   setTimeout(() => { this.alerta = false }, 5000)
-    // }
 
   }
 
