@@ -19,9 +19,11 @@ export class EditarComponent implements OnInit {
   confirmarSenha: string;
   novaSenha: string;
   novaConfirmaSenha: string;
+
+  // Campos que retornam para alteração
   nome: string;
-  telefone: string;
   email: string;
+  telefone: string;
   emailusuario: string;
 
 
@@ -43,39 +45,65 @@ export class EditarComponent implements OnInit {
     this.telefone = (<HTMLInputElement>document.getElementById("tel")).value;
 
     this.senhaAtual = (<HTMLInputElement>document.getElementById("senhaAtual")).value;
-    this.confirmarSenha = (<HTMLInputElement>document.getElementById("confirmarSenha")).value;
     this.novaSenha = (<HTMLInputElement>document.getElementById("novaSenha")).value;
-    this.novaConfirmaSenha = (<HTMLInputElement>document.getElementById("novaConfirmaSenha")).value;
+    this.novaConfirmaSenha = (<HTMLInputElement>document.getElementById("confirmarNovaSenha")).value;
     this.emailusuario = this.usuario.email;
 
+
+    // Faz as alterações
+    this.alterarNome();
+    this.alterarEmail();
+    this.alterarTelefone();
+    this.alterarSenha();
+
+    // Salva as Alterações
     this.salvar();
 
   }
 
 
+  alterarNome() {
+    if (this.nome != "") {
+
+      this.usuario.nome = this.nome
+
+    } else {
+      return this.usuario.nome;
+    }
+
+  }
+
+  alterarEmail() {
+    if (this.email != "") {
+      this.usuario.email = this.email
+    } else {
+      return this.usuario.email
+    }
+
+  }
+
+  alterarTelefone() {
+    if (this.telefone != "") {
+      this.usuario.telefone = this.telefone
+    } else {
+      return this.usuario.telefone
+    }
+  }
+
+  alterarSenha() {
+
+    if ((this.novaSenha === this.novaConfirmaSenha) && (this.senhaAtual === this.usuario.senha)) {
+      this.usuario.senha = this.novaSenha
+    } else {
+      return this.usuario.senha;
+    }
+  }
+
   salvar() {
 
-    if ((this.usuario.senha === this.confirmarSenha) || (this.novaSenha == null)) {
+    if ((this.usuario.senha === this.senhaAtual) || (this.novaSenha === "")) {
       this.alerta = false;
 
-      if (this.nome != null) {
-
-        this.usuario.nome = this.nome
-
-      }
-
-      else if (this.email != null) {
-        this.usuario.email = this.email
-      }
-
-      else if (this.telefone != null) {
-        this.usuario.telefone = this.telefone
-      }
-
-      else if ((this.novaSenha === this.novaConfirmaSenha) && (this.usuario.senha === this.senhaAtual)) {
-        this.usuario.senha = this.novaSenha
-
-      }
 
 
       this.usuarioService.putUsuario(this.usuario).subscribe((resp: Usuario) => {
@@ -83,10 +111,15 @@ export class EditarComponent implements OnInit {
         this.router.navigate(['/usuarios/editar/:id'])
         console.log(this.usuario);
 
-        if (this.usuario.email != this.emailusuario) {
-          setTimeout(() => { alert("Cadastro Alterado, você será redirecionado"); this.router.navigate(['/login']) }, 1000)
+        if ((this.usuario.email != this.emailusuario)) {
+          setTimeout(() => { alert("Cadastro Alterado, você será redirecionado"); this.router.navigate(['/login']) }, 500)
         } else {
-          setTimeout(() => { alert("Cadastro Alterado, você será redirecionado"); this.router.navigate(['/usuario']) }, 1000)
+          setTimeout(() => {
+            alert("Cadastro Alterado, você será redirecionado");
+            localStorage.clear();
+            location.reload(true);
+            this.router.navigate(['/usuarios'])
+          }, 500)
         }
       })
 
