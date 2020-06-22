@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../service/usuario.service';
 import { Usuario } from '../Model/usuario';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-usuarios',
@@ -8,15 +9,25 @@ import { Usuario } from '../Model/usuario';
   styleUrls: ['./usuarios.component.css']
 })
 export class UsuariosComponent implements OnInit {
-  nomeUsuario: string;
-  nomeEndereco: string;
 
-  constructor(private usuarioService: UsuarioService) { }
+  usuario: Usuario;
+
+  idUsuario: number;
+
+  constructor(private usuarioService: UsuarioService, private route: Router) { }
 
 
-  ngOnInit(): void {
-    this.nomeUsuario = localStorage.getItem("nomeUsuario");
+  ngOnInit() {
+    this.idUsuario = parseInt(localStorage.getItem('idUsuario'));
+    if(this.idUsuario == null) {
+      this.route.navigate(["/login"]);
+    } else {
+      this.usuarioService.getByIdUsuario(this.idUsuario).subscribe((resp:Usuario)=> {
+        this.usuario = resp;
+      })
+    }
   }
+
 
 
 

@@ -29,4 +29,12 @@ export class ProdutoService {
     return this.http.get(`http://localhost:8080/produtos/nome/${nome}?page=${pagina}&size=${quantidade}&sort=${ordenacao},${ordem}`)
   }
 
+  getProdutosByIdUsuario(id:number){
+    return this.http.get(`http://localhost:8080/produtos/meusprodutos/${id}`, {
+      headers: {
+        "Authorization": localStorage.getItem('token')
+      }
+    })
+  }
+
 }

@@ -9,7 +9,7 @@ export class Produto {
     public categoria: string;
     public urlImg: string;
     public ativo: boolean;
-    public data: Date;
+    public date: Date;
     public idUsuario: Usuario;
     public idCategoria: Categoria
 }

@@ -108,7 +108,12 @@
             </div>
             <hr>
             <div>
-                <span>Usuario: {{produto.descricao}}</span>
+                <span>Usuario: {{produto.idUsuario.nome}}</span>
+            </div>
+            <hr>
+            <div>
+                <span>Publicado: {{produto.date | date: 'dd/MM/yyyy'}}
+                    ás {{produto.date | date: 'HH:mm'}} </span>
             </div>
             <hr>
             <button class="btn verMais" [routerLink]="['/produtos/detalhar', produto.codigo]">Ver mais</button>
@@ -119,11 +124,11 @@
 
 <div class="d-flex justify-content-center py-5">
     <nav aria-label="Page navigation shadow-lg">
-        <button class="btn btn-outline-primary" (click)="paginar(0)">
+        <button class="btn btn-outline-primary" (click)="paginar(0)"> -
         </button>
         <button class="btn btn-primary" *ngFor="let pagina of arrayDePaginas"
             (click)="paginar(pagina)">{{pagina}}</button>
-        <button class="btn btn-outline-primary" (click)="paginar(3)"> -> </button>
+        <button class="btn btn-outline-primary" (click)="paginar(3)"> - </button>
     </nav>
 
 </div>

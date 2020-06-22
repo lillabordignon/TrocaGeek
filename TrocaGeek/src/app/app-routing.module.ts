@@ -19,6 +19,7 @@ import { CardgameComponent } from './categorias/cardgame/cardgame.component';
 import { AcessoriosComponent } from './categorias/acessorios/acessorios.component';
 import { ConsoleComponent } from './categorias/console/console.component';
 import { NegociacaoComponent } from './negociacao/negociacao.component';
+import { MeusprodutosComponent } from './usuarios/meusprodutos/meusprodutos.component';
 
 
 const routes: Routes = [
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'usuarios/deletar/:id', component: DeletarComponent },
   { path: 'usuarios/editar/:id', component: EditarComponent },
+  { path: 'usuarios/meusprodutos', component: MeusprodutosComponent},
   { path: 'produtos/jogos', component: JogosComponent },
   { path: 'produtos/consoles', component: ConsoleComponent },
   { path: 'produtos/actionfigures', component: ActionfigureComponent },

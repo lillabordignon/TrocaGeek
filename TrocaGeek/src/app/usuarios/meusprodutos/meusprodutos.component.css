@@ -1,0 +1,78 @@
+.wrapper {
+    display: flex;
+    width: 20%;
+}
+
+#sidebar {
+    width: 250px;
+    height: 100%;
+    background: black;
+    color: white;
+    padding-left: 10px;
+
+}
+
+a{
+    text-decoration: none;
+    color: #2e2e2e;
+}
+
+a:hover{
+    color: #ed3263;
+}
+
+@media (min-width: 768px) and (max-width: 864) {
+
+
+    .card{
+        border:none;
+        width: 100%;
+        margin: 0%;
+    }
+    .wrapper {
+        display: flex;
+        width: 0%;
+        font-size: 2em;
+    }
+
+  }
+
+
+
+@media only screen and (max-width: 768px) {
+    #sidebar{
+        display: none;
+
+    }
+
+    .card{
+        border:none;
+        width: 100%;
+        margin: 0%;
+    }
+    .wrapper {
+        display: flex;
+        width: 0%;
+    }
+
+  }
+
+
+  .img{
+    width: 150px;
+    height: 200px;
+}
+
+
+
+.caixas{
+    border: none;
+    box-shadow: 0px 0px 10px 2px #dbdbdb;
+    transition: box-shadow 0.3s;
+    background-color: #f1f0f0;
+    max-width: 200px;
+}
+
+.caixas:hover{
+    box-shadow: 0px 0px 20px 12px #dbdbdb;
+}

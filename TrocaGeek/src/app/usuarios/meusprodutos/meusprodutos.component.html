@@ -1,0 +1,69 @@
+<div class="conteiner d-flex">
+
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header pb-5">
+                <h3>Minhas Informações</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+
+                <li class="my-3">
+                    <a routerLink="">Alterar Cadastro</a>
+                </li>
+                <li class="my-3">
+                    <a routerLink="">Minhas Negociações</a>
+                </li>
+                <li class="my-3">
+                    <a routerLink="/usuarios/meusprodutos">Meus Produtos</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+    <div class="card w-100">
+        <div class="card-body">
+            <div class="d-flex justify-content-center">
+                <h1 class="">Meus produtos </h1>
+            </div>
+        
+            <section class="d-flex justify-content-around flex-wrap my-3">
+                <div class="card text-center my-4 mx-3 caixas" *ngFor="let produto of listaProdutos">
+                    <div class="card-body">
+                        <div>
+                            <h4>{{produto.nome}}</h4>
+                        </div>
+                        <hr>
+                        <div>
+                            <img class="img-fluid img" src="{{produto.urlImg}}" alt="">
+                        </div>
+                        <hr>
+                        <div>
+                            <span>Preço: {{produto.preco | currency:"BRL" }}</span>
+                        </div>
+                        <hr>
+                        <div *ngIf="produto.ativo">
+                            Ativo: &#9989; 	
+                        </div>
+                        <div *ngIf="!produto.ativo">
+                            Ativo: &#10060;	
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                        <button class="btn btn-success">Editar</button>
+                        <button class="btn btn-danger">Apagar</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+        
+
+           
+
+    </div>
+</div>

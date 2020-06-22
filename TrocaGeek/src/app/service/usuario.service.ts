@@ -9,6 +9,8 @@ export class UsuarioService {
 
   usuario: Usuario = new Usuario;
 
+  urlApi: string = "http://localhost:8080"
+
   constructor(private http: HttpClient) { }
 
   //Listar todos os usuarios
@@ -19,13 +21,17 @@ export class UsuarioService {
 
   //Listar usuario pelo ID
   getByIdUsuario(id: number) {
-    return this.http.get(`http://93.188.161.223:9000/user/${id}`)
+    return this.http.get( this.urlApi + `/usuario/${id}`, {
+      headers: {
+        "Authorization": localStorage.getItem('token')
+      }
+    })
   }
 
 
   //Cadastrar usuarios
   postCadastro(usuario: Usuario) {
-    return this.http.post('http://localhost:8080/usuario/cadastrar', usuario);
+    return this.http.post( this.urlApi +'/usuario/cadastrar', usuario);
   }
 
   postLogar(usuario: Usuario) {

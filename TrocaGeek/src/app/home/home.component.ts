@@ -96,10 +96,10 @@ export class HomeComponent implements OnInit {
     this.pagina = pagina;
     if (this.barraPesquisa != null) {
       this.buscarPorNomeProdutoOrdenados(this.barraPesquisa, this.pagina, this.quantidade, this.ordenar, this.ordem)
-      window.scroll(0, 0)
+      window.scroll(0, 10)
     } else {
       this.findAllProdutos(pagina, this.quantidade);
-      window.scroll(0, 0)
+      window.scroll(0, 500)
     }
 
   }

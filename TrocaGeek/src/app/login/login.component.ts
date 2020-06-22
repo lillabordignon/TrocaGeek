@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("token", resp.token);
       localStorage.setItem("nomeUsuario", resp.nome)
       localStorage.setItem("logado", "true")
+      localStorage.setItem("idUsuario", resp.id.toString())
       alert("Logado com sucesso !")
       this.router.navigate(['/home']);
       let navbar = new NavbarComponent(this.router);
