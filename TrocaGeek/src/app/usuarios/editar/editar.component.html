@@ -42,7 +42,12 @@
             <label for="password">Alterar senha: </label>
             <input type="password" class="form-control mb-4" id="senha" maxlength="25" placeholder="Senha Atual">
 
-            <input type="password" class="form-control mb-4" id="confirmaSenha" maxlength="25" placeholder="Nova Senha">
+            <input type="password" class="form-control mb-4" id="confirmaSenha" maxlength="25"
+                placeholder="Confirmar Senha Atual">
+
+            <input type="password" class="form-control mb-4" id="novaSenha" maxlength="25" placeholder="Nova Senha">
+            <input type="password" class="form-control mb-4" id="novaConfirmaSenha" maxlength="25"
+                placeholder="Confirmar Senha Atual">
 
             <!-- *ngIf espera uma condição True ou False da variavel -->
             <div *ngIf='alerta'>

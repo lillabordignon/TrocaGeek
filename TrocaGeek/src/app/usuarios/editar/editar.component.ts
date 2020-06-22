@@ -15,6 +15,7 @@ export class EditarComponent implements OnInit {
   usuario: Usuario = new Usuario;
   senhaErrada: boolean = false;
   alerta: boolean = false;
+  senhaAtual: string;
 
   ngOnInit(): void {
     let id = this.route.snapshot.params['id'];
