@@ -251,7 +251,13 @@ Altera o logo no desktop e mobile
     justify-content: space-between;
 }
 
-@media(min-width:769px) and (max-width:1366px){
+@media(min-width:814px) and (max-width:1366px){
+
+   .minhainfo{
+       display: none;
+   }
+
+
     .cabecalho .collapse:not(.show){
         display: flex !important;
     }
@@ -293,7 +299,8 @@ Altera o logo no desktop e mobile
     display: none !important;
 }
 
-@media(min-width:536px) and (max-width:769px){
+@media(min-width:536px) and (max-width:813px){
+
     .has-mobile-hidden{
         display: flex !important;
         flex-wrap: nowrap !important;

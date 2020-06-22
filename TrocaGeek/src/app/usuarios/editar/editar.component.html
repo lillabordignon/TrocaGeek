@@ -1,22 +1,41 @@
 <div class="conteiner d-flex flex-wrap">
 
-    <div class="wrapper">
+    <div class="wrapper bg-light">
         <!-- Sidebar -->
+
         <nav id="sidebar">
-            <div class="sidebar-header pb-5">
-                <h3>Minhas Informações</h3>
+            <div class="sidebar-header pb-2">
+                <h1 class="mb-5 text-center"><img src="../../assets/img/logo-white.png" class="img-fluid logo mt-5"
+                        alt="Logo">
+                </h1>
             </div>
 
             <ul class="list-unstyled components">
 
-                <li class="my-3">
-                    <a [routerLink]="['/usuarios/editar',usuario.id]">Alterar Cadastro</a>
+                <li class=" w-100">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        routerLink="/usuarios">Minha Área</button>
                 </li>
-                <li class="my-3">
-                    <a routerLink="">Minhas Negociações</a>
+                <li class="">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        [routerLink]="['/usuarios/editar',usuario.id]">Alterar
+                        Cadastro</button>
                 </li>
-                <li class="my-3">
-                    <a routerLink="/usuarios/meusprodutos">Meus Produtos</a>
+                <li class="">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        [routerLink]="['/cadastrar-produto']">Cadastrar
+                        Produtos</button>
+                </li>
+
+                <li class="">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        [routerLink]="['/usuarios/meusprodutos']">Meus
+                        Produtos</button>
+                </li>
+
+                <li class="">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper" routerLink="">Minhas
+                        Negociações</button>
                 </li>
 
             </ul>
@@ -30,28 +49,32 @@
 
 
     <div class="mt-2 w-50 mx-auto">
-        <h1 class="mb-5 text-center"><img src="../../assets/img/logo-white.png" class="img-fluid logo mt-5" alt="Logo">
-        </h1>
         <small>Todos os dados devem ser preenchidos !</small>
+
         <div class="form-group pb-5">
             <label for="name">Alterar nome de Usuario*: </label>
-            <input type="text" class="form-control mb-4" id="name" [(ngModel)]="usuarioEditar.nome" maxlength="80" placeholder="{{usuario.nome}}">
+            <input type="text" class="form-control mb-4" id="name" [(ngModel)]="usuarioEditar.nome" maxlength="80"
+                placeholder="{{usuario.nome}}">
 
             <label for="email">Alterar e-mail atual*: </label>
-            <input type="email" class="form-control mb-4" id="email" [(ngModel)]="usuarioEditar.email" maxlength="50" placeholder="{{usuario.email}}">
+            <input type="email" class="form-control mb-4" id="email" [(ngModel)]="usuarioEditar.email" maxlength="50"
+                placeholder="{{usuario.email}}">
 
             <label for="email">Alterar telefone atual*: </label>
-            <input type="email" class="form-control mb-4" id="tel" [(ngModel)]="usuarioEditar.telefone" maxlength="50" placeholder="{{usuario.telefone}}">
+            <input type="email" class="form-control mb-4" id="tel" [(ngModel)]="usuarioEditar.telefone" maxlength="50"
+                placeholder="{{usuario.telefone}}">
 
             <label for="password">Senha antiga*:</label>
-            <input type="password" class="form-control mb-4" [(ngModel)]="usuarioEditar.senhaAntiga" id="senhaAtual" maxlength="25" placeholder="Senha atual">
+            <input type="password" class="form-control mb-4" [(ngModel)]="usuarioEditar.senhaAntiga" id="senhaAtual"
+                maxlength="25" placeholder="Senha atual">
 
             <label for="password">Nova senha*:</label>
-            <input type="password" class="form-control mb-4" [(ngModel)]="usuarioEditar.senha" id="novaSenha" maxlength="25" placeholder="Nova senha">
+            <input type="password" class="form-control mb-4" [(ngModel)]="usuarioEditar.senha" id="novaSenha"
+                maxlength="25" placeholder="Nova senha">
 
             <label for="password">Confirmar nova senha*:</label>
-            <input type="password" class="form-control mb-4" [(ngModel)]="verificarSenha" id="confirmarNovaSenha" maxlength="25"
-                placeholder="Confirmar nova senha">
+            <input type="password" class="form-control mb-4" [(ngModel)]="verificarSenha" id="confirmarNovaSenha"
+                maxlength="25" placeholder="Confirmar nova senha">
 
             <!-- *ngIf espera uma condição True ou False da variavel -->
             <div *ngIf='alerta'>

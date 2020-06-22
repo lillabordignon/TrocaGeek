@@ -1,7 +1,56 @@
-<div class="container">
+<div class="conteiner d-flex">
 
-    <h1 class="text-center mt-5">Cadastre seu Produto</h1>
-    <div class="container">
+    <div class="wrapper">
+
+        <!-- Sidebar -->
+
+        <nav id="sidebar">
+            <div class=" pb-5">
+                <h1 class="mb-3 text-center"><img src="../../assets/img/logo-white.png" class="img-fluid logo mt-5"
+                        alt="Logo">
+                </h1>
+            </div>
+
+            <ul class="list-unstyled components">
+
+                <li class=" w-100">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        routerLink="/usuarios">Minha Área</button>
+                </li>
+                <li class="">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        [routerLink]="['/usuarios/editar',usuario.id]">Alterar
+                        Cadastro</button>
+                </li>
+                <li class="">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        [routerLink]="['/cadastrar-produto']">Cadastrar
+                        Produtos</button>
+                </li>
+
+                <li class="">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        [routerLink]="['/usuarios/meusprodutos']">Meus
+                        Produtos</button>
+                </li>
+
+                <li class="">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper" routerLink="">Minhas
+                        Negociações</button>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+
+    <div class="mt-2 w-50 mx-auto">
+
+
+
+        <h1 class="text-center mt-5">Cadastre seu Produto</h1>
 
         <div>
             <div class="form-group">
@@ -18,7 +67,7 @@
 
             <div class="form-group">
                 <label for="qtdEstoque">Descrição do Produto</label>
-                <input type="text" class="form-control" id="qtdEstoque" placeholder="Digite a quantidade em estoque"
+                <input type="text" class="form-control" id="qtdEstoque" placeholder="Descreva sobre seu produto"
                     [(ngModel)]="produto.descricao">
             </div>
 
@@ -46,6 +95,6 @@
 
             </div>
 
-            <button type="submit" class="btn btn-primary mb-5" (click)="cadastrarProduto()">Cadastrar</button>
+            <button type="button" class="btn btn-primary mb-5" (click)="cadastrarProduto()">Cadastrar</button>
         </div>
     </div>

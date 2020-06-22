@@ -3,6 +3,7 @@ import { ProdutoService } from 'src/app/service/produto.service';
 import { Router } from '@angular/router';
 import { Produto } from 'src/app/Model/Produto';
 
+
 @Component({
   selector: 'app-meusprodutos',
   templateUrl: './meusprodutos.component.html',
@@ -11,7 +12,8 @@ import { Produto } from 'src/app/Model/Produto';
 export class MeusprodutosComponent implements OnInit {
 
   idUsuario: number;
-  listaProdutos: Produto [];
+  listaProdutos: Produto[];
+
 
 
 
@@ -19,11 +21,12 @@ export class MeusprodutosComponent implements OnInit {
 
   ngOnInit() {
     this.idUsuario = parseInt(localStorage.getItem('idUsuario'));
-    if(localStorage.getItem('idUsuario') == null) {
+    if (localStorage.getItem('idUsuario') == null) {
       this.route.navigate(['/login'])
     }
     else {
-      this.produtosService.getProdutosByIdUsuario(this.idUsuario).subscribe((resp:Produto [])=> {
+
+      this.produtosService.getProdutosByIdUsuario(this.idUsuario).subscribe((resp: Produto[]) => {
         this.listaProdutos = resp;
       })
 
