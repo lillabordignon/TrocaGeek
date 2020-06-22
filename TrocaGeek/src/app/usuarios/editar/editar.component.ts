@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/Model/usuario';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UsuarioEditar } from 'src/app/Model/UsuarioEditar';
 
 @Component({
   selector: 'app-editar',
@@ -13,122 +14,43 @@ export class EditarComponent implements OnInit {
   constructor(private usuarioService: UsuarioService, private route: ActivatedRoute, private router: Router) { }
 
   usuario: Usuario = new Usuario;
-  senhaAtual: string;
-  senhaErrada: boolean = false;
-  alerta: boolean = false;
-  confirmarSenha: string;
-  novaSenha: string;
-  novaConfirmaSenha: string;
+  usuarioEditar: UsuarioEditar = new UsuarioEditar;
+  idUsuario:number;
+  verificarSenha: string;
 
-  // Campos que retornam para alteração
-  nome: string;
-  email: string;
-  telefone: string;
-  emailusuario: string;
+  alerta:boolean = false;
 
-
-  ngOnInit(): void {
-    let id = this.route.snapshot.params['id'];
-    this.findByid(id);
+  ngOnInit() {
+    this.idUsuario = this.route.snapshot.params['id'];
+    this.findUsuario(this.idUsuario);
   }
-
-  findByid(id: number) {
-    this.usuarioService.getByIdUsuario(id).subscribe((resp: Usuario) => {
+  findUsuario (id:number) {
+    this.usuarioService.getByIdUsuario(id).subscribe((resp: Usuario)=> {
       this.usuario = resp;
     })
   }
-
-  verificar() {
-
-    this.nome = (<HTMLInputElement>document.getElementById("name")).value;
-    this.email = (<HTMLInputElement>document.getElementById("email")).value;
-    this.telefone = (<HTMLInputElement>document.getElementById("tel")).value;
-
-    this.senhaAtual = (<HTMLInputElement>document.getElementById("senhaAtual")).value;
-    this.novaSenha = (<HTMLInputElement>document.getElementById("novaSenha")).value;
-    this.novaConfirmaSenha = (<HTMLInputElement>document.getElementById("confirmarNovaSenha")).value;
-    this.emailusuario = this.usuario.email;
-
-
-    // Faz as alterações
-    this.alterarNome();
-    this.alterarEmail();
-    this.alterarTelefone();
-    this.alterarSenha();
-
-    // Salva as Alterações
-    this.salvar();
-
-  }
-
-
-  alterarNome() {
-    if (this.nome != "") {
-
-      this.usuario.nome = this.nome
-
-    } else {
-      return this.usuario.nome;
-    }
-
-  }
-
-  alterarEmail() {
-    if (this.email != "") {
-      this.usuario.email = this.email
-    } else {
-      return this.usuario.email
-    }
-
-  }
-
-  alterarTelefone() {
-    if (this.telefone != "") {
-      this.usuario.telefone = this.telefone
-    } else {
-      return this.usuario.telefone
-    }
-  }
-
-  alterarSenha() {
-
-    if ((this.novaSenha === this.novaConfirmaSenha) && (this.senhaAtual === this.usuario.senha)) {
-      this.usuario.senha = this.novaSenha
-    } else {
-      return this.usuario.senha;
-    }
-  }
-
-  salvar() {
-
-    if ((this.usuario.senha === this.senhaAtual) || (this.novaSenha === "")) {
-      this.alerta = false;
-
-
-
-      this.usuarioService.putUsuario(this.usuario).subscribe((resp: Usuario) => {
-        this.usuario = resp;
-        this.router.navigate(['/usuarios/editar/:id'])
-        console.log(this.usuario);
-
-        if ((this.usuario.email != this.emailusuario)) {
-          setTimeout(() => { alert("Cadastro Alterado, você será redirecionado"); this.router.navigate(['/login']) }, 500)
-        } else {
-          setTimeout(() => {
-            alert("Cadastro Alterado, você será redirecionado");
-            localStorage.clear();
-            location.reload(true);
-            this.router.navigate(['/usuarios'])
-          }, 500)
-        }
-      })
-
-
+  verificarSenhasCoincidem() {
+    if(this.usuarioEditar.senha == this.verificarSenha){
+     this.alterarDados(this.usuarioEditar, this.idUsuario);
     } else {
       this.alerta = true;
       setTimeout(() => { this.alerta = false }, 5000)
     }
+  }
+  alterarDados(usuarioNovo:UsuarioEditar, id:number){
+    this.usuarioService.putUsuario(usuarioNovo, id).subscribe((resp:UsuarioEditar)=> {
+      this.usuarioEditar = resp;
+      alert("Dados alterados, você será redirecionado a tela de login")
+    }, err => {
+      alert(err.error)
+    })
 
+    this.deslogar();
   }
 
+  deslogar() {
+    localStorage.clear();
+    this.router.navigate(['/login']);
+  }
+  
 }

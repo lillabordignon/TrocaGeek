@@ -32,35 +32,36 @@
     <div class="mt-2 w-50 mx-auto">
         <h1 class="mb-5 text-center"><img src="../../assets/img/logo-white.png" class="img-fluid logo mt-5" alt="Logo">
         </h1>
+        <small>Todos os dados devem ser preenchidos !</small>
         <div class="form-group pb-5">
-            <label for="name">Alterar nome de Usuario: {{usuario.nome}}</label>
-            <input type="text" class="form-control mb-4" id="name" maxlength="80" placeholder="Alterar seu nome">
+            <label for="name">Alterar nome de Usuario*: </label>
+            <input type="text" class="form-control mb-4" id="name" [(ngModel)]="usuarioEditar.nome" maxlength="80" placeholder="{{usuario.nome}}">
 
-            <label for="email">Alterar e-mail atual: {{usuario.email}}</label>
-            <input type="email" class="form-control mb-4" id="email" maxlength="50" placeholder="Alterar seu email">
+            <label for="email">Alterar e-mail atual*: </label>
+            <input type="email" class="form-control mb-4" id="email" [(ngModel)]="usuarioEditar.email" maxlength="50" placeholder="{{usuario.email}}">
 
-            <label for="email">Alterar telefone atual: {{usuario.telefone}}</label>
-            <input type="email" class="form-control mb-4" id="tel" maxlength="50" placeholder="Alterar telefone">
+            <label for="email">Alterar telefone atual*: </label>
+            <input type="email" class="form-control mb-4" id="tel" [(ngModel)]="usuarioEditar.telefone" maxlength="50" placeholder="{{usuario.telefone}}">
 
-            <label for="password">Alterar senha:</label>
-            <input type="password" class="form-control mb-4" id="senhaAtual" maxlength="25" placeholder="Senha atual">
+            <label for="password">Senha antiga*:</label>
+            <input type="password" class="form-control mb-4" [(ngModel)]="usuarioEditar.senhaAntiga" id="senhaAtual" maxlength="25" placeholder="Senha atual">
 
+            <label for="password">Nova senha*:</label>
+            <input type="password" class="form-control mb-4" [(ngModel)]="usuarioEditar.senha" id="novaSenha" maxlength="25" placeholder="Nova senha">
 
-            <input type="password" class="form-control mb-4" id="novaSenha" maxlength="25" placeholder="Nova senha">
-
-
-            <input type="password" class="form-control mb-4" id="confirmarNovaSenha" maxlength="25"
+            <label for="password">Confirmar nova senha*:</label>
+            <input type="password" class="form-control mb-4" [(ngModel)]="verificarSenha" id="confirmarNovaSenha" maxlength="25"
                 placeholder="Confirmar nova senha">
 
             <!-- *ngIf espera uma condição True ou False da variavel -->
             <div *ngIf='alerta'>
                 <div class="alert alert-danger" role="alert">
-                    Campos de Senha Preenchidos Incorretamente
+                    Senha errada Favor conferir
                 </div>
             </div>
 
             <button type="button" id="cadastrar" class="btn btn-primary btn-block botao"
-                (click)="verificar()">Salvar</button>
+                (click)="verificarSenhasCoincidem()">Salvar</button>
         </div>
 
     </div>
