@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from '../Model/usuario'
+import { UsuarioEditar } from '../Model/UsuarioEditar';
 
 @Injectable({
   providedIn: 'root'
@@ -44,8 +45,8 @@ export class UsuarioService {
   }
 
   //Atualizar Usuarios
-  putUsuario(usuario: Usuario) {
-    return this.http.put(this.urlApi + `/usuario`, usuario, {
+  putUsuario(usuario: UsuarioEditar, id:number) {
+    return this.http.put(this.urlApi + `/usuario/${id}`, usuario, {
       headers: {
         "Authorization": localStorage.getItem('token')
       }
