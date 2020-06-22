@@ -65,8 +65,13 @@
                     <label class="mr-3 ml-5" for="">E-mail:</label>
                     <p class="ml-1" type="text"> {{usuario.email}}</p>
                 </div>
-
-
+                <hr>
+                <div>
+                    <button class="btn verMais btn-success mr-3" [routerLink]="['/usuarios/meusprodutos']">Meus
+                        Produtos</button>
+                    <button class="btn verMais btn-success" [routerLink]="['/cadastrar-produto']">Cadastrar
+                        Produto</button>
+                </div>
             </div>
         </div>
 

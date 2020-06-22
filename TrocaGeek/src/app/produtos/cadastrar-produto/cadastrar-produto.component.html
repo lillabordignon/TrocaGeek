@@ -1,0 +1,51 @@
+<div class="container">
+
+    <h1 class="text-center mt-5">Cadastre seu Produto</h1>
+    <div class="container">
+
+        <div>
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" class="form-control" placeholder="Digite o nome do produto"
+                    [(ngModel)]="produto.nome" id="nome">
+            </div>
+
+            <div class="form-group">
+                <label for="preco">Preço</label>
+                <input type="text" class="form-control" id="preco" placeholder="Digite o preço do produto"
+                    [(ngModel)]="produto.preco">
+            </div>
+
+            <div class="form-group">
+                <label for="qtdEstoque">Descrição do Produto</label>
+                <input type="text" class="form-control" id="qtdEstoque" placeholder="Digite a quantidade em estoque"
+                    [(ngModel)]="produto.descricao">
+            </div>
+
+            <div class="form-group">
+                <label for="imagemProduto">Imagem</label>
+                <input type="text" class="form-control" id="imagemProduto" placeholder="Digite a URL da imagem"
+                    [(ngModel)]="produto.urlImg">
+            </div>
+
+
+
+            <div class="form-group d-flex">
+                <label class="control-label mx-2">Categoria:</label>
+                <div>
+
+                    <select name="txt_order" id="categoria" size="1" class="filtro form-control input-sm">
+                        <option value="1" selected="">Acessórios</option>
+                        <option value="2">Cartas</option>
+                        <option value="3">Consoles</option>
+                        <option value="4">Action Figure</option>
+                        <option value="5">Jogos</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary mb-5" (click)="cadastrarProduto()">Cadastrar</button>
+        </div>
+    </div>

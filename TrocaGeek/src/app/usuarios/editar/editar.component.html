@@ -39,25 +39,28 @@
             <label for="email">Alterar e-mail atual: {{usuario.email}}</label>
             <input type="email" class="form-control mb-4" id="email" maxlength="50" placeholder="Insira seu Email">
 
-            <label for="password">Alterar senha: </label>
-            <input type="password" class="form-control mb-4" id="senha" maxlength="25" placeholder="Senha Atual">
+            <label for="email">Alterar telefone atual: {{usuario.telefone}}</label>
+            <input type="email" class="form-control mb-4" id="tel" maxlength="50" placeholder="Insira seu Telefone">
 
-            <input type="password" class="form-control mb-4" id="confirmaSenha" maxlength="25"
+            <!-- <label for="password">Alterar senha: {{usuario.senha}}</label>
+            <input type="password" class="form-control mb-4" id="senhateste" maxlength="25" placeholder="Senha Atual">
+
+            <input type="password" class="form-control mb-4" id="confirmarSenha" maxlength="25"
                 placeholder="Confirmar Senha Atual">
 
             <input type="password" class="form-control mb-4" id="novaSenha" maxlength="25" placeholder="Nova Senha">
             <input type="password" class="form-control mb-4" id="novaConfirmaSenha" maxlength="25"
-                placeholder="Confirmar Senha Atual">
+                placeholder="Confirmar Nova Atual"> -->
 
             <!-- *ngIf espera uma condição True ou False da variavel -->
             <div *ngIf='alerta'>
                 <div class="alert alert-danger" role="alert">
-                    Senha errada Favor conferir ;)
+                    Campos de Senha Preenchidos Incorretamente
                 </div>
             </div>
 
             <button type="button" id="cadastrar" class="btn btn-primary btn-block botao"
-                (click)="salvar()">Salvar</button>
+                (click)="verificar()">Salvar</button>
         </div>
 
     </div>
