@@ -41,7 +41,7 @@ public class ProdutoController {
 	public Page<Produto> listar (@PageableDefault(page = 0,
 		size = 10, sort = "date" ,direction = Direction.DESC) Pageable paginacao) {
 		
-		return repository.findAll(paginacao);
+		return repository.findByativoTrue(paginacao);
 	}
 	
 	@GetMapping("/{codigo}")
@@ -69,6 +69,12 @@ public class ProdutoController {
 		size = 10, sort = "date" ,direction = Direction.DESC) Pageable paginacao) {
 		
 		return repository.findByidCategoria_nomeCategoriaContainingIgnoreCase(nome, paginacao);
+	}
+	
+	//Buscar produtos pelo id do usuario
+	@GetMapping("/meusprodutos/{id}")
+	public List<Produto> getProdutosUsuario(@PathVariable Long id) {
+		return repository.findByidUsuario_id(id);
 	}
 	
 	@PostMapping
