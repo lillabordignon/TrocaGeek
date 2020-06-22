@@ -1,15 +1,48 @@
-<div class=" container mb-5">
-    <h1 class="mt-5 text-center"><img src="../../assets/img/logo-white.png" class="img-fluid logo mt-5" alt="Logo"></h1>
-    <div class="mt-5 w-50 mx-auto">
+<div class="conteiner d-flex flex-wrap">
+
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header pb-5">
+                <h3>Minhas Informações</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+
+                <li class="my-3">
+                    <a [routerLink]="['/usuarios/editar',usuario.id]">Alterar Cadastro</a>
+                </li>
+                <li class="my-3">
+                    <a routerLink="">Minhas Negociações</a>
+                </li>
+                <li class="my-3">
+                    <a routerLink="/usuarios/meusprodutos">Meus Produtos</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+
+
+
+
+    <div class="mt-2 w-50 mx-auto">
+        <h1 class="mb-5 text-center"><img src="../../assets/img/logo-white.png" class="img-fluid logo mt-5" alt="Logo">
+        </h1>
         <div class="form-group pb-5">
-            <input type="text" class="form-control mb-4" id="name" maxlength="80" placeholder="Nome"
-                [(ngModel)]="usuario.nome">
-            <input type="email" class="form-control mb-4" id="email" maxlength="50" placeholder="Email"
-                [(ngModel)]="usuario.email">
-            <input type="password" class="form-control mb-4" id="senha" maxlength="25" placeholder="Senha"
-                [(ngModel)]="usuario.senha">
-            <input type="password" class="form-control mb-4" id="confirmaSenha" maxlength="25"
-                placeholder="Confirmar senha" [(ngModel)]="usuario.confirmarSenha">
+            <label for="name">Alterar nome de Usuario: {{usuario.nome}}</label>
+            <input type="text" class="form-control mb-4" id="name" maxlength="80" placeholder="Insira seu Nome">
+
+            <label for="email">Alterar e-mail atual: {{usuario.email}}</label>
+            <input type="email" class="form-control mb-4" id="email" maxlength="50" placeholder="Insira seu Email">
+
+            <label for="password">Alterar senha: </label>
+            <input type="password" class="form-control mb-4" id="senha" maxlength="25" placeholder="Senha Atual">
+
+            <input type="password" class="form-control mb-4" id="confirmaSenha" maxlength="25" placeholder="Nova Senha">
 
             <!-- *ngIf espera uma condição True ou False da variavel -->
             <div *ngIf='alerta'>

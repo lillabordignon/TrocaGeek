@@ -21,7 +21,7 @@ export class UsuarioService {
 
   //Listar usuario pelo ID
   getByIdUsuario(id: number) {
-    return this.http.get( this.urlApi + `/usuario/${id}`, {
+    return this.http.get(this.urlApi + `/usuario/${id}`, {
       headers: {
         "Authorization": localStorage.getItem('token')
       }
@@ -31,7 +31,7 @@ export class UsuarioService {
 
   //Cadastrar usuarios
   postCadastro(usuario: Usuario) {
-    return this.http.post( this.urlApi +'/usuario/cadastrar', usuario);
+    return this.http.post(this.urlApi + '/usuario/cadastrar', usuario);
   }
 
   postLogar(usuario: Usuario) {
@@ -45,7 +45,7 @@ export class UsuarioService {
 
   //Atualizar Usuarios
   putUsuario(usuario: Usuario) {
-    return this.http.put('http://93.188.161.223:9000/user', usuario)
+    return this.http.put(this.urlApi + `/usuario`, usuario)
   }
 
 
