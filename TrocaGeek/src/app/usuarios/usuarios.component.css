@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
+
+*{
+    font-family: 'Libre Franklin', sans-serif;
+}
+
 .wrapper {
     display: flex;
     width: 20%;
@@ -6,19 +12,26 @@
 #sidebar {
     width: 250px;
     height: 100%;
-    background: black;
-    color: white;
-    padding-left: 10px;
-
+    background: #232323;
+    color: #c5c5c5;
 }
 
 a{
     text-decoration: none;
-    color: #2e2e2e;
+    color: #c5c5c5;
 }
 
 a:hover{
     color: #ed3263;
+}
+
+.informacoes{
+    
+}
+
+label{
+    
+    border-radius: 3px;
 }
 
 @media (min-width: 768px) and (max-width: 864) {
