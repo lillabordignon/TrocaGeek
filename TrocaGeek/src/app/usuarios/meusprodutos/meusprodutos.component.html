@@ -50,11 +50,11 @@
             <div class="d-flex justify-content-center">
                 <h1 class="">Meus produtos </h1>
             </div>
-            <div *ngIf = 'apagado'>
+            <div *ngIf='apagado'>
                 <div class="alert alert-success" role="alert">
                     Produto apagado com sucesso!
                 </div>
-              </div>
+            </div>
 
             <section class="d-flex justify-content-around flex-wrap my-3">
                 <div class="card text-center my-4 mx-3 caixas" *ngFor="let produto of listaProdutos">
@@ -70,6 +70,10 @@
                         <div>
                             <span>Preço: {{produto.preco | currency:"BRL" }}</span>
                         </div>
+                        <hr>
+                        <button class="btn verMais" [routerLink]="['/produtos/detalhar', produto.codigo]">Ver
+                            mais</button>
+
                         <hr>
                         <div *ngIf="produto.ativo">
                             Ativo: &#9989;

@@ -20,6 +20,7 @@ import { ConsoleComponent } from './categorias/console/console.component';
 import { NegociacaoComponent } from './negociacao/negociacao.component';
 import { MeusprodutosComponent } from './usuarios/meusprodutos/meusprodutos.component';
 import { CadastrarProdutoComponent } from './produtos/cadastrar-produto/cadastrar-produto.component';
+import { DetalhesComponent } from './negociacao/detalhes/detalhes.component';
 
 
 const routes: Routes = [
@@ -43,8 +44,11 @@ const routes: Routes = [
   { path: 'produtos/cardgame', component: CardgameComponent },
   { path: 'produtos/acessorios', component: AcessoriosComponent },
   { path: 'produtos/detalhar/:codigo', component: DetalharComponent },
+  // Apos clicar em negociar, antes de dar post na negociação / **codigo referente ao produto que sera negociado
   { path: 'negociacao/:codigo', component: NegociacaoComponent },
-  { path: 'cadastrar-produto', component: CadastrarProdutoComponent }
+  { path: 'cadastrar-produto', component: CadastrarProdutoComponent },
+  // detalhe da Negociação (apos clicar em negoicar) *id da negociação em andamento
+  { path: 'negociacao-detalhe/:id', component: DetalhesComponent }
 
 
 ];

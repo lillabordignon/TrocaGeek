@@ -27,6 +27,8 @@ import { DetalharComponent } from './produtos/detalhar/detalhar.component';
 import { NegociacaoComponent } from './negociacao/negociacao.component';
 import { MeusprodutosComponent } from './usuarios/meusprodutos/meusprodutos.component';
 import { CadastrarProdutoComponent } from './produtos/cadastrar-produto/cadastrar-produto.component';
+import { MinhasnegociacoesComponent } from './negociacao/minhasnegociacoes/minhasnegociacoes.component';
+import { DetalhesComponent } from './negociacao/detalhes/detalhes.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { CadastrarProdutoComponent } from './produtos/cadastrar-produto/cadastra
     DetalharComponent,
     NegociacaoComponent,
     MeusprodutosComponent,
-    CadastrarProdutoComponent
+    CadastrarProdutoComponent,
+    MinhasnegociacoesComponent,
+    DetalhesComponent
   ],
   imports: [
     BrowserModule,

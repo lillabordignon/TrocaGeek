@@ -24,4 +24,9 @@ h4{
    width: 100% !important;
 }
 
+.img {
+   height: auto;
+   width: auto;
+}
+
 }

@@ -44,6 +44,16 @@ a:hover{
     color: #ed3263;
 }
 
+
+.verMais{
+    background-color: #05a4c4;
+    color: #fff !important
+}
+
+.verMais:hover{
+    background-color: #ed3263;
+}
+
 @media (min-width: 768px) and (max-width: 864) {
 
 

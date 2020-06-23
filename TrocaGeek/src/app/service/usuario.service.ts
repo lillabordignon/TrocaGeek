@@ -16,7 +16,7 @@ export class UsuarioService {
 
   //Listar todos os usuarios
   getAllUsuarios() {
-    return this.http.get('http://93.188.161.223:9000/user');
+    return this.http.get(this.urlApi + '/user');
   }
 
 
@@ -36,16 +36,16 @@ export class UsuarioService {
   }
 
   postLogar(usuario: Usuario) {
-    return this.http.post('http://localhost:8080/usuario/logar', usuario);
+    return this.http.post(this.urlApi + '/usuario/logar', usuario);
   }
 
   //Deletar Usuarios
   deleteUsuario(id: number) {
-    return this.http.delete(`http://93.188.161.223:9000/user/${id}`);
+    return this.http.delete(this.urlApi + `/user/${id}`);
   }
 
   //Atualizar Usuarios
-  putUsuario(usuario: UsuarioEditar, id:number) {
+  putUsuario(usuario: UsuarioEditar, id: number) {
     return this.http.put(this.urlApi + `/usuario/${id}`, usuario, {
       headers: {
         "Authorization": localStorage.getItem('token')
