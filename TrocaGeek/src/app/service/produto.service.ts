@@ -47,4 +47,12 @@ export class ProdutoService {
     });
   }
 
+  deletarProduto(codigo) {
+    return this.http.delete(`http://localhost:8080/produtos/${codigo}`, {
+      headers: {
+        "Authorization": localStorage.getItem('token')
+      }
+    });
+  }
+
 }

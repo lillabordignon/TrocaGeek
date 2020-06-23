@@ -67,7 +67,7 @@
                         <option value="8" selected="8">8</option>
                         <option value="14">14</option>
                         <option value="20">20</option>
-                        <option value="26">26</option>
+                        <option value="28">28</option>
 
                     </select>
 
@@ -104,7 +104,7 @@
             </div>
             <hr>
             <div>
-                <span>Preço: R$ {{produto.preco}}</span>
+                <span>Preço: {{produto.preco | currency:"BRL" }}</span>
             </div>
             <hr>
             <div>

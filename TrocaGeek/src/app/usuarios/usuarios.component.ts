@@ -26,6 +26,7 @@ export class UsuariosComponent implements OnInit {
         this.usuario = resp;
       })
     }
+  
   }
 
 

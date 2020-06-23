@@ -14,6 +14,8 @@ export class MeusprodutosComponent implements OnInit {
   idUsuario: number;
   listaProdutos: Produto[];
 
+  apagado:boolean = false;
+
 
 
 
@@ -31,6 +33,22 @@ export class MeusprodutosComponent implements OnInit {
       })
 
     }
+    window.scroll(0,0)
   }
 
+  apagarProduto(codigo) {
+    if(window.confirm("Deseja apagar ?")) {
+      this.produtosService.deletarProduto(codigo).subscribe(()=> {
+        this.apagado = true;
+        window.scroll(0,0)
+        
+        setTimeout(() => {
+          this.apagado = false;
+          location.assign('/usuarios/meusprodutos');
+        }, 2500);
+      })
+
+    }
+     
+  }
 }
