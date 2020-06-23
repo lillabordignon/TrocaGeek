@@ -1,71 +1,93 @@
 <div class="conteiner d-flex">
     <div class="wrapper">
+
         <!-- Sidebar -->
-        <nav class="text-center" id="sidebar">
-            <div class="sidebar-header pb-5">
-                <h3>Minhas Informações</h3>
+
+        <nav id="sidebar">
+            <div class=" pb-5">
+                <h1 class="mb-3 text-center"><img src="../../assets/img/logo-white.png" class="img-fluid logo mt-5"
+                        alt="Logo">
+                </h1>
             </div>
             <ul class="list-unstyled components">
-                <li class="my-3">
-                    <a routerLink="">Alterar Cadastro</a>
+
+                <li class=" w-100">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        routerLink="/usuarios">Minha Área</button>
                 </li>
-                <li class="my-3">
-                    <a routerLink="">Minhas Negociações</a>
+                <li class="">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        [routerLink]="['/usuarios/editar', usuario.id]">Alterar
+                        Cadastro</button>
                 </li>
-                <li class="my-3">
-                    <a routerLink="/usuarios/meusprodutos">Meus Produtos</a>
+                <li class="">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        [routerLink]="['/cadastrar-produto']">Cadastrar
+                        Produtos</button>
+                </li>
+
+                <li class="">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        [routerLink]="['/usuarios/meusprodutos']">Meus
+                        Produtos</button>
+                </li>
+
+                <li class="">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper" routerLink="">Minhas
+                        Negociações</button>
                 </li>
             </ul>
         </nav>
     </div>
 
-    <div class="card w-100 text-center">
-        <div class="card-body">
-            <div class="d-flex justify-content-center">
-                <h1 class="">Olá {{usuario.nome}} </h1>
-            </div>
-            <div class="card-body">
-                <h3 class="py-4">Informações de Cadastro</h3>
-                <div class="input-group">
-                    <div class="input-group-prepend d-flex flex-wrap">
-                        <span class="input-group-text informacoes">Nome Completo:</span>
-                        <span class="input-group-text mr-1">{{usuario.nome}}</span>
-                        <span class="input-group-text">CPF</span>
-                        <span class="input-group-text mr-1">{{usuario.cpf}}</span>
-                        <span class="input-group-text">Cidade:</span>
-                        <span class="input-group-text mr-1">{{usuario.cpf}}</span>
-                        <span class="input-group-text">Estado:</span>
-                        <span class="input-group-text mr-1">{{usuario.cpf}}</span>
-                        <span class="input-group-text">Telefone:</span>
-                        <span class="input-group-text mr-1">{{usuario.cpf}}</span>
-                        <span class="input-group-text">Email:</span>
-                        <span class="input-group-text mr-1">{{usuario.cpf}}</span>
-                    </div>
-                </div>
-                <!-- <div class="my-3 d-flex flex-wrap informacoes">
-                    <label class="mr-3" for="">Nome Completo:</label>
-                    <p class="ml-1" type="text">{{usuario.nome}}</p>
-                    <label class="mr-3 ml-5" for="">CPF:</label>
-                    <p class=" mx-3" type="text">{{usuario.cpf}}</p>
-                </div>
-                <div class="my-3 d-flex flex-wrap informacoes">
-                    <div class="d-flex ">
-                        <label class="mr-3" for="">Cidade:</label>
-                        <p class="ml-1" type="text">{{usuario.cpf}}</p>
-                    </div>
-                    <div class="d-flex ">
-                        <label class="mr-3 ml-5" for="">Estado:</label>
-                        <p class="ml-1" type="text">{{usuario.cpf}}</p>
-                    </div>
-                </div>
-                <div class="my-3 d-flex flex-wrap informacoes">
-                    <label class="mr-3" for="">Telefone:</label>
-                    <p class="ml-1" type="text">{{usuario.telefone}}</p>
+    <div class="mt-2 w-50 mx-auto">
+        <div class="form-group pb-5">
 
-                    <label class="mr-3 ml-5" for="">E-mail:</label>
-                    <p class="ml-1" type="text"> {{usuario.email}}</p>
-                </div> -->
+
+
+            <div class="form-group py-3">
+                <h2 class="d-flex justify-content-center mb-4">Bem-vinde {{usuario.nome}} </h2>
+
+
+
+                <div class="form-group pb-5">
+
+
+                    <div class="userName mr-3">
+                        <label for="username">Nome de Usuário: </label>
+                        <p type="text" class="form-control mb-4" id="username" maxlength="50"> {{usuario.nome}} </p>
+                    </div>
+
+                    <div class="userEmail">
+                        <label for="email">E-mail: </label>
+                        <p type="email" class="form-control mb-4" id="email" maxlength="50"> {{usuario.email}} </p>
+                    </div>
+
+                    <div class="userTelefone">
+                        <label for="tel">Telefone: </label>
+                        <p type="text" class="form-control mb-4" id="tel" maxlength="50"> {{usuario.telefone}}
+                        </p>
+                    </div>
+
+                    <div class="userCpf">
+                        <label for="cpf">CPF: </label>
+                        <p type="text" class="form-control mb-4" id="cpf" maxlength="50"> {{usuario.cpf}}
+                        </p>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+            <div>
+                <button class="btn verMais btn-success mr-3" [routerLink]="['/usuarios/editar',usuario.id]">Alterar
+                    Cadastro</button>
+                <button class="btn verMais btn-success" [routerLink]="['/cadastrar-produto']">Cadastrar
+                    Produto</button>
             </div>
         </div>
     </div>
+
 </div>

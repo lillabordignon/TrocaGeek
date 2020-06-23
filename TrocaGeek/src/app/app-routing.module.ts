@@ -8,7 +8,6 @@ import { ContatoComponent } from './contato/contato.component';
 import { TermosDeUsoComponent } from './termos-de-uso/termos-de-uso.component';
 import { FAQComponent } from './faq/faq.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
-import { DeletarComponent } from './usuarios/deletar/deletar.component';
 import { EditarComponent } from './usuarios/editar/editar.component';
 import { DetalharComponent } from './produtos/detalhar/detalhar.component';
 import { ProdutosComponent } from './produtos/produtos.component';
@@ -20,6 +19,8 @@ import { AcessoriosComponent } from './categorias/acessorios/acessorios.componen
 import { ConsoleComponent } from './categorias/console/console.component';
 import { NegociacaoComponent } from './negociacao/negociacao.component';
 import { MeusprodutosComponent } from './usuarios/meusprodutos/meusprodutos.component';
+import { CadastrarProdutoComponent } from './produtos/cadastrar-produto/cadastrar-produto.component';
+import { DetalhesComponent } from './negociacao/detalhes/detalhes.component';
 
 
 const routes: Routes = [
@@ -35,16 +36,19 @@ const routes: Routes = [
   { path: 'faq', component: FAQComponent },
   { path: 'produtos', component: ProdutosComponent },
   { path: 'usuarios', component: UsuariosComponent },
-  { path: 'usuarios/deletar/:id', component: DeletarComponent },
   { path: 'usuarios/editar/:id', component: EditarComponent },
-  { path: 'usuarios/meusprodutos', component: MeusprodutosComponent},
+  { path: 'usuarios/meusprodutos', component: MeusprodutosComponent },
   { path: 'produtos/jogos', component: JogosComponent },
   { path: 'produtos/consoles', component: ConsoleComponent },
   { path: 'produtos/actionfigures', component: ActionfigureComponent },
   { path: 'produtos/cardgame', component: CardgameComponent },
   { path: 'produtos/acessorios', component: AcessoriosComponent },
   { path: 'produtos/detalhar/:codigo', component: DetalharComponent },
-  { path: 'negociacao/:codigo', component: NegociacaoComponent }
+  // Apos clicar em negociar, antes de dar post na negociação / **codigo referente ao produto que sera negociado
+  { path: 'negociacao/:codigo', component: NegociacaoComponent },
+  { path: 'cadastrar-produto', component: CadastrarProdutoComponent },
+  // detalhe da Negociação (apos clicar em negoicar) *id da negociação em andamento
+  { path: 'negociacao-detalhe/:id', component: DetalhesComponent }
 
 
 ];

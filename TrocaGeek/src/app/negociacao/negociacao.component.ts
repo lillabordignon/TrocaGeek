@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from '../service/produto.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Produto } from '../Model/Produto';
+import { Usuario } from '../Model/usuario';
+import { UsuarioService } from '../service/usuario.service';
+import { Negociacao } from '../Model/Negociacao';
+import { NegociacaoService } from '../service/negociacao.service';
+import { getLocaleDirection } from '@angular/common';
 
 @Component({
   selector: 'app-negociacao',
@@ -9,19 +14,66 @@ import { Produto } from '../Model/Produto';
   styleUrls: ['./negociacao.component.css']
 })
 export class NegociacaoComponent implements OnInit {
+
   produto: Produto = new Produto;
+  usuario: Usuario = new Usuario;
+  negociacao: Negociacao = new Negociacao;
 
-  constructor(private produtoService: ProdutoService, private route: ActivatedRoute, private router: Router) { }
 
-  ngOnInit(): void {
+  constructor(private produtoService: ProdutoService, private usuarioService: UsuarioService, private negociacaoService: NegociacaoService, private route: ActivatedRoute, private router: Router) { }
+
+  ngOnInit() {
+
+    //validação se o usuario esta logado
+    if (localStorage.getItem('token') == null) {
+      return this.router.navigate(['/login']);
+    }
+
+    //captura do usuario logado
+    this.usuario.id = parseInt(localStorage.getItem('idUsuario'));
+    //traz o usuario Logado com todos os dados dele
+    this.findByIdUsuario(this.usuario.id);
+
+
+    //pega o codigo do produto passado na URL
     let codigo = this.route.snapshot.params['codigo'];
+    //traz o produto (pelo codigo passado na URL)com todos os dados dele inclusive do USUARIO  
     this.findByCodigo(codigo);
+
+    //chama a negociação
+
   }
 
+  //Busca o produto na API passa passando o ID
   findByCodigo(codigo: number) {
     this.produtoService.getProdutoEspecifico(codigo).subscribe((resp: Produto) => {
       this.produto = resp;
+      //atribui o produto na negociação
+      this.negociacao.idProduto = this.produto;
+      //atribui o vendedor pelo produto na negociação
+      this.negociacao.idVendedor = this.produto.idUsuario;
     })
   }
 
+  //Busca o usuario na API passa passando o ID
+  findByIdUsuario(codigo: number) {
+    this.usuarioService.getByIdUsuario(codigo).subscribe((resp: Usuario) => {
+      this.usuario = resp;
+
+      //atribui o comprador (Usuario ativo) capturado pelo Token
+      this.negociacao.idComprador = this.usuario;
+    })
+  }
+
+  negociar() {
+    this.negociacaoService.postNegociacao(this.negociacao).subscribe((resp: Negociacao) => {
+      this.negociacao = resp;
+      location.assign('negociacao-detalhe/' + this.negociacao.idNegociacao)
+    })
+  }
+
+
+  editarNegociacao() {
+
+  }
 }

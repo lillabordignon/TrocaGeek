@@ -1,22 +1,42 @@
 <div class="conteiner d-flex">
 
     <div class="wrapper">
+
         <!-- Sidebar -->
+
         <nav id="sidebar">
-            <div class="sidebar-header pb-5">
-                <h3>Minhas Informações</h3>
+            <div class=" pb-5">
+                <h1 class="mb-3 text-center"><img src="../../assets/img/logo-white.png" class="img-fluid logo mt-5"
+                        alt="Logo">
+                </h1>
             </div>
 
             <ul class="list-unstyled components">
 
-                <li class="my-3">
-                    <a routerLink="">Alterar Cadastro</a>
+                <li class=" w-100">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        routerLink="/usuarios">Minha Área</button>
                 </li>
-                <li class="my-3">
-                    <a routerLink="">Minhas Negociações</a>
+                <li class="">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        [routerLink]="['/usuarios/editar',idUsuario]">Alterar
+                        Cadastro</button>
                 </li>
-                <li class="my-3">
-                    <a routerLink="/usuarios/meusprodutos">Meus Produtos</a>
+                <li class="">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        [routerLink]="['/cadastrar-produto']">Cadastrar
+                        Produtos</button>
+                </li>
+
+                <li class="">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        [routerLink]="['/usuarios/meusprodutos']">Meus
+                        Produtos</button>
+                </li>
+
+                <li class="">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper" routerLink="">Minhas
+                        Negociações</button>
                 </li>
 
             </ul>
@@ -30,7 +50,12 @@
             <div class="d-flex justify-content-center">
                 <h1 class="">Meus produtos </h1>
             </div>
-        
+            <div *ngIf='apagado'>
+                <div class="alert alert-success" role="alert">
+                    Produto apagado com sucesso!
+                </div>
+            </div>
+
             <section class="d-flex justify-content-around flex-wrap my-3">
                 <div class="card text-center my-4 mx-3 caixas" *ngFor="let produto of listaProdutos">
                     <div class="card-body">
@@ -46,24 +71,28 @@
                             <span>Preço: {{produto.preco | currency:"BRL" }}</span>
                         </div>
                         <hr>
+                        <button class="btn verMais" [routerLink]="['/produtos/detalhar', produto.codigo]">Ver
+                            mais</button>
+
+                        <hr>
                         <div *ngIf="produto.ativo">
-                            Ativo: &#9989; 	
+                            Ativo: &#9989;
                         </div>
                         <div *ngIf="!produto.ativo">
-                            Ativo: &#10060;	
+                            Ativo: &#10060;
                         </div>
                         <hr>
                         <div class="d-flex justify-content-between">
-                        <button class="btn btn-success">Editar</button>
-                        <button class="btn btn-danger">Apagar</button>
+                            <button class="btn btn-success">Editar</button>
+                            <button class="btn btn-danger" (click)="apagarProduto(produto.codigo)">Apagar</button>
                         </div>
                     </div>
                 </div>
             </section>
-    
-        
 
-           
 
+
+
+
+        </div>
     </div>
-</div>

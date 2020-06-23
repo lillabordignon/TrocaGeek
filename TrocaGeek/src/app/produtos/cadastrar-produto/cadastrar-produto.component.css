@@ -44,6 +44,16 @@ a:hover{
     color: #ed3263;
 }
 
+@media(max-width: 970){
+
+   .sidebar {
+        display: flex;
+        width: 20%;
+      
+    }
+
+
+}
 
 @media (min-width: 768px) and (max-width: 864) {
 

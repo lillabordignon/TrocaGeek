@@ -10,18 +10,23 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class DetalharComponent implements OnInit {
 
-  produto:Produto = new Produto;
+  produto: Produto = new Produto;
 
-  constructor(private produtoService:ProdutoService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private produtoService: ProdutoService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     let codigo = this.route.snapshot.params['codigo'];
     this.findByCodigo(codigo);
   }
 
-  findByCodigo (codigo:number) {
-    this.produtoService.getProdutoEspecifico(codigo).subscribe((resp: Produto)=> {
+  findByCodigo(codigo: number) {
+    this.produtoService.getProdutoEspecifico(codigo).subscribe((resp: Produto) => {
       this.produto = resp;
     })
   }
+
+
+
+
+
 }

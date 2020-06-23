@@ -3,6 +3,7 @@ import { ProdutoService } from 'src/app/service/produto.service';
 import { Router } from '@angular/router';
 import { Produto } from 'src/app/Model/Produto';
 
+
 @Component({
   selector: 'app-meusprodutos',
   templateUrl: './meusprodutos.component.html',
@@ -11,7 +12,10 @@ import { Produto } from 'src/app/Model/Produto';
 export class MeusprodutosComponent implements OnInit {
 
   idUsuario: number;
-  listaProdutos: Produto [];
+  listaProdutos: Produto[];
+
+  apagado:boolean = false;
+
 
 
 
@@ -19,15 +23,32 @@ export class MeusprodutosComponent implements OnInit {
 
   ngOnInit() {
     this.idUsuario = parseInt(localStorage.getItem('idUsuario'));
-    if(localStorage.getItem('idUsuario') == null) {
+    if (localStorage.getItem('idUsuario') == null) {
       this.route.navigate(['/login'])
     }
     else {
-      this.produtosService.getProdutosByIdUsuario(this.idUsuario).subscribe((resp:Produto [])=> {
+
+      this.produtosService.getProdutosByIdUsuario(this.idUsuario).subscribe((resp: Produto[]) => {
         this.listaProdutos = resp;
       })
 
     }
+    window.scroll(0,0)
   }
 
+  apagarProduto(codigo) {
+    if(window.confirm("Deseja apagar ?")) {
+      this.produtosService.deletarProduto(codigo).subscribe(()=> {
+        this.apagado = true;
+        window.scroll(0,0)
+        
+        setTimeout(() => {
+          this.apagado = false;
+          location.assign('/usuarios/meusprodutos');
+        }, 2500);
+      })
+
+    }
+     
+  }
 }
