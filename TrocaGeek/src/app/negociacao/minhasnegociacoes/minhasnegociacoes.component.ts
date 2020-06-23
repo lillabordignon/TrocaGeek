@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Negociacao } from 'src/app/Model/Negociacao';
+import { NegociacaoService } from 'src/app/service/negociacao.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-minhasnegociacoes',
@@ -7,9 +10,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MinhasnegociacoesComponent implements OnInit {
 
-  constructor() { }
+  listaVendas: Negociacao[];
+  listaCompras: Negociacao[];
+
+  vendas: Negociacao = new Negociacao;
+  compras: Negociacao = new Negociacao;
+
+  constructor(private negociacaoService: NegociacaoService, private router: Router) { }
 
   ngOnInit(): void {
+    let id = localStorage.getItem("idUsuario");
+    this.buscarVendas(id);
+    this.buscarCompras(id);
   }
+
+
+  buscarVendas(id) {
+    this.negociacaoService.getVendas(id).subscribe((resp: Negociacao[]) => {
+      this.listaVendas = resp;
+    })
+  }
+
+  buscarCompras(id) {
+    this.negociacaoService.getCompras(id).subscribe((resp: Negociacao[]) => {
+      this.listaCompras = resp;
+    })
+
+  }
+
+
+
 
 }

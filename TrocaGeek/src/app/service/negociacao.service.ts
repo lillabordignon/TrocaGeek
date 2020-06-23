@@ -27,6 +27,24 @@ export class NegociacaoService {
     })
   }
 
+  getVendas(id: number) {
+    return this.http.get(`http://localhost:8080/negociacao/vendas/${id}`, {
+      headers: {
+        "Authorization": localStorage.getItem('token')
+      }
+    })
+  }
+
+
+
+  getCompras(id: number) {
+    return this.http.get(`http://localhost:8080/negociacao/compras/${id}`, {
+      headers: {
+        "Authorization": localStorage.getItem('token')
+      }
+    })
+  }
+
 
 
 
