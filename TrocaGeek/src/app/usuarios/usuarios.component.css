@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
+
+*{
+    font-family: 'Libre Franklin', sans-serif;
+}
 
 .wrapper {
     display: flex;
@@ -44,6 +49,27 @@ a:hover{
     color: #ed3263;
 }
 
+.formulario{
+
+    width: 50%;
+}
+
+
+.verMais{
+
+    background-color: #05A4C4;
+    border-color: #05A4C4;
+    max-width: 200px;
+}
+
+.verMais:hover{
+
+    background-color: #ed3263;
+    border-color: #ed3263;
+}
+
+
+
 @media(max-width: 970){
 
    .sidebar {
@@ -73,10 +99,22 @@ a:hover{
 
 
 
-@media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     #sidebar{
         display: none;
 
+    }
+
+    .alterarCadastroArea{
+
+       
+
+      width: 100% !important;
+      max-width: none !important;
+      justify-content: center;
+          
+    
+        
     }
 
     .card{
@@ -88,5 +126,26 @@ a:hover{
         display: flex;
         width: 0%;
     }
+
+
+
+  }
+
+  @media only screen and (max-width: 425px){
+
+    .formulario{
+        width:90%
+    }
+  }
+
+  @media only screen and (max-width: 366px){
+
+
+    .botoes{
+
+        margin-bottom: 10px !important;
+    }
+
+    
 
   }

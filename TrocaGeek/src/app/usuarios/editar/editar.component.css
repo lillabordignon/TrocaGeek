@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
+
+*{
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+
 
 .wrapper {
     display: flex;
@@ -44,6 +51,23 @@ a:hover{
     color: #ed3263;
 }
 
+.formulario{
+
+    width: 50%;
+}
+
+.botao{
+
+    background-color: #05A4C4;
+    border-color: #05A4C4;
+}
+
+.botao:hover{
+
+    background-color: #ed3263;
+    border-color: #ed3263;
+
+}
 
 @media (min-width: 768px) and (max-width: 864) {
 
@@ -69,6 +93,18 @@ a:hover{
 
     }
 
+    .alterarCadastroArea{
+
+       
+
+      width: 100% !important;
+      max-width: none !important;
+      justify-content: center;
+          
+    
+        
+    }
+
     .card{
         border:none;
         width: 100%;
@@ -79,4 +115,13 @@ a:hover{
         width: 0%;
     }
 
+
+
+  }
+
+  @media only screen and (max-width: 425px){
+
+    .formulario{
+        width:90%
+    }
   }
