@@ -45,8 +45,9 @@ public class NegociacaoController {
 
 	@PostMapping
 	public ResponseEntity<Negociacao> post(@RequestBody Negociacao negociacao) {
+		System.out.println(negociacao.getIdVendedor());
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(negociacao));
-	}
+			}
 
 	
 	@PutMapping("/{id}")

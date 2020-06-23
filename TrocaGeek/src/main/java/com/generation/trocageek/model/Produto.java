@@ -27,14 +27,14 @@ public class Produto {
 	private String nome;
 	
 	@NotNull
-	@Size(min = 2, max = 100)
+	@Size(min = 2, max = 1500)
 	private String descricao;
 	
 	@NotNull
 	private float preco;
 	
 	@NotNull
-	@Size(min = 2, max = 500)
+	@Size(min = 2, max = 1500)
 	private String urlImg;
 	
 	private boolean ativo = true;
