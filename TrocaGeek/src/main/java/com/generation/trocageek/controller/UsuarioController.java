@@ -64,11 +64,14 @@ public class UsuarioController {
 	}
 	
 	@PutMapping("/{id}")//futuramente extrair esse metodo para o service
+	//Envia a atualização para o Banco de Dados
 	@Transactional
 	public ResponseEntity<Object> atualizar (@PathVariable Long id,@RequestBody UsuarioEditar usuario) {
 		Optional<Usuario> optional = repository.findById(id);
+		//instanciou o encoder para criptografare
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		if(optional.isPresent()) {
+			//verifica se a senha atual (sem criptografia) é igual a senha criptografada
 			if(encoder.matches(usuario.getSenhaAntiga(), optional.get().getSenha())) {
 				String senhaCrypt = encoder.encode(usuario.getSenha());
 				optional.get().setNome(usuario.getNome());

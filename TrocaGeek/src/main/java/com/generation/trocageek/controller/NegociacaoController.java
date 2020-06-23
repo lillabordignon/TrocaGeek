@@ -1,0 +1,66 @@
+package com.generation.trocageek.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.generation.trocageek.model.Negociacao;
+import com.generation.trocageek.repository.NegociacaoRepository;
+
+@RestController
+@RequestMapping("/negociacao")
+@CrossOrigin("*")
+public class NegociacaoController {
+
+	@Autowired
+	private NegociacaoRepository repository;
+
+	@GetMapping
+	public List<Negociacao> GetAll() {
+		return repository.findAll();
+	}
+
+	@GetMapping("/{id}")
+	public ResponseEntity<Negociacao> Detalhar(@PathVariable Long id) {
+
+		Optional<Negociacao> negociacao = repository.findById(id);
+		if (negociacao.isPresent()) {
+			return ResponseEntity.ok().body(negociacao.get());
+		}
+
+		return ResponseEntity.notFound().build();
+
+	}
+
+	@PostMapping
+	public ResponseEntity<Negociacao> post(@RequestBody Negociacao negociacao) {
+		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(negociacao));
+	}
+
+	
+	@PutMapping("/{id}")
+	public ResponseEntity<Negociacao> put(@PathVariable Long id, @RequestBody boolean ativo){
+		
+		Optional<Negociacao> negociacao = repository.findById(id);
+		if(negociacao.isPresent()) {
+			negociacao.get().setStatus(ativo);
+			return ResponseEntity.ok().body(repository.save(negociacao.get()));
+		}
+		
+		return ResponseEntity.notFound().build();
+
+
+	}
+	
+}
