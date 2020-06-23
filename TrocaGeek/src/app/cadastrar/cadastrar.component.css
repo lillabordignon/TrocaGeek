@@ -6,15 +6,25 @@
 
 .container{
     background-color: #232323;
+    border-radius: 25px;
+}
+
+.container-cadastrar{
+    max-width: 960px;
+}
+
+.cadastrarpai{
+    max-width: 600px;
 }
 
 .logo{
-    width: 200px;
+    max-width: 200px;
 }
 
 .login{
-    font-size: 22px;
+    font-size: 24px;
     color: #c5c5c5;
+    margin-bottom: -5px;
 }
 
 label{
@@ -26,6 +36,7 @@ label{
     background-color: #05a4c4;
     color: #fff;
     border: none;
+    width: 400px;
 }
 
 .botao:hover{
@@ -45,9 +56,3 @@ label{
 .checkBox:hover{
     color: #ed3263;
 }
-
-@media screen and (max-width: 992px) {
-    .cadastrarpai {
-      width: 100%;
-    }
-  }
