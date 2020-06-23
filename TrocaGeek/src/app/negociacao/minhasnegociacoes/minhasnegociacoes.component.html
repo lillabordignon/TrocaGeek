@@ -1,1 +1,69 @@
-<p>minhasnegociacoes works!</p>
+<div class="container mt-4">
+
+    <h1 class="text-center ">Minhas Vendas</h1>
+    <hr>
+    <section class="d-flex justify-content-around flex-wrap my-3">
+        <div class="card text-center my-4 mx-3 caixas" *ngFor="let vendas of listaVendas">
+            <div class="card-body">
+                <div>
+                    <h4>Venda Nº {{vendas.idNegociacao}}</h4>
+                </div>
+                <hr>
+                <div>
+                    <span>Produto: {{vendas.idProduto.nome }}</span>
+                </div>
+                <hr>
+                <div>
+                    <span>Valor: {{vendas.idProduto.preco | currency:"BRL" }}</span>
+                </div>
+                <hr>
+                <div>
+                    <span>Interessado: {{vendas.idComprador.nome}}</span>
+                </div>
+                <hr>
+                <div>
+                    <span>Início Negociacao: {{vendas.dataInicioNegociacao | date: 'dd/MM/yyyy'}}
+                        ás {{vendas.dataInicioNegociacao| date: 'HH:mm'}} </span>
+                </div>
+                <hr>
+                <button class="btn verMais" [routerLink]="['/negociacao-detalhe', vendas.idNegociacao]">Ver
+                    mais</button>
+            </div>
+        </div>
+    </section>
+    <hr>
+
+
+    <h1 class="text-center ">Minhas Compras</h1>
+    <hr>
+    <section class="d-flex justify-content-around flex-wrap my-3">
+        <div class="card text-center my-4 mx-3 caixas" *ngFor="let compras of listaCompras">
+            <div class="card-body">
+                <div>
+                    <h4>Compra Nº {{compras.idNegociacao}}</h4>
+                </div>
+                <hr>
+                <div>
+                    <span>Produto: {{compras.idProduto.nome }}</span>
+                </div>
+                <hr>
+                <div>
+                    <span>Valor: {{compras.idProduto.preco | currency:"BRL" }}</span>
+                </div>
+                <hr>
+                <div>
+                    <span>Vendedor: {{compras.idVendedor.nome}}</span>
+                </div>
+                <hr>
+                <div>
+                    <span>Início Negociacao: {{compras.dataInicioNegociacao | date: 'dd/MM/yyyy'}}
+                        ás {{compras.dataInicioNegociacao| date: 'HH:mm'}} </span>
+                </div>
+                <hr>
+                <button class="btn verMais" [routerLink]="['/negociacao-detalhe', compras.idNegociacao]">Ver
+                    mais</button>
+            </div>
+        </div>
+    </section>
+
+</div>
