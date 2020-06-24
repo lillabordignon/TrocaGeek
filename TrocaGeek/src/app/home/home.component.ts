@@ -22,6 +22,11 @@ export class HomeComponent implements OnInit {
   arrayDePaginas: number[] = [0];
   ultimaPagina: boolean;
 
+  //variaveis do modo noturno
+  modoNoturno:boolean = false;
+  corBodyNoturno:string = '#0f1f1e'
+  corFontesNoturno:string = '#ffffff'
+
   //variaveis ordenacao produto
   ordenar: string;
   ordem: string;
@@ -38,6 +43,10 @@ export class HomeComponent implements OnInit {
     this.ordem = (<HTMLInputElement>document.getElementById("ordem")).value;
     this.quantidade = parseInt((<HTMLInputElement>document.getElementById("quantidade")).value);
 
+  }
+
+  modoNoturnoFunction(){
+    this.modoNoturno = !this.modoNoturno;
   }
 
   findAllProdutos(pagina, quantidade) {
@@ -97,7 +106,12 @@ export class HomeComponent implements OnInit {
     if (this.barraPesquisa != null) {
       this.buscarPorNomeProdutoOrdenados(this.barraPesquisa, this.pagina, this.quantidade, this.ordenar, this.ordem)
       window.scroll(0, 10)
-    } else {
+    } else if(this.ordem != 'desc' || this.ordenar != 'date') {
+      this.buscarProdutosOrdenados(this.pagina, this.quantidade, this.ordenar, this.ordem);
+
+    }
+    
+    else {
       this.findAllProdutos(pagina, this.quantidade);
       window.scroll(0, 500)
     }

@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
+
+*{
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+
+.wrapper {
+    display: flex;
+    width: 25%;
+    background-color: #F8F9FA;
+  
+}
+
+#sidebar {
+    width: 100%;
+    height: 100%;
+    color: black;
+
+}
+
+.liwrapper{
+
+    width: 100%;
+    
+    margin: none;
+    height: 100%;
+
+}
+
+.btn-wrapper{
+
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+
+}
+
+
+.logo{
+    width: 80%;
+    height: 80%;
+}
+
+a{
+    text-decoration: none;
+    color: #2e2e2e;
+}
+
+a:hover{
+    color: #ed3263;
+}
+
+.formulario{
+
+    width: 50%;
+}
+
+.botao{
+
+    background-color: #05A4C4;
+    border-color: #05A4C4;
+}
+
+.botao:hover{
+
+    background-color: #ed3263;
+    border-color: #ed3263;
+
+}
+
+@media(max-width: 970){
+
+   .sidebar {
+        display: flex;
+        width: 20%;
+      
+    }
+
+
+}
+
+@media (min-width: 768px) and (max-width: 864) {
+
+
+    .card{
+        border:none;
+        width: 100%;
+        margin: 0%;
+    }
+    .wrapper {
+        display: flex;
+        width: 0%;
+        font-size: 2em;
+    }
+
+  }
+  @media only screen and (max-width: 768px) {
+    #sidebar{
+        display: none;
+
+    }
+
+    .areaCadastrarProduto{
+
+       
+
+      width: 100% !important;
+      max-width: none !important;
+      justify-content: center;
+          
+    
+        
+    }
+
+    .card{
+        border:none;
+        width: 100%;
+        margin: 0%;
+    }
+    .wrapper {
+        display: flex;
+        width: 0%;
+    }
+
+
+
+  }
+
+  @media only screen and (max-width: 520px){
+
+    .formulario{
+        width:90%
+    }
+  }

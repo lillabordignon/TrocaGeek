@@ -80,8 +80,10 @@
                         [routerLink]="['/usuarios/editar',usuario.id]">Alterar
                         Cadastro</button>
                 </div>
-                <button class="btn verMais btn-success cadastrarProtudo" [routerLink]="['/cadastrar-produto']">Cadastrar
+                <button class="btn verMais btn-success cadastrarProtudo" routerLink="/cadastrar-produto">Cadastrar
                     Produto</button>
+
+                    <button class="btn ml-2 btn-danger" (click)="deletarConta()">Deletar minha conta</button>
             </div>
 
         </div>

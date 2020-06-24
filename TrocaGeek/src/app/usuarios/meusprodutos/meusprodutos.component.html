@@ -49,7 +49,9 @@
         <div class="card-body">
             <div class="d-flex justify-content-center">
                 <h1 class="">Meus produtos </h1>
+                
             </div>
+            <p class="text-center text-muted">Atenção, produtos que não estão ativos somente você pode visualizar</p>
             <div *ngIf='apagado'>
                 <div class="alert alert-success" role="alert">
                     Produto apagado com sucesso!
@@ -83,7 +85,7 @@
                         </div>
                         <hr>
                         <div class="d-flex justify-content-between">
-                            <button class="btn btn-success">Editar</button>
+                            <button class="btn btn-success" [routerLink]="['/produtos/editar', produto.codigo]">Editar</button>
                             <button class="btn btn-danger" (click)="apagarProduto(produto.codigo)">Apagar</button>
                         </div>
                     </div>

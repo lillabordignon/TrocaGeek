@@ -29,6 +29,16 @@ export class UsuariosComponent implements OnInit {
   
   }
 
+  deletarConta() {
+    if(window.confirm("Deseja mesmo deletar sua conta ? essa ação não pode ser revertida !")){
+      this.usuarioService.deleteUsuario(this.idUsuario).subscribe(()=>{})
+      localStorage.clear();
+      location.reload(true);
+      this.route.navigate(["/login"]);
+    }
+
+  }
+
 
 
 
