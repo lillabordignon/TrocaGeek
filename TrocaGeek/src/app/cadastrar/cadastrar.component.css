@@ -13,7 +13,7 @@
     max-width: 1024px;
 }
 
-.cadastrarpai{
+.tamanhoinput{
     max-width: 600px;
 }
 
@@ -36,7 +36,7 @@ label{
     background-color: #05a4c4;
     color: #fff;
     border: none;
-    width: 400px;
+    width: 300px;
 }
 
 .botao:hover{

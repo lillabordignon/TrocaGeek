@@ -251,7 +251,7 @@ Altera o logo no desktop e mobile
     justify-content: space-between;
 }
 
-@media(min-width:814px) and (max-width:1366px){
+@media(min-width:814px) and (max-width:1920px){
 
    .minhainfo{
        display: none;

@@ -1,19 +1,24 @@
-<div class=" container mb-5">
-    <h1 class="mt-5 text-center"><img src="../../assets/img/logo-white.png" class="img-fluid logo mt-5" alt="Logo"></h1>
-    <div class="mt-5 w-75 mx-auto loginpai">
-        <div class="form-group pb-5 w-100">
-            <div class="text-light d-flex justify-content-center">
-                <h3 class="login">Olá! Digite seu E-mail e Senha.</h3>
-            </div>
+<div class=" container container-login mb-5">
+    <h1 class="mt-5 text-center">
+        <img class="img-fluid logo mt-5" src="../../assets/img/logo-white.png" alt="Logo">
+    </h1>
+    <div class="mt-4 mx-auto px-3 tamanhoinput">
+        <div class="text-light text-center">
+            <h2 class="login">Login</h2>
+        </div>
+        <div class="form-group pb-5">
             <label for="email">Email</label>
-            <input type="email" [(ngModel)]="usuario.email" class="form-control mb-3" id="email" maxlength="50" placeholder="Email">
+            <input type="email" [(ngModel)]="usuario.email" class="form-control mb-2" id="email" maxlength="50"
+                placeholder="Email">
             <label for="senha">Senha</label>
-            <input type="password" [(ngModel)]="usuario.senha" class="form-control mb-2" id="senha" maxlength="25" placeholder="Senha">
-
-            <div class=" mb-3 d-flex justify-content-end">
+            <input type="password" [(ngModel)]="usuario.senha" class="form-control mb-2" id="senha" maxlength="25"
+                placeholder="Senha">
+            <div class=" mb-4 d-flex justify-content-end">
                 <a class="recuperarSenha" href="#">Esqueceu sua senha?</a>
             </div>
-            <button type="submit" class="btn btn-primary btn-block botao" (click)="logar()">Entrar</button>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary btn-block botao" (click)="logar()">Entrar</button>
+            </div>
         </div>
     </div>
 </div>

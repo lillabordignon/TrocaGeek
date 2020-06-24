@@ -26,69 +26,51 @@
 </div>
 
 
-<section class="d-flex justify-content-around flex-wrap my-3">
-
+<section class="d-flex justify-content-around flex-wrap my-3 container-home">
     <div class="d-flex justify-content-between responsivo">
-
         <div class="d-flex pt-3 flex-wrap filtros" action="">
-
             <div class="form-group d-flex justify-content-center">
                 <label class="control-label mx-2">Ordenar:</label>
                 <div>
-
                     <select name="txt_order mx-3" id="ordenarPor" size="1" class="fFiltro form-control input-sm">
                         <option value="date" selected="Data">Data</option>
                         <option value="preco">Preço</option>
                         <option value="nome">Nome</option>
                     </select>
-
                 </div>
             </div>
-
             <div class="form-group d-flex justify-content-center">
                 <label class="control-label mx-2">Ordem:</label>
                 <div>
-
                     <select name="txt_order" id="ordem" size="1" class="fFiltro form-control input-sm">
                         <option value="desc" selected="">Decrescente</option>
                         <option value="asc">Crescente</option>
-
                     </select>
-
                 </div>
-
             </div>
-
             <div class="form-group d-flex justify-content-center">
                 <label class="control-label mx-2">Quantidade por página:</label>
                 <div>
-
                     <select name="txt_order" size="1" id="quantidade" class="fFiltro form-control input-sm">
                         <option value="8" selected="8">8</option>
                         <option value="14">14</option>
                         <option value="20">20</option>
                         <option value="28">28</option>
-
                     </select>
-
                 </div>
             </div>
-
             <button class="btn btn-outline-primary mx-3 mb-3" type="button" (click)="filtrarProdutos()" name="btFiltrar"
                 id="filtrar" value="Filtrar">Filtrar
             </button>
         </div>
-
     </div>
     <div class="d-flex justify-content-end ">
-
         <div class="form-inline my-2 my-lg-0 d-flex justify-content-center pesquisa">
             <input class="form-control mr-sm-2 pesquisaMobile" type="search" placeholder="Pesquisar" aria-label="Search"
                 [(ngModel)]="barraPesquisa">
             <button class="btn btn-outline-success" (click)="buttonPesquisar()">Pesquisar</button>
         </div>
     </div>
-
 </section>
 
 
@@ -120,19 +102,14 @@
         </div>
     </div>
 </section>
-
-
 <div class="d-flex justify-content-center py-5">
     <nav aria-label="Page navigation shadow-lg">
-        <button class="btn btn-outline-primary" (click)="paginar(0)"> -
-        </button>
+        <button class="btn btn-outline-primary" (click)="paginar(0)"> - </button>
         <button class="btn btn-primary" *ngFor="let pagina of arrayDePaginas"
             (click)="paginar(pagina)">{{pagina}}</button>
         <button class="btn btn-outline-primary" (click)="paginar(3)"> - </button>
     </nav>
-
 </div>
-
 <div class="d-flex justify-content-center py-1">
     <span class="text-muted "> Página atual {{pagina}}</span>
 </div>

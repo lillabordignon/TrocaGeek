@@ -6,15 +6,25 @@
 
 .container{
     background-color: #232323;
+    border-radius: 25px;
+}
+
+.container-login{
+    max-width: 1024px;
+}
+
+.tamanhoinput{
+    max-width: 600px;
 }
 
 .logo{
-    width: 200px;
+    max-width: 200px;
 }
 
 .login{
-    font-size: 22px;
+    font-size: 24px;
     color: #c5c5c5;
+    margin-bottom: -5px;
 }
 
 label{
@@ -26,6 +36,7 @@ label{
     background-color: #05a4c4;
     color: #fff;
     border: none;
+    width: 300px;
 }
 
 .botao:hover{
@@ -42,13 +53,4 @@ label{
 
 .recuperarSenha:hover{
     color: #ed3263;
-   
-}
-
-@media screen and (max-width:992px) {
-
-    .loginpai{
-        width: 100%;
-    }
-    
 }
