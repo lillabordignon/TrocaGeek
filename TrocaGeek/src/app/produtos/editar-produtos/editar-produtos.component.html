@@ -53,17 +53,20 @@
         <div class="form-group formulario pb-5 ">
 
             <h1 class="text-center my-5">Editar produto</h1>
-            <p>{{produto.nome}}</p>
-            <p>{{produto.preco | currency: "BRL"}}</p>
-            <p>{{produto.descricao}}</p>
-            <p *ngIf="produto.ativo">Produto ativo</p>
-            <p *ngIf="!produto.ativo">Produto desativado</p>
 
-            <small class="text-muted">Todos os campos devem ser preenchidos!</small><br>
+            <div class="my-5">
+                <p>{{produto.nome}}</p>
+                <p>{{produto.preco | currency: "BRL"}}</p>
+                <p>{{produto.descricao}}</p>
+                <p *ngIf="produto.ativo">Produto ativo</p>
+                <p *ngIf="!produto.ativo">Produto desativado</p>
+            </div>
+
+
 
             <label class="font-weight-bold" for="nome">Nome:</label>
             <input type="text" class="form-control mb-4" placeholder="Digite o nome do produto"
-                [(ngModel)]="produtoNovo.nome" id="nome" >
+                [(ngModel)]="produtoNovo.nome" id="nome">
 
 
 
@@ -97,23 +100,23 @@
                         <option value="5">Jogos</option>
                     </select>
 
-                    
+
 
                 </div>
                 <div>
 
                     <select name="txt_order" id="ativo" size="1" class="filtro form-control input-sm ml-2">
                         <option value="1" selected="Sim">Ativo?</option>
-                        <option value="2" >Sim</option>
+                        <option value="2">Sim</option>
                         <option value="3">Não</option>
                     </select>
 
-                    
+
 
                 </div>
- 
+
             </div>
-            <button type="button" class="btn btn-primary mb-5 botao" (click)="atualizarProduto()">Cadastrar</button>
+            <button type="button" class="btn btn-primary mb-5 botao" (click)="verificar()">Atualizar</button>
 
         </div>
     </div>
