@@ -18,30 +18,60 @@ export class EditarProdutosComponent implements OnInit {
   categoria: Categoria = new Categoria;
 
 
-  constructor(private produtoService: ProdutoService, private router:ActivatedRoute) { }
+  constructor(private produtoService: ProdutoService, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
-    if(localStorage.getItem('idUsuario')== null) {
+    if (localStorage.getItem('idUsuario') == null) {
       location.assign('/login')
     }
     let id = this.router.snapshot.params['codigo'];
-    this.usuario.id = parseInt( localStorage.getItem('idUsuario'));
+    this.usuario.id = parseInt(localStorage.getItem('idUsuario'));
 
     this.buscarProduto(id);
   }
 
   buscarProduto(id) {
-    this.produtoService.getProdutoEspecifico(id).subscribe((resp: Produto)=> {
+    this.produtoService.getProdutoEspecifico(id).subscribe((resp: Produto) => {
       this.produto = resp;
     })
   }
+
+
+
+
+  conferirNome() {
+    if (this.produtoNovo.nome == null) {
+      this.produtoNovo.nome = this.produto.nome
+    } return this.produtoNovo.nome;
+  }
+
+  conferirPreco() {
+    if (this.produtoNovo.preco == null) {
+      this.produtoNovo.preco = this.produto.preco
+    } return this.produtoNovo.preco;
+  }
+
+  conferirDescricao() {
+
+    if (this.produtoNovo.descricao == null) {
+      this.produtoNovo.descricao = this.produto.descricao
+    } return this.produtoNovo.descricao
+  }
+
+  conferirUrlImg() {
+
+    if (this.produtoNovo.urlImg == null) {
+      this.produtoNovo.urlImg = this.produto.urlImg
+    } return this.produtoNovo.urlImg
+  }
+
 
   atualizarProduto() {
     //Capturando a Categoria pelo html (value)
     this.categoria.codigoCategoria = parseInt((<HTMLSelectElement>document.getElementById('categoria')).value);
     this.produtoNovo.idCategoria = this.categoria;
     let ativo = (<HTMLSelectElement>document.getElementById('ativo')).value;
-    if(ativo == '1' || ativo == '2') {
+    if (ativo == '1' || ativo == '2') {
       this.produtoNovo.ativo = true;
     } else {
       this.produtoNovo.ativo = false;
@@ -57,5 +87,15 @@ export class EditarProdutosComponent implements OnInit {
       location.assign('/usuarios/meusprodutos');
     })
   }
+
+  verificar() {
+
+    this.conferirNome();
+    this.conferirPreco();
+    this.conferirDescricao();
+    this.conferirUrlImg();
+    this.atualizarProduto();
+  }
+
 
 }

@@ -16,36 +16,83 @@ export class EditarComponent implements OnInit {
 
   usuario: Usuario = new Usuario;
   usuarioEditar: UsuarioEditar = new UsuarioEditar;
-  idUsuario:number;
+  idUsuario: number;
   verificarSenha: string;
 
-  alerta:boolean = false;
+  alerta: boolean = false;
 
   //dados usuario 
-
-
-
-
 
   ngOnInit() {
     this.idUsuario = this.route.snapshot.params['id'];
     this.findUsuario(this.idUsuario);
   }
-  findUsuario (id:number) {
-    this.usuarioService.getByIdUsuario(id).subscribe((resp: Usuario)=> {
+  findUsuario(id: number) {
+    this.usuarioService.getByIdUsuario(id).subscribe((resp: Usuario) => {
       this.usuario = resp;
     })
   }
-  verificarSenhasCoincidem() {
-    if(this.usuarioEditar.senha == this.verificarSenha){
-     this.alterarDados(this.usuarioEditar, this.idUsuario);
+
+  alterarNome() {
+
+    if (this.usuarioEditar.nome == null) {
+      return this.usuarioEditar.nome = this.usuario.nome
+    } return this.usuarioEditar.nome
+  }
+
+  alterarEmail() {
+    if (this.usuarioEditar.email == null) {
+      return this.usuarioEditar.email = this.usuario.email
+    } return this.usuarioEditar.email
+  }
+
+  alterarTelefone() {
+    if (this.usuarioEditar.telefone == null) {
+      return this.usuarioEditar.telefone = this.usuario.telefone
+    } return this.usuarioEditar.telefone
+  }
+
+  alterarSenha() {
+
+
+    if (this.usuarioEditar.senha == this.verificarSenha) {
+      return this.usuarioEditar.senhaAntiga = this.usuarioEditar.senha
+
     } else {
-      this.alerta = true;
-      setTimeout(() => { this.alerta = false }, 5000)
+      this.usuarioEditar.senha = this.usuarioEditar.senhaAntiga;
+      this.verificarSenha = this.usuarioEditar.senhaAntiga;
     }
   }
-  alterarDados(usuarioNovo:UsuarioEditar, id:number){
-    this.usuarioService.putUsuario(usuarioNovo, id).subscribe((resp:UsuarioEditar)=> {
+
+
+  verificar() {
+
+    // if (this.usuarioEditar.senhaAntiga == this.usuario.senha) {
+
+    this.alterarNome();
+    this.alterarEmail();
+    this.alterarTelefone();
+    this.alterarSenha();
+    this.usuarioEditar.senhaAntiga = this.usuario.senha;
+    this.alterarDados(this.usuarioEditar, this.idUsuario);
+
+    // } else {
+    //   this.alerta = true;
+    //   setTimeout(() => { this.alerta = false }, 5000)
+    // }
+
+
+  }
+
+  verificarSenhasCoincidem() {
+    if (this.usuarioEditar.senha == this.verificarSenha) {
+
+    }
+  }
+
+
+  alterarDados(usuarioNovo: UsuarioEditar, id: number) {
+    this.usuarioService.putUsuario(usuarioNovo, id).subscribe((resp: UsuarioEditar) => {
       this.usuarioEditar = resp;
       alert("Dados alterados, você será redirecionado a tela de login")
     }, err => {
@@ -56,8 +103,8 @@ export class EditarComponent implements OnInit {
   }
 
   deslogar() {
-    localStorage.clear();
-    this.router.navigate(['/login']);
+    // localStorage.clear();
+    this.router.navigate(['/usuario']);
   }
-  
+
 }
