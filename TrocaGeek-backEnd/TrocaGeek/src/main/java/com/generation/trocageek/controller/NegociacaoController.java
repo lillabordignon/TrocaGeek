@@ -43,6 +43,21 @@ public class NegociacaoController {
 
 	}
 
+	
+	@GetMapping("/vendas/{id}")
+	public ResponseEntity<List<Negociacao>> Vendas(@PathVariable Long id){
+		return ResponseEntity.ok().body(repository.findByidVendedor_id(id));
+	}
+	
+	
+	@GetMapping("/compras/{id}")
+	public ResponseEntity<List<Negociacao>> Compras(@PathVariable Long id){
+		return ResponseEntity.ok().body(repository.findByidComprador_id(id));
+	}
+	
+	
+	
+	
 	@PostMapping
 	public ResponseEntity<Negociacao> post(@RequestBody Negociacao negociacao) {
 		System.out.println(negociacao.getIdVendedor());
