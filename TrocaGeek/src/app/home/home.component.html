@@ -99,9 +99,11 @@
                 <h4>{{produto.nome}}</h4>
             </div>
             <hr>
-            <div>
-                <img class="img-fluid img" src="{{produto.urlImg}}" alt="">
+
+            <div class="divimg d-flex justify-content-center">
+                <img class="img-fluid img justify-content-center" src="{{produto.urlImg}}" alt="{{produto.descricao}}">
             </div>
+
             <hr>
             <div>
                 <span>Preço: {{produto.preco | currency:"BRL" }}</span>
