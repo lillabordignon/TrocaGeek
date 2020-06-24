@@ -1,69 +1,124 @@
-<div class="container mt-4">
+<div class="conteiner d-flex">
 
-    <h1 class="text-center ">Minhas Vendas</h1>
-    <hr>
-    <section class="d-flex justify-content-around flex-wrap my-3">
-        <div class="card text-center my-4 mx-3 caixas" *ngFor="let vendas of listaVendas">
-            <div class="card-body">
-                <div>
-                    <h4>Venda Nº {{vendas.idNegociacao}}</h4>
-                </div>
-                <hr>
-                <div>
-                    <span>Produto: {{vendas.idProduto.nome }}</span>
-                </div>
-                <hr>
-                <div>
-                    <span>Valor: {{vendas.idProduto.preco | currency:"BRL" }}</span>
-                </div>
-                <hr>
-                <div>
-                    <span>Interessado: {{vendas.idComprador.nome}}</span>
-                </div>
-                <hr>
-                <div>
-                    <span>Início Negociacao: {{vendas.dataInicioNegociacao | date: 'dd/MM/yyyy'}}
-                        ás {{vendas.dataInicioNegociacao| date: 'HH:mm'}} </span>
-                </div>
-                <hr>
-                <button class="btn verMais" [routerLink]="['/negociacao-detalhe', vendas.idNegociacao]">Ver
-                    mais</button>
+
+    <div class="wrapper">
+
+        <!-- Sidebar -->
+
+        <nav id="sidebar">
+            <div class=" pb-5">
+                <h1 class="mb-3 text-center"><img src="../../assets/img/logo-white.png" class="img-fluid logo mt-5"
+                        alt="Logo">
+                </h1>
             </div>
-        </div>
-    </section>
-    <hr>
+
+            <ul class="list-unstyled components">
+
+                <li class=" w-100">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        routerLink="/usuarios">Minha Área</button>
+                </li>
+                <li class="">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        [routerLink]="['/usuarios/editar',idUsuario]">Alterar
+                        Cadastro</button>
+                </li>
+                <li class="">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        [routerLink]="['/cadastrar-produto']">Cadastrar
+                        Produtos</button>
+                </li>
+
+                <li class="">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        [routerLink]="['/usuarios/meusprodutos']">Meus
+                        Produtos</button>
+                </li>
+
+                <li class="">
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        routerLink='/minhas-negociacoes'>Minhas Negociações</button>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
 
 
-    <h1 class="text-center ">Minhas Compras</h1>
-    <hr>
-    <section class="d-flex justify-content-around flex-wrap my-3">
-        <div class="card text-center my-4 mx-3 caixas" *ngFor="let compras of listaCompras">
-            <div class="card-body">
-                <div>
-                    <h4>Compra Nº {{compras.idNegociacao}}</h4>
+    <div class="d-flex justify-content-center mt-5 w-100  alterarCadastroArea">
+
+        <div class="formulario pb-5">
+
+            <h1 class="text-center ">Minhas Vendas</h1>
+            <hr>
+            <section class="d-flex justify-content-around flex-wrap my-3">
+                <div class="card text-center my-4 mx-3 caixas" *ngFor="let vendas of listaVendas">
+                    <div class="card-body">
+                        <div>
+                            <h4>Venda Nº {{vendas.idNegociacao}}</h4>
+                        </div>
+                        <hr>
+                        <div>
+                            <span>Produto: {{vendas.idProduto.nome }}</span>
+                        </div>
+                        <hr>
+                        <div>
+                            <span>Valor: {{vendas.idProduto.preco | currency:"BRL" }}</span>
+                        </div>
+                        <hr>
+                        <div>
+                            <span>Interessado: {{vendas.idComprador.nome}}</span>
+                        </div>
+                        <hr>
+                        <div>
+                            <span>Início Negociacao: {{vendas.dataInicioNegociacao | date: 'dd/MM/yyyy'}}
+                                ás {{vendas.dataInicioNegociacao| date: 'HH:mm'}} </span>
+                        </div>
+                        <hr>
+                        <button class="btn verMais" [routerLink]="['/negociacao-detalhe', vendas.idNegociacao]">Ver
+                            mais</button>
+                    </div>
                 </div>
-                <hr>
-                <div>
-                    <span>Produto: {{compras.idProduto.nome }}</span>
+            </section>
+
+
+            <hr>
+
+
+            <h1 class="text-center ">Minhas Compras</h1>
+            <hr>
+            <section class="d-flex justify-content-around flex-wrap my-3">
+                <div class="card text-center my-4 mx-3 caixas" *ngFor="let compras of listaCompras">
+                    <div class="card-body">
+                        <div>
+                            <h4>Compra Nº {{compras.idNegociacao}}</h4>
+                        </div>
+                        <hr>
+                        <div>
+                            <span>Produto: {{compras.idProduto.nome }}</span>
+                        </div>
+                        <hr>
+                        <div>
+                            <span>Valor: {{compras.idProduto.preco | currency:"BRL" }}</span>
+                        </div>
+                        <hr>
+                        <div>
+                            <span>Vendedor: {{compras.idVendedor.nome}}</span>
+                        </div>
+                        <hr>
+                        <div>
+                            <span>Início Negociacao: {{compras.dataInicioNegociacao | date: 'dd/MM/yyyy'}}
+                                ás {{compras.dataInicioNegociacao| date: 'HH:mm'}} </span>
+                        </div>
+                        <hr>
+                        <button class="btn verMais" [routerLink]="['/negociacao-detalhe', compras.idNegociacao]">Ver
+                            mais</button>
+                    </div>
                 </div>
-                <hr>
-                <div>
-                    <span>Valor: {{compras.idProduto.preco | currency:"BRL" }}</span>
-                </div>
-                <hr>
-                <div>
-                    <span>Vendedor: {{compras.idVendedor.nome}}</span>
-                </div>
-                <hr>
-                <div>
-                    <span>Início Negociacao: {{compras.dataInicioNegociacao | date: 'dd/MM/yyyy'}}
-                        ás {{compras.dataInicioNegociacao| date: 'HH:mm'}} </span>
-                </div>
-                <hr>
-                <button class="btn verMais" [routerLink]="['/negociacao-detalhe', compras.idNegociacao]">Ver
-                    mais</button>
-            </div>
+            </section>
         </div>
-    </section>
+    </div>
 
 </div>

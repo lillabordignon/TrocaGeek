@@ -12,6 +12,7 @@ export class MinhasnegociacoesComponent implements OnInit {
 
   listaVendas: Negociacao[];
   listaCompras: Negociacao[];
+  idUsuario: number;
 
   vendas: Negociacao = new Negociacao;
   compras: Negociacao = new Negociacao;
@@ -19,6 +20,7 @@ export class MinhasnegociacoesComponent implements OnInit {
   constructor(private negociacaoService: NegociacaoService, private router: Router) { }
 
   ngOnInit(): void {
+    this.idUsuario = parseInt(localStorage.getItem('idUsuario'));
     let id = localStorage.getItem("idUsuario");
     this.buscarVendas(id);
     this.buscarCompras(id);

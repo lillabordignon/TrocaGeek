@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
+
+*{
+    font-family: 'Libre Franklin', sans-serif;
+}
+
 
 .divimg{
 
@@ -15,9 +21,11 @@
 .card-body{
     width: 300px;
 }
+
 body {
     transition: 0.5s;
 }
+
 .caixas{
     border: none;
     box-shadow: 0px 0px 10px 2px #dbdbdb;

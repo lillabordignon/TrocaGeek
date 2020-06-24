@@ -74,17 +74,28 @@
             </p>
 
 
-            <div class="d-flex flex-wrap ">
-                <div class="botoes">
+            <div class="d-flex justify-content-between flex-wrap ">
+                <div class="botoes ">
                     <button class="btn verMais btn-success mr-3 alterarCadastro"
                         [routerLink]="['/usuarios/editar',usuario.id]">Alterar
                         Cadastro</button>
                 </div>
-                <button class="btn verMais btn-success cadastrarProtudo" routerLink="/cadastrar-produto">Cadastrar
-                    Produto</button>
 
-                    <button class="btn ml-2 btn-danger" (click)="deletarConta()">Deletar minha conta</button>
+                <div class="">
+                    <button class=" btn verMais btn-success botoesCadastrar mr-3 cadastrarProtudo"
+                        routerLink="/cadastrar-produto">Cadastrar
+                        Produto</button>
+                </div>
+
+
+                <div class="">
+                    <button class="btn btn-danger btndeletar" (click)="deletarConta()">Deletar minha conta</button>
+                </div>
+
+
             </div>
+
+
 
         </div>
 
