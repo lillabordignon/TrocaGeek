@@ -48,6 +48,34 @@ a:hover{
     color: #ed3263;
 }
 
+.formulario{
+
+    width: 50%;
+}
+
+
+.verMais{
+
+    background-color: #05A4C4;
+    border-color: #05A4C4;
+    max-width: 200px;
+}
+
+.verMais:hover{
+
+    background-color: #ed3263;
+    border-color: #ed3263;
+}
+
+@media(max-width: 1304){
+    
+    .btndeletar{
+        margin-bottom: 32px !important;
+       
+    }
+
+}
+
 @media(max-width: 970){
 
    .sidebar {
@@ -59,7 +87,7 @@ a:hover{
 
 }
 
-@media (min-width: 768px) and (max-width: 864) {
+@media (min-width: 768px) and (max-width: 872) {
 
 
     .card{
@@ -73,14 +101,36 @@ a:hover{
         font-size: 2em;
     }
 
+    .botoesCadastrar{
+        margin-right: 0px;
+        margin-top: 16px !important;
+       
+    }
+
   }
 
 
 
-@media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     #sidebar{
         display: none;
 
+    }
+
+    .formulario{
+        width:90%
+    }
+
+    .alterarCadastroArea{
+
+       
+
+      width: 100% !important;
+      max-width: none !important;
+      justify-content: center;
+          
+    
+        
     }
 
     .card{
@@ -92,5 +142,28 @@ a:hover{
         display: flex;
         width: 0%;
     }
+
+
+
+  }
+
+
+  @media only screen and (max-width: 579px){
+
+    .formulario{
+        width:90%
+    }
+
+  }
+
+  @media only screen and (max-width: 384px){
+
+
+    .botoes{
+
+        margin-bottom: 16px !important;
+    }
+
+    
 
   }

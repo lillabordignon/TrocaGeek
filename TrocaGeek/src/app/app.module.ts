@@ -29,6 +29,7 @@ import { MeusprodutosComponent } from './usuarios/meusprodutos/meusprodutos.comp
 import { CadastrarProdutoComponent } from './produtos/cadastrar-produto/cadastrar-produto.component';
 import { MinhasnegociacoesComponent } from './negociacao/minhasnegociacoes/minhasnegociacoes.component';
 import { DetalhesComponent } from './negociacao/detalhes/detalhes.component';
+import { EditarProdutosComponent } from './produtos/editar-produtos/editar-produtos.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { DetalhesComponent } from './negociacao/detalhes/detalhes.component';
     MeusprodutosComponent,
     CadastrarProdutoComponent,
     MinhasnegociacoesComponent,
-    DetalhesComponent
+    DetalhesComponent,
+    EditarProdutosComponent
   ],
   imports: [
     BrowserModule,

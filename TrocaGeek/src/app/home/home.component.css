@@ -2,6 +2,21 @@
     background-color: #232323;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
+
+*{
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+
+.divimg{
+
+    width: 200px;
+    height: 200px;
+    margin: 0px 0px 0px 0px !important;
+}
+
+
 .img{
     max-width: 200px;
     max-height: 200px;
@@ -9,6 +24,10 @@
 
 .card-body{
     width: 300px;
+}
+
+body {
+    transition: 0.5s;
 }
 
 .caixas{

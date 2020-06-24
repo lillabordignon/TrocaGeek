@@ -22,72 +22,79 @@
                 </li>
                 <li class="">
                     <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
-                        [routerLink]="['/cadastrar-produto']">Cadastrar
+                        routerLink='/cadastrar-produto'>Cadastrar
                         Produtos</button>
                 </li>
 
                 <li class="">
                     <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
-                        [routerLink]="['/usuarios/meusprodutos']">Meus
+                        routerLink='/usuarios/meusprodutos'>Meus
                         Produtos</button>
                 </li>
 
                 <li class="">
-                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper" routerLink="">Minhas
+                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                        routerLink='/minhas-negociacoes'>Minhas
                         Negociações</button>
                 </li>
             </ul>
         </nav>
     </div>
 
-    <div class="mt-2 w-50 mx-auto">
-        <div class="form-group pb-5">
+    <div class="d-flex justify-content-center mt-5 w-100  alterarCadastroArea">
+
+        <div class="form-group formulario pb-5">
+
+            <h1 class="text-center my-5">Bem-vinde {{usuario.nome}}</h1>
+
+
+            <label class="font-weight-bold" for="username">Nome de Usuário: </label>
+            <p type="text" class="mb-4" id="username" maxlength="50"> {{usuario.nome}} </p>
 
 
 
-            <div class="form-group py-3">
-                <h2 class="d-flex justify-content-center mb-4">Bem-vinde {{usuario.nome}} </h2>
+            <label class="font-weight-bold" for="email">E-mail: </label>
+            <p type="email" class="mb-4" id="email" maxlength="50"> {{usuario.email}} </p>
 
 
 
-                <div class="form-group pb-5">
-
-
-                    <div class="userName mr-3">
-                        <label for="username">Nome de Usuário: </label>
-                        <p type="text" class="form-control mb-4" id="username" maxlength="50"> {{usuario.nome}} </p>
-                    </div>
-
-                    <div class="userEmail">
-                        <label for="email">E-mail: </label>
-                        <p type="email" class="form-control mb-4" id="email" maxlength="50"> {{usuario.email}} </p>
-                    </div>
-
-                    <div class="userTelefone">
-                        <label for="tel">Telefone: </label>
-                        <p type="text" class="form-control mb-4" id="tel" maxlength="50"> {{usuario.telefone}}
-                        </p>
-                    </div>
-
-                    <div class="userCpf">
-                        <label for="cpf">CPF: </label>
-                        <p type="text" class="form-control mb-4" id="cpf" maxlength="50"> {{usuario.cpf}}
-                        </p>
-                    </div>
+            <label class="font-weight-bold" for="tel">Telefone: </label>
+            <p type="text" class="mb-4" id="tel" maxlength="50"> {{usuario.telefone}}
+            </p>
 
 
 
+            <label class="font-weight-bold" for="cpf">CPF: </label>
+            <p type="text" class="mb-4" id="cpf" maxlength="50"> {{usuario.cpf}}
+            </p>
+
+
+            <div class="d-flex justify-content-between flex-wrap ">
+                <div class="botoes ">
+                    <button class="btn verMais btn-success mr-3 alterarCadastro"
+                        [routerLink]="['/usuarios/editar',usuario.id]">Alterar
+                        Cadastro</button>
+                </div>
+
+                <div class="">
+                    <button class=" btn verMais btn-success botoesCadastrar mr-3 cadastrarProtudo"
+                        routerLink="/cadastrar-produto">Cadastrar
+                        Produto</button>
+                </div>
+
+
+                <div class="">
+                    <button class="btn btn-danger btndeletar" (click)="deletarConta()">Deletar minha conta</button>
                 </div>
 
 
             </div>
-            <div>
-                <button class="btn verMais btn-success mr-3" [routerLink]="['/usuarios/editar',usuario.id]">Alterar
-                    Cadastro</button>
-                <button class="btn verMais btn-success" [routerLink]="['/cadastrar-produto']">Cadastrar
-                    Produto</button>
-            </div>
+
+
+
         </div>
+
+
     </div>
 
 </div>
