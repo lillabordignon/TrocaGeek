@@ -19,6 +19,9 @@ export class CadastrarProdutoComponent implements OnInit {
   constructor(private produtoService: ProdutoService, private usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem('idUsuario')== null) {
+      location.assign('/login')
+    }
   }
 
   cadastrarProduto() {

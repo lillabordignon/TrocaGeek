@@ -3,6 +3,7 @@ import { Usuario } from 'src/app/Model/usuario';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioEditar } from 'src/app/Model/UsuarioEditar';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-editar',
@@ -19,6 +20,12 @@ export class EditarComponent implements OnInit {
   verificarSenha: string;
 
   alerta:boolean = false;
+
+  //dados usuario 
+
+
+
+
 
   ngOnInit() {
     this.idUsuario = this.route.snapshot.params['id'];

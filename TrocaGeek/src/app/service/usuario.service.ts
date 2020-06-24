@@ -41,7 +41,7 @@ export class UsuarioService {
 
   //Deletar Usuarios
   deleteUsuario(id: number) {
-    return this.http.delete(this.urlApi + `/user/${id}`);
+    return this.http.delete(this.urlApi + `/usuario/${id}`);
   }
 
   //Atualizar Usuarios

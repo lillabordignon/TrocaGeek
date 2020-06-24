@@ -47,6 +47,14 @@ export class ProdutoService {
     });
   }
 
+  putProduto(produto: Produto) {
+    return this.http.put('http://localhost:8080/produtos', produto, {
+      headers: {
+        "Authorization": localStorage.getItem('token')
+      }
+    })
+  }
+
   deletarProduto(codigo) {
     return this.http.delete(`http://localhost:8080/produtos/${codigo}`, {
       headers: {
