@@ -20,5 +20,7 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 	
 	public List<Produto> findByidUsuario_id(Long id);
 	
+	public void deleteAllByidUsuario_id(Long id);
+	
 
 }

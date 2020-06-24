@@ -11,4 +11,8 @@ public interface NegociacaoRepository extends JpaRepository<Negociacao, Long>{
 	public List<Negociacao> findByidVendedor_id(Long id);
 	
 	public List<Negociacao> findByidComprador_id(Long id);
+	
+	public void deleteAllByidComprador_id(Long id);
+	
+	public void deleteAllByidVendedor_id(Long id);
 }

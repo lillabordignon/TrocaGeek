@@ -22,6 +22,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.generation.trocageek.model.Usuario;
 import com.generation.trocageek.model.UsuarioEditar;
 import com.generation.trocageek.model.UsuarioLogin;
+import com.generation.trocageek.repository.NegociacaoRepository;
+import com.generation.trocageek.repository.ProdutoRepository;
 import com.generation.trocageek.repository.UsuarioRepository;
 import com.generation.trocageek.service.UsuarioService;
 
@@ -31,20 +33,26 @@ import com.generation.trocageek.service.UsuarioService;
 public class UsuarioController {
 	
 	@Autowired
-	private UsuarioRepository repository;
+	private UsuarioRepository usuarioRepository;
 	
 	@Autowired
 	private UsuarioService usuarioService;
+	
+	@Autowired
+	private ProdutoRepository produtoRepository;
+	
+	@Autowired
+	private NegociacaoRepository negociacaoRepository;
 
 	
 	@GetMapping
 	public List<Usuario> listar () {
-		return repository.findAll();
+		return usuarioRepository.findAll();
 	}
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Usuario> detalhar (@PathVariable Long id) {
-		 Optional<Usuario> usuario = repository.findById(id);
+		 Optional<Usuario> usuario = usuarioRepository.findById(id);
 		 if(usuario.isPresent()) {
 			 return ResponseEntity.ok(usuario.get());
 		 }
@@ -67,7 +75,7 @@ public class UsuarioController {
 	//Envia a atualização para o Banco de Dados
 	@Transactional
 	public ResponseEntity<Object> atualizar (@PathVariable Long id,@RequestBody UsuarioEditar usuario) {
-		Optional<Usuario> optional = repository.findById(id);
+		Optional<Usuario> optional = usuarioRepository.findById(id);
 		//instanciou o encoder para criptografare
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		if(optional.isPresent()) {
@@ -79,7 +87,7 @@ public class UsuarioController {
 				optional.get().setTelefone(usuario.getTelefone());
 				optional.get().setSenha(senhaCrypt);
 				
-				return ResponseEntity.ok(repository.save(optional.get()));
+				return ResponseEntity.ok(usuarioRepository.save(optional.get()));
 			}
 			return ResponseEntity.badRequest().body("Senha atual não está correta !");
 		}
@@ -89,11 +97,19 @@ public class UsuarioController {
 	}
 	
 	@DeleteMapping("/{id}")
+	@Transactional
 	public ResponseEntity<Usuario> deletar (@PathVariable Long id) {
-		Optional<Usuario> usuario = repository.findById(id);
+		Optional<Usuario> usuario = usuarioRepository.findById(id);
 		if(usuario.isPresent()) {
-			repository.deleteById(id);
+			
+			//busca o id do usuario deletado em produtos e negociacoes e tbm apaga alem da conta.
+			produtoRepository.deleteAllByidUsuario_id(id);
+			negociacaoRepository.deleteAllByidComprador_id(id);
+			negociacaoRepository.deleteAllByidVendedor_id(id);
+			usuarioRepository.deleteById(id);
+		
 			return ResponseEntity.noContent().build();
+
 		}
 		
 		return ResponseEntity.badRequest().build();
