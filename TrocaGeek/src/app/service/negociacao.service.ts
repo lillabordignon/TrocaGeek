@@ -56,8 +56,16 @@ export class NegociacaoService {
     })
   }
 
-  putNegociacao(negociacao: Negociacao) {
-    return this.http.put('http://localhost:8080/negociacao', negociacao, {
+  putNegociacao(id:number, statusNegociacao: number) {
+    return this.http.put(`http://localhost:8080/negociacao/${id}`, statusNegociacao, {
+      headers: {
+        "Authorization": localStorage.getItem('token')
+      }
+    })
+  }
+
+  putNegociacaoInteira( negociacao: Negociacao) {
+    return this.http.put(`http://localhost:8080/negociacao/editar`, negociacao, {
       headers: {
         "Authorization": localStorage.getItem('token')
       }

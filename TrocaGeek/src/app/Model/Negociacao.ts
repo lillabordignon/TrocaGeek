@@ -8,5 +8,5 @@ export class Negociacao {
     public idProduto: Produto;
     public dataInicioNegociacao: Date;
     public dataFinalNegociacao: Date;
-    public status: boolean
+    public statusNegociacao: any;
 }
