@@ -1,7 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
-
 *{
     font-family: 'Libre Franklin', sans-serif;
+}
+
+.c-login{
+    background: url(../../assets/img/bg-login.jpg) center center no-repeat;
+    width: 100%;
+    padding: 35px 15px;
+    margin: -1px 0 !important;
+    background-size: cover;
 }
 
 .container{
@@ -11,6 +17,7 @@
 
 .container-login{
     max-width: 1024px;
+    max-width: 500px;
 }
 
 .tamanhoinput{
@@ -25,6 +32,7 @@
     font-size: 24px;
     color: #c5c5c5;
     margin-bottom: -5px;
+    font-weight: 400;
 }
 
 label{
@@ -36,7 +44,9 @@ label{
     background-color: #05a4c4;
     color: #fff;
     border: none;
-    width: 300px;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .botao:hover{

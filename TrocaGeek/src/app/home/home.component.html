@@ -28,18 +28,18 @@
     </div>
 
 
-    <section class="d-flex justify-content-around flex-wrap my-3">
+    <section class="d-flex justify-content-around flex-wrap pt-3 pb-3 c-filter-bar">
 
         <div class="d-flex justify-content-between responsivo"
             [ngStyle]="{'color': modoNoturno == true ? corFontesNoturno : 'black'}">
 
-            <div class="d-flex pt-3 flex-wrap filtros" action="">
+            <div class="d-flex flex-wrap filtros" action="">
 
-                <div class="form-group d-flex justify-content-center">
-                    <label class="control-label mx-2">Ordenar:</label>
+                <div class="d-flex justify-content-center">
+                    <label class="control-label">Ordenar:</label>
                     <div>
 
-                        <select name="txt_order mx-3" id="ordenarPor" size="1" class="fFiltro form-control input-sm">
+                        <select name="txt_order" id="ordenarPor" size="1" class="fFiltro form-control input-sm">
                             <option value="date" selected="Data">Data</option>
                             <option value="preco">Preço</option>
                             <option value="nome">Nome</option>
@@ -48,8 +48,8 @@
                     </div>
                 </div>
 
-                <div class="form-group d-flex justify-content-center">
-                    <label class="control-label mx-2">Ordem:</label>
+                <div class="d-flex justify-content-center">
+                    <label class="control-label">Ordem:</label>
                     <div>
 
                         <select name="txt_order" id="ordem" size="1" class="fFiltro form-control input-sm">
@@ -62,8 +62,8 @@
 
                 </div>
 
-                <div class="form-group d-flex justify-content-center">
-                    <label class="control-label mx-2">Quantidade por página:</label>
+                <div class="d-flex justify-content-center">
+                    <label class="control-label">Quantidade por página:</label>
                     <div>
 
                         <select name="txt_order" size="1" id="quantidade" class="fFiltro form-control input-sm">
@@ -77,20 +77,22 @@
                     </div>
                 </div>
 
-                <button class="btn btn-outline-primary mx-3 mb-3" type="button" (click)="filtrarProdutos()"
-                    name="btFiltrar" id="filtrar" value="Filtrar">Filtrar
+                <button class="btn btn-outline-primary" type="button" (click)="filtrarProdutos()" name="btFiltrar"
+                    id="filtrar" value="Filtrar">Filtrar
                 </button>
 
-                <button class="btn btn-dark" type="button" (click)="modoNoturnoFunction()"> Modo Nortuno</button>
+                <!-- <button class="btn btn-dark" type="button" (click)="modoNoturnoFunction()"> Modo Nortuno</button> -->
             </div>
 
         </div>
         <div class="d-flex justify-content-end ">
 
             <div class="form-inline my-2 my-lg-0 d-flex justify-content-center pesquisa">
-                <input class="form-control mr-sm-2 pesquisaMobile" type="search" placeholder="Pesquisar"
-                    aria-label="Search" [(ngModel)]="barraPesquisa">
-                <button class="btn btn-outline-success" (click)="buttonPesquisar()">Pesquisar</button>
+                <input class="form-control pesquisaMobile" type="search" placeholder="Pesquisar" aria-label="Search"
+                    [(ngModel)]="barraPesquisa">
+                <button class="btn btn-outline-success" (click)="buttonPesquisar()">
+                    <img class="img-fluid" width="20" src="../../assets/img/busca.png" alt="Buscar">
+                </button>
             </div>
         </div>
 
@@ -117,7 +119,7 @@
                     <span>Preço: {{produto.preco | currency:"BRL" }}</span>
                 </div>
                 <hr>
-                <div>
+                <!-- <div>
                     <span>Usuario: {{produto.idUsuario.nome}}</span>
                 </div>
                 <hr>
@@ -125,7 +127,7 @@
                     <span>Publicado: {{produto.date | date: 'dd/MM/yyyy'}}
                         ás {{produto.date | date: 'HH:mm'}} </span>
                 </div>
-                <hr>
+                <hr> -->
                 <button class="btn verMais" [routerLink]="['/produtos/detalhar', produto.codigo]">Ver mais</button>
             </div>
         </div>

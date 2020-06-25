@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Zian';
+    src: url('assets/fonts/Zian.eot');
+    src: url('assets/fonts/Zian.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Zian.woff2') format('woff2'),
+        url('assets/fonts/Zian.woff') format('woff'),
+        url('assets/fonts/Zian.ttf') format('truetype'),
+        url('assets/fonts/Zian.svg#Zian') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

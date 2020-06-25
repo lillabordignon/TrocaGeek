@@ -49,3 +49,66 @@ body {
 .verMais:hover{
     background-color: #ed3263;
 }
+
+.c-filter-bar{
+    background-color: #232323;
+    margin-top: 0 !important;
+    padding-bottom: 15px;
+}
+
+#filtrar,
+.btn-outline-success{
+    margin: 0 15px ;
+    background-color: #05a4c4;
+    color: #fff !important;
+    border: 0;
+}
+
+#filtrar:hover,
+.btn-outline-success:hover{
+    background-color:#ed3263;
+}
+
+.filtros{
+    align-items: center;
+}
+
+.filtros label{
+    display: flex;
+    place-self: center;
+    margin-bottom: 0;
+    color:#c5c5c5;
+    padding: 0 15px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+@media(max-width:600px){
+    .filtros div{
+        width: 100%;
+        flex-direction: column;
+    }
+    .filtros div div{
+        padding: 0 15px;
+    }
+    .filtros label{
+        padding: 10px 0;   
+    }
+    .responsivo{
+        order: 2;
+    }
+    .pesquisa{
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    #filtrar{
+        width: 100%;
+        margin-top: 15px;
+    }
+    .c-filter-bar{
+        padding: 25px 0 45px !important;
+    }
+    .btn-outline-success{
+        margin: 0 12px;
+    }
+}
