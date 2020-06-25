@@ -1,12 +1,14 @@
-.container-home{
-    background-color: #232323;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
 
 *{
     font-family: 'Libre Franklin', sans-serif;
 }
+
+.container-home{
+    background-color: #232323;
+}
+
+
 .botaoNoturno {
     position: fixed;
     top: 30%;
@@ -18,6 +20,10 @@
 }
 .botaoNoturno:hover {
     opacity: 1;
+}
+
+.produtonome{
+    height: 70px;
 }
 
 

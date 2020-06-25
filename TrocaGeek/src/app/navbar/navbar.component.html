@@ -14,63 +14,80 @@
             aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+
+
             <form class="form-inline my-2 my-lg-0 c-search has-mobile-hamburguer">
                 <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
                 <button class="btn my-2 my-sm-0 pesquisar pesquisa-mobile" type="button">
                     <img class="img-fluid" width="20" src="../../assets/img/busca.png" alt="Buscar">
                 </button>
             </form>
+
+
+
             <ul class="navbar-nav menuNav">
 
+                <div class="d-flex justify-content-around navmenu">
+                    <li class="nav-item active">
+                        <a class="nav-link menumargin" routerLink="/home">Home<span class="sr-only">(página
+                                atual)</span></a>
+                    </li>
 
-                <li class="nav-item active">
-                    <a class="nav-link" routerLink="/home">Home<span class="sr-only">(página atual)</span></a>
-                </li>
+                    <li class="nav-item dropdown minhainfo">
+                        <a class="nav-link dropdown-toggle" *ngIf="logado" routerLink="#" id="navbarDropdown2"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Minhas Informações
+                        </a>
+                        <div class="dropdown-menu " aria-labelledby="navbarDropdown2">
+                            <a class="dropdown-item" routerLink="usuarios">Minha Área</a>
+                            <a class="dropdown-item" [routerLink]="['/usuarios/editar', idUsuario ]">Alterar
+                                Cadastro</a>
+                            <a class="dropdown-item" routerLink="cadastrar-produto">Cadastrar Produto</a>
+                            <a class="dropdown-item" routerLink="usuarios/meusprodutos">Meus Produtos</a>
+                            <a class="dropdown-item" routerLink="minhas-negociacoes">Minhas Negociações</a>
 
-                <li class="nav-item dropdown minhainfo">
-                    <a class="nav-link dropdown-toggle" *ngIf="logado" routerLink="#" id="navbarDropdown2" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Minhas Informações
-                    </a>
-                    <div class="dropdown-menu " aria-labelledby="navbarDropdown2">
-                        <a class="dropdown-item" routerLink="usuarios">Minha Área</a>
-                        <a class="dropdown-item" [routerLink]="['/usuarios/editar', idUsuario ]">Alterar Cadastro</a>
-                        <a class="dropdown-item" routerLink="cadastrar-produto">Cadastrar Produto</a>
-                        <a class="dropdown-item" routerLink="usuarios/meusprodutos">Meus Produtos</a>
-                        <a class="dropdown-item" routerLink="minhas-negociacoes">Minhas Negociações</a>
-
-                    </div>
-                </li>
+                        </div>
+                    </li>
 
 
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" routerLink="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Produtos
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" routerLink="produtos/categoria/acessorios">Acessórios</a>
-                        <a class="dropdown-item" routerLink="produtos/categoria/consoles">Consoles</a>
-                        <a class="dropdown-item" routerLink="produtos/categoria/actionfigure">Action Figures</a>
-                        <a class="dropdown-item" routerLink="produtos/categoria/cardgame">Card Game</a>
-                        <a class="dropdown-item" routerLink="produtos/categoria/jogos">Jogos</a>
-                    </div>
-                </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle menumargin" routerLink="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Produtos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" routerLink="produtos/categoria/acessorios">Acessórios</a>
+                            <a class="dropdown-item" routerLink="produtos/categoria/consoles">Consoles</a>
+                            <a class="dropdown-item" routerLink="produtos/categoria/actionfigure">Action Figures</a>
+                            <a class="dropdown-item" routerLink="produtos/categoria/cardgame">Card Game</a>
+                            <a class="dropdown-item" routerLink="produtos/categoria/jogos">Jogos</a>
+                        </div>
+                    </li>
 
+                    <li class="nav-item" *ngIf="deslogado">
+                        <a class="nav-link menumargin" routerLink='/login'>Login</a>
+                    </li>
+                </div>
                 <li class="nav-item" *ngIf="deslogado">
-                    <a class="nav-link" routerLink='/login'>Login</a>
+                    <a class="nav-link btn botaocadastrar d-flex justify-content-center"
+                        routerLink='/cadastrar'>Cadastrar</a>
                 </li>
-                <li class="nav-item" *ngIf="deslogado">
-                    <a class="nav-link btn botaocadastrar" routerLink='/cadastrar'>Cadastrar</a>
-                </li>
-                <li class="nav-item" *ngIf="logado">
-                    <a class="nav-link btn botaocadastrar" routerLink='/usuarios'>Minha área</a>
-                </li>
-                <li class="nav-item ml-2" *ngIf="logado">
-                    <a class="nav-link btn btn-danger" (click)="deslogar()">Logout</a>
-                </li>
+
+                <div class="d-flex justify-content-around botoeson">
+                    <li class="nav-item " *ngIf="logado">
+                        <a class="nav-link btn botaocadastrar d-flex justify-content-center"
+                            routerLink='/usuarios'>Minha
+                            área</a>
+                    </li>
+                    <li class="nav-item ml-2" *ngIf="logado">
+                        <a class="nav-link btn btndeslogar btn-danger d-flex justify-content-center"
+                            (click)="deslogar()">Logout</a>
+                    </li>
+                </div>
+
             </ul>
         </div>
     </nav>

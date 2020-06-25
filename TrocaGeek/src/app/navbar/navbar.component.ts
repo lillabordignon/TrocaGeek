@@ -41,6 +41,7 @@ export class NavbarComponent implements OnInit {
   deslogar() {
     localStorage.clear();
     location.reload(true);
+    this.router.navigate(["/home"])
   }
 
   pesquisarProdutos() {
