@@ -23,9 +23,9 @@ export class HomeComponent implements OnInit {
   ultimaPagina: boolean;
 
   //variaveis do modo noturno
-  modoNoturno:boolean = false;
-  corBodyNoturno:string = '#010101'
-  corFontesNoturno:string = '#ffffff'
+  modoNoturno: boolean = false;
+  corBodyNoturno: string = '#010101'
+  corFontesNoturno: string = '#ffffff'
 
   //variaveis ordenacao produto
   ordenar: string;
@@ -43,12 +43,12 @@ export class HomeComponent implements OnInit {
     this.ordem = (<HTMLInputElement>document.getElementById("ordem")).value;
     this.quantidade = parseInt((<HTMLInputElement>document.getElementById("quantidade")).value);
 
-    if(localStorage.getItem('noturno') == 'true') {
+    if (localStorage.getItem('noturno') == 'true') {
       this.modoNoturno = true;
     }
   }
 
-  modoNoturnoFunction(){
+  modoNoturnoFunction() {
     this.modoNoturno = !this.modoNoturno;
     localStorage.setItem('noturno', this.modoNoturno.toString());
   }
@@ -110,11 +110,11 @@ export class HomeComponent implements OnInit {
     if (this.barraPesquisa != null) {
       this.buscarPorNomeProdutoOrdenados(this.barraPesquisa, this.pagina, this.quantidade, this.ordenar, this.ordem)
       window.scroll(0, 10)
-    } else if(this.ordem != 'desc' || this.ordenar != 'date') {
+    } else if (this.ordem != 'desc' || this.ordenar != 'date') {
       this.buscarProdutosOrdenados(this.pagina, this.quantidade, this.ordenar, this.ordem);
 
     }
-    
+
     else {
       this.findAllProdutos(pagina, this.quantidade);
       window.scroll(0, 500)

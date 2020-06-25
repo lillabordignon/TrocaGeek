@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit {
   deslogado: boolean = true;
   logado: boolean = false;
 
+  idUsuario: number;
   nomeUsuario: string;
 
   barraPesquisa: string;
@@ -28,6 +29,7 @@ export class NavbarComponent implements OnInit {
     this.verificar = localStorage.getItem("logado");
     if (this.verificar == "true") {
       this.nomeUsuario = localStorage.getItem("nomeUsuario");
+      this.idUsuario = parseInt(localStorage.getItem("idUsuario"));
       this.deslogado = false;
       this.logado = true;
     } else {

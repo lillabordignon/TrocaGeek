@@ -34,11 +34,11 @@
                         Minhas Informações
                     </a>
                     <div class="dropdown-menu " aria-labelledby="navbarDropdown2">
-                        <a class="dropdown-item" routerLink="/produtos/jogos">Minha Área</a>
-                        <a class="dropdown-item" routerLink="/produtos/jogos">Alterar Cadastro</a>
-                        <a class="dropdown-item" routerLink="/produtos/jogos">Cadastrar Produto</a>
-                        <a class="dropdown-item" routerLink="/produtos/consoles">Meus Produtos</a>
-                        <a class="dropdown-item" routerLink="/produtos/actionfigures">Minhas Negociações</a>
+                        <a class="dropdown-item" routerLink="usuarios">Minha Área</a>
+                        <a class="dropdown-item" [routerLink]="['/usuarios/editar', idUsuario ]">Alterar Cadastro</a>
+                        <a class="dropdown-item" routerLink="cadastrar-produto">Cadastrar Produto</a>
+                        <a class="dropdown-item" routerLink="usuarios/meusprodutos">Meus Produtos</a>
+                        <a class="dropdown-item" routerLink="minhas-negociacoes">Minhas Negociações</a>
 
                     </div>
                 </li>
@@ -51,11 +51,11 @@
                         Produtos
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" routerLink="#">Acessórios</a>
-                        <a class="dropdown-item" routerLink="#">Consoles</a>
-                        <a class="dropdown-item" routerLink="#">Figure Action</a>
-                        <a class="dropdown-item" routerLink="#">Cartas</a>
-                        <a class="dropdown-item" routerLink="#">Jogos</a>
+                        <a class="dropdown-item" routerLink="produtos/categoria/acessorios">Acessórios</a>
+                        <a class="dropdown-item" routerLink="produtos/categoria/consoles">Consoles</a>
+                        <a class="dropdown-item" routerLink="produtos/categoria/actionfigure">Action Figures</a>
+                        <a class="dropdown-item" routerLink="produtos/categoria/cardgame">Card Game</a>
+                        <a class="dropdown-item" routerLink="produtos/categoria/jogos">Jogos</a>
                     </div>
                 </li>
 
