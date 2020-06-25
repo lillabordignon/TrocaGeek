@@ -16,6 +16,13 @@ export class CadastrarProdutoComponent implements OnInit {
   usuario: Usuario = new Usuario;
   categoria: Categoria = new Categoria;
 
+  
+  //variaveis do modo noturno
+  modoNoturno:boolean = false;
+  corBodyNoturno:string = '#010101'
+  corFontesNoturno:string = '#ffffff'
+
+
   constructor(private produtoService: ProdutoService, private usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
@@ -23,8 +30,17 @@ export class CadastrarProdutoComponent implements OnInit {
       location.assign('/login')
     }
     this.usuario.id = parseInt(localStorage.getItem("idUsuario"));
+    
+    if(localStorage.getItem('noturno') == 'true') {
+      this.modoNoturno = true;
+
+    }
   }
 
+  modoNoturnoFunction(){
+    this.modoNoturno = !this.modoNoturno;
+    localStorage.setItem('noturno', this.modoNoturno.toString());
+  }
   cadastrarProduto() {
     //Capturando a Categoria pelo html (value)
     this.categoria.codigoCategoria = parseInt((<HTMLSelectElement>document.getElementById('categoria')).value);

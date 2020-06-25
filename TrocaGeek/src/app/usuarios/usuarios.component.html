@@ -1,100 +1,108 @@
-<div class="conteiner d-flex">
-    <div class="wrapper">
+<body [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : 'white'}">
 
-        <!-- Sidebar -->
 
-        <nav id="sidebar">
-            <div class=" pb-5">
-                <h1 class="mb-3 text-center"><img src="../../assets/img/logo-white.png" class="img-fluid logo mt-5"
-                        alt="Logo">
-                </h1>
+    <div class="conteiner d-flex" [ngStyle]="{'color': modoNoturno == true ? corFonteNoturno : 'black'}">
+
+        <div class="wrapper">
+
+            <!-- Sidebar -->
+
+            <nav id="sidebar">
+                <div class=" pb-5">
+                    <h1 class="mb-3 text-center"><img src="../../assets/img/logo-white.png" class="img-fluid logo mt-5"
+                            alt="Logo">
+                    </h1>
+                </div>
+                <ul class="list-unstyled components">
+
+                    <li class=" w-100">
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno" routerLink="/usuarios">Minha Área</button>
+                    </li>
+                    <li class="">
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno" [routerLink]="['/usuarios/editar', usuario.id]">Alterar
+                            Cadastro</button>
+                    </li>
+                    <li class="">
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno" routerLink='/cadastrar-produto'>Cadastrar
+                            Produtos</button>
+                    </li>
+
+                    <li class="">
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno" routerLink='/usuarios/meusprodutos'>Meus
+                            Produtos</button>
+                    </li>
+
+                    <li class="">
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno" routerLink='/minhas-negociacoes'>Minhas
+                            Negociações</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <div class="d-flex justify-content-center mt-5 w-100  alterarCadastroArea">
+
+            <div class="form-group formulario pb-5">
+
+                <h1 class="text-center my-5">Bem-vinde {{usuario.nome}}</h1>
+
+
+                <label class="font-weight-bold" for="username">Nome de Usuário: </label>
+                <p type="text" class="mb-4" id="username" maxlength="50"> {{usuario.nome}} </p>
+
+
+
+                <label class="font-weight-bold" for="email">E-mail: </label>
+                <p type="email" class="mb-4" id="email" maxlength="50"> {{usuario.email}} </p>
+
+
+
+                <label class="font-weight-bold" for="tel">Telefone: </label>
+                <p type="text" class="mb-4" id="tel" maxlength="50"> {{usuario.telefone}}
+                </p>
+
+
+
+                <label class="font-weight-bold" for="cpf">CPF: </label>
+                <p type="text" class="mb-4" id="cpf" maxlength="50"> {{usuario.cpf}}
+                </p>
+
+
+                <div class="d-flex justify-content-between flex-wrap ">
+                    <div class="botoes ">
+                        <button class="btn verMais btn-success mr-3 alterarCadastro"
+                            [routerLink]="['/usuarios/editar',usuario.id]">Alterar
+                            Cadastro</button>
+                    </div>
+
+                    <div class="">
+                        <button class=" btn verMais btn-success botoesCadastrar mr-3 cadastrarProtudo"
+                            routerLink="/cadastrar-produto">Cadastrar
+                            Produto</button>
+                    </div>
+
+
+                    <div class="">
+                        <button class="btn btn-danger btndeletar" (click)="deletarConta()">Deletar minha conta</button>
+                    </div>
+
+
+                </div>
+
+
+
             </div>
-            <ul class="list-unstyled components">
-
-                <li class=" w-100">
-                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
-                        routerLink="/usuarios">Minha Área</button>
-                </li>
-                <li class="">
-                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
-                        [routerLink]="['/usuarios/editar', usuario.id]">Alterar
-                        Cadastro</button>
-                </li>
-                <li class="">
-                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
-                        routerLink='/cadastrar-produto'>Cadastrar
-                        Produtos</button>
-                </li>
-
-                <li class="">
-                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
-                        routerLink='/usuarios/meusprodutos'>Meus
-                        Produtos</button>
-                </li>
-
-                <li class="">
-                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
-                        routerLink='/minhas-negociacoes'>Minhas
-                        Negociações</button>
-                </li>
-            </ul>
-        </nav>
-    </div>
-
-    <div class="d-flex justify-content-center mt-5 w-100  alterarCadastroArea">
-
-        <div class="form-group formulario pb-5">
-
-            <h1 class="text-center my-5">Bem-vinde {{usuario.nome}}</h1>
-
-
-            <label class="font-weight-bold" for="username">Nome de Usuário: </label>
-            <p type="text" class="mb-4" id="username" maxlength="50"> {{usuario.nome}} </p>
-
-
-
-            <label class="font-weight-bold" for="email">E-mail: </label>
-            <p type="email" class="mb-4" id="email" maxlength="50"> {{usuario.email}} </p>
-
-
-
-            <label class="font-weight-bold" for="tel">Telefone: </label>
-            <p type="text" class="mb-4" id="tel" maxlength="50"> {{usuario.telefone}}
-            </p>
-
-
-
-            <label class="font-weight-bold" for="cpf">CPF: </label>
-            <p type="text" class="mb-4" id="cpf" maxlength="50"> {{usuario.cpf}}
-            </p>
-
-
-            <div class="d-flex justify-content-between flex-wrap ">
-                <div class="botoes ">
-                    <button class="btn verMais btn-success mr-3 alterarCadastro"
-                        [routerLink]="['/usuarios/editar',usuario.id]">Alterar
-                        Cadastro</button>
-                </div>
-
-                <div class="">
-                    <button class=" btn verMais btn-success botoesCadastrar mr-3 cadastrarProtudo"
-                        routerLink="/cadastrar-produto">Cadastrar
-                        Produto</button>
-                </div>
-
-
-                <div class="">
-                    <button class="btn btn-danger btndeletar" (click)="deletarConta()">Deletar minha conta</button>
-                </div>
-
-
-            </div>
-
 
 
         </div>
 
-
     </div>
-
-</div>
+    <img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+        title="Modo noturno" alt="botão para ativar modo noturno">
+</body>

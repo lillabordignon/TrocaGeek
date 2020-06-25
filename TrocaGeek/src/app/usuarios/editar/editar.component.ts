@@ -21,11 +21,19 @@ export class EditarComponent implements OnInit {
 
   alerta: boolean = false;
 
+   //variaveis modo noturno
+   modoNoturno:boolean ;
+   corBodyNoturno: string = '#010101'
+   corFonteNoturno: string = '#ffffff'
+
   //dados usuario 
 
   ngOnInit() {
     this.idUsuario = this.route.snapshot.params['id'];
     this.findUsuario(this.idUsuario);
+    if(localStorage.getItem('noturno') == 'true') {
+      this.modoNoturno = true;
+    }
   }
   findUsuario(id: number) {
     this.usuarioService.getByIdUsuario(id).subscribe((resp: Usuario) => {
@@ -89,6 +97,12 @@ export class EditarComponent implements OnInit {
 
     }
   }
+
+  modoNoturnoFunction(){
+    this.modoNoturno = !this.modoNoturno;
+    localStorage.setItem('noturno', this.modoNoturno.toString());
+  }
+   
 
 
   alterarDados(usuarioNovo: UsuarioEditar, id: number) {

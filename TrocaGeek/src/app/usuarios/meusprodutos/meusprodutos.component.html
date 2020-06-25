@@ -1,4 +1,8 @@
-<div class="conteiner d-flex">
+<body [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : 'white'}">
+    
+
+
+<div class="conteiner d-flex" [ngStyle]="{'color': modoNoturno == true ? corFonteNoturno : 'black'}">
 
     <div class="wrapper">
 
@@ -11,32 +15,43 @@
                 </h1>
             </div>
 
-            <ul class="list-unstyled components">
+        <ul class="list-unstyled components">
 
                 <li class=" w-100">
-                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                    <button class="btn btn-wrapper justify-content-center liwrapper"
+                    [class.btn-dark]="modoNoturno"
+                        [class.btn-light]="!modoNoturno"
                         routerLink="/usuarios">Minha Área</button>
                 </li>
                 <li class="">
-                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
-                        [routerLink]="['/usuarios/editar',idUsuario]">Alterar
+                    <button class="btn btn-wrapper justify-content-center liwrapper" 
+                        [class.btn-dark]="modoNoturno"
+                        [class.btn-light]="!modoNoturno"
+                        [routerLink]="['/usuarios/editar', idUsuario]">Alterar
                         Cadastro</button>
                 </li>
                 <li class="">
-                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
-                        [routerLink]="['/cadastrar-produto']">Cadastrar
+                    <button class="btn btn-wrapper justify-content-center liwrapper"
+                        [class.btn-dark]="modoNoturno"
+                        [class.btn-light]="!modoNoturno"
+                        routerLink='/cadastrar-produto'>Cadastrar
                         Produtos</button>
                 </li>
 
                 <li class="">
-                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
-                        [routerLink]="['/usuarios/meusprodutos']">Meus
+                    <button class="btn btn-wrapper justify-content-center liwrapper"
+                        [class.btn-dark]="modoNoturno"
+                        [class.btn-light]="!modoNoturno"
+                        routerLink='/usuarios/meusprodutos'>Meus
                         Produtos</button>
                 </li>
 
                 <li class="">
-                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
-                        routerLink='/minhas-negociacoes'>Minhas Negociações</button>
+                    <button class="btn btn-wrapper justify-content-center liwrapper"
+                        [class.btn-dark]="modoNoturno"
+                        [class.btn-light]="!modoNoturno"
+                        routerLink='/minhas-negociacoes'>Minhas
+                        Negociações</button>
                 </li>
 
             </ul>
@@ -47,9 +62,10 @@
 
 
 
-    <div class="d-flex justify-content-center mt-5 w-100  alterarCadastroArea">
+    <div class="d-flex justify-content-center mt-5 w-100  alterarCadastroArea"
+    >
 
-        <div class="card formulario pb-5">
+        <div class="card formulario pb-5" [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : 'white'}">
 
             <h1 class="text-center mt-5">Meus Produtos</h1>
 
@@ -68,7 +84,7 @@
 
             <section class="d-flex justify-content-around flex-wrap my-3">
 
-                <div class="card text-center my-4 mx-3 caixas" *ngFor="let produto of listaProdutos">
+                <div class="card text-center my-4 mx-3 caixas text-dark" *ngFor="let produto of listaProdutos">
 
                     <div class="card-body">
                         <div>
@@ -118,3 +134,5 @@
         </div>
     </div>
 </div>
+<img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()" title="Modo noturno" alt="botão para ativar modo noturno">
+</body>
