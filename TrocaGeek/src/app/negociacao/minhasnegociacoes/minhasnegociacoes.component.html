@@ -77,6 +77,10 @@
                                 ás {{vendas.dataInicioNegociacao| date: 'HH:mm'}} </span>
                         </div>
                         <hr>
+                        <div>
+                            <span>Status: {{vendas.statusNegociacao}} </span>
+                        </div>
+                        <hr>
                         <button class="btn verMais" [routerLink]="['/negociacao-detalhe', vendas.idNegociacao]">Ver
                             mais</button>
                     </div>
@@ -109,8 +113,14 @@
                         </div>
                         <hr>
                         <div>
-                            <span>Início Negociacao: {{compras.dataInicioNegociacao | date: 'dd/MM/yyyy'}}
-                                ás {{compras.dataInicioNegociacao| date: 'HH:mm'}} </span>
+                            <p>Início: {{compras.dataInicioNegociacao | date: 'dd/MM/yyyy'}}
+                                ás {{compras.dataInicioNegociacao| date: 'HH:mm'}} </p>
+                                <p *ngIf="compras.dataFinalNegociacao != null">Final: {{compras.dataFinalNegociacao | date: 'dd/MM/yyyy'}}
+                                    ás {{compras.dataFinalNegociacao| date: 'HH:mm'}} </p>
+                        </div>
+                        <hr>
+                        <div>
+                            <span>Status: {{compras.statusNegociacao}} </span>
                         </div>
                         <hr>
                         <button class="btn verMais" [routerLink]="['/negociacao-detalhe', compras.idNegociacao]">Ver

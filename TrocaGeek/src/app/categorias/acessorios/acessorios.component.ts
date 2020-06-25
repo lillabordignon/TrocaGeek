@@ -9,7 +9,9 @@ export class AcessoriosComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
+
+  
 
 }

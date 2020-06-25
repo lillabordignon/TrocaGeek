@@ -1,18 +1,25 @@
 <div class="container">
 
     <div class="card text-center mt-5">
-        <h4 class="card-header">
-            Negociação: Nº {{negociacao.idNegociacao}}
+        <div class="d-flex justify-content-between card-header">
+        <h4>
+            Negociação: Nº {{negociacao.idNegociacao}} 
         </h4>
-
+        <h4>
+            status: {{negociacao.statusNegociacao}}
+        </h4>
+        </div>  
         <div class="card-body">
             <p class="card-text">Sabemos que esta ansioso para adquirir esse belo produto.
                 <br>Para Prosseguir com sua negociação, favor entrar em contato com dono dele para melhor negociarem ;)
             </p>
         </div>
-        <div class="card-footer text-muted">
-            Início da Negociação {{negociacao.dataInicioNegociacao | date: 'dd/MM/yyyy'}}
-            ás {{negociacao.dataInicioNegociacao | date: 'HH:mm'}}
+        <div class="card-footer text-muted d-flex justify-content-between" >
+            <p>Início da Negociação {{negociacao.dataInicioNegociacao | date: 'dd/MM/yyyy'}}
+            ás {{negociacao.dataInicioNegociacao | date: 'HH:mm'}}</p> 
+
+           <p>Final da Negociação {{negociacao.dataFinalNegociacao | date: 'dd/MM/yyyy'}}
+            ás {{negociacao.dataFinalNegociacao | date: 'HH:mm'}}</p> 
         </div>
     </div>
 
@@ -75,8 +82,8 @@
             </div>
         </div>
     </div>
-    <div class="d-flex justify-content-between my-4">
-        <a class="btn btn-outline-success mr-3 negociar" click="negociar()">Concluir</a>
-        <a class="btn btn-outline-danger voltar" routerLink="/home">Cancelar</a>
+    <div class="d-flex justify-content-between my-4" *ngIf="negociacaoEmAndamento">
+        <a class="btn btn-outline-success mr-3 negociar" (click)="concluirNegociacao(negociacao.idNegociacao, 2)">Concluir</a>
+        <a class="btn btn-outline-danger voltar" (click)="cancelarNegociacao(negociacao.idNegociacao, 3)">Cancelar</a>
     </div>
 </div>
