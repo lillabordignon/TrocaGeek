@@ -1,0 +1,143 @@
+.container-home{
+    background-color: #232323;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
+
+*{
+    font-family: 'Libre Franklin', sans-serif;
+}
+.botaoNoturno {
+    position: fixed;
+    top: 30%;
+    right: 20px;
+    height: 60px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+.botaoNoturno:hover {
+    opacity: 1;
+}
+
+
+.divimg{
+
+    width: 200px;
+    height: 200px;
+    margin: 0px 0px 0px 0px !important;
+}
+
+
+.img{
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.card-body{
+    width: 300px;
+}
+
+body {
+    transition: 0.5s;
+}
+
+.caixas{
+    border: none;
+    box-shadow: 0px 0px 8px 3px #bebebe;
+    transition: box-shadow 0.3s;
+    background-color: #f1f0f0;
+}
+
+.caixas:hover{
+    box-shadow: 0px 0px 15px 5px #b1b1b1;
+}
+
+.caixasNoturno {
+    border: none;
+    box-shadow: 0px 0px 5px 2px #dbdbdb;
+    transition: box-shadow 0.3s;
+    background-color: #f1f0f0;
+}
+
+.caixasNoturno:hover{
+    box-shadow: 0px 0px 15px 2px #dbdbdb;
+}
+
+.verMais{
+    background-color: #05a4c4;
+    color: #fff !important
+}
+
+.verMais:hover{
+    background-color: #ed3263;
+}
+
+.c-filter-bar{
+    background-color: #232323;
+    margin-top: 0 !important;
+    padding-bottom: 15px;
+}
+
+#filtrar,
+.btn-outline-success{
+    margin: 0 15px ;
+    background-color: #05a4c4;
+    color: #fff !important;
+    border: 0;
+}
+
+#filtrar:hover,
+.btn-outline-success:hover{
+    background-color:#ed3263;
+}
+
+.filtros{
+    align-items: center;
+}
+
+.filtros label{
+    display: flex;
+    place-self: center;
+    margin-bottom: 0;
+    color:#c5c5c5;
+    padding: 0 15px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+@media(max-width:600px){
+    .filtros div{
+        width: 100%;
+        flex-direction: column;
+    }
+    .filtros div div{
+        padding: 0 15px;
+    }
+    .filtros label{
+        padding: 10px 0;   
+    }
+    .responsivo{
+        order: 2;
+    }
+    .pesquisa{
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    #filtrar{
+        width: 100%;
+        margin-top: 15px;
+    }
+    .c-filter-bar{
+        padding: 25px 0 45px !important;
+    }
+    .btn-outline-success{
+        margin: 0 12px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .botaoNoturno {
+        height: 40px;
+    }
+}
