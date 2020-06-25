@@ -16,6 +16,11 @@ export class MeusprodutosComponent implements OnInit {
 
   apagado:boolean = false;
 
+   //variaveis modo noturno
+   modoNoturno:boolean ;
+   corBodyNoturno: string = '#010101'
+   corFonteNoturno: string = '#ffffff'
+
 
 
 
@@ -32,6 +37,9 @@ export class MeusprodutosComponent implements OnInit {
         this.listaProdutos = resp;
       })
 
+    }
+    if(localStorage.getItem('noturno') == 'true') {
+      this.modoNoturno = true;
     }
     window.scroll(0,0)
   }
@@ -51,4 +59,10 @@ export class MeusprodutosComponent implements OnInit {
     }
      
   }
+
+  modoNoturnoFunction(){
+    this.modoNoturno = !this.modoNoturno;
+    localStorage.setItem('noturno', this.modoNoturno.toString());
+  }
+  
 }

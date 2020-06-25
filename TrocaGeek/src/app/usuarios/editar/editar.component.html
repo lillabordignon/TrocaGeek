@@ -1,4 +1,6 @@
-<div class="conteiner d-flex">
+<body [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : 'white'}">
+    
+<div class="conteiner d-flex" [ngStyle]="{'color': modoNoturno == true ? corFonteNoturno : 'black'}">
 
     <div class="wrapper">
 
@@ -14,28 +16,38 @@
             <ul class="list-unstyled components">
 
                 <li class=" w-100">
-                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                    <button class="btn btn-wrapper justify-content-center liwrapper"
+                    [class.btn-dark]="modoNoturno"
+                        [class.btn-light]="!modoNoturno"
                         routerLink="/usuarios">Minha Área</button>
                 </li>
                 <li class="">
-                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                    <button class="btn btn-wrapper justify-content-center liwrapper" 
+                        [class.btn-dark]="modoNoturno"
+                        [class.btn-light]="!modoNoturno"
                         [routerLink]="['/usuarios/editar', usuario.id]">Alterar
                         Cadastro</button>
                 </li>
                 <li class="">
-                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                    <button class="btn btn-wrapper justify-content-center liwrapper"
+                        [class.btn-dark]="modoNoturno"
+                        [class.btn-light]="!modoNoturno"
                         routerLink='/cadastrar-produto'>Cadastrar
                         Produtos</button>
                 </li>
 
                 <li class="">
-                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                    <button class="btn btn-wrapper justify-content-center liwrapper"
+                        [class.btn-dark]="modoNoturno"
+                        [class.btn-light]="!modoNoturno"
                         routerLink='/usuarios/meusprodutos'>Meus
                         Produtos</button>
                 </li>
 
                 <li class="">
-                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                    <button class="btn btn-wrapper justify-content-center liwrapper"
+                        [class.btn-dark]="modoNoturno"
+                        [class.btn-light]="!modoNoturno"
                         routerLink='/minhas-negociacoes'>Minhas
                         Negociações</button>
                 </li>
@@ -96,3 +108,5 @@
 
     </div>
 </div>
+<img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()" title="Modo noturno" alt="botão para ativar modo noturno">
+</body>

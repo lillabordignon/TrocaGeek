@@ -3,6 +3,18 @@
 *{
     font-family: 'Libre Franklin', sans-serif;
 }
+.botaoNoturno {
+    position: fixed;
+    top: 30%;
+    right: 20px;
+    height: 60px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+.botaoNoturno:hover {
+    opacity: 1;
+}
 
 
 .divimg{
@@ -37,6 +49,17 @@ body {
     box-shadow: 0px 0px 20px 12px #dbdbdb;
 }
 
+.caixasNoturno {
+    border: none;
+    box-shadow: 0px 0px 5px 2px #dbdbdb;
+    transition: box-shadow 0.3s;
+    background-color: #f1f0f0;
+}
+
+.caixasNoturno:hover{
+    box-shadow: 0px 0px 15px 2px #dbdbdb;
+}
+
 .verMais{
     background-color: #05a4c4;
     color: #fff !important
@@ -44,4 +67,10 @@ body {
 
 .verMais:hover{
     background-color: #ed3263;
+}
+
+@media screen and (max-width:500px) {
+    .botaoNoturno {
+        height: 40px;
+    }
 }

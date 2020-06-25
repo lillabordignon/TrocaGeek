@@ -3,12 +3,30 @@
 *{
     font-family: 'Libre Franklin', sans-serif;
 }
+body {
+    transition: 0.5s;
+}
+
+
+
+.botaoNoturno {
+    position: fixed;
+    top: 30%;
+    right: 20px;
+    height: 60px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+.botaoNoturno:hover {
+    opacity: 1;
+}
+
 
 
 .wrapper {
     display: flex;
     width: 25%;
-    background-color: #F8F9FA;
   
 }
 
@@ -132,3 +150,10 @@ a:hover{
         width:90%
     }
   }
+
+      
+@media screen and (max-width:500px) {
+    .botaoNoturno {
+        height: 40px;
+    }
+}

@@ -11,8 +11,12 @@ import { Router } from '@angular/router';
 export class UsuariosComponent implements OnInit {
 
   usuario: Usuario;
-
   idUsuario: number;
+
+  //variaveis modo noturno
+  modoNoturno:boolean ;
+  corBodyNoturno: string = '#010101'
+  corFonteNoturno: string = '#ffffff'
 
   constructor(private usuarioService: UsuarioService, private route: Router) { }
 
@@ -25,6 +29,10 @@ export class UsuariosComponent implements OnInit {
       this.usuarioService.getByIdUsuario(this.idUsuario).subscribe((resp:Usuario)=> {
         this.usuario = resp;
       })
+    }
+
+    if(localStorage.getItem('noturno') == 'true') {
+      this.modoNoturno = true;
     }
   
   }
@@ -39,6 +47,11 @@ export class UsuariosComponent implements OnInit {
 
   }
 
+  modoNoturnoFunction(){
+    this.modoNoturno = !this.modoNoturno;
+    localStorage.setItem('noturno', this.modoNoturno.toString());
+  }
+  
 
 
 

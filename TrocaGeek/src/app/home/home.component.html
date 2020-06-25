@@ -81,7 +81,6 @@
                     name="btFiltrar" id="filtrar" value="Filtrar">Filtrar
                 </button>
 
-                <button class="btn btn-dark" type="button" (click)="modoNoturnoFunction()"> Modo Nortuno</button>
             </div>
 
         </div>
@@ -99,7 +98,10 @@
 
     <section class="d-flex justify-content-around flex-wrap my-3">
 
-        <div class="card text-center my-4 mx-3 caixas" *ngFor="let produto of listaProdutos">
+        <div class="card text-center my-4 mx-3" *ngFor="let produto of listaProdutos"
+        [class.caixasNoturno]="modoNoturno"
+        [class.caixas]="!modoNoturno"
+        >
 
             <div class="card-body">
                 <div>
@@ -146,4 +148,6 @@
     <div class="d-flex justify-content-center py-1">
         <span class="text-muted "> Página atual {{pagina + 1}}</span>
     </div>
+    <img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()" title="Modo noturno" alt="botão para ativar modo noturno">
 </body>
+
