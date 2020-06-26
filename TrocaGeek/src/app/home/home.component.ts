@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ProdutoService } from '../service/produto.service';
 import { Produto } from '../Model/Produto';
 import { Conteudo } from '../Model/Conteudo';
@@ -14,10 +14,11 @@ export class HomeComponent implements OnInit {
   produto: Produto = new Produto;
   conteudo: Conteudo = new Conteudo;
 
+
   //variaveis de opcoes do usuario
   barraPesquisa: string;
   pagina: number = 0;
-  private quantidade: number = 8;
+  quantidade: number = 8;
   numeroDePaginas: number;
   arrayDePaginas: number[] = [0];
   ultimaPagina: boolean;
@@ -46,6 +47,7 @@ export class HomeComponent implements OnInit {
     if (localStorage.getItem('noturno') == 'true') {
       this.modoNoturno = true;
     }
+  
   }
 
   modoNoturnoFunction() {
@@ -139,7 +141,5 @@ export class HomeComponent implements OnInit {
     this.buscarProdutosOrdenados(this.pagina, this.quantidade, this.ordenar, this.ordem);
     this.verificarNumeroDePaginas()
   }
-
-
 }
 

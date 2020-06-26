@@ -5,9 +5,9 @@
             <!-- <img src="../../assets/img/logo-black-mobile.png" class="img-fluid logo logo-mobile" alt="Logo"> -->
         </a>
         <form class="form-inline my-2 my-lg-0 c-search has-mobile-hidden">
-            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-            <button class="btn my-2 my-sm-0 pesquisar pesquisa-mobile" type="button">
-                <img class="img-fluid" width="20" src="../../assets/img/busca.png" alt="Buscar">
+            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" name="barra pesquisa" aria-label="Pesquisar" [(ngModel)]="barraPesquisa">
+            <button class="btn my-2 my-sm-0 pesquisar pesquisa-mobile" type="button" >
+                <img class="img-fluid" width="20" src="../../assets/img/busca.png" alt="Buscar" >
             </button>
         </form>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
@@ -16,9 +16,9 @@
         </button>
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
             <form class="form-inline my-2 my-lg-0 c-search has-mobile-hamburguer">
-                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" [(ngModel)]="barraPesquisa" name="pesquisar">
                 <button class="btn my-2 my-sm-0 pesquisar pesquisa-mobile" type="button">
-                    <img class="img-fluid" width="20" src="../../assets/img/busca.png" alt="Buscar">
+                    <img class="img-fluid" width="20" src="../../assets/img/busca.png" alt="Buscar" >
                 </button>
             </form>
             <ul class="navbar-nav menuNav">
@@ -29,7 +29,7 @@
                 </li>
 
                 <li class="nav-item dropdown minhainfo">
-                    <a class="nav-link dropdown-toggle" *ngIf="logado" routerLink="#" id="navbarDropdown2" role="button"
+                    <a class="nav-link dropdown-toggle" *ngIf="logado" id="navbarDropdown2" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Minhas Informações
                     </a>

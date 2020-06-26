@@ -3,6 +3,7 @@ import { Usuario } from '../Model/usuario';
 import { UsuarioService } from '../service/usuario.service';
 import { Router } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   usuario: Usuario = new Usuario;
 
-  constructor(private usuarioService: UsuarioService, private router: Router) { }
+  constructor(private usuarioService: UsuarioService, private router: Router, private home:HomeComponent) { }
 
   ngOnInit() {
     
