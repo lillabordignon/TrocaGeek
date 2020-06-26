@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProdutoService } from '../service/produto.service';
-import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-navbar',
@@ -11,6 +9,7 @@ import { HomeComponent } from '../home/home.component';
 export class NavbarComponent implements OnInit {
   deslogado: boolean = true;
   logado: boolean = false;
+   
 
   idUsuario: number;
   nomeUsuario: string;
@@ -42,13 +41,6 @@ export class NavbarComponent implements OnInit {
     localStorage.clear();
     location.reload(true);
     this.router.navigate(["/home"])
-  }
-
-  pesquisarProdutos() {
-    this.router.navigate(["/home"]);
-    localStorage.setItem("pesquisaBarra", this.barraPesquisa);
-
-
   }
 
 }
