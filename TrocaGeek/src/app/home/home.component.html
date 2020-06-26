@@ -30,12 +30,12 @@
 
     <section class="d-flex justify-content-around flex-wrap pt-3 pb-3 c-filter-bar">
 
-        <div class="d-flex justify-content-between responsivo"
+        <div class="d-flex justify-content-between responsivo filtros-content"
             [ngStyle]="{'color': modoNoturno == true ? corFontesNoturno : 'black'}">
 
             <div class="d-flex flex-wrap filtros" action="">
 
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center filtros-fields">
                     <label class="control-label">Ordenar:</label>
                     <div>
 
@@ -48,7 +48,7 @@
                     </div>
                 </div>
 
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center filtros-fields">
                     <label class="control-label">Ordem:</label>
                     <div>
 
@@ -62,7 +62,7 @@
 
                 </div>
 
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center filtros-fields">
                     <label class="control-label">Quantidade por página:</label>
                     <div>
 
@@ -85,7 +85,7 @@
             </div>
 
         </div>
-        <div class="d-flex justify-content-end ">
+        <div class="d-flex justify-content-end filtros-search">
 
             <div class="form-inline my-2 my-lg-0 d-flex justify-content-center pesquisa">
                 <input class="form-control pesquisaMobile" type="search" placeholder="Pesquisar" aria-label="Search"
@@ -105,17 +105,19 @@
             [class.caixasNoturno]="modoNoturno" [class.caixas]="!modoNoturno">
 
             <div class="card-body">
-                <div class="produtonome">
-                    <h4>{{produto.nome}}</h4>
-                </div>
-                <hr>
+                <a [routerLink]="['/produtos/detalhar', produto.codigo]">
+                    <div class="produtonome">
+                        <h4>{{produto.nome}}</h4>
+                    </div>
+                    <hr>
 
-                <div class="divimg d-flex w-100 justify-content-center">
-                    <img class="img-fluid img justify-content-center" src="{{produto.urlImg}}"
-                        alt="{{produto.descricao}}">
-                </div>
+                    <div class="divimg d-flex w-100 justify-content-center">
+                        <img class="img-fluid img justify-content-center" src="{{produto.urlImg}}"
+                            alt="{{produto.descricao}}">
+                    </div>
 
-                <hr>
+                    <hr>
+                </a>
                 <div>
                     <span>Preço: {{produto.preco | currency:"BRL" }}</span>
                 </div>
@@ -129,19 +131,22 @@
                         ás {{produto.date | date: 'HH:mm'}} </span>
                 </div>
                 <hr> -->
-                <button class="btn verMais" [routerLink]="['/produtos/detalhar', produto.codigo]">Ver mais</button>
+                <button class="btn verMais" [routerLink]="['/produtos/detalhar', produto.codigo]">Saiba mais</button>
             </div>
         </div>
     </section>
 
 
     <div class="d-flex justify-content-center py-5">
-        <nav aria-label="Page navigation shadow-lg">
-            <button class="btn btn-outline-primary"> -
+        <nav aria-label="Page navigation shadow-lg" class="navigationPage">
+            <button class="btn btn-outline-primary">
+                <img src="../../assets/img/arrowleft.png" alt="">
             </button>
-            <button class="btn btn-primary" *ngFor="let pagina of arrayDePaginas"
+            <button class="btn btn-outline-primary" *ngFor="let pagina of arrayDePaginas"
                 (click)="paginar(pagina)">{{pagina + 1}}</button>
-            <button class="btn btn-outline-primary"> - </button>
+            <button class="btn btn-outline-primary">
+                <img src="../../assets/img/arroright.png" alt="">
+            </button>
         </nav>
 
     </div>

@@ -110,11 +110,11 @@
 
     <div class="d-flex justify-content-center py-5">
         <nav aria-label="Page navigation shadow-lg">
-            <button class="btn btn-outline-primary" (click)="paginar(0)"> -
-            </button>
-            <button class="btn btn-primary" *ngFor="let pagina of arrayDePaginas"
-                (click)="paginar(pagina)">{{pagina + 1}}</button>
-            <button class="btn btn-outline-primary" (click)="paginar(3)"> - </button>
+            <button class="btn btn-outline-primary" (click)="paginar(0)">
+                < </button>
+                    <button class="btn btn-primary" *ngFor="let pagina of arrayDePaginas"
+                        (click)="paginar(pagina)">{{pagina + 1}}</button>
+                    <button class="btn btn-outline-primary" (click)="paginar(3)"> > </button>
         </nav>
 
     </div>
