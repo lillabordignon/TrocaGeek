@@ -75,7 +75,9 @@ a:hover{
 
     background-color: #05A4C4;
     border-color: #05A4C4;
-    max-width: 200px;
+    width: 150px;
+    padding: 0%;
+    padding: 6px 0px 6px 0px;
 }
 
 .verMais:hover{
@@ -84,14 +86,19 @@ a:hover{
     border-color: #ed3263;
 }
 
-@media(max-width: 1304){
-    
-    .btndeletar{
-        margin-bottom: 32px !important;
-       
-    }
+.btndeletar{
+
+    background-color: #ed3263;
+    border-color: #ed3263;
+}
+
+.btndeletar:hover{
+
+    background-color: #5c5c5c;
+    border-color: #5c5c5c;
 
 }
+
 
 @media(max-width: 970){
 
@@ -180,15 +187,3 @@ a:hover{
         top: 200px;
     }
 }
-
-  @media only screen and (max-width: 384px){
-
-
-    .botoes{
-
-        margin-bottom: 16px !important;
-    }
-
-    
-
-  }

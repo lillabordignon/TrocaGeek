@@ -1,14 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
+
+*{
+    font-family: 'Libre Franklin', sans-serif;
+}
+
 h4{
    font-weight: normal;
 }
-.img {
-   height: 500px;
+
+
+img{
+   max-width:300px;
+   max-height:350px;
+   width: auto;
+   height: auto;
 }
+   
+
+
+
 
 .negociar{
 
    background-color:#05a4c4;
-   color: #fff !important
+   color: #fff !important;
+   
+   width: 90px;
+   white-space: normal;
 }
 
 .negociar:hover{
@@ -18,15 +36,37 @@ h4{
    color: #867e80
 }
 
-@media only screen and (max-width: 859px) {
+@media only screen and (max-width: 737px) {
+
+h2{
+
+   font-size: 1.5em;
+   
+}
+
+h3{
+   font-size: 1.25em;
+
+}
+
+h4{
+   font-size: 1em
+}
 
 .infoproduto{
    width: 100% !important;
 }
 
-.img {
-   height: auto;
-   width: auto;
 }
 
+@media only screen and (max-width: 572px) {
+
+  
+
+   img{
+      max-width:200px;
+      max-height:150px;
+      width: auto;
+      height: auto;
+   }
 }

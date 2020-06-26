@@ -5,38 +5,39 @@
         <div class="d-flex d-flex justify-content-around flex-wrap">
 
 
-            <div class="justify-content-center mx-3 my-3">
-                <img class="img-fluid img" src="{{produto.urlImg}}" alt="">
+            <div class="justify-content-center px-3 py-3 limitimg">
+                <img class="" src="{{produto.urlImg}}" alt="">
             </div>
 
             <div class="infoproduto justify-content-around w-50">
                 <div class="py-2">
-                    <h1>{{produto.nome}}</h1>
+                    <h2>{{produto.nome}}</h2>
                 </div>
 
                 <div class="py-2">
-                    <h2> <span>Valor: R$ {{produto.preco}}</span> </h2>
+                    <h3> <span>Valor: R$ {{produto.preco}}</span> </h3>
                 </div>
 
                 <div class="py-2">
-                    <h2><span>Publicado por: {{produto.idUsuario.nome}}</span></h2>
+                    <h4><span>Publicado por: {{produto.idUsuario.nome}}</span></h4>
                 </div>
 
                 <div class="py-2">
-                    <h2><small>Data de publicação: {{produto.date | date: 'dd/MM/yyyy'}}
+                    <h4><small>Data de publicação: {{produto.date | date: 'dd/MM/yyyy'}}
                             ás {{produto.date | date: 'HH:mm'}}
 
 
-                        </small></h2>
+                        </small></h4>
                 </div>
 
                 <div class="d-flex flex-wrap">
                     <div class="d-flex py-2 mr-5">
-                        <button class="btn negociar" [routerLink]="['/negociacao', produto.codigo]">Negociar</button>
+                        <button type="button" class="btn negociar"
+                            [routerLink]="['/negociacao', produto.codigo]">Negociar</button>
                     </div>
 
                     <div class="d-flex py-2">
-                        <button class="btn negociar" [routerLink]="['/home']">Voltar</button>
+                        <button type="button" class="btn negociar" [routerLink]="['/home']">Voltar</button>
                     </div>
 
                 </div>
@@ -50,7 +51,7 @@
 
                     <div>
                         <div>
-                            <h4>{{produto.descricao}}</h4>
+                            <h4><span>{{produto.descricao}}</span></h4>
                         </div>
                     </div>
                 </div>
