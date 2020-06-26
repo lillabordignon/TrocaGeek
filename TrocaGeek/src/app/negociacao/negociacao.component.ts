@@ -25,8 +25,8 @@ export class NegociacaoComponent implements OnInit {
   ngOnInit() {
 
     //validação se o usuario esta logado
-    if (localStorage.getItem('token') == null) {
-      return this.router.navigate(['/login']);
+    if (localStorage.getItem('idUsuario') == null) {
+      return location.assign('/login')
     }
 
     //captura do usuario logado

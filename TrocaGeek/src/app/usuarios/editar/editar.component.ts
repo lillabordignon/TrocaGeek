@@ -31,6 +31,9 @@ export class EditarComponent implements OnInit {
   ngOnInit() {
     this.idUsuario = this.route.snapshot.params['id'];
     this.findUsuario(this.idUsuario);
+    if(localStorage.getItem('idUsuario') == null) {
+      this.router.navigate(["/login"]);
+    }
     if(localStorage.getItem('noturno') == 'true') {
       this.modoNoturno = true;
     }

@@ -31,6 +31,8 @@ export class ActionfigureComponent implements OnInit {
   corBodyNoturno: string = '#010101'
   corFontesNoturno: string = '#ffffff'
 
+  corBodyNaoNoturno: string = '#DBDEE3'
+
   //variaveis ordenacao produto
   ordenar: string;
   ordem: string;

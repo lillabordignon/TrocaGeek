@@ -18,6 +18,9 @@ export class DeletarComponent implements OnInit {
   delOk: boolean = false;
 
   ngOnInit(): void {
+    if(localStorage.getItem('idUsuario') == null) {
+      this.router.navigate(["/login"]);
+    }
     let id: number = this.route.snapshot.params['id'];
     this.findById(id);
   }

@@ -23,8 +23,8 @@ export class UsuariosComponent implements OnInit {
 
   ngOnInit() {
     this.idUsuario = parseInt(localStorage.getItem('idUsuario'));
-    if(this.idUsuario == null) {
-      this.route.navigate(["/login"]);
+    if(localStorage.getItem('idUsuario') == null) {
+      location.assign('/login')
     } else {
       this.usuarioService.getByIdUsuario(this.idUsuario).subscribe((resp:Usuario)=> {
         this.usuario = resp;

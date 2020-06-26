@@ -1,4 +1,4 @@
-<body [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : 'white'}">
+<body [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -101,7 +101,7 @@
 
     <section class="d-flex justify-content-around flex-wrap my-3">
 
-        <div class="card text-center my-4 mx-3" *ngFor="let produto of listaProdutos"
+        <div class="card text-center my-4 mx-3 modoNoturno" *ngFor="let produto of listaProdutos"
             [class.caixasNoturno]="modoNoturno" [class.caixas]="!modoNoturno">
 
             <div class="card-body">

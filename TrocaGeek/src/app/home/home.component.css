@@ -58,7 +58,6 @@
 
 body {
     transition: 0.5s;
-    background-color: #DBDEE3 !important;
 }
 
 .caixas{
@@ -78,13 +77,17 @@ body {
 
 .caixasNoturno {
     border: none;
-    box-shadow: 0px 0px 5px 2px #dbdbdb;
+    box-shadow: 0px 0px 8px 3px rgb(105, 105, 105);
     transition: box-shadow 0.3s;
     background-color: #f1f0f0;
+    transition: transform .35s ease;
+    border-radius: 15px;
 }
 
 .caixasNoturno:hover{
-    box-shadow: 0px 0px 15px 2px #dbdbdb;
+    box-shadow: 0px 0px 15px 5px #464646;
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .verMais{
