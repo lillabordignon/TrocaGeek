@@ -1,5 +1,8 @@
-<div class="container">
-    <div class="sobreNos my-5">
+<body [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
+<div class="container"
+[ngStyle]="{'color': modoNoturno == true ? corFontesNoturno : 'black'}"
+>
+    <div class="sobreNos py-5">
         <h1>Sobre Nós</h1>
         <p>
             A TrocaGeek foi criada com o intuito de economizar, desburocratizar e unir as pessoas com os mesmos
@@ -19,12 +22,13 @@
         </p>
     </div>
     <div class="devs mt-5 mb-5">
-        <h1 class="d-flex justify-content-center my-5">Desenvolvedores do TrocaGeek</h1>
+        <h2 class="d-flex justify-content-center my-5">Desenvolvedores do TrocaGeek</h2>
     </div>
-    <div class="d-flex justify-content-center mb-5 devResponsivo">
+    <div class="d-flex justify-content-center pb-5 devResponsivo">
  
-            <div class="card-body">
-                <div class="card border-0">
+            <div class="card-body" >
+                <div class="card border-0" [ngStyle]="{'color': modoNoturno == true ? corFontesNoturno : 'black'}"
+                [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
                     <div class="d-flex justify-content-center mt-1">
                         <img class="card-img-top rounded-circle " src="../../assets/img/cass.jpg"
                             alt="Card image cap">
@@ -56,7 +60,8 @@
         </div>
 
             <div class="card-body">
-                <div class="card border-0">
+                <div class="card border-0" [ngStyle]="{'color': modoNoturno == true ? corFontesNoturno : 'black'}"
+                [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
                     <div class="d-flex justify-content-center mt-1">
                         <img class="card-img-top rounded-circle " src="../../assets/img/leo.jpg"
                             alt="Card image cap">
@@ -89,7 +94,8 @@
         </div>
 
             <div class="card-body">
-                <div class="card border-0">
+                <div class="card border-0" [ngStyle]="{'color': modoNoturno == true ? corFontesNoturno : 'black'}"
+                [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
                     <div class="d-flex justify-content-center mt-1">
                         <img class="card-img-top rounded-circle" src="../../assets/img/deividson.jpg"
                             alt="Card image cap">
@@ -121,7 +127,8 @@
         </div>
 
             <div class="card-body">
-                <div class="card border-0">
+                <div class="card border-0" [ngStyle]="{'color': modoNoturno == true ? corFontesNoturno : 'black'}"
+                [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
                     <div class="d-flex justify-content-center mt-1">
                         <img class="card-img-top rounded-circle" src="../../assets/img/lilla.jpg"
                             alt="Card image cap">
@@ -152,4 +159,7 @@
             </div>
     
     </div>
+    <img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+    title="Modo noturno" alt="botão para ativar modo noturno">
 </div>
+</body>

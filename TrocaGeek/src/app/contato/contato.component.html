@@ -1,5 +1,6 @@
-<div class="container">
-    <div id="input" class="jumbotron faleConosco my-5 w-100">
+<body [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
+<div class="container py-5">
+    <div id="input" class="jumbotron faleConosco py-5 w-100">
         <h1>Fale Conosco</h1>
         <div>
             <div class="form-group">
@@ -42,3 +43,6 @@
         </div>
     </div>
 </div>
+<img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+title="Modo noturno" alt="botão para ativar modo noturno">
+</body>

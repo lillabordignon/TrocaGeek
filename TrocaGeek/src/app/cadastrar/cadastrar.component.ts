@@ -47,6 +47,7 @@ export class CadastrarComponent implements OnInit {
     this.nome = (<HTMLInputElement>document.getElementById("nome")).value;
     this.email = (<HTMLInputElement>document.getElementById("email")).value;
     this.telefone = (<HTMLInputElement>document.getElementById("tel")).value;
+    this.cpf = (<HTMLInputElement>document.getElementById("cpf")).value;
 
     this.nome.trim();
     this.email.trim()
@@ -54,14 +55,34 @@ export class CadastrarComponent implements OnInit {
     if (this.nome.length < 3 || this.nome == null) {
       return alert("Digite um nome válido")
     }
-    else if (!this.email.endsWith(".com") || !this.email.endsWith(".net") || !this.email.endsWith(".br")
-      && !this.email.includes("@")) {
-      return alert("Digite um EMAIL válido !")
+    else if (!this.testaCPF(this.cpf)) {
+      return alert("Digite um Cpf válido !")
     } else {
       this.cadastro();
     }
 
 
   }
+
+  testaCPF(cpf) {
+    var Soma;
+    var Resto;
+    Soma = 0;
+  if (cpf == "00000000000") return false;
+     
+  for (let i=1; i<=9; i++) Soma = Soma + parseInt(cpf.substring(i-1, i)) * (11 - i);
+  Resto = (Soma * 10) % 11;
+   
+    if ((Resto == 10) || (Resto == 11))  Resto = 0;
+    if (Resto != parseInt(cpf.substring(9, 10)) ) return false;
+   
+  Soma = 0;
+    for ( let i = 1; i <= 10; i++) Soma = Soma + parseInt(cpf.substring(i-1, i)) * (12 - i);
+    Resto = (Soma * 10) % 11;
+   
+    if ((Resto == 10) || (Resto == 11))  Resto = 0;
+    if (Resto != parseInt(cpf.substring(10, 11) ) ) return false;
+    return true;
+}
 
 }

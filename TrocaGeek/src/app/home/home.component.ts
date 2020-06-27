@@ -38,6 +38,10 @@ export class HomeComponent implements OnInit {
   constructor(private produtoService: ProdutoService) { }
 
   ngOnInit() {
+    if(localStorage.getItem('pesquisaBarra') != null) {
+      this.barraPesquisa = localStorage.getItem('pesquisaBarra');
+      this.buscarPorNomeProduto(this.barraPesquisa, 0, this.quantidade);
+    }
     this.findAllProdutos(this.pagina, this.quantidade);
     this.verificarNumeroDePaginas();
 
@@ -73,6 +77,7 @@ export class HomeComponent implements OnInit {
       this.listaProdutos = this.conteudo.content;
       this.numeroDePaginas = this.conteudo.totalPages;
       this.verificarNumeroDePaginas()
+      localStorage.removeItem('barraPesquisa')
     })
   }
   buscarPorNomeProdutoOrdenados(nome, pagina, quantidade, ordenacao, ordem) {

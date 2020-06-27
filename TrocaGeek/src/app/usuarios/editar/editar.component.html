@@ -29,6 +29,12 @@
                         Cadastro</button>
                 </li>
                 <li class="">
+                    <button class="btn btn-wrapper justify-content-center liwrapper" 
+                        [class.btn-dark]="modoNoturno"
+                        [class.btn-light]="!modoNoturno"
+                        [routerLink]="['/usuarios/editar', usuario.id]">Alterar Senha</button>
+                </li>
+                <li class="">
                     <button class="btn btn-wrapper justify-content-center liwrapper"
                         [class.btn-dark]="modoNoturno"
                         [class.btn-light]="!modoNoturno"
@@ -70,29 +76,22 @@
             </div>
 
 
-            <label class="font-weight-bold" for="name">Alterar nome de Usuario: </label>
+            <label class="font-weight-bold" for="name">Alterar nome de Usuario*: </label>
             <input type="text" class="form-control mb-4" id="name" [(ngModel)]="usuarioEditar.nome" maxlength="80"
                 placeholder="{{usuario.nome}}">
 
-            <label class="font-weight-bold" for="email">Alterar e-mail atual: </label>
+            <label class="font-weight-bold" for="email">Alterar e-mail atual*: </label>
             <input type="email" class="form-control mb-4" id="email" [(ngModel)]="usuarioEditar.email" maxlength="50"
                 placeholder="{{usuario.email}}">
 
-            <label class="font-weight-bold" for="email">Alterar telefone atual: </label>
+            <label class="font-weight-bold" for="email">Alterar telefone atual*: </label>
             <input type="tel" class="form-control mb-4" id="tel" [(ngModel)]="usuarioEditar.telefone" maxlength="50"
                 placeholder="{{usuario.telefone}}">
 
-            <label class="font-weight-bold" for="password">Senha atual*:</label>
+            <label class="font-weight-bold" for="password">Senha*:</label>
             <input type="password" class="form-control mb-4" [(ngModel)]="usuarioEditar.senhaAntiga" id="senhaAtual"
                 maxlength="25" placeholder="Digite sua senha atual">
 
-            <label class="font-weight-bold" for="password">Nova senha:</label>
-            <input type="password" class="form-control mb-4" [(ngModel)]="usuarioEditar.senha" id="novaSenha"
-                maxlength="25" placeholder="Digite sua nova senha">
-
-            <label class="font-weight-bold" for="password">Confirmar nova senha:</label>
-            <input type="password" class="form-control mb-4" [(ngModel)]="verificarSenha" id="confirmarNovaSenha"
-                maxlength="25" placeholder="Confirmar nova senha">
 
             <!-- *ngIf espera uma condição True ou False da variavel -->
             <div *ngIf='alerta'>

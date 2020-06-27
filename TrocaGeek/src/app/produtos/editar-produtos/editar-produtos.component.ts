@@ -17,6 +17,13 @@ export class EditarProdutosComponent implements OnInit {
   usuario: Usuario = new Usuario;
   categoria: Categoria = new Categoria;
 
+    //variaveis do modo noturno
+    modoNoturno: boolean = false;
+    corBodyNoturno: string = '#010101'
+    corFontesNoturno: string = '#ffffff'
+  
+    corBodyNaoNoturno: string = '#DBDEE3'
+
 
   constructor(private produtoService: ProdutoService, private router: ActivatedRoute) { }
 

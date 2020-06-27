@@ -15,7 +15,7 @@
                 </h1>
             </div>
 
-        <ul class="list-unstyled components">
+            <ul class="list-unstyled components">
 
                 <li class=" w-100">
                     <button class="btn btn-wrapper justify-content-center liwrapper"
@@ -29,6 +29,12 @@
                         [class.btn-light]="!modoNoturno"
                         [routerLink]="['/usuarios/editar', idUsuario]">Alterar
                         Cadastro</button>
+                </li>
+                <li class="">
+                    <button class="btn btn-wrapper justify-content-center liwrapper" 
+                        [class.btn-dark]="modoNoturno"
+                        [class.btn-light]="!modoNoturno"
+                        [routerLink]="['/usuarios/editar', idUsuario]">Alterar Senha</button>
                 </li>
                 <li class="">
                     <button class="btn btn-wrapper justify-content-center liwrapper"

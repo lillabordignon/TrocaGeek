@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from '../Model/usuario'
 import { UsuarioEditar } from '../Model/UsuarioEditar';
+import { UsuarioAlterarSenha } from '../Model/UsuarioAlterarSenha';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,13 @@ export class UsuarioService {
   //Atualizar Usuarios
   putUsuario(usuario: UsuarioEditar, id: number) {
     return this.http.put(this.urlApi + `/usuario/${id}`, usuario, {
+      headers: {
+        "Authorization": localStorage.getItem('token')
+      }
+    })
+  }
+  putUsuarioSenha(usuario: UsuarioAlterarSenha, id: number) {
+    return this.http.put(this.urlApi + `/usuario/alterarsenha/${id}`, usuario, {
       headers: {
         "Authorization": localStorage.getItem('token')
       }

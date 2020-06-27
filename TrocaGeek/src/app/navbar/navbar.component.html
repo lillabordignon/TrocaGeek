@@ -6,7 +6,7 @@
         </a>
         <form class="form-inline my-2 my-lg-0 c-search has-mobile-hidden">
             <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" name="barra pesquisa" aria-label="Pesquisar" [(ngModel)]="barraPesquisa">
-            <button class="btn my-2 my-sm-0 pesquisar pesquisa-mobile" type="button" >
+            <button class="btn my-2 my-sm-0 pesquisar pesquisa-mobile" type="button" (click)="pesquisarProdutos()">
                 <img class="img-fluid" width="20" src="../../assets/img/busca.png" alt="Buscar" >
             </button>
         </form>
@@ -20,7 +20,7 @@
 
             <form class="form-inline my-2 my-lg-0 c-search has-mobile-hamburguer">
                 <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" [(ngModel)]="barraPesquisa" name="pesquisar">
-                <button class="btn my-2 my-sm-0 pesquisar pesquisa-mobile" type="button">
+                <button class="btn my-2 my-sm-0 pesquisar pesquisa-mobile" type="button" (click)="pesquisarProdutos()">
                     <img class="img-fluid" width="20" src="../../assets/img/busca.png" alt="Buscar" >
                 </button>
             </form>
