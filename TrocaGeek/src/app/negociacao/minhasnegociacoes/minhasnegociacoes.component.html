@@ -58,82 +58,69 @@
         <div class="formulario pb-5">
 
             <h1 class="text-center ">Minhas Vendas</h1>
-            <hr>
-            <section class="d-flex justify-content-around flex-wrap my-3">
-                <div class="card text-center my-4 mx-3 caixas" *ngFor="let vendas of listaVendas">
-                    <div class="card-body">
-                        <div>
-                            <h4>Venda Nº {{vendas.idNegociacao}}</h4>
-                        </div>
-                        <hr>
-                        <div>
-                            <span>Produto: {{vendas.idProduto.nome }}</span>
-                        </div>
-                        <hr>
-                        <div>
-                            <span>Valor: {{vendas.idProduto.preco | currency:"BRL" }}</span>
-                        </div>
-                        <hr>
-                        <div>
-                            <span>Interessado: {{vendas.idComprador.nome}}</span>
-                        </div>
-                        <hr>
-                        <div>
-                            <span>Início Negociacao: {{vendas.dataInicioNegociacao | date: 'dd/MM/yyyy'}}
-                                ás {{vendas.dataInicioNegociacao| date: 'HH:mm'}} </span>
-                        </div>
-                        <hr>
-                        <div>
-                            <span>Status: {{vendas.statusNegociacao}} </span>
-                        </div>
-                        <hr>
-                        <button class="btn verMais" [routerLink]="['/negociacao-detalhe', vendas.idNegociacao]">Ver
-                            mais</button>
-                    </div>
-                </div>
-            </section>
+
+            <section class=" bg-warning d-inline flex-nowrap my-3">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nº Venda</th>
+                            <th scope="col">Produto</th>
+                            <th scope="col">Preço</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Mais Informações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody *ngFor="let vendas of listaVendas">
+                        <tr>
+
+                            <th scope="row">{{vendas.idNegociacao}}</th>
+                            <td>{{vendas.idProduto.nome }}</td>
+                            <td>{{vendas.idProduto.preco | currency:"BRL" }}</td>
+                            <td>{{vendas.statusNegociacao}}</td>
+                            <td><button class="btn verMais"
+                                    [routerLink]="['/negociacao-detalhe', compras.idNegociacao]">Ver
+                                    mais</button></td>
+                        </tr>
+
+                    </tbody>
+                </table>
 
 
-            <hr>
 
 
-            <h1 class="text-center ">Minhas Compras</h1>
-            <hr>
-            <section class="d-flex justify-content-around flex-wrap my-3">
-                <div class="card text-center my-4 mx-3 caixas" *ngFor="let compras of listaCompras">
-                    <div class="card-body">
-                        <div>
-                            <h4>Compra Nº {{compras.idNegociacao}}</h4>
-                        </div>
-                        <hr>
-                        <div>
-                            <span>Produto: {{compras.idProduto.nome }}</span>
-                        </div>
-                        <hr>
-                        <div>
-                            <span>Valor: {{compras.idProduto.preco | currency:"BRL" }}</span>
-                        </div>
-                        <hr>
-                        <div>
-                            <span>Vendedor: {{compras.idVendedor.nome}}</span>
-                        </div>
-                        <hr>
-                        <div>
-                            <p>Início: {{compras.dataInicioNegociacao | date: 'dd/MM/yyyy'}}
-                                ás {{compras.dataInicioNegociacao| date: 'HH:mm'}} </p>
-                            <p *ngIf="compras.dataFinalNegociacao != null">Final:
-                                {{compras.dataFinalNegociacao | date: 'dd/MM/yyyy'}}
-                                ás {{compras.dataFinalNegociacao| date: 'HH:mm'}} </p>
-                        </div>
-                        <hr>
-                        <div>
-                            <span>Status: {{compras.statusNegociacao}} </span>
-                        </div>
-                        <hr>
-                        <button class="btn verMais" [routerLink]="['/negociacao-detalhe', compras.idNegociacao]">Ver
-                            mais</button>
-                    </div>
-                </div>
+                <h1 class="text-center ">Minhas Compras</h1>
+
+
+                <section class=" bg-warning d-inline flex-nowrap my-3">
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nº Compra</th>
+                                <th scope="col">Produto</th>
+                                <th scope="col">Preço</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Mais Informações</th>
+                            </tr>
+                        </thead>
+
+                        <tbody *ngFor="let compras of listaCompras">
+                            <tr>
+
+                                <th scope="row">{{compras.idNegociacao}}</th>
+                                <td>{{compras.idProduto.nome }}</td>
+                                <td>{{compras.idProduto.preco | currency:"BRL" }}</td>
+                                <td>{{compras.statusNegociacao}}</td>
+                                <td><button class="btn verMais"
+                                        [routerLink]="['/negociacao-detalhe', compras.idNegociacao]">Ver
+                                        mais</button></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </section>
             </section>
         </div>
     </div>

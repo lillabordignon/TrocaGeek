@@ -20,8 +20,8 @@
 
 
             <form class="form-inline my-2 my-lg-0 c-search has-mobile-hamburguer">
-                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar"
-                    [(ngModel)]="barraPesquisa" name="pesquisar">
+                <input class="form-control mr-sm-2 srcmobile" type="search" placeholder="Pesquisar"
+                    aria-label="Pesquisar" [(ngModel)]="barraPesquisa" name="pesquisar">
                 <button class="btn my-2 my-sm-0 pesquisar pesquisa-mobile" type="button" (click)="pesquisarProdutos()">
                     <img class="img-fluid" width="20" src="../../assets/img/busca.png" alt="Buscar">
                 </button>
@@ -31,9 +31,9 @@
 
             <ul class="navbar-nav menuNav">
 
-                <div class="d-flex justify-content-around navmenu">
+                <div class="d-flex justify-content-around navmenu navhome">
                     <li class="nav-item active">
-                        <a class="nav-link menumargin" routerLink="/home">Home<span class="sr-only">(página
+                        <a class="nav-link menumargin " routerLink="/home">Home<span class="sr-only">(página
                                 atual)</span></a>
                     </li>
 
@@ -46,6 +46,8 @@
                             <a class="dropdown-item" routerLink="usuarios">Minha Área</a>
                             <a class="dropdown-item" [routerLink]="['/usuarios/editar', idUsuario ]">Alterar
                                 Cadastro</a>
+                            <a class="dropdown-item" [routerLink]="['/usuarios/alterarsenha', idUsuario ]">Alterar
+                                Senha</a>
                             <a class="dropdown-item" routerLink="cadastrar-produto">Cadastrar Produto</a>
                             <a class="dropdown-item" routerLink="usuarios/meusprodutos">Meus Produtos</a>
                             <a class="dropdown-item" routerLink="minhas-negociacoes">Minhas Negociações</a>
@@ -56,8 +58,8 @@
 
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle menumargin" routerLink="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle menumargin produtosnav" routerLink="#" id="navbarDropdown"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Produtos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">

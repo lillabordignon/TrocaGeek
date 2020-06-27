@@ -132,7 +132,14 @@ body {
 
 @media(max-width:1080px){
     
+
+    .pesquisa{
+        max-width: 90% !important;
+        justify-content: center !important;
+    }
+
     .filtros-content{
+        justify-content: space-around !important;
         order: 2;
     }
     .filtros-content,
@@ -140,6 +147,8 @@ body {
         width: 100%;
         max-width: 900px;
         padding: 5px 0;
+        display: flex;
+        justify-content: center !important;
     }
     .form-inline,
     .pesquisaMobile {
@@ -151,9 +160,38 @@ body {
     }
 }
 
+@media(max-width:768px){
+
+    .ordenartest{
+      justify-content: center;
+       width: 100%;
+    }
+
+    #filtrar{
+        width: 200px;
+        margin-top: 16px !important
+    }
+}
+
+@media(min-width:460px) and (max-width:481px){
+
+    .qntpag{
+     padding-bottom: 17px !important;
+     max-height: auto !important;
+    
+    }
+
+    .filtros-content{
+        max-height: auto !important;
+        height: 81px !important;
+        
+    }
+}
+
 @media(min-width:460px) and (max-width:1079px){
     .filtros{
         flex-wrap: nowrap !important;
+        max-width: 100%;
     }
 }
 
@@ -200,6 +238,8 @@ body {
 }
 
 @media(max-width:600px){
+
+
     .filtros div{
         width: 100%;
         flex-direction: column;
@@ -218,8 +258,8 @@ body {
         flex-wrap: nowrap;
     }
     #filtrar{
-        width: 100%;
-        margin-top: 15px;
+        width: 40%;
+        margin-top: 40px !important;
     }
     .c-filter-bar{
         padding: 25px 0 45px !important;
