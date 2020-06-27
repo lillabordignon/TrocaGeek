@@ -82,11 +82,9 @@ public class UsuarioController {
 		if(optional.isPresent()) {
 			//verifica se a senha atual (sem criptografia) é igual a senha criptografada
 			if(encoder.matches(usuario.getSenhaAntiga(), optional.get().getSenha())) {
-				String senhaCrypt = encoder.encode(usuario.getSenha());
 				optional.get().setNome(usuario.getNome());
 				optional.get().setEmail(usuario.getEmail());
 				optional.get().setTelefone(usuario.getTelefone());
-				optional.get().setSenha(senhaCrypt);
 				
 				return ResponseEntity.ok(usuarioRepository.save(optional.get()));
 			}
