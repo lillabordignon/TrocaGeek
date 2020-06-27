@@ -38,8 +38,8 @@ export class ProdutoService {
     })
   }
 
-  getProdutosByCategoria(nome: string) {
-    return this.http.get(`http://localhost:8080/produtos/categoria/${nome}`)
+  getProdutosByCategoria(nome: string, pagina, quantidade, ordenar, ordem) {
+    return this.http.get(`http://localhost:8080/produtos/categoria/${nome}?page=${pagina}&size=${quantidade}&sort=${ordenar},${ordem}`)
   }
 
   //cadastrar produtos

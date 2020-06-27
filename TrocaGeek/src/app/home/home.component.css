@@ -109,9 +109,6 @@ body {
     padding-bottom: 15px;
 }
 
-.navigationPage{
- 
-}
 
 .navigationPage button{
     background-color: #05a4c4;
@@ -173,6 +170,12 @@ body {
 .btn-outline-success{
     margin: 0 15px ;
     background-color: #05a4c4;
+    color: #fff !important;
+    border: 0;
+}
+.btn-outline-selecionado{
+    margin: 0 15px ;
+    background-color: #232424;
     color: #fff !important;
     border: 0;
 }

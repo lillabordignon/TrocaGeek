@@ -43,4 +43,9 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(["/home"])
   }
 
+  pesquisarProdutos() {
+    localStorage.setItem('pesquisaBarra', this.barraPesquisa);
+    location.assign('/home');
+  }
+
 }

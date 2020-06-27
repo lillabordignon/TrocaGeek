@@ -1,5 +1,6 @@
-<div class="container">
-    <div id="input" class="jumbotron mt-3 ml-3">
+<body [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
+<div class="container py-2">
+    <div id="input" class="jumbotron pt-3 ml-3">
         <h1>Política de privacidade para Troca Geek</h1>
 
         <p class="text-wrap">
@@ -44,3 +45,6 @@
        
     </div>
 </div>
+<img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+title="Modo noturno" alt="botão para ativar modo noturno">
+</body>

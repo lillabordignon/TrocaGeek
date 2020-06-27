@@ -6,10 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./termos-de-uso.component.css']
 })
 export class TermosDeUsoComponent implements OnInit {
+ //variaveis do modo noturno
+ modoNoturno: boolean = false;
+ corBodyNoturno: string = '#010101'
+ corFontesNoturno: string = '#ffffff'
 
-  constructor() { }
+ corBodyNaoNoturno: string = '#DBDEE3'
 
-  ngOnInit(): void {
-  }
+ constructor() { }
 
+ ngOnInit(): void {
+   if (localStorage.getItem('noturno') == 'true') {
+     this.modoNoturno = true;
+   }
+ }
+
+ modoNoturnoFunction() {
+   this.modoNoturno = !this.modoNoturno;
+   localStorage.setItem('noturno', this.modoNoturno.toString());
+ }
 }

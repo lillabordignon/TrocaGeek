@@ -19,7 +19,7 @@
                 <input type="number" class="form-control mb-2" id="cpf" maxlength="50" placeholder="Cpf/Cnpj"
                     [(ngModel)]="usuario.cpf">
                 <label for="email">Telefone</label>
-                <input type="phone" class="form-control mb-2" id="tel" maxlength="13" placeholder="Telefone"
+                <input type="number" class="form-control mb-2" id="tel" maxlength="13" placeholder="Telefone"
                     [(ngModel)]="usuario.telefone">
                 <label for="senha">Senha</label>
                 <input type="password" class="form-control mb-2" id="senha" maxlength="25" placeholder="Senha"
@@ -41,7 +41,7 @@
                 </div>
                 <div class="d-flex justify-content-center">
                     <button class="btn btn-primary botao btn-block" type="button" id="cadastrar"
-                        (click)="cadastro()">Cadastre-se</button>
+                        (click)="verificar()">Cadastre-se</button>
                 </div>
             </div>
         </div>

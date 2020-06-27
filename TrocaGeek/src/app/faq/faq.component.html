@@ -1,5 +1,8 @@
+<body [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
 <!--Accordion wrapper-->
-<div class="accordion md-accordion container my-5" id="accordionEx" role="tablist" aria-multiselectable="true">
+<div class="accordion md-accordion container py-5" id="accordionEx" role="tablist" aria-multiselectable="true"
+[ngStyle]="{'color': modoNoturno == true ? corFontesNoturno : 'black'}"
+>
     <h1 class="mb-2" id="duvidas">Dúvidas Frequentes</h1>
     <!-- Accordion card -->
     <div class="card">
@@ -226,3 +229,6 @@
     <!-- Accordion card -->
 </div>
 <!-- Accordion wrapper -->
+<img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+title="Modo noturno" alt="botão para ativar modo noturno">
+</body>

@@ -23,6 +23,7 @@ import { CadastrarProdutoComponent } from './produtos/cadastrar-produto/cadastra
 import { DetalhesComponent } from './negociacao/detalhes/detalhes.component';
 import { MinhasnegociacoesComponent } from './negociacao/minhasnegociacoes/minhasnegociacoes.component';
 import { EditarProdutosComponent } from './produtos/editar-produtos/editar-produtos.component';
+import { AlterarsenhaComponent } from './usuarios/alterarsenha/alterarsenha.component';
 
 
 const routes: Routes = [
@@ -39,6 +40,7 @@ const routes: Routes = [
   { path: 'produtos', component: ProdutosComponent },
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'usuarios/editar/:id', component: EditarComponent },
+  { path: 'usuarios/alterarsenha/:id', component: AlterarsenhaComponent },
   { path: 'usuarios/meusprodutos', component: MeusprodutosComponent },
   { path: 'produtos/categoria/jogos', component: JogosComponent },
   { path: 'produtos/categoria/consoles', component: ConsoleComponent },

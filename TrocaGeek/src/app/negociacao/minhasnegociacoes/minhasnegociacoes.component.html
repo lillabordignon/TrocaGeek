@@ -15,29 +15,46 @@
             <ul class="list-unstyled components">
 
                 <li class=" w-100">
-                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
+                    <button class="btn btn-wrapper justify-content-center liwrapper"
+                    [class.btn-dark]="modoNoturno"
+                        [class.btn-light]="!modoNoturno"
                         routerLink="/usuarios">Minha Área</button>
                 </li>
                 <li class="">
-                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
-                        [routerLink]="['/usuarios/editar',idUsuario]">Alterar
+                    <button class="btn btn-wrapper justify-content-center liwrapper" 
+                        [class.btn-dark]="modoNoturno"
+                        [class.btn-light]="!modoNoturno"
+                        [routerLink]="['/usuarios/editar', idUsuario]">Alterar
                         Cadastro</button>
                 </li>
                 <li class="">
-                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
-                        [routerLink]="['/cadastrar-produto']">Cadastrar
+                    <button class="btn btn-wrapper justify-content-center liwrapper" 
+                        [class.btn-dark]="modoNoturno"
+                        [class.btn-light]="!modoNoturno"
+                        [routerLink]="['/usuarios/editar', idUsuario]">Alterar Senha</button>
+                </li>
+                <li class="">
+                    <button class="btn btn-wrapper justify-content-center liwrapper"
+                        [class.btn-dark]="modoNoturno"
+                        [class.btn-light]="!modoNoturno"
+                        routerLink='/cadastrar-produto'>Cadastrar
                         Produtos</button>
                 </li>
 
                 <li class="">
-                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
-                        [routerLink]="['/usuarios/meusprodutos']">Meus
+                    <button class="btn btn-wrapper justify-content-center liwrapper"
+                        [class.btn-dark]="modoNoturno"
+                        [class.btn-light]="!modoNoturno"
+                        routerLink='/usuarios/meusprodutos'>Meus
                         Produtos</button>
                 </li>
 
                 <li class="">
-                    <button class="btn btn-wrapper btn-light justify-content-center liwrapper"
-                        routerLink='/minhas-negociacoes'>Minhas Negociações</button>
+                    <button class="btn btn-wrapper justify-content-center liwrapper"
+                        [class.btn-dark]="modoNoturno"
+                        [class.btn-light]="!modoNoturno"
+                        routerLink='/minhas-negociacoes'>Minhas
+                        Negociações</button>
                 </li>
 
             </ul>

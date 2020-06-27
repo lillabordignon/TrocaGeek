@@ -16,7 +16,6 @@ import { TermosDeUsoComponent } from './termos-de-uso/termos-de-uso.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { FormsModule } from '@angular/forms';
-import { DeletarComponent } from './usuarios/deletar/deletar.component';
 import { EditarComponent } from './usuarios/editar/editar.component';
 import { ActionfigureComponent } from './categorias/actionfigure/actionfigure.component';
 import { CardgameComponent } from './categorias/cardgame/cardgame.component';
@@ -30,6 +29,7 @@ import { CadastrarProdutoComponent } from './produtos/cadastrar-produto/cadastra
 import { MinhasnegociacoesComponent } from './negociacao/minhasnegociacoes/minhasnegociacoes.component';
 import { DetalhesComponent } from './negociacao/detalhes/detalhes.component';
 import { EditarProdutosComponent } from './produtos/editar-produtos/editar-produtos.component';
+import { AlterarsenhaComponent } from './usuarios/alterarsenha/alterarsenha.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,6 @@ import { EditarProdutosComponent } from './produtos/editar-produtos/editar-produ
     FAQComponent,
     TermosDeUsoComponent,
     UsuariosComponent,
-    DeletarComponent,
     EditarComponent,
     ActionfigureComponent,
     CardgameComponent,
@@ -58,7 +57,8 @@ import { EditarProdutosComponent } from './produtos/editar-produtos/editar-produ
     CadastrarProdutoComponent,
     MinhasnegociacoesComponent,
     DetalhesComponent,
-    EditarProdutosComponent
+    EditarProdutosComponent,
+    AlterarsenhaComponent
   ],
   imports: [
     BrowserModule,

@@ -44,61 +44,15 @@ export class EditarComponent implements OnInit {
     })
   }
 
-  alterarNome() {
-
-    if (this.usuarioEditar.nome == null) {
-      return this.usuarioEditar.nome = this.usuario.nome
-    } return this.usuarioEditar.nome
-  }
-
-  alterarEmail() {
-    if (this.usuarioEditar.email == null) {
-      return this.usuarioEditar.email = this.usuario.email
-    } return this.usuarioEditar.email
-  }
-
-  alterarTelefone() {
-    if (this.usuarioEditar.telefone == null) {
-      return this.usuarioEditar.telefone = this.usuario.telefone
-    } return this.usuarioEditar.telefone
-  }
-
-  alterarSenha() {
-
-
-    if (this.usuarioEditar.senha == this.verificarSenha) {
-      return this.usuarioEditar.senhaAntiga = this.usuarioEditar.senha
-
-    } else {
-      this.usuarioEditar.senha = this.usuarioEditar.senhaAntiga;
-      this.verificarSenha = this.usuarioEditar.senhaAntiga;
-    }
-  }
-
-
   verificar() {
-
-    // if (this.usuarioEditar.senhaAntiga == this.usuario.senha) {
-
-    this.alterarNome();
-    this.alterarEmail();
-    this.alterarTelefone();
-    this.alterarSenha();
-    this.usuarioEditar.senhaAntiga = this.usuario.senha;
-    this.alterarDados(this.usuarioEditar, this.idUsuario);
-
-    // } else {
-    //   this.alerta = true;
-    //   setTimeout(() => { this.alerta = false }, 5000)
-    // }
-
-
-  }
-
-  verificarSenhasCoincidem() {
+   
     if (this.usuarioEditar.senha == this.verificarSenha) {
+      this.alterarDados(this.usuarioEditar, this.idUsuario)
+     } else {
+      this.alerta = true;
+       setTimeout(() => { this.alerta = false }, 5000)
+     }
 
-    }
   }
 
   modoNoturnoFunction(){
@@ -106,8 +60,6 @@ export class EditarComponent implements OnInit {
     localStorage.setItem('noturno', this.modoNoturno.toString());
   }
    
-
-
   alterarDados(usuarioNovo: UsuarioEditar, id: number) {
     this.usuarioService.putUsuario(usuarioNovo, id).subscribe((resp: UsuarioEditar) => {
       this.usuarioEditar = resp;
@@ -120,7 +72,7 @@ export class EditarComponent implements OnInit {
   }
 
   deslogar() {
-    // localStorage.clear();
+    localStorage.clear();
     this.router.navigate(['/usuario']);
   }
 

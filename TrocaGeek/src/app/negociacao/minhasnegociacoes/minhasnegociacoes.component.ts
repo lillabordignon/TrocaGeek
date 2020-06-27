@@ -17,9 +17,17 @@ export class MinhasnegociacoesComponent implements OnInit {
   vendas: Negociacao = new Negociacao;
   compras: Negociacao = new Negociacao;
 
+    //variaveis do modo noturno
+    modoNoturno: boolean = false;
+    corBodyNoturno: string = '#010101'
+    corFontesNoturno: string = '#ffffff'
+  
+    corBodyNaoNoturno: string = '#DBDEE3'
+
   constructor(private negociacaoService: NegociacaoService, private router: Router) { }
 
   ngOnInit(): void {
+    window.scroll(0,0)
     this.idUsuario = parseInt(localStorage.getItem('idUsuario'));
     let id = localStorage.getItem("idUsuario");
     this.buscarVendas(id);
