@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
   constructor(private produtoService: ProdutoService) { }
 
   ngOnInit() {
-    if(localStorage.getItem('pesquisaBarra') != null) {
+    if (localStorage.getItem('pesquisaBarra') != null) {
       this.barraPesquisa = localStorage.getItem('pesquisaBarra');
       this.buscarPorNomeProduto(this.barraPesquisa, 0, this.quantidade);
     }

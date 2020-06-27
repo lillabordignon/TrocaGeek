@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
   deslogado: boolean = true;
   logado: boolean = false;
-   
+
 
   idUsuario: number;
   nomeUsuario: string;
@@ -45,7 +45,9 @@ export class NavbarComponent implements OnInit {
 
   pesquisarProdutos() {
     localStorage.setItem('pesquisaBarra', this.barraPesquisa);
+    console.log(this.barraPesquisa)
     location.assign('/home');
+
   }
 
 }

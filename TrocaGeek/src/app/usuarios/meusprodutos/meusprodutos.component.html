@@ -1,144 +1,134 @@
 <body [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : 'white'}">
-    
-
-
-<div class="conteiner d-flex" [ngStyle]="{'color': modoNoturno == true ? corFonteNoturno : 'black'}">
-
-    <div class="wrapper">
-
-        <!-- Sidebar -->
-
-        <nav id="sidebar">
-            <div class=" pb-5">
-                <h1 class="mb-3 text-center"><img src="../../assets/img/logo-white.png" class="img-fluid logo mt-5"
-                        alt="Logo">
-                </h1>
-            </div>
-
-            <ul class="list-unstyled components">
-
-                <li class=" w-100">
-                    <button class="btn btn-wrapper justify-content-center liwrapper"
-                    [class.btn-dark]="modoNoturno"
-                        [class.btn-light]="!modoNoturno"
-                        routerLink="/usuarios">Minha Área</button>
-                </li>
-                <li class="">
-                    <button class="btn btn-wrapper justify-content-center liwrapper" 
-                        [class.btn-dark]="modoNoturno"
-                        [class.btn-light]="!modoNoturno"
-                        [routerLink]="['/usuarios/editar', idUsuario]">Alterar
-                        Cadastro</button>
-                </li>
-                <li class="">
-                    <button class="btn btn-wrapper justify-content-center liwrapper" 
-                        [class.btn-dark]="modoNoturno"
-                        [class.btn-light]="!modoNoturno"
-                        [routerLink]="['/usuarios/editar', idUsuario]">Alterar Senha</button>
-                </li>
-                <li class="">
-                    <button class="btn btn-wrapper justify-content-center liwrapper"
-                        [class.btn-dark]="modoNoturno"
-                        [class.btn-light]="!modoNoturno"
-                        routerLink='/cadastrar-produto'>Cadastrar
-                        Produtos</button>
-                </li>
-
-                <li class="">
-                    <button class="btn btn-wrapper justify-content-center liwrapper"
-                        [class.btn-dark]="modoNoturno"
-                        [class.btn-light]="!modoNoturno"
-                        routerLink='/usuarios/meusprodutos'>Meus
-                        Produtos</button>
-                </li>
-
-                <li class="">
-                    <button class="btn btn-wrapper justify-content-center liwrapper"
-                        [class.btn-dark]="modoNoturno"
-                        [class.btn-light]="!modoNoturno"
-                        routerLink='/minhas-negociacoes'>Minhas
-                        Negociações</button>
-                </li>
-
-            </ul>
-
-        </nav>
-
-    </div>
 
 
 
-    <div class="d-flex justify-content-center mt-5 w-100  alterarCadastroArea"
-    >
+    <div class="conteiner d-flex" [ngStyle]="{'color': modoNoturno == true ? corFonteNoturno : 'black'}">
 
-        <div class="card formulario pb-5" [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : 'white'}">
+        <div class="wrapper">
 
-            <h1 class="text-center mt-5">Meus Produtos</h1>
+            <!-- Sidebar -->
 
-            <p class="text-center text-muted">Atenção, produtos que não estão ativos somente você pode visualizar
-            </p>
-
-            <div class="card-body">
-
-                <div *ngIf='apagado'>
-                    <div class="alert alert-success" role="alert">
-                        Produto apagado com sucesso!
-                    </div>
+            <nav id="sidebar">
+                <div class=" pb-5">
+                    <h1 class="mb-3 text-center"><img src="../../assets/img/logo-white.png" class="img-fluid logo mt-5"
+                            alt="Logo">
+                    </h1>
                 </div>
-            </div>
 
+                <ul class="list-unstyled components">
 
-            <section class="d-flex justify-content-around flex-wrap my-3">
+                    <li class=" w-100">
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno" routerLink="/usuarios">Minha Área</button>
+                    </li>
+                    <li class="">
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno" [routerLink]="['/usuarios/editar', idUsuario]">Alterar
+                            Cadastro</button>
+                    </li>
+                    <li class="">
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno"
+                            [routerLink]="['/usuarios/alterarsenha', idUsuario]">Alterar Senha</button>
+                    </li>
+                    <li class="">
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno" routerLink='/cadastrar-produto'>Cadastrar
+                            Produtos</button>
+                    </li>
 
-                <div class="card text-center my-4 mx-3 caixas text-dark" *ngFor="let produto of listaProdutos">
+                    <li class="">
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno" routerLink='/usuarios/meusprodutos'>Meus
+                            Produtos</button>
+                    </li>
 
-                    <div class="card-body">
-                        <div>
-                            <h4>{{produto.nome}}</h4>
-                        </div>
-                        <hr>
+                    <li class="">
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno" routerLink='/minhas-negociacoes'>Minhas
+                            Negociações</button>
+                    </li>
 
+                </ul>
 
-                        <div class=" divimg d-flex w-100 justify-content-center">
-                            <img class="img-fluid img justify-content-center" src="{{produto.urlImg}}"
-                                alt="{{produto.descricao}}">
-                        </div>
-
-                        <hr>
-
-                        <div>
-                            <span>Preço: {{produto.preco | currency:"BRL" }}</span>
-                        </div>
-                        <hr>
-
-                        <div *ngIf="produto.ativo">
-                            Ativo: &#9989;
-                        </div>
-                        <div *ngIf="!produto.ativo">
-                            Ativo: &#10060;
-                        </div>
-                        <hr>
-                        <button class="btn verMais" [routerLink]="['/produtos/detalhar', produto.codigo]">Ver
-                            mais</button>
-
-                        <hr>
-                        <div class="d-flex justify-content-around">
-                            <div class="">
-                                <button class="btn btn-success"
-                                    [routerLink]="['/produtos/editar', produto.codigo]">Editar</button>
-                            </div>
-                            <button class="btn btn-danger" (click)="apagarProduto(produto.codigo)">Apagar</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-
-
+            </nav>
 
         </div>
+
+
+
+        <div class="d-flex justify-content-center mt-5 w-100  alterarCadastroArea">
+
+            <div class="card formulario pb-5"
+                [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : 'white'}">
+
+                <h1 class="text-center mt-5">Meus Produtos</h1>
+
+                <p class="text-center text-muted">Atenção, produtos que não estão ativos somente você pode visualizar
+                </p>
+
+                <div class="card-body">
+
+                    <div *ngIf='apagado'>
+                        <div class="alert alert-success" role="alert">
+                            Produto apagado com sucesso!
+                        </div>
+                    </div>
+                </div>
+
+
+                <section class="d-flex justify-content-around flex-wrap my-3">
+
+                    <div class="card text-center my-4 mx-3 caixas text-dark" *ngFor="let produto of listaProdutos">
+
+                        <div class="card-body">
+                            <div>
+                                <h4>{{produto.nome}}</h4>
+                            </div>
+                            <hr>
+
+
+                            <div class=" divimg d-flex w-100 justify-content-center">
+                                <img class="img-fluid img justify-content-center" src="{{produto.urlImg}}"
+                                    alt="{{produto.descricao}}">
+                            </div>
+
+                            <hr>
+
+                            <div>
+                                <span>Preço: {{produto.preco | currency:"BRL" }}</span>
+                            </div>
+                            <hr>
+
+                            <div *ngIf="produto.ativo">
+                                Ativo: &#9989;
+                            </div>
+                            <div *ngIf="!produto.ativo">
+                                Ativo: &#10060;
+                            </div>
+                            <hr>
+                            <button class="btn verMais" [routerLink]="['/produtos/detalhar', produto.codigo]">Ver
+                                mais</button>
+
+                            <hr>
+                            <div class="d-flex justify-content-around">
+                                <div class="">
+                                    <button class="btn btn-success"
+                                        [routerLink]="['/produtos/editar', produto.codigo]">Editar</button>
+                                </div>
+                                <button class="btn btn-danger" (click)="apagarProduto(produto.codigo)">Apagar</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+
+
+            </div>
+        </div>
     </div>
-</div>
-<img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()" title="Modo noturno" alt="botão para ativar modo noturno">
+    <img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+        title="Modo noturno" alt="botão para ativar modo noturno">
 </body>
