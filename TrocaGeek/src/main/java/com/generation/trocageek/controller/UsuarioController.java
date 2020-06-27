@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.generation.trocageek.controller.form.UsuarioEditarSenhaForm;
 import com.generation.trocageek.model.Usuario;
 import com.generation.trocageek.model.UsuarioEditar;
 import com.generation.trocageek.model.UsuarioLogin;
@@ -95,6 +96,23 @@ public class UsuarioController {
 		return ResponseEntity.notFound().build();
 		
 	}
+	
+	@PutMapping("/alterarsenha/{id}")
+	@Transactional
+	public ResponseEntity<Object> alterarSenha (@PathVariable Long id, @RequestBody UsuarioEditarSenhaForm form) {
+		Optional<Usuario> usuario = usuarioRepository.findById(id);
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		if(usuario.isPresent()) {
+			if(encoder.matches(form.getSenhaAntiga(), usuario.get().getSenha())) {
+				String senhaCrypt = encoder.encode(form.getSenhaNova());
+				usuario.get().setSenha(senhaCrypt);
+				return ResponseEntity.ok(usuarioRepository.save(usuario.get()));
+			}
+			return ResponseEntity.badRequest().body("Senha antiga não está correta !");
+		}
+		return ResponseEntity.notFound().build();
+	}
+	
 	
 	@DeleteMapping("/{id}")
 	@Transactional
