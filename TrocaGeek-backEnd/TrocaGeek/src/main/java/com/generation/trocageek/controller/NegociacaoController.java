@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.generation.trocageek.model.Negociacao;
+import com.generation.trocageek.model.NegociacaoEnum;
 import com.generation.trocageek.repository.NegociacaoRepository;
 
 @RestController
@@ -66,17 +67,28 @@ public class NegociacaoController {
 
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Negociacao> put(@PathVariable Long id, @RequestBody boolean ativo){
-		
+	public ResponseEntity<Negociacao> put(@PathVariable Long id, @RequestBody int statusNegociacao){
 		Optional<Negociacao> negociacao = repository.findById(id);
 		if(negociacao.isPresent()) {
-			negociacao.get().setStatus(ativo);
-			return ResponseEntity.ok().body(repository.save(negociacao.get()));
+			if(statusNegociacao == 1) {
+				negociacao.get().setStatusNegociacao(NegociacaoEnum.ANDAMENTO);
+				return ResponseEntity.ok().body(repository.save(negociacao.get()));
+			} else if (statusNegociacao == 2) {
+				negociacao.get().setStatusNegociacao(NegociacaoEnum.CONCLUIDA);
+				return ResponseEntity.ok().body(repository.save(negociacao.get()));
+			} else {
+				negociacao.get().setStatusNegociacao(NegociacaoEnum.CANCELADA);
+				return ResponseEntity.ok().body(repository.save(negociacao.get()));
+			}
 		}
 		
 		return ResponseEntity.notFound().build();
-
-
+	}
+	
+	@PutMapping("/editar")
+	public ResponseEntity<Negociacao> put(@RequestBody Negociacao negociacaoEditar){
+		return ResponseEntity.ok(repository.save(negociacaoEditar));
+	
 	}
 	
 }

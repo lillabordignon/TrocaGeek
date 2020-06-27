@@ -44,10 +44,12 @@ export class NavbarComponent implements OnInit {
   }
 
   pesquisarProdutos() {
-    localStorage.setItem('pesquisaBarra', this.barraPesquisa);
-    console.log(this.barraPesquisa)
-    location.assign('/home');
+    if (this.barraPesquisa != null) {
+      localStorage.setItem('pesquisaBarra', this.barraPesquisa);
+      console.log(this.barraPesquisa)
+      location.assign('/home');
 
+    }
   }
 
 }

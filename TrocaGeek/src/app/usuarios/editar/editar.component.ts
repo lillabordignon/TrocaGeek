@@ -44,31 +44,19 @@ export class EditarComponent implements OnInit {
     })
   }
 
-  verificar() {
-   
-    if (this.usuarioEditar.senha == this.verificarSenha) {
-      this.alterarDados(this.usuarioEditar, this.idUsuario)
-     } else {
-      this.alerta = true;
-       setTimeout(() => { this.alerta = false }, 5000)
-     }
-
-  }
 
   modoNoturnoFunction(){
     this.modoNoturno = !this.modoNoturno;
     localStorage.setItem('noturno', this.modoNoturno.toString());
   }
    
-  alterarDados(usuarioNovo: UsuarioEditar, id: number) {
-    this.usuarioService.putUsuario(usuarioNovo, id).subscribe((resp: UsuarioEditar) => {
+  alterarDados() {
+    this.usuarioService.putUsuario(this.usuarioEditar, this.idUsuario).subscribe((resp: UsuarioEditar) => {
       this.usuarioEditar = resp;
       alert("Dados alterados, você será redirecionado a tela de login")
     }, err => {
       alert(err.error)
     })
-
-    this.deslogar();
   }
 
   deslogar() {

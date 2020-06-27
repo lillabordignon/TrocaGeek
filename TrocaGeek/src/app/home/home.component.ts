@@ -41,6 +41,7 @@ export class HomeComponent implements OnInit {
     if (localStorage.getItem('pesquisaBarra') != null) {
       this.barraPesquisa = localStorage.getItem('pesquisaBarra');
       this.buscarPorNomeProduto(this.barraPesquisa, 0, this.quantidade);
+      document.getElementById('pesquisar').click();
     }
     this.findAllProdutos(this.pagina, this.quantidade);
     this.verificarNumeroDePaginas();

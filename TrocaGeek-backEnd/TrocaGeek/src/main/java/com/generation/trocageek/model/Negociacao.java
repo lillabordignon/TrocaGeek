@@ -3,6 +3,8 @@ package com.generation.trocageek.model;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -34,6 +36,20 @@ public class Negociacao {
 	private Date dataFinalNegociacao = null;
 	
 	private boolean status = true;
+	
+	//Guarda o valor no banco conforme a classe ENUM
+	@Enumerated(EnumType.STRING)
+	private NegociacaoEnum statusNegociacao = NegociacaoEnum.ANDAMENTO;
+	
+	
+
+	public NegociacaoEnum getStatusNegociacao() {
+		return statusNegociacao;
+	}
+
+	public void setStatusNegociacao(NegociacaoEnum statusNegociacao) {
+		this.statusNegociacao = statusNegociacao;
+	}
 
 	public Long getIdNegociacao() {
 		return idNegociacao;
