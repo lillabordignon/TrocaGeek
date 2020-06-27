@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
     if (localStorage.getItem('noturno') == 'true') {
       this.modoNoturno = true;
     }
-  
+
   }
 
   modoNoturnoFunction() {
