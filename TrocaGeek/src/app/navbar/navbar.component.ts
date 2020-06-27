@@ -44,8 +44,10 @@ export class NavbarComponent implements OnInit {
   }
 
   pesquisarProdutos() {
+    if(this.barraPesquisa != null) {
     localStorage.setItem('pesquisaBarra', this.barraPesquisa);
     location.assign('/home');
+  }
   }
 
 }
