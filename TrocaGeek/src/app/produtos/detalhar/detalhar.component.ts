@@ -12,12 +12,26 @@ export class DetalharComponent implements OnInit {
 
   produto: Produto = new Produto;
 
+  //variaveis do modo noturno
+  modoNoturno: boolean = false;
+  corBodyNoturno: string = '#010101'
+  corFontesNoturno: string = '#ffffff'
+
+  corBodyNaoNoturno: string = '#DBDEE3'
+
+
   constructor(private produtoService: ProdutoService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     let codigo = this.route.snapshot.params['codigo'];
     this.findByCodigo(codigo);
   }
+
+  modoNoturnoFunction() {
+    this.modoNoturno = !this.modoNoturno;
+    localStorage.setItem('noturno', this.modoNoturno.toString());
+  }
+
 
   findByCodigo(codigo: number) {
     this.produtoService.getProdutoEspecifico(codigo).subscribe((resp: Produto) => {

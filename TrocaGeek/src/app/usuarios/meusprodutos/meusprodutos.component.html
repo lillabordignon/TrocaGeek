@@ -4,7 +4,7 @@
 
     <div class="conteiner d-flex" [ngStyle]="{'color': modoNoturno == true ? corFonteNoturno : 'black'}">
 
-        <div class="wrapper">
+        <div [class.wrapperNoturno]="modoNoturno" class="wrapper">
 
             <!-- Sidebar -->
 
@@ -74,50 +74,55 @@
 
                 <div class="card-body">
 
-                    
+
                 </div>
 
 
                 <section class="d-flex justify-content-around flex-wrap my-3">
 
-                    <div class="card text-center my-4 mx-3 caixas text-dark" *ngFor="let produto of listaProdutos">
+                    <div class="card text-center my-4 mx-3 modoNoturno" *ngFor="let produto of listaProdutos"
+                        [class.caixasNoturno]="modoNoturno" [class.caixas]="!modoNoturno">
 
                         <div class="card-body">
+                            <a [routerLink]="['/produtos/detalhar', produto.codigo]">
+                                <div class="produtonome">
+                                    <h4 class="d-flex justify-content-center w-auto">{{produto.nome}}</h4>
+                                </div>
+                                <hr>
+
+                                <div class="divimg d-flex w-100 justify-content-center">
+                                    <img class="img-fluid img justify-content-center" src="{{produto.urlImg}}"
+                                        alt="{{produto.descricao}}">
+                                </div>
+
+                                <hr>
+                            </a>
                             <div>
-                                <h4>{{produto.nome}}</h4>
+                                <span [class.fontNoturno]="modoNoturno">Preço:
+                                    {{produto.preco | currency:"BRL" }}</span>
                             </div>
                             <hr>
 
-
-                            <div class=" divimg d-flex w-100 justify-content-center">
-                                <img class="img-fluid img justify-content-center" src="{{produto.urlImg}}"
-                                    alt="{{produto.descricao}}">
-                            </div>
-
-                            <hr>
-
-                            <div>
-                                <span>Preço: {{produto.preco | currency:"BRL" }}</span>
-                            </div>
-                            <hr>
-
-                            <div *ngIf="produto.ativo">
+                            <div [class.fontNoturno]="modoNoturno" *ngIf="produto.ativo">
                                 Ativo: &#9989;
                             </div>
-                            <div *ngIf="!produto.ativo">
+                            <div [class.fontNoturno]="modoNoturno" *ngIf="!produto.ativo">
                                 Ativo: &#10060;
                             </div>
                             <hr>
-                            <button class="btn verMais" [routerLink]="['/produtos/detalhar', produto.codigo]">Ver
-                                mais</button>
+                            <button [class.verMais]="!modoNoturno" [class.verMaisNoturno]="modoNoturno" class="btn"
+                                [routerLink]="['/produtos/detalhar', produto.codigo]">Ver Mais</button>
 
                             <hr>
                             <div class="d-flex justify-content-around">
                                 <div class="">
-                                    <button class="btn btn-success"
+                                    <button class="btn btn-success" [class.verMais]="!modoNoturno"
+                                        [class.verMaisNoturno]="modoNoturno"
                                         [routerLink]="['/produtos/editar', produto.codigo]">Editar</button>
                                 </div>
-                                <button class="btn btn-danger" (click)="apagarProduto(produto.codigo)">Apagar</button>
+                                <button class="btn btn-danger" [class.deletar]="!modoNoturno"
+                                    [class.deletarNoturno]="modoNoturno"
+                                    (click)="apagarProduto(produto.codigo)">Apagar</button>
                             </div>
                         </div>
                     </div>

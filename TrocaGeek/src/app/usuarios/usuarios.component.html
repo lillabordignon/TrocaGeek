@@ -3,7 +3,7 @@
 
     <div class="conteiner d-flex" [ngStyle]="{'color': modoNoturno == true ? corFonteNoturno : 'black'}">
 
-        <div class="wrapper">
+        <div [class.wrapperNoturno]="modoNoturno" class="wrapper">
 
             <!-- Sidebar -->
 
@@ -13,6 +13,7 @@
                             alt="Logo">
                     </h1>
                 </div>
+
                 <ul class="list-unstyled components">
 
                     <li class=" w-100">
@@ -21,16 +22,14 @@
                     </li>
                     <li class="">
                         <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
-                            [class.btn-light]="!modoNoturno" [routerLink]="['/usuarios/editar', usuario.id]">Alterar
+                            [class.btn-light]="!modoNoturno" [routerLink]="['/usuarios/editar', idUsuario]">Alterar
                             Cadastro</button>
                     </li>
-
                     <li class="">
                         <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
                             [class.btn-light]="!modoNoturno"
-                            [routerLink]="['/usuarios/alterarsenha', usuario.id]">Alterar Senha</button>
+                            [routerLink]="['/usuarios/alterarsenha', idUsuario]">Alterar Senha</button>
                     </li>
-
                     <li class="">
                         <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
                             [class.btn-light]="!modoNoturno" routerLink='/cadastrar-produto'>Cadastrar
@@ -48,9 +47,13 @@
                             [class.btn-light]="!modoNoturno" routerLink='/minhas-negociacoes'>Minhas
                             Negociações</button>
                     </li>
+
                 </ul>
+
             </nav>
+
         </div>
+
 
 
         <div class="d-flex justify-content-center mt-5 w-100  alterarCadastroArea">

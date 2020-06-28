@@ -2,7 +2,7 @@
 
     <div class="conteiner d-flex" [ngStyle]="{'color': modoNoturno == true ? corFonteNoturno : 'black'}">
 
-        <div class="wrapper">
+        <div [class.wrapperNoturno]="modoNoturno" class="wrapper">
 
             <!-- Sidebar -->
 
@@ -21,13 +21,13 @@
                     </li>
                     <li class="">
                         <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
-                            [class.btn-light]="!modoNoturno" [routerLink]="['/usuarios/editar', usuario.id]">Alterar
+                            [class.btn-light]="!modoNoturno" [routerLink]="['/usuarios/editar', idUsuario]">Alterar
                             Cadastro</button>
                     </li>
                     <li class="">
                         <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
                             [class.btn-light]="!modoNoturno"
-                            [routerLink]="['/usuarios/alterarsenha', usuario.id]">Alterar Senha</button>
+                            [routerLink]="['/usuarios/alterarsenha', idUsuario]">Alterar Senha</button>
                     </li>
                     <li class="">
                         <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
@@ -65,15 +65,15 @@
                 </div>
 
 
-                <label class="font-weight-bold" for="name">Alterar nome de Usuario*: </label>
+                <label class="font-weight-bold" for="name">Alterar nome de Usuario: </label>
                 <input type="text" class="form-control mb-4" id="name" [(ngModel)]="usuarioEditar.nome" maxlength="80"
                     placeholder="{{usuario.nome}}">
 
-                <label class="font-weight-bold" for="email">Alterar e-mail atual*: </label>
+                <label class="font-weight-bold" for="email">Alterar e-mail atual: </label>
                 <input type="email" class="form-control mb-4" id="email" [(ngModel)]="usuarioEditar.email"
                     maxlength="50" placeholder="{{usuario.email}}">
 
-                <label class="font-weight-bold" for="email">Alterar telefone atual*: </label>
+                <label class="font-weight-bold" for="email">Alterar telefone atual: </label>
                 <input type="tel" class="form-control mb-4" id="tel" [(ngModel)]="usuarioEditar.telefone" maxlength="50"
                     placeholder="{{usuario.telefone}}">
 

@@ -1,110 +1,100 @@
 <body [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : 'white'}">
-    
+
     <div class="conteiner d-flex" [ngStyle]="{'color': modoNoturno == true ? corFonteNoturno : 'black'}">
-    
-        <div class="wrapper">
-    
+
+        <div [class.wrapperNoturno]="modoNoturno" class="wrapper">
+
             <!-- Sidebar -->
-    
+
             <nav id="sidebar">
                 <div class=" pb-5">
                     <h1 class="mb-3 text-center"><img src="../../assets/img/logo-white.png" class="img-fluid logo mt-5"
                             alt="Logo">
                     </h1>
                 </div>
-    
+
                 <ul class="list-unstyled components">
-    
+
                     <li class=" w-100">
-                        <button class="btn btn-wrapper justify-content-center liwrapper"
-                        [class.btn-dark]="modoNoturno"
-                            [class.btn-light]="!modoNoturno"
-                            routerLink="/usuarios">Minha Área</button>
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno" routerLink="/usuarios">Minha Área</button>
                     </li>
                     <li class="">
-                        <button class="btn btn-wrapper justify-content-center liwrapper" 
-                            [class.btn-dark]="modoNoturno"
-                            [class.btn-light]="!modoNoturno"
-                            [routerLink]="['/usuarios/editar', usuario.id]">Alterar
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno" [routerLink]="['/usuarios/editar', idUsuario]">Alterar
                             Cadastro</button>
                     </li>
                     <li class="">
-                        <button class="btn btn-wrapper justify-content-center liwrapper" 
-                            [class.btn-dark]="modoNoturno"
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
                             [class.btn-light]="!modoNoturno"
-                            [routerLink]="['/usuarios/editar', usuario.id]">Alterar Senha</button>
+                            [routerLink]="['/usuarios/alterarsenha', idUsuario]">Alterar Senha</button>
                     </li>
                     <li class="">
-                        <button class="btn btn-wrapper justify-content-center liwrapper"
-                            [class.btn-dark]="modoNoturno"
-                            [class.btn-light]="!modoNoturno"
-                            routerLink='/cadastrar-produto'>Cadastrar
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno" routerLink='/cadastrar-produto'>Cadastrar
                             Produtos</button>
                     </li>
-    
+
                     <li class="">
-                        <button class="btn btn-wrapper justify-content-center liwrapper"
-                            [class.btn-dark]="modoNoturno"
-                            [class.btn-light]="!modoNoturno"
-                            routerLink='/usuarios/meusprodutos'>Meus
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno" routerLink='/usuarios/meusprodutos'>Meus
                             Produtos</button>
                     </li>
-    
+
                     <li class="">
-                        <button class="btn btn-wrapper justify-content-center liwrapper"
-                            [class.btn-dark]="modoNoturno"
-                            [class.btn-light]="!modoNoturno"
-                            routerLink='/minhas-negociacoes'>Minhas
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno" routerLink='/minhas-negociacoes'>Minhas
                             Negociações</button>
                     </li>
-    
+
                 </ul>
-    
+
             </nav>
-    
+
         </div>
-    
-    
+
+
         <div class="d-flex justify-content-center mt-5 w-100  alterarCadastroArea">
-    
+
             <div class="form-group formulario pb-5">
                 <div *ngIf='alertaSenha'>
                     <div class="alert alert-success" role="alert">
                         Senha alterada com sucesso
                     </div>
                 </div>
-    
+
                 <h1 class="text-center my-5">Alterar senha</h1>
-    
+
                 <div class="my-2">
                     <small>*Campos que devem ser preenchidos obrigatóriamente !</small>
                 </div>
-    
+
                 <label class="font-weight-bold" for="password">Senha atual*:</label>
-                <input type="password" class="form-control mb-4" [(ngModel)]="usuarioSenhaNova.senhaAntiga" id="senhaAtual"
-                    maxlength="25" placeholder="Digite sua senha atual">
-    
+                <input type="password" class="form-control mb-4" [(ngModel)]="usuarioSenhaNova.senhaAntiga"
+                    id="senhaAtual" maxlength="25" placeholder="Digite sua senha atual">
+
                 <label class="font-weight-bold" for="password">Nova senha*:</label>
                 <input type="password" class="form-control mb-4" [(ngModel)]="usuarioSenhaNova.senhaNova" id="novaSenha"
                     maxlength="25" placeholder="Deve conter entre 6 a 32 caracteres">
-    
+
                 <label class="font-weight-bold" for="password">Confirmar nova senha*:</label>
-                <input type="password" class="form-control mb-4" [(ngModel)]="usuarioSenhaNova.confirmaSenha" id="confirmarNovaSenha"
-                    maxlength="25" placeholder="Deve conter entre 6 a 32 caracteres">
-    
+                <input type="password" class="form-control mb-4" [(ngModel)]="usuarioSenhaNova.confirmaSenha"
+                    id="confirmarNovaSenha" maxlength="25" placeholder="Deve conter entre 6 a 32 caracteres">
+
                 <!-- *ngIf espera uma condição True ou False da variavel -->
                 <div *ngIf='alerta'>
                     <div class="alert alert-danger" role="alert">
                         Senha errada Favor conferir
                     </div>
                 </div>
-    
+
                 <button type="button" id="cadastrar" class="btn btn-primary btn-block botao"
                     (click)="verificar()">Salvar</button>
             </div>
-    
-    
+
+
         </div>
     </div>
-    <img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()" title="Modo noturno" alt="botão para ativar modo noturno">
-    </body>
+    <img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+        title="Modo noturno" alt="botão para ativar modo noturno">
+</body>

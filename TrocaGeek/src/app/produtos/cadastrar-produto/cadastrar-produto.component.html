@@ -3,7 +3,7 @@
 
     <div class="conteiner d-flex" [ngStyle]="{'color': modoNoturno == true ? corFontesNoturno : 'black'}">
 
-        <div class="wrapper">
+        <div [class.wrapperNoturno]="modoNoturno" class="wrapper">
 
             <!-- Sidebar -->
 

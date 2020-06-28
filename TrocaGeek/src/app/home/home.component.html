@@ -82,7 +82,7 @@
                 </div>
 
                 <button class="btn btn-outline-primary" type="button" (click)="filtrarProdutos()" name="btFiltrar"
-                    id="filtrar" value="Filtrar">Filtrar
+                    id="filtrar" [class.filtrarNoturno]="modoNoturno" value="Filtrar">Filtrar
                 </button>
 
                 <!-- <button class="btn btn-dark" type="button" (click)="modoNoturnoFunction()"> Modo Nortuno</button> -->
@@ -135,22 +135,28 @@
                         ás {{produto.date | date: 'HH:mm'}} </span>
                 </div>
                 <hr> -->
-                <button class="btn verMais" [routerLink]="['/produtos/detalhar', produto.codigo]">Saiba mais</button>
+                <button [class.verMais]="!modoNoturno" [class.verMaisNoturno]="modoNoturno" class="btn"
+                    [routerLink]="['/produtos/detalhar', produto.codigo]">Saiba mais</button>
             </div>
         </div>
     </section>
 
 
     <div class="d-flex justify-content-center py-5">
-        <nav aria-label="Page navigation shadow-lg" class="navigationPage">
-            <button class="btn btn-outline-primary">
+        <nav aria-label="Page navigation shadow-lg">
+
+            <button class="btn btn-outline-primary" [class.navigationPage]="!modoNoturno"
+                [class.paginacaoNoturno]="modoNoturno">
                 <img src="../../assets/img/arrowleft.png" alt="">
             </button>
-            <button class="btn btn-outline-primary" *ngFor="let pagina of arrayDePaginas"
+            <button class="btn btn-outline-primary" [class.navigationPage]="!modoNoturno"
+                [class.paginacaoNoturno]="modoNoturno" *ngFor="let pagina of arrayDePaginas"
                 (click)="paginar(pagina)">{{pagina + 1}}</button>
-            <button class="btn btn-outline-primary">
+            <button class="btn btn-outline-primary" [class.navigationPage]="!modoNoturno"
+                [class.paginacaoNoturno]="modoNoturno">
                 <img src="../../assets/img/arroright.png" alt="">
             </button>
+
         </nav>
 
     </div>

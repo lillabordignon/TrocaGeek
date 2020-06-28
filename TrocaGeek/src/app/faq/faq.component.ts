@@ -11,7 +11,7 @@ export class FAQComponent implements OnInit {
   corBodyNoturno: string = '#010101'
   corFontesNoturno: string = '#ffffff'
 
-  corBodyNaoNoturno: string = '#DBDEE3'
+  corBodyNaoNoturno: string = '#ffff'
 
   constructor() { }
 

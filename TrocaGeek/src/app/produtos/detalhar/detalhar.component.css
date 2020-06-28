@@ -2,8 +2,27 @@
     font-family: 'Libre Franklin', sans-serif;
 }
 
+.botaoNoturno {
+   position: fixed;
+   top: 30%;
+   right: 20px;
+   height: 60px;
+   cursor: pointer;
+   opacity: 0.7;
+   transition: 0.5s;
+}
+.botaoNoturno:hover {
+   opacity: 1;
+}
+
 h4{
    font-weight: normal;
+}
+
+
+.caixas{
+
+   border:none !important;
 }
 
 
@@ -18,21 +37,33 @@ img{
 
 
 
-.negociar{
 
-   background-color:#05a4c4;
-   color: #fff !important;
-   
-   width: 90px;
-   white-space: normal;
+.verMais{
+   background-color: #05a4c4;
+   padding: 8px 35px;
+   font-weight: 500;
+   letter-spacing: 0.5px;
+   color: #fff;
+   transition: color .25s ease, background .25s ease;
 }
 
-.negociar:hover{
-
-
-   background-color: #ed3263 !important;
-   color: #867e80
+.verMais:hover{
+   background-color: #ed3263;
 }
+
+.verMaisNoturno{
+   background-color: #5C5099;
+   padding: 8px 35px;
+   font-weight: 500;
+   letter-spacing: 0.5px;
+   color: #fff;
+   transition: color .25s ease, background .25s ease;
+}
+
+.verMaisNoturno:hover{
+   background-color: #2b215e;
+}
+
 
 @media only screen and (max-width: 737px) {
 
@@ -66,5 +97,12 @@ h4{
       max-height:150px;
       width: auto;
       height: auto;
+   }
+}
+
+@media screen and (max-width:500px) {
+   .botaoNoturno {
+       height: 40px;
+       top: 200px;
    }
 }

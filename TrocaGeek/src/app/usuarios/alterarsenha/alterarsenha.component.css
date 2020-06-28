@@ -24,9 +24,18 @@ body {
 .wrapper {
     display: flex;
     width: 25%;
+    background-color: #F8F9FA;
   
 }
 
+
+.wrapperNoturno{
+
+    display: flex;
+    width: 25%;
+    background-color: #343A40;
+
+}
 #sidebar {
     width: 100%;
     height: 100%;
