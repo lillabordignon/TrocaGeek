@@ -86,11 +86,11 @@
     
                 <label class="font-weight-bold" for="password">Nova senha*:</label>
                 <input type="password" class="form-control mb-4" [(ngModel)]="usuarioSenhaNova.senhaNova" id="novaSenha"
-                    maxlength="25" placeholder="Digite sua nova senha">
+                    maxlength="25" placeholder="Deve conter entre 6 a 32 caracteres">
     
                 <label class="font-weight-bold" for="password">Confirmar nova senha*:</label>
                 <input type="password" class="form-control mb-4" [(ngModel)]="usuarioSenhaNova.confirmaSenha" id="confirmarNovaSenha"
-                    maxlength="25" placeholder="Confirmar nova senha">
+                    maxlength="25" placeholder="Deve conter entre 6 a 32 caracteres">
     
                 <!-- *ngIf espera uma condição True ou False da variavel -->
                 <div *ngIf='alerta'>

@@ -41,9 +41,10 @@ export class HomeComponent implements OnInit {
     if (localStorage.getItem('pesquisaBarra') != null) {
       this.barraPesquisa = localStorage.getItem('pesquisaBarra');
       this.buscarPorNomeProduto(this.barraPesquisa, 0, this.quantidade);
-    }
+    } else {
     this.findAllProdutos(this.pagina, this.quantidade);
     this.verificarNumeroDePaginas();
+    }
 
     // ao iniciar seta as variaveis com os valores do filtro
     this.ordenar = (<HTMLInputElement>document.getElementById("ordenarPor")).value;
@@ -133,12 +134,13 @@ export class HomeComponent implements OnInit {
 
   verificarNumeroDePaginas() {
     if (this.numeroDePaginas == 0) {
-      this.arrayDePaginas.splice(0, this.arrayDePaginas.length)
+      return this.arrayDePaginas.splice(0, this.arrayDePaginas.length)
     }
     this.arrayDePaginas.splice(0, this.numeroDePaginas)
     for (let i = 0; i < this.numeroDePaginas; i++) {
       this.arrayDePaginas[i] = i;
     }
+    console.log(this.numeroDePaginas)
   }
 
   filtrarProdutos() {

@@ -62,6 +62,11 @@
             <div class="card formulario pb-5"
                 [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : 'white'}">
 
+                <div *ngIf='apagado'>
+                    <div class="alert alert-success" role="alert">
+                        Produto apagado com sucesso!
+                    </div>
+                </div>
                 <h1 class="text-center mt-5">Meus Produtos</h1>
 
                 <p class="text-center text-muted">Atenção, produtos que não estão ativos somente você pode visualizar
@@ -69,11 +74,7 @@
 
                 <div class="card-body">
 
-                    <div *ngIf='apagado'>
-                        <div class="alert alert-success" role="alert">
-                            Produto apagado com sucesso!
-                        </div>
-                    </div>
+                    
                 </div>
 
 
