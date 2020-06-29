@@ -61,6 +61,7 @@ export class AlterarsenhaComponent implements OnInit {
   AlterarSenha(usuarioNovo: UsuarioAlterarSenha, id: number) {
     this.usuarioService.putUsuarioSenha(usuarioNovo, id).subscribe((resp: Usuario) => {
       this.alertaSenha = true;
+      localStorage.setItem('token', resp.token)
 
       setTimeout(() => {
         this.alertaSenha = false;
