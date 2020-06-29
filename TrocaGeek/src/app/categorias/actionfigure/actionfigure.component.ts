@@ -25,7 +25,7 @@ export class ActionfigureComponent implements OnInit {
   numeroDePaginas: number;
   arrayDePaginas: number[] = [0];
   ultimaPagina: boolean;
-  categoria:string = 'action figure'
+  categoria:string = 'action_figure'
 
   //variaveis do modo noturno
   modoNoturno: boolean = false;
