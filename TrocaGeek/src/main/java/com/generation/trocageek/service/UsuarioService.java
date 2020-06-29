@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.generation.trocageek.controller.form.UsuarioLogin;
 import com.generation.trocageek.model.Usuario;
-import com.generation.trocageek.model.UsuarioLogin;
 import com.generation.trocageek.repository.UsuarioRepository;
 
 @Service
@@ -44,6 +44,16 @@ public class UsuarioService {
 		}
 		
 		return null;
+		
+	}
+	
+	public String gerarTokenNovo(String email, String senha) {
+		String auth = email + ":" + senha;
+		byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
+		String authHeader = "Basic " + new String(encodedAuth);
+		
+		return authHeader;
+		
 		
 	}
 }

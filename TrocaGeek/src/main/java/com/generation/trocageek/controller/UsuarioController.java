@@ -19,10 +19,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.generation.trocageek.controller.form.UsuarioEditar;
 import com.generation.trocageek.controller.form.UsuarioEditarSenhaForm;
+import com.generation.trocageek.controller.form.UsuarioLogin;
 import com.generation.trocageek.model.Usuario;
-import com.generation.trocageek.model.UsuarioEditar;
-import com.generation.trocageek.model.UsuarioLogin;
 import com.generation.trocageek.repository.NegociacaoRepository;
 import com.generation.trocageek.repository.ProdutoRepository;
 import com.generation.trocageek.repository.UsuarioRepository;
@@ -102,9 +102,13 @@ public class UsuarioController {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		if(usuario.isPresent()) {
 			if(encoder.matches(form.getSenhaAntiga(), usuario.get().getSenha())) {
+				String token = usuarioService.gerarTokenNovo(usuario.get().getEmail(), form.getSenhaNova());
 				String senhaCrypt = encoder.encode(form.getSenhaNova());
 				usuario.get().setSenha(senhaCrypt);
-				return ResponseEntity.ok(usuarioRepository.save(usuario.get()));
+				usuarioRepository.save(usuario.get());
+				UsuarioLogin usuarioTokenNovo = new UsuarioLogin();
+				usuarioTokenNovo.setToken(token);
+				return ResponseEntity.ok(usuarioTokenNovo);
 			}
 			return ResponseEntity.badRequest().body("Senha antiga não está correta !");
 		}
