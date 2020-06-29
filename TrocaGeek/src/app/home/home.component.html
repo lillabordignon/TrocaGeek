@@ -126,7 +126,7 @@
                     <span>Preço: {{produto.preco | currency:"BRL" }}</span>
                 </div>
                 <hr>
-                <!-- <div>
+                <div>
                     <span>Usuario: {{produto.idUsuario.nome}}</span>
                 </div>
                 <hr>
@@ -134,7 +134,7 @@
                     <span>Publicado: {{produto.date | date: 'dd/MM/yyyy'}}
                         ás {{produto.date | date: 'HH:mm'}} </span>
                 </div>
-                <hr> -->
+                <hr>
                 <button [class.verMais]="!modoNoturno" [class.verMaisNoturno]="modoNoturno" class="btn"
                     [routerLink]="['/produtos/detalhar', produto.codigo]">Saiba mais</button>
             </div>

@@ -78,7 +78,7 @@ export class HomeComponent implements OnInit {
       this.listaProdutos = this.conteudo.content;
       this.numeroDePaginas = this.conteudo.totalPages;
       this.verificarNumeroDePaginas()
-      localStorage.removeItem('barraPesquisa')
+      localStorage.removeItem('pesquisaBarra')
     })
   }
   buscarPorNomeProdutoOrdenados(nome, pagina, quantidade, ordenacao, ordem) {
@@ -122,7 +122,7 @@ export class HomeComponent implements OnInit {
       window.scroll(0, 10)
     } else if (this.ordem != 'desc' || this.ordenar != 'date') {
       this.buscarProdutosOrdenados(this.pagina, this.quantidade, this.ordenar, this.ordem);
-
+      window.scroll(0, 10)
     }
 
     else {
@@ -140,7 +140,6 @@ export class HomeComponent implements OnInit {
     for (let i = 0; i < this.numeroDePaginas; i++) {
       this.arrayDePaginas[i] = i;
     }
-    console.log(this.numeroDePaginas)
   }
 
   filtrarProdutos() {
