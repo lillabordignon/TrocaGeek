@@ -23,6 +23,13 @@ export class DetalhesComponent implements OnInit {
   negociacaoEmAndamento: boolean = true;
   negociacaoConcluida: boolean;
 
+  //variaveis do modo noturno
+  modoNoturno: boolean = false;
+  corBodyNoturno: string = '#010101'
+  corFontesNoturno: string = '#ffffff'
+
+  corBodyNaoNoturno: string = '#DBDEE3'
+
   constructor(private negociacaoService: NegociacaoService, private produtoService: ProdutoService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
@@ -48,6 +55,9 @@ export class DetalhesComponent implements OnInit {
       }
     }, 500);
 
+    if (localStorage.getItem('noturno') == 'true') {
+      this.modoNoturno = true;
+    }
 
   }
 
@@ -57,6 +67,11 @@ export class DetalhesComponent implements OnInit {
   //     console.log("id vendedor" + this.negociacao.idVendedor.id);
   //   }
   // }
+
+  modoNoturnoFunction() {
+    this.modoNoturno = !this.modoNoturno;
+    localStorage.setItem('noturno', this.modoNoturno.toString());
+  }
 
 
   buscarNegociacao(id: number) {

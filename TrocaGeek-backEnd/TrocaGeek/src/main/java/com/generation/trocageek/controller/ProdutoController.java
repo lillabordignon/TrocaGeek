@@ -59,7 +59,7 @@ public class ProdutoController {
 		size = 10, sort = "date" ,direction = Direction.DESC)
 			Pageable paginacao) {
 		
-		return repository.findBynomeContainingIgnoreCase(nome, paginacao);
+		return repository.findBynomeContainingIgnoreCaseAndAtivoTrue(nome, paginacao);
 		
 	}
 	
@@ -68,7 +68,7 @@ public class ProdutoController {
 	public Page<Produto> buscarPorNomeCategoria(@PathVariable String nome, @PageableDefault(page = 0,
 		size = 10, sort = "date" ,direction = Direction.DESC) Pageable paginacao) {
 		
-		return repository.findByidCategoria_nomeCategoriaContainingIgnoreCase(nome, paginacao);
+		return repository.findByidCategoria_nomeCategoriaContainingIgnoreCaseAndAtivoTrue(nome, paginacao);
 	}
 	
 	//Buscar produtos pelo id do usuario

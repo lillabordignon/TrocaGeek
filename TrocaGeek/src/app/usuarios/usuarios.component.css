@@ -81,7 +81,7 @@ a:hover{
 .verMais{
 
     background-color: #05A4C4;
-    border-color: #05A4C4;
+border-color: #05A4C4 ;
     width: 150px;
     padding: 0%;
     padding: 6px 0px 6px 0px;
@@ -90,19 +90,36 @@ a:hover{
 .verMais:hover{
 
     background-color: #ed3263;
-    border-color: #ed3263;
+    border:none;
 }
 
-.btndeletar{
 
+.verMaisNoturno{
+    background-color: #5C5099;
+    border:none; 
+    width: 150px;
+    padding: 0%;
+    padding: 6px 0px 6px 0px;
+}
+
+.verMaisNoturno:hover{
+    background-color: #2b215e;
+}
+
+
+.btndeletar{
+    width: 150px;
+    padding: 0%;
+    padding: 6px 0px 6px 0px;
     background-color: #ed3263;
-    border-color: #ed3263;
+    border:none;
+   
 }
 
 .btndeletar:hover{
 
     background-color: #5c5c5c;
-    border-color: #5c5c5c;
+    border:none;
 
 }
 

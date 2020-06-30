@@ -1,93 +1,107 @@
-<div class="container">
+<div class="container" [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
 
-    <div class="card text-center mt-5">
-        <div class="d-flex justify-content-between card-header">
-            <h4>
-                Negociação: Nº {{negociacao.idNegociacao}}
-            </h4>
-            <h4>
-                Status: {{negociacao.statusNegociacao}}
-            </h4>
-        </div>
-        <div class="card-body">
-            <p class="card-text">
-                Boa sorte na negociação!!
-                <br>Caso seja concluída, o Fornecedor deve clicar em Concluir no final da página.
-            </p>
-        </div>
-        <div class="card-footer text-muted d-flex justify-content-between">
-            <p>Início da Negociação: {{negociacao.dataInicioNegociacao | date: 'dd/MM/yyyy'}}
-                ás {{negociacao.dataInicioNegociacao | date: 'HH:mm'}}</p>
+    <div>
+        <section>
+            <div class="card">
 
-            <p>Final da Negociação: {{negociacao.dataFinalNegociacao | date: 'dd/MM/yyyy'}}
-                ás {{negociacao.dataFinalNegociacao | date: 'HH:mm'}}</p>
-        </div>
-    </div>
-
-
-
-
-    <!-- Dados do Produto -->
-    <!-- // <div class="container "> -->
-
-    <div class="row border my-2 py-5">
-
-        <div class="col-4">
-            <img src="{{negociacao.idProduto.urlImg}}" class="card-img-top img-fluid " alt="imagem do produto">
-        </div>
-
-        <div class="col-8">
-            <div>
-
-                <div class="d-flex">
-                    <h5 class="mr-1"> Produto:</h5>
-                    <p id="nome"> {{negociacao.idProduto.nome}}</p>
+                <div class="d-flex justify-content-between card-header">
+                    <h4>
+                        Negociação: Nº {{negociacao.idNegociacao}}
+                    </h4>
+                    <h4>
+                        Status: {{negociacao.statusNegociacao}}
+                    </h4>
                 </div>
-
-                <div class="d-flex">
-                    <h5 class="mr-1"> Preço: </h5>
-                    <p id="preco"> {{negociacao.idProduto.preco | currency:"BRL"}}</p>
-                </div>
-
-                <div class="d-flex">
-                    <h5 class="mr-1"> Descrição:</h5>
-                    <p id="descricao"> {{negociacao.idProduto.descricao}}</p>
-                </div>
-                <!-- <button type="submit" class="btn btn-primary  mb-5" (click)="salvar()">Atualizar</button> -->
-            </div>
-        </div>
-    </div>
-
-
-
-    <!-- Dados Fornecedor e Interessado -->
-    <div class="row my-2 mb-3">
-        <div class="col-sm-6">
-            <div class="card border">
                 <div class="card-body">
-                    <h5 class="card-title">Dados do Fornecedor</h5>
-                    <p class="card-text">Nome: {{negociacao.idVendedor.nome}}</p>
-                    <p class="card-text">Telefone: {{negociacao.idVendedor.telefone}}</p>
-                    <p class="card-text">Email: {{negociacao.idVendedor.email}}</p>
+                    <p class="card-text">
+                        Boa sorte na negociação!!
+                        <br>Caso seja concluída, o Fornecedor deve clicar em Concluir no final da página.
+                    </p>
+                </div>
+                <div class="card-footer text-muted d-flex justify-content-between">
+                    <p>Início da Negociação: {{negociacao.dataInicioNegociacao | date: 'dd/MM/yyyy'}}
+                        ás {{negociacao.dataInicioNegociacao | date: 'HH:mm'}}</p>
+
+                    <p>Final da Negociação: {{negociacao.dataFinalNegociacao | date: 'dd/MM/yyyy'}}
+                        ás {{negociacao.dataFinalNegociacao | date: 'HH:mm'}}</p>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card border">
-                <div class="card-body">
-                    <h5 class="card-title">Dados do Interessado</h5>
-                    <p class="card-text">Nome: {{negociacao.idComprador.nome}}</p>
-                    <p class="card-text">Telefone: {{negociacao.idComprador.telefone}}</p>
-                    <p class="card-text">Email: {{negociacao.idComprador.email}}</p>
+        </section>
+
+
+
+        <!-- Dados do Produto -->
+        <!-- // <div class="container "> -->
+        <section>
+            <div class="row border my-2 py-5">
+
+                <div class="col-4">
+                    <img src="{{negociacao.idProduto.urlImg}}" class="card-img-top img-fluid " alt="imagem do produto">
+                </div>
+
+                <div class="col-8">
+                    <div>
+
+                        <div class="d-flex">
+                            <h5 class="mr-1"> Produto:</h5>
+                            <p id="nome"> {{negociacao.idProduto.nome}}</p>
+                        </div>
+
+                        <div class="d-flex">
+                            <h5 class="mr-1"> Preço: </h5>
+                            <p id="preco"> {{negociacao.idProduto.preco | currency:"BRL"}}</p>
+                        </div>
+
+                        <div class="d-flex">
+                            <h5 class="mr-1"> Descrição:</h5>
+                            <p id="descricao"> {{negociacao.idProduto.descricao}}</p>
+                        </div>
+                        <!-- <button type="submit" class="btn btn-primary  mb-5" (click)="salvar()">Atualizar</button> -->
+                    </div>
                 </div>
             </div>
+        </section>
+
+
+        <!-- Dados Fornecedor e Interessado -->
+
+        <section>
+            <div class="row my-2 mb-3">
+                <div class="col-sm-6">
+                    <div class="card border">
+                        <div class="card-body">
+                            <h5 class="card-title">Dados do Fornecedor</h5>
+                            <p class="card-text">Nome: {{negociacao.idVendedor.nome}}</p>
+                            <p class="card-text">Telefone: {{negociacao.idVendedor.telefone}}</p>
+                            <p class="card-text">Email: {{negociacao.idVendedor.email}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card border">
+                        <div class="card-body">
+                            <h5 class="card-title">Dados do Interessado</h5>
+                            <p class="card-text">Nome: {{negociacao.idComprador.nome}}</p>
+                            <p class="card-text">Telefone: {{negociacao.idComprador.telefone}}</p>
+                            <p class="card-text">Email: {{negociacao.idComprador.email}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="d-flex justify-content-end my-4" *ngIf="negociacaoEmAndamento">
+            <div *ngIf="donoDoProduto">
+                <a class="btn btn-outline-success mr-3 negociar" [class.negociar]="!modoNoturno"
+                    [class.negociarNoturno]="modoNoturno"
+                    (click)="concluirNegociacao(negociacao.idNegociacao, 2)">Concluir</a>
+            </div>
+            <a class="btn btn-outline-danger btncancelar"
+                (click)="cancelarNegociacao(negociacao.idNegociacao, 3)">Cancelar</a>
         </div>
-    </div>
-    <div class="d-flex justify-content-end my-4" *ngIf="negociacaoEmAndamento">
-        <div *ngIf="donoDoProduto">
-            <a class="btn btn-outline-success mr-3 negociar"
-                (click)="concluirNegociacao(negociacao.idNegociacao, 2)">Concluir</a>
-        </div>
-        <a class="btn btn-outline-danger voltar" (click)="cancelarNegociacao(negociacao.idNegociacao, 3)">Cancelar</a>
+
+        <img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+            title="Modo noturno" alt="botão para ativar modo noturno">
     </div>
 </div>

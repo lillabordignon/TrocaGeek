@@ -1,4 +1,4 @@
-<body [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
+<div class="conteiner" [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -82,7 +82,7 @@
                 </div>
 
                 <button class="btn btn-outline-primary" type="button" (click)="filtrarProdutos()" name="btFiltrar"
-                    id="filtrar" [class.filtrarNoturno]="modoNoturno" value="Filtrar">Filtrar
+                    id="filtrar" value="Filtrar">Filtrar
                 </button>
 
                 <!-- <button class="btn btn-dark" type="button" (click)="modoNoturnoFunction()"> Modo Nortuno</button> -->
@@ -166,4 +166,4 @@
     </div>
     <img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
         title="Modo noturno" alt="botão para ativar modo noturno">
-</body>
+</div>

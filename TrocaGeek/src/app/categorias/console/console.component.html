@@ -1,4 +1,4 @@
-<body [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
+<div [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -35,11 +35,15 @@
 
             <div class="d-flex flex-wrap filtros" action="">
 
-                <div class="d-flex justify-content-center filtros-fields">
-                    <label class="control-label">Ordenar:</label>
+                <div class="d-flex justify-content-center filtros-fields ordemfield">
+
+
+                    <label class="ordenartest control-label ">Ordenar:</label>
+
+
                     <div>
 
-                        <select name="txt_order" id="ordenarPor" size="1" class="fFiltro form-control input-sm">
+                        <select name=" txt_order" id="ordenarPor" size="1" class="fFiltro form-control input-sm">
                             <option value="date" selected="Data">Data</option>
                             <option value="preco">Preço</option>
                             <option value="nome">Nome</option>
@@ -62,8 +66,8 @@
 
                 </div>
 
-                <div class="d-flex justify-content-center filtros-fields">
-                    <label class="control-label">Quantidade por página:</label>
+                <div class="d-flex justify-content-center filtros-fields qntpag">
+                    <label class="control-label">Qntd. por página:</label>
                     <div>
 
                         <select name="txt_order" size="1" id="quantidade" class="fFiltro form-control input-sm">
@@ -99,6 +103,7 @@
     </section>
 
 
+
     <section class="d-flex justify-content-around flex-wrap my-3">
 
         <div class="card text-center my-4 mx-3 modoNoturno" *ngFor="let produto of listaProdutos"
@@ -122,7 +127,7 @@
                     <span>Preço: {{produto.preco | currency:"BRL" }}</span>
                 </div>
                 <hr>
-                 <div>
+                <div>
                     <span>Usuario: {{produto.idUsuario.nome}}</span>
                 </div>
                 <hr>
@@ -131,22 +136,28 @@
                         ás {{produto.date | date: 'HH:mm'}} </span>
                 </div>
                 <hr>
-                <button class="btn verMais" [routerLink]="['/produtos/detalhar', produto.codigo]">Saiba mais</button>
+                <button [class.verMais]="!modoNoturno" [class.verMaisNoturno]="modoNoturno" class="btn verMais"
+                    [routerLink]="['/produtos/detalhar', produto.codigo]">Saiba mais</button>
             </div>
         </div>
     </section>
 
 
     <div class="d-flex justify-content-center py-5">
-        <nav aria-label="Page navigation shadow-lg" class="navigationPage">
-            <button class="btn btn-outline-primary">
+        <nav aria-label="Page navigation shadow-lg">
+
+            <button class="btn btn-outline-primary" [class.navigationPage]="!modoNoturno"
+                [class.paginacaoNoturno]="modoNoturno">
                 <img src="../../assets/img/arrowleft.png" alt="">
             </button>
-            <button class="btn btn-outline-primary" *ngFor="let pagina of arrayDePaginas"
+            <button class="btn btn-outline-primary" [class.navigationPage]="!modoNoturno"
+                [class.paginacaoNoturno]="modoNoturno" *ngFor="let pagina of arrayDePaginas"
                 (click)="paginar(pagina)">{{pagina + 1}}</button>
-            <button class="btn btn-outline-primary">
+            <button class="btn btn-outline-primary" [class.navigationPage]="!modoNoturno"
+                [class.paginacaoNoturno]="modoNoturno">
                 <img src="../../assets/img/arroright.png" alt="">
             </button>
+
         </nav>
 
     </div>
@@ -156,4 +167,4 @@
     </div>
     <img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
         title="Modo noturno" alt="botão para ativar modo noturno">
-</body>
+</div>

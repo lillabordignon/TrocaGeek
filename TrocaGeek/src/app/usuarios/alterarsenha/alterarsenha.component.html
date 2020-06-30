@@ -1,4 +1,4 @@
-<body [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : 'white'}">
+<div [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : 'white'}">
 
     <div class="conteiner d-flex" [ngStyle]="{'color': modoNoturno == true ? corFonteNoturno : 'black'}">
 
@@ -88,8 +88,8 @@
                     </div>
                 </div>
 
-                <button type="button" id="cadastrar" class="btn btn-primary btn-block botao"
-                    (click)="verificar()">Salvar</button>
+                <button type="button" id="cadastrar" class="btn btn-primary" [class.botao]="!modoNoturno"
+                    [class.btnNoturno]="modoNoturno" (click)="verificar()">Salvar</button>
             </div>
 
 
@@ -97,4 +97,4 @@
     </div>
     <img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
         title="Modo noturno" alt="botão para ativar modo noturno">
-</body>
+</div>

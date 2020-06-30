@@ -1,7 +1,8 @@
-<div class="conteiner d-flex">
+<div [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}"
+    class="conteiner d-flex">
 
 
-    <div class="wrapper">
+    <div [class.wrapperNoturno]="modoNoturno" class="wrapper">
 
         <!-- Sidebar -->
 
@@ -53,7 +54,8 @@
     </div>
 
 
-    <div class="d-flex justify-content-center mt-5 w-100  alterarCadastroArea">
+    <div [ngStyle]="{'color': modoNoturno == true ? corFontesNoturno : 'black'}"
+        class="d-flex justify-content-center mt-5 w-100">
 
         <div class="formulario pb-5">
 
@@ -61,31 +63,34 @@
 
             <section class=" bg-warning d-inline flex-nowrap my-3">
 
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Nº Venda</th>
-                            <th scope="col">Produto</th>
-                            <th scope="col">Preço</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Mais Informações</th>
-                        </tr>
-                    </thead>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">IDº Venda</th>
+                                <th scope="col">Produto</th>
+                                <th scope="col">Preço</th>
+                                <th class="statusmobile" scope="col">Status</th>
+                                <th scope="col">Mais Informações</th>
+                            </tr>
+                        </thead>
 
-                    <tbody *ngFor="let vendas of listaVendas">
-                        <tr>
+                        <tbody *ngFor="let vendas of listaVendas">
+                            <tr>
 
-                            <th scope="row">{{vendas.idNegociacao}}</th>
-                            <td>{{vendas.idProduto.nome }}</td>
-                            <td>{{vendas.idProduto.preco | currency:"BRL" }}</td>
-                            <td>{{vendas.statusNegociacao}}</td>
-                            <td><button class="btn verMais"
-                                    [routerLink]="['/negociacao-detalhe', vendas.idNegociacao]">Ver
-                                    mais</button></td>
-                        </tr>
+                                <th scope="row">{{vendas.idNegociacao}}</th>
+                                <td>{{vendas.idProduto.nome }}</td>
+                                <td>{{vendas.idProduto.preco | currency:"BRL" }}</td>
+                                <td class="statusmobile">{{vendas.statusNegociacao}}</td>
+                                <td> <button class="btn" [class.verMais]="!modoNoturno"
+                                        [class.verMaisNoturno]="modoNoturno"
+                                        [routerLink]="['/negociacao-detalhe', vendas.idNegociacao]">Ver
+                                        mais</button></td>
+                            </tr>
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
 
 
 
@@ -95,34 +100,45 @@
 
                 <section class=" bg-warning d-inline flex-nowrap my-3">
 
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Nº Compra</th>
-                                <th scope="col">Produto</th>
-                                <th scope="col">Preço</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Mais Informações</th>
-                            </tr>
-                        </thead>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">IDº Compra</th>
+                                    <th scope="col">Produto</th>
+                                    <th scope="col">Preço</th>
+                                    <th class="statusmobile" scope="col">Status</th>
+                                    <th scope="col">Mais Informações</th>
+                                </tr>
+                            </thead>
 
-                        <tbody *ngFor="let compras of listaCompras">
-                            <tr>
+                            <tbody *ngFor="let compras of listaCompras">
 
-                                <th scope="row">{{compras.idNegociacao}}</th>
-                                <td>{{compras.idProduto.nome }}</td>
-                                <td>{{compras.idProduto.preco | currency:"BRL" }}</td>
-                                <td>{{compras.statusNegociacao}}</td>
-                                <td><button class="btn verMais"
-                                        [routerLink]="['/negociacao-detalhe', compras.idNegociacao]">Ver
-                                        mais</button></td>
-                            </tr>
+                                <tr>
 
-                        </tbody>
-                    </table>
+                                    <th scope="row">{{compras.idNegociacao}}</th>
+                                    <td>{{compras.idProduto.nome }}</td>
+                                    <td>{{compras.idProduto.preco | currency:"BRL" }}</td>
+                                    <td class="statusmobile">{{compras.statusNegociacao}}</td>
+                                    <td><button class="btn" [class.verMais]="!modoNoturno"
+                                            [class.verMaisNoturno]="modoNoturno"
+                                            [routerLink]="['/negociacao-detalhe', compras.idNegociacao]">Ver
+                                            mais</button></td>
+
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
             </section>
+
+            <img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+                title="Modo noturno" alt="botão para ativar modo noturno">
         </div>
     </div>
+
+
 
 </div>

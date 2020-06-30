@@ -102,7 +102,8 @@
                     </div>
 
                 </div>
-                <button type="button" class="btn btn-primary mb-5 botao" (click)="cadastrarProduto()">Cadastrar</button>
+                <button type="button" class="btn btn-primary mb-5" [class.botao]="!modoNoturno"
+                    [class.btnNoturno]="modoNoturno" (click)="cadastrarProduto()">Cadastrar</button>
 
             </div>
         </div>
