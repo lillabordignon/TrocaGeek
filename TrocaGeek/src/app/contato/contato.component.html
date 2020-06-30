@@ -1,48 +1,47 @@
 <body [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
-<div class="container py-5">
-    <div id="input" class="jumbotron faleConosco py-5 w-100">
-        <h1>Fale Conosco</h1>
-        <div>
-            <div class="form-group">
-                <label for="nomeCompleto">Nome Completo</label>
-                <input type="text" class="form-control" id="nomeCompleto" aria-describedby="emailHelp"
-                    placeholder="Insira o seu nome">
-                <div style="visibility: hidden;" class="alert alert-danger alertColor" role="alert-nome"
-                    id="alert-nome">
+    <div class="enviar">
+        <div class="container container-contato mb-5">
+            <h1 class="mt-5 text-center">
+                <img class="img-fluid logo mt-5" src="../../assets/img/logo-white.png" alt="Logo">
+            </h1>
+            <div class="mx-auto px-3 tamanhoinput">
+                <div class="text-light text-center mt-4">
+                    <h2 class="contato">Fale Conosco</h2>
                 </div>
-
-            </div>
-
-            <div class="form-group">
-                <label for="emailValid">Endereço de email</label>
-                <input type="email" class="form-control" id="emailValid" aria-describedby="emailHelp"
-                    placeholder="Insira o seu e-mail">
-                <div style="visibility: hidden;" class="alert alert-danger alertColor" role="alert-email"
-                    id="alert-email">
+                <div class="pb-5">
+                    <div class="form-group">
+                        <label for="nomeCompleto">Nome Completo</label>
+                        <input type="text" class="form-control mb-2" id="nomeCompleto" aria-describedby="emailHelp"
+                            placeholder="Nome Completo">
+                        <div style="visibility: hidden;" class="alert alert-danger alertColor" role="alert-nome"
+                            id="alert-nome">
+                        </div>
+                        <label for="emailValid">Endereço de email</label>
+                        <input type="email" class="form-control mb-2" id="emailValid" aria-describedby="emailHelp"
+                            placeholder="Email">
+                        <div style="visibility: hidden;" class="alert alert-danger alertColor" role="alert-email"
+                            id="alert-email">
+                        </div>
+                        <label for="telValid">Telefone</label>
+                        <input type="text" class="form-control mb-2" id="telValid" placeholder="Telefone"
+                            onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="11">
+                        <div style="visibility: hidden;" class="alert alert-danger alertColor" role="alert-tel"
+                            id="alert-tel">
+                        </div>
+                        <label for="textArea">Mensagem</label>
+                        <textarea class="form-control mb-5" id="textArea" placeholder="Escreva aqui sua mensagem"
+                            rows="5"></textarea>
+                        <div style="visibility: hidden;" class="alert alert-danger alertColor" role="alert-textArea"
+                            id="alert-textArea">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn btn-primary btn-block botao" id="btnEnviar">Enviar</button>
+                    </div>
                 </div>
-
             </div>
-            <div class="form-group">
-                <label for="telValid">Telefone</label>
-                <input type="text" class="form-control" id="telValid" placeholder="(xx) xxxx-xxxx ou (xx) xxxx-xxxxx"
-                    onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="11">
-                <div style="visibility: hidden;" class="alert alert-danger alertColor" role="alert-tel" id="alert-tel">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="textArea">Mensagem</label>
-                <textarea class="form-control" id="textArea" placeholder="Escreva aqui sua mensagem"
-                    rows="5"></textarea>
-                <div style="visibility: hidden;" class="alert alert-danger alertColor" role="alert-textArea"
-                    id="alert-textArea">
-                </div>
-            </div>
-            <button type="button" class="btn btn-info" id="btnEnviar">Enviar</button>
-            <br />
-            <br />
         </div>
+        <img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+            title="Modo noturno" alt="botão para ativar modo noturno">
     </div>
-</div>
-<img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
-title="Modo noturno" alt="botão para ativar modo noturno">
 </body>

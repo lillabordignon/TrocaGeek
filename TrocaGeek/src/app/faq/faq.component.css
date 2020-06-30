@@ -1,11 +1,42 @@
+
 .mb-0{
     color:#bebebe;
     text-decoration:none;
-    background-color: #232323;
+}
+
+#duvidas{
+    font-family: 'Libre Franklin', sans-serif;
+    padding-bottom: 40px;
+    color: #232323 !important;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 32px;
 }
 
 .card-header{
-    background-color: #232323;
+    background: #ed3263;
+    background: -moz-linear-gradient(-45deg, #ed3263 0%, #7db9e8 100%);
+    background: -webkit-linear-gradient(-45deg, #ed3263 0%,#7db9e8 100%);
+    background: linear-gradient(135deg, #ed3263 0%,#7db9e8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed3263', endColorstr='#7db9e8',GradientType=1 );
+    padding: 15px 25px;
+    border: 0;
+    margin-bottom: 2px;
+    font-weight: 100;
+    font-family: 'Libre Franklin', sans-serif;
+    margin: 15px;
+    border-radius: 15px !important;
+}
+
+.card-body a{
+    color: #ed3263;
+    font-weight: bold;
+}
+
+.card-header a h5{
+    color: #fff;
 }
 
 .collapse{

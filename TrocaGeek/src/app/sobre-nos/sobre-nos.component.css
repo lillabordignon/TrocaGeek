@@ -1,9 +1,82 @@
 *{
     font-family: 'Libre Franklin', sans-serif;
 }
+
+.imageContent img{
+    width: 100%;
+    height: auto;
+    max-width: 450px;
+}
+
+.card-title{
+    font-weight: 700;
+    font-family: 'Zian', sans-serif;
+    color: #232323;
+}
+
+.imageContent,
+.infoContent{
+    flex-basis: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+@media(min-width:992px) {
+    .infoContent{
+        padding-top: 35px;
+    }
+}
+
+@media(max-width:991px) {
+    .responsive{
+        flex-direction: column;
+    }
+    .infoContent{
+        order: 2;
+    }
+    .equipe{
+        margin-top: 0 !important;
+    }
+    h2, h1{
+        font-size: 25px !important;
+        margin-top: 0 !important;
+        text-align: center !important;
+    }
+    .devs{
+        margin-top: 0 !important;
+    }
+    .imageContent img{
+        margin-top: 15px;
+    }
+}
+
+h1, h2{
+    font-family: 'Libre Franklin', sans-serif;
+    color: #232323 !important;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 32px;
+    text-align: left;
+}
+
+.devResponsivo{
+    border: 6px solid #ed3263;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
 .devResponsivo img {
    height: 150px;
    width: 150px;
+   border: 4px solid gainsboro;
+}
+
+.card-header{
+    padding: 1.25rem;
 }
 
 .faFacebook, .faGithubAlt, .faInstagram{
@@ -29,10 +102,9 @@
 }
 @media screen and (max-width:813px) {
     .devResponsivo {
-        display: inline-block !important;
+        display: flex !important;
         justify-content: center;
-        margin: 0 auto !important;
-     
+        flex-direction: column;
     }
 }
 

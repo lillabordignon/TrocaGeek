@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faFacebook } from '@fortawesome/free-brands-svg-icons'
-import { faGithubAlt} from '@fortawesome/free-brands-svg-icons'
+import { faGithubAlt } from '@fortawesome/free-brands-svg-icons'
 
 @Component({
   selector: 'app-sobre-nos',
@@ -14,12 +14,12 @@ export class SobreNosComponent implements OnInit {
   faFacebook = faFacebook
   faGithubAlt = faGithubAlt
 
-    //variaveis do modo noturno
-    modoNoturno: boolean = false;
-    corBodyNoturno: string = '#010101'
-    corFontesNoturno: string = '#ffffff'
-  
-    corBodyNaoNoturno: string = '#DBDEE3'
+  //variaveis do modo noturno
+  modoNoturno: boolean = false;
+  corBodyNoturno: string = '#010101'
+  corFontesNoturno: string = '#ffffff'
+
+  corBodyNaoNoturno: string = '#ffffff'
 
 
 

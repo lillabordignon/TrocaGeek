@@ -1,37 +1,40 @@
 <body [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
-<div class="container"
-[ngStyle]="{'color': modoNoturno == true ? corFontesNoturno : 'black'}"
->
-    <div class="sobreNos py-5">
-        <h1>Sobre Nós</h1>
-        <p>
-            A TrocaGeek foi criada com o intuito de economizar, desburocratizar e unir as pessoas com os mesmos
-            interesses, somos um serviço gratuito e novo no ramo de e-commerce e buscamos ganhar a confiança dos
-            usuários.
-        </p>
+    <div class="container responsive d-flex" [ngStyle]="{'color': modoNoturno == true ? corFontesNoturno : 'black'}">
+        <div class="infoContent">
+            <div class="sobreNos my-5">
+                <h1>Sobre Nós</h1>
+                <p class="text-justify ">
+                    A TrocaGeek foi criada com o intuito de economizar, desburocratizar e unir as pessoas com os mesmos
+                    interesses, somos um serviço gratuito e novo no ramo de e-commerce e buscamos ganhar a confiança dos
+                    usuários.
+                </p>
+            </div>
+            <div class="equipe my-5">
+                <h2 class>Conheça a Equipe</h2>
+                <p class="text-justify">
+                    Um grupo de jovens apaixonados por programação e compartilhando dos mesmos gostos, decidiram criar
+                    uma
+                    plataforma que solucionava o problema deles e de muitas pessoas que é anunciar produtos geeks e
+                    encontrar pessoas para troca-los ou vende-los. Buscando cada vez mais aperfeiçoar suas técnicas,
+                    inovar
+                    e gerar um resultado incrível para seus clientes.
+                </p>
+            </div>
+        </div>
+        <div class="imageContent">
+            <img src="../../assets/img/bg-team.png" />
+        </div>
     </div>
-    <div class="equipe my-5">
-        <h1 class>Conheça a Equipe</h1>
-        <p>
-            Um grupo de jovens apaixonados por programação e compartilhando dos mesmos gostos, decidiram criar
-            uma
-            plataforma que solucionava o problema deles e de muitas pessoas que é anunciar produtos geeks e
-            encontrar pessoas para troca-los ou vende-los. Buscando cada vez mais aperfeiçoar suas técnicas,
-            inovar
-            e gerar um resultado incrível para seus clientes.
-        </p>
-    </div>
-    <div class="devs mt-5 mb-5">
-        <h2 class="d-flex justify-content-center my-5">Desenvolvedores do TrocaGeek</h2>
-    </div>
-    <div class="d-flex justify-content-center pb-5 devResponsivo">
- 
-            <div class="card-body" >
+    <div class="container mb-5" [ngStyle]="{'color': modoNoturno == true ? corFontesNoturno : 'black'}">
+        <div class="devs">
+            <h2 class="d-flex justify-content-center my-5">Desenvolvedores do TrocaGeek</h2>
+        </div>
+        <div class="d-flex justify-content-center devResponsivo">
+            <div class="card-body">
                 <div class="card border-0" [ngStyle]="{'color': modoNoturno == true ? corFontesNoturno : 'black'}"
-                [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
-                    <div class="d-flex justify-content-center mt-1">
-                        <img class="card-img-top rounded-circle " src="../../assets/img/cass.jpg"
-                            alt="Card image cap">
+                    [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
+                    <div class="card-header d-flex justify-content-center mt-1">
+                        <img class="card-img-top rounded-circle " src="../../assets/img/cass.jpg" alt="Card image cap">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-center">Cassiano</h5>
@@ -55,16 +58,15 @@
                             </ul>
                         </div>
                     </div>
-     
+
+                </div>
             </div>
-        </div>
 
             <div class="card-body">
                 <div class="card border-0" [ngStyle]="{'color': modoNoturno == true ? corFontesNoturno : 'black'}"
-                [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
-                    <div class="d-flex justify-content-center mt-1">
-                        <img class="card-img-top rounded-circle " src="../../assets/img/leo.jpg"
-                            alt="Card image cap">
+                    [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
+                    <div class="card-header d-flex justify-content-center mt-1">
+                        <img class="card-img-top rounded-circle " src="../../assets/img/leo.jpg" alt="Card image cap">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-center">Leonardo</h5>
@@ -89,14 +91,14 @@
                             </ul>
                         </div>
                     </div>
-         
+
+                </div>
             </div>
-        </div>
 
             <div class="card-body">
                 <div class="card border-0" [ngStyle]="{'color': modoNoturno == true ? corFontesNoturno : 'black'}"
-                [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
-                    <div class="d-flex justify-content-center mt-1">
+                    [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
+                    <div class="card-header d-flex justify-content-center mt-1">
                         <img class="card-img-top rounded-circle" src="../../assets/img/deividson.jpg"
                             alt="Card image cap">
                     </div>
@@ -123,15 +125,14 @@
                         </div>
                     </div>
 
+                </div>
             </div>
-        </div>
 
             <div class="card-body">
                 <div class="card border-0" [ngStyle]="{'color': modoNoturno == true ? corFontesNoturno : 'black'}"
-                [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
-                    <div class="d-flex justify-content-center mt-1">
-                        <img class="card-img-top rounded-circle" src="../../assets/img/lilla.jpg"
-                            alt="Card image cap">
+                    [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
+                    <div class="card-header d-flex justify-content-center mt-1">
+                        <img class="card-img-top rounded-circle" src="../../assets/img/lilla.jpg" alt="Card image cap">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-center">Lirian</h5>
@@ -157,9 +158,9 @@
                     </div>
                 </div>
             </div>
-    
+
+        </div>
+        <img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+            title="Modo noturno" alt="botão para ativar modo noturno">
     </div>
-    <img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
-    title="Modo noturno" alt="botão para ativar modo noturno">
-</div>
 </body>

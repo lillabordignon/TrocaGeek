@@ -1,63 +1,62 @@
+*{
+    font-family: 'Libre Franklin', sans-serif;
+}
 
+label{
+    margin: 0;
+    color: #232323;
+}
 
-/* Início do Main */
-/*
-#input{
-    max-width: 800px;
-    background-color: #5C5099;
-    padding: 35px 35px;
-    border: 1px solid #414141;
-    margin: 100px auto !important;
-    text-align: center;
- }
- .alertColor {
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
+.enviar{
+    background: url(../../assets/img/bg-enviar.jpg) center center no-repeat;
+    width: 100%;
+    padding: 35px 15px;
+    margin: 0 !important;
+    background-size: cover;
+}
+
+.alert-danger {
+    display: none;
+}
+
+.container{
+    background-color: #232323;
+    border-radius: 25px;
+}
+
+.container-contato{
+    max-width: 1024px;
+    max-width: 500px;
+}
+
+.tamanhoinput{
+    max-width: 600px;
+}
+
+.logo{
+    max-width: 200px;
+}
+
+.contato{
+    font-size: 24px;
+    color: #c5c5c5;
+    margin-bottom: -5px;
+    font-weight: 400;
+}
+
+.botao{
+    background-color: #05a4c4;
     color: #fff;
- }
-
- #input h1 {
-    font-family: 'Marvel', sans-serif;
-    margin-bottom: 40px;
- }
-
- #btnEnviar:hover{
-     background-color: rgba(0, 0, 0, 0.5);
- }
- 
- #btnEnviar {
-     width: 160px;
-     font-family: 'Press Start 2P', cursive;
-     font-size: 14px;
-     background-color: #e9316e;
-     border: 1px solid #5c5099;
-     margin-top: 20px;
-
- }
- 
- #input label {
-     color: #ffffff;
-     font-family: 'Marvel', sans-serif;
-     font-size: 22px;
-     font-weight: 600;
- }
-
-.devs h1{
-   text-align: center;
-
+    border: none;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
-.container h1 {
-    text-align: center;
-    margin: 30px auto 15px auto;
-    color: white;
-
+.botao:hover{
+    background-color:#ed3263;
+    color: #fff;
 }
-.container p{
-    text-align: center;
-    color:white;
-    border: 2px solid  #696969;
-}*/
 
 .botaoNoturno {
     position: fixed;
