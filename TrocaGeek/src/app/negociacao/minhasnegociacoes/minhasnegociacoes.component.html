@@ -120,8 +120,7 @@
                                     <td>{{compras.idProduto.nome }}</td>
                                     <td>{{compras.idProduto.preco | currency:"BRL" }}</td>
                                     <td class="statusmobile">{{compras.statusNegociacao}}</td>
-                                    <td><button class="btn" [class.verMais]="!modoNoturno"
-                                            [class.verMaisNoturno]="modoNoturno"
+                                    <td><button class="btn verMais"
                                             [routerLink]="['/negociacao-detalhe', compras.idNegociacao]">Ver
                                             mais</button></td>
 

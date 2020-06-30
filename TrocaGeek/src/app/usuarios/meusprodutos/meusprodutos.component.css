@@ -111,6 +111,11 @@ a:hover{
     height: 200px;
 }
 
+.card-body{
+
+    width: 400px !important;
+}
+
 
 
 .caixas{
@@ -231,25 +236,32 @@ a:hover{
 
   }
 
-  .caixas{
-
-    max-width: 300px;
-
-  }
-
 
 
 @media only screen and (max-width: 768px) {
+
+    
     #sidebar{
         display: none;
 
     }
 
-    .card{
-        border:none;
-        width: 100%;
-        margin: 0%;
+    .caixas{
+
+        max-width: 350px;
+        display: flex;
+        justify-content: center;
+    
+      }
+    
+      .caixasNoturno{
+        max-width: 350px;
+      }
+
+    .card-body{
+        width: 300px !important;
     }
+
     .wrapper {
         display: flex;
         width: 0%;

@@ -86,15 +86,13 @@
 
                 <div class="d-flex justify-content-between flex-wrap ">
                     <div class="mb-2">
-                        <button [class.verMais]="!modoNoturno" [class.verMaisNoturno]="modoNoturno"
-                            class="btn verMais btn-success mr-1 alterarCadastro"
+                        <button class="btn verMais btn-success mr-1 alterarCadastro"
                             [routerLink]="['/usuarios/editar',usuario.id]">Alterar
                             Cadastro</button>
                     </div>
 
                     <div class="mb-2">
-                        <button [class.verMais]="!modoNoturno" [class.verMaisNoturno]="modoNoturno"
-                            class=" btn verMais btn-success  mr-1 " routerLink="/cadastrar-produto">Cadastrar
+                        <button class=" btn verMais btn-success  mr-1 " routerLink="/cadastrar-produto">Cadastrar
                             Produto</button>
                     </div>
 

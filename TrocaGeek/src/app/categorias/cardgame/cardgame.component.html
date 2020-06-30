@@ -107,7 +107,7 @@
             <div class="card-body">
                 <a [routerLink]="['/produtos/detalhar', produto.codigo]">
                     <div class="produtonome">
-                        <h4>{{produto.nome}}</h4>
+                        <h4 class="d-flex justify-content-center w-auto">{{produto.nome}}</h4>
                     </div>
                     <hr>
 
@@ -122,17 +122,16 @@
                     <span>Preço: {{produto.preco | currency:"BRL" }}</span>
                 </div>
                 <hr>
-                <div>
+                <!-- <div>
                     <span>Usuario: {{produto.idUsuario.nome}}</span>
                 </div>
                 <hr>
                 <div>
                     <span>Publicado: {{produto.date | date: 'dd/MM/yyyy'}}
                         ás {{produto.date | date: 'HH:mm'}} </span>
-                </div>
-                <hr>
-                <button [class.verMais]="!modoNoturno" [class.verMaisNoturno]="modoNoturno" class="btn verMais"
-                    [routerLink]="['/produtos/detalhar', produto.codigo]">Saiba mais</button>
+                </div> 
+                <hr> -->
+                <button class="btn verMais" [routerLink]="['/produtos/detalhar', produto.codigo]">Saiba mais</button>
             </div>
         </div>
     </section>
@@ -141,15 +140,12 @@
     <div class="d-flex justify-content-center py-5">
         <nav aria-label="Page navigation shadow-lg">
 
-            <button class="btn btn-outline-primary" [class.navigationPage]="!modoNoturno"
-                [class.paginacaoNoturno]="modoNoturno">
+            <button class="btn btn-outline-primary navigationPage">
                 <img src="../../assets/img/arrowleft.png" alt="">
             </button>
-            <button class="btn btn-outline-primary" [class.navigationPage]="!modoNoturno"
-                [class.paginacaoNoturno]="modoNoturno" *ngFor="let pagina of arrayDePaginas"
+            <button class="btn btn-outline-primary navigationPage" *ngFor="let pagina of arrayDePaginas"
                 (click)="paginar(pagina)">{{pagina + 1}}</button>
-            <button class="btn btn-outline-primary" [class.navigationPage]="!modoNoturno"
-                [class.paginacaoNoturno]="modoNoturno">
+            <button class="btn btn-outline-primary navigationPage">
                 <img src="../../assets/img/arroright.png" alt="">
             </button>
 
