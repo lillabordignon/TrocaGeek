@@ -38,9 +38,4 @@ export class DetalharComponent implements OnInit {
       this.produto = resp;
     })
   }
-
-
-
-
-
 }

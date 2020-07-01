@@ -1,275 +1,277 @@
-*{
-    font-family: 'Libre Franklin', sans-serif;
+* {
+  font-family: 'Libre Franklin', sans-serif;
 }
+
 body {
-    transition: 0.5s;
-}
-
-
-
-.botaoNoturno {
-    position: fixed;
-    top: 30%;
-    right: 20px;
-    height: 50px;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: 0.5s;
-}
-.botaoNoturno:hover {
-    opacity: 1;
+  transition: 0.5s;
 }
 
 .wrapper {
-    display: flex;
-    width: 25%;
-    background-color: #F8F9FA;
-  
+  display: flex;
+  width: 25%;
+  background-color: #F8F9FA;
+
 }
 
-.wrapperNoturno{
-
-    display: flex;
-    width: 25%;
-    background-color: #343A40;
+.wrapperNoturno {
+  display: flex;
+  width: 25%;
+  background-color: #343A40;
 
 }
 
 #sidebar {
-    width: 100%;
-    height: 100%;
-    color: black;
+  width: 100%;
+  height: 100%;
+  color: black;
+}
+
+.liwrapper {
+  width: 100%;
+  margin: none;
+  height: 100%;
 
 }
 
-.liwrapper{
-
-    width: 100%;
-    
-    margin: none;
-    height: 100%;
+.btn-wrapper {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
 
 }
 
-.btn-wrapper{
+.logo {
+  width: 80%;
+  height: 80%;
+}
 
-    padding-top: 20px !important;
-    padding-bottom: 20px !important;
-
+.card {
+  border: none;
 }
 
 
-.logo{
-    width: 80%;
-    height: 80%;
+a {
+  text-decoration: none;
+  color: #2e2e2e;
 }
 
-.card{
-    border:none;
+a:hover {
+  color: #ed3263;
 }
 
+.alterarCadastroArea {
+  width: 100% !important;
+  max-width: none !important;
+  justify-content: center;
 
-a{
-    text-decoration: none;
-    color: #2e2e2e;
 }
 
-a:hover{
-    color: #ed3263;
+.card-body {
+  width: 300px;
 }
 
+.formulario {
+  width: 100%;
+  transition: 0.5s;
+}
 
-.alterarCadastroArea{
-    width: 100% !important;
-    max-width: none !important;
-    justify-content: center;
-      
+.produtonome {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.produtonome h4 {
+  display: inline-table;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  font-weight: 900;
+  font-size: 26px;
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+.divimg {
+  width: 200px;
+  height: 200px;
+  margin: 0px 0px 0px 0px !important;
+}
+
+.img {
+  max-width: 260px;
+  max-height: 200px;
+}
+
+.card-body {
+  width: 300px;
+}
+
+.card-body a {
+  text-decoration: none;
+  color: #212529;
+}
+
+.caixas {
+  border: none;
+  box-shadow: 0px 0px 8px 3px #ccc;
+  transition: box-shadow 0.3s;
+  background-color: #f1f0f0;
+  transition: transform .35s ease;
+  border-radius: 15px;
+}
+
+.caixas:hover {
+  box-shadow: 0px 0px 15px 5px #b1b1b1;
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.caixasNoturno {
+  border: none;
+  box-shadow: 0px 0px 8px 3px rgb(105, 105, 105);
+  transition: box-shadow 0.3s;
+  background-color: #DBDEE3;
+  transition: transform .35s ease;
+  border-radius: 15px;
+}
+
+.caixasNoturno:hover {
+  box-shadow: 0px 0px 15px 5px #464646;
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.fontNoturno {
+
+  color: black;
+}
+
+span {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.verMais {
+  background-color: #05a4c4;
+  padding: 8px 35px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #fff;
+  transition: color .25s ease, background .25s ease;
+}
+
+.verMais:hover {
+  background-color: #ed3263;
+}
+
+.verMaisNoturno {
+  background-color: #7e69e4;
+  padding: 8px 35px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #fff;
+  transition: color .25s ease, background .25s ease;
+  border: none;
+}
+
+.verMaisNoturno:hover {
+  background-color: #2b215e;
+}
+
+.deletar {
+  padding: 8px 35px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #fff;
+  transition: color .25s ease, background .25s ease;
+  border: none;
+}
+
+.deletar:hover {
+  background-color: #232323;
+}
+
+.deletarNoturno {
+  padding: 8px 35px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #fff;
+  transition: color .25s ease, background .25s ease;
+  border: none;
+}
+
+.deletarNoturno:hover {
+  background-color: #232323;
+}
+
+@media (min-width: 768px) and (max-width: 864) {
+
+  .wrapper {
+    display: flex;
+    width: 0%;
+    font-size: 2em;
   }
 
-  .card-body{
-    width: 300px;
 }
 
+@media only screen and (max-width: 768px) {
 
-.formulario{
+  #sidebar {
+    display: none;
 
-    width: 100%;
-    transition: 0.5s;
-}
+  }
 
-
-.divimg{
-
-    width: 200px;
-    height: 200px;
-    margin: 0px 0px 0px 0px !important;
-}
-
-.img{
-    width: 150px;
-    height: 200px;
-}
-
-.card-body{
-
-    width: 400px !important;
-}
-
-
-
-.caixas{
+  .caixas {
     border: none;
     box-shadow: 0px 0px 8px 3px #ccc;
     transition: box-shadow 0.3s;
     background-color: #f1f0f0;
     transition: transform .35s ease;
     border-radius: 15px;
-}
+  }
 
-.caixas:hover{
+  .caixas:hover {
     box-shadow: 0px 0px 15px 5px #b1b1b1;
     -ms-transform: scale(1.1);
     transform: scale(1.1);
-}
+  }
 
-.caixasNoturno {
-    border: none;
-    box-shadow: 0px 0px 8px 3px rgb(105, 105, 105);
-    transition: box-shadow 0.3s;
-    background-color: #c5c5c5;
-    transition: transform .35s ease;
-    border-radius: 15px;
-}
+  .caixasNoturno {
+    max-width: 350px;
+  }
 
-.caixasNoturno:hover{
-    box-shadow: 0px 0px 15px 5px #464646;
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-}
+  .card-body {
+    width: 300px !important;
+  }
 
-.produtonome{
-    height: 70px;
+  .card-body a {
+    text-decoration: none;
+    color: #212529;
+  }
+
+  .wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.produtonome h4{
-    display: inline-table;
-    font-weight: 600;
-    letter-spacing: -0.5px;
-}
-
-
-.fontNoturno{
-
-    color:black;
-}
-
-.verMais{
-    background-color: #05a4c4;
-    padding: 8px 35px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    color: #fff;
-    transition: color .25s ease, background .25s ease;
-    border: none;
-}
-
-.verMais:hover{
-    background-color: #ed3263;
-}
-
-.verMaisNoturno{
-    background-color: #5C5099;
-    padding: 8px 35px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    color: #fff;
-    transition: color .25s ease, background .25s ease;
-    border: none;
-}
-
-.verMaisNoturno:hover{
-    background-color: #2b215e;
-}
-
-
-.deletar{
-   
-    padding: 8px 35px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    color: #fff;
-    transition: color .25s ease, background .25s ease;
-    border: none;
-}
-
-.deletar:hover{
-    background-color: #c5c5c5;
-}
-
-.deletarNoturno{
-   
-    padding: 8px 35px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    color: #fff;
-    transition: color .25s ease, background .25s ease;
-    border: none;
-}
-
-.deletarNoturno:hover{
-    background-color: #c5c5c5;
-}
-
-
-
-@media (min-width: 768px) and (max-width: 864) {
-
-    .wrapper {
-        display: flex;
-        width: 0%;
-        font-size: 2em;
-    }
-
+    width: 0%;
   }
 
+}
 
-
-@media only screen and (max-width: 768px) {
-
-    
-    #sidebar{
-        display: none;
-
-    }
-
-    .caixas{
-
-        max-width: 350px;
-        display: flex;
-        justify-content: center;
-    
-      }
-    
-      .caixasNoturno{
-        max-width: 350px;
-      }
-
-    .card-body{
-        width: 300px !important;
-    }
-
-    .wrapper {
-        display: flex;
-        width: 0%;
-    }
-
+@media screen and (max-width:500px) {
+  .botaoNoturno {
+    height: 40px;
+    top: 200px;
   }
-  @media screen and (max-width:500px) {
-    .botaoNoturno {
-        height: 40px;
-        top: 200px;
-    }
+}
+
+.botaoNoturno {
+  position: fixed;
+  top: 30%;
+  right: 20px;
+  height: 50px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.5s;
+}
+
+.botaoNoturno:hover {
+  opacity: 1;
 }
