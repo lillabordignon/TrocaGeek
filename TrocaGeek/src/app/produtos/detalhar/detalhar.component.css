@@ -6,28 +6,8 @@ body {
   background-color: #DBDEE3 !important;
 }
 
-.bg-color {
-  background-color: #dbdee3;
-}
-
-h2 {
-  font-size: 26px;
-}
-
-h4 {
-  font-weight: normal;
-}
-
-.preco {
-  font-size: 24px;
-}
-
-.publicado {
-  font-size: 15px;
-}
-
-.descricaoProduto {
-  font-size: 16px;
+.imgDetalhar {
+  max-width: 350px;
 }
 
 .caixas {
@@ -68,17 +48,17 @@ h4 {
   place-self: center;
   background: #fff;
   margin: 15px;
+  max-width: 300px;
   padding: 35px 0 !important;
   height: 100%;
   border-radius: 15px;
   box-shadow: 0 0 10px 0 rgba(186, 186, 186, 0.8);
 }
 
-img {
-  max-width: 300px;
-  max-height: 350px;
-  width: auto;
+.imgDetalhar {
+  width: 100%;
   height: auto;
+  display: block;
 }
 
 h2 {
@@ -116,7 +96,7 @@ strong {
 }
 
 .verMaisNoturno {
-  background-color: #5C5099;
+  background-color: #05a4c4;
   padding: 8px 35px;
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -125,7 +105,7 @@ strong {
 }
 
 .verMaisNoturno:hover {
-  background-color: #2b215e;
+  background-color: #ed3263;
 }
 
 
