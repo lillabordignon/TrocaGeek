@@ -36,6 +36,9 @@ export class DetalhesComponent implements OnInit {
     let id = this.route.snapshot.params['id']
 
     this.buscarNegociacao(id);
+    if(localStorage.getItem('token') == null) {
+      location.assign('/login')
+    }
 
     setTimeout(() => {
       if (this.negociacao.dataFinalNegociacao != null) {

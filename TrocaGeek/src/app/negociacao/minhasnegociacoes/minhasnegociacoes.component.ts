@@ -32,7 +32,9 @@ export class MinhasnegociacoesComponent implements OnInit {
     let id = localStorage.getItem("idUsuario");
     this.buscarVendas(id);
     this.buscarCompras(id);
-
+    if(localStorage.getItem('token') == null) {
+      location.assign('/login')
+    }
     if (localStorage.getItem('noturno') == 'true') {
       this.modoNoturno = true;
     }

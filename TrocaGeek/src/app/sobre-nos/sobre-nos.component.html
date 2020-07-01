@@ -1,6 +1,6 @@
-<body [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
+<div [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}" class="py-2 transition">
     <div class="container responsive d-flex" [ngStyle]="{'color': modoNoturno == true ? corFontesNoturno : 'black'}">
-        <div class="infoContent">
+        <div class="infoContent" >
             <div class="sobreNos my-5">
                 <h1>Sobre Nós</h1>
                 <p class="text-justify ">
@@ -37,7 +37,8 @@
                         <img class="card-img-top rounded-circle " src="../../assets/img/cass.jpg" alt="Card image cap">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-center">Cassiano</h5>
+                        <h5 class=" text-center" [class.card-title]="!modoNoturno"
+                        [class.card-titleNoturno]="modoNoturno">Cassiano</h5>
                         <p class="card-text text-center">Estudante do curso de desenvolvimento Java na Generation
                             Brasil.
                         </p>
@@ -67,7 +68,9 @@
                         <img class="card-img-top rounded-circle " src="../../assets/img/leo.jpg" alt="Card image cap">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-center">Leonardo</h5>
+                        <h5 class=" text-center" [class.card-title]="!modoNoturno"
+                                                [class.card-titleNoturno]="modoNoturno"
+                            >Leonardo</h5>
                         <p class="card-text text-center">Estudante do curso de desenvolvimento Java na Generation
                             Brasil.
                         </p>
@@ -99,7 +102,8 @@
                             alt="Card image cap">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-center">Deividson</h5>
+                        <h5 class=" text-center" [class.card-title]="!modoNoturno"
+                        [class.card-titleNoturno]="modoNoturno">Deividson</h5>
                         <p class="card-text text-center">Estudante do curso de desenvolvimento Java na Generation
                             Brasil.
                         </p>
@@ -129,7 +133,8 @@
                         <img class="card-img-top rounded-circle" src="../../assets/img/lilla.jpg" alt="Card image cap">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-center">Lirian</h5>
+                        <h5 class="text-center" [class.card-title]="!modoNoturno"
+                        [class.card-titleNoturno]="modoNoturno">Lirian</h5>
                         <p class="card-text text-center">Estudante do curso de desenvolvimento Java na Generation
                             Brasil.
                         </p>
@@ -156,4 +161,4 @@
         <img src="../../assets/img/botao_noturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
             title="Modo noturno" alt="botão para ativar modo noturno">
     </div>
-</body>
+</div>
