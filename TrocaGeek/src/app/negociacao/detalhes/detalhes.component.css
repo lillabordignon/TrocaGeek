@@ -1,0 +1,62 @@
+*{
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.botaoNoturno {
+    position: fixed;
+    top: 30%;
+    right: 20px;
+    height: 60px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+.botaoNoturno:hover {
+    opacity: 1;
+}
+
+
+.verMais{
+
+    background-color: #05A4C4;
+border-color: #05A4C4 ;
+    width: 150px;
+    padding: 0%;
+    padding: 6px 0px 6px 0px;
+}
+
+.negociar:hover{
+
+    background-color: #ed3263;
+    border:none;
+}
+
+
+.negociarNoturno{
+    background-color: #5C5099;
+    border:none; 
+    width: 150px;
+    padding: 0%;
+    padding: 6px 0px 6px 0px;
+}
+
+.negociarNoturno:hover{
+    background-color: #2b215e;
+}
+
+.btncancelar{
+    color: white !important;
+    width: 150px;
+    padding: 0%;
+    padding: 6px 0px 6px 0px;
+    background-color: #ed3263;
+    border:none;
+   
+}
+
+.btncancelar:hover{
+
+    background-color: #5c5c5c;
+    border:none;
+
+}

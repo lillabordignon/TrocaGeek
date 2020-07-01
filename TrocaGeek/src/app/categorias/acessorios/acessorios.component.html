@@ -1,4 +1,4 @@
-<body [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
+<div class="conteiner" [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}">
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -35,11 +35,15 @@
 
             <div class="d-flex flex-wrap filtros" action="">
 
-                <div class="d-flex justify-content-center filtros-fields">
-                    <label class="control-label">Ordenar:</label>
+                <div class="d-flex justify-content-center filtros-fields ordemfield">
+
+
+                    <label class="ordenartest control-label ">Ordenar:</label>
+
+
                     <div>
 
-                        <select name="txt_order" id="ordenarPor" size="1" class="fFiltro form-control input-sm">
+                        <select name=" txt_order" id="ordenarPor" size="1" class="fFiltro form-control input-sm">
                             <option value="date" selected="Data">Data</option>
                             <option value="preco">Preço</option>
                             <option value="nome">Nome</option>
@@ -62,8 +66,8 @@
 
                 </div>
 
-                <div class="d-flex justify-content-center filtros-fields">
-                    <label class="control-label">Quantidade por página:</label>
+                <div class="d-flex justify-content-center filtros-fields qntpag">
+                    <label class="control-label">Qntd. por página:</label>
                     <div>
 
                         <select name="txt_order" size="1" id="quantidade" class="fFiltro form-control input-sm">
@@ -78,7 +82,7 @@
                 </div>
 
                 <button class="btn btn-outline-primary" type="button" (click)="filtrarProdutos()" name="btFiltrar"
-                    id="filtrar" value="Filtrar">Filtrar
+                    id="filtrar" [class.filtrarNoturno]="modoNoturno" value="Filtrar">Filtrar
                 </button>
 
                 <!-- <button class="btn btn-dark" type="button" (click)="modoNoturnoFunction()"> Modo Nortuno</button> -->
@@ -107,7 +111,7 @@
             <div class="card-body">
                 <a [routerLink]="['/produtos/detalhar', produto.codigo]">
                     <div class="produtonome">
-                        <h4>{{produto.nome}}</h4>
+                        <h4 class="d-flex justify-content-center w-auto">{{produto.nome}}</h4>
                     </div>
                     <hr>
 
@@ -122,15 +126,15 @@
                     <span>Preço: {{produto.preco | currency:"BRL" }}</span>
                 </div>
                 <hr>
-                 <div>
+                <!-- <div>
                     <span>Usuario: {{produto.idUsuario.nome}}</span>
                 </div>
                 <hr>
                 <div>
                     <span>Publicado: {{produto.date | date: 'dd/MM/yyyy'}}
                         ás {{produto.date | date: 'HH:mm'}} </span>
-                </div>
-                <hr> 
+                </div> 
+                <hr> -->
                 <button class="btn verMais" [routerLink]="['/produtos/detalhar', produto.codigo]">Saiba mais</button>
             </div>
         </div>
@@ -138,15 +142,17 @@
 
 
     <div class="d-flex justify-content-center py-5">
-        <nav aria-label="Page navigation shadow-lg" class="navigationPage">
-            <button class="btn btn-outline-primary">
+        <nav aria-label="Page navigation shadow-lg">
+
+            <button class="btn btn-outline-primary navigationPage">
                 <img src="../../assets/img/arrowleft.png" alt="">
             </button>
-            <button class="btn btn-outline-primary" *ngFor="let pagina of arrayDePaginas"
+            <button class="btn btn-outline-primary navigationPage" *ngFor="let pagina of arrayDePaginas"
                 (click)="paginar(pagina)">{{pagina + 1}}</button>
-            <button class="btn btn-outline-primary">
+            <button class="btn btn-outline-primary navigationPage">
                 <img src="../../assets/img/arroright.png" alt="">
             </button>
+
         </nav>
 
     </div>
@@ -156,4 +162,4 @@
     </div>
     <img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
         title="Modo noturno" alt="botão para ativar modo noturno">
-</body>
+</div>

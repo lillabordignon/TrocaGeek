@@ -110,14 +110,13 @@
                                 Ativo: &#10060;
                             </div>
                             <hr>
-                            <button [class.verMais]="!modoNoturno" [class.verMaisNoturno]="modoNoturno" class="btn"
-                                [routerLink]="['/produtos/detalhar', produto.codigo]">Ver Mais</button>
+                            <button class="btn verMais" [routerLink]="['/produtos/detalhar', produto.codigo]">Ver
+                                Mais</button>
 
                             <hr>
                             <div class="d-flex justify-content-around">
                                 <div class="">
-                                    <button class="btn btn-success" [class.verMais]="!modoNoturno"
-                                        [class.verMaisNoturno]="modoNoturno"
+                                    <button class="btn verMais"
                                         [routerLink]="['/produtos/editar', produto.codigo]">Editar</button>
                                 </div>
                                 <button class="btn btn-danger" [class.deletar]="!modoNoturno"

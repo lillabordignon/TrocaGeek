@@ -93,6 +93,16 @@ a:hover{
 
 }
 
+.btnNoturno{
+    background-color: #5C5099 ;
+  border-color:#5C5099  ;
+}
+
+.btnNoturno:hover{
+    background-color: #2b215e ;
+    border-color:#2b215e ;
+}
+
 @media (min-width: 768px) and (max-width: 864) {
 
 

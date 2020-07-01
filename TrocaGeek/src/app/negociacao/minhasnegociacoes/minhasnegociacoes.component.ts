@@ -36,6 +36,7 @@ export class MinhasnegociacoesComponent implements OnInit {
     if (localStorage.getItem('noturno') == 'true') {
       this.modoNoturno = true;
     }
+
   }
 
   modoNoturnoFunction() {

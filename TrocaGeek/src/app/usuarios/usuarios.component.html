@@ -1,4 +1,4 @@
-<body [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : 'white'}">
+<div [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : 'white'}">
 
 
     <div class="conteiner d-flex" [ngStyle]="{'color': modoNoturno == true ? corFonteNoturno : 'black'}">
@@ -115,4 +115,4 @@
     </div>
     <img src="../../assets/img/botao_noturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
         title="Modo noturno" alt="botão para ativar modo noturno">
-</body>
+</div>

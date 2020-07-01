@@ -2,11 +2,34 @@
     font-family: 'Libre Franklin', sans-serif;
 }
 
+.botaoNoturno {
+    position: fixed;
+    top: 30%;
+    right: 20px;
+    height: 60px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+.botaoNoturno:hover {
+    opacity: 1;
+}
+
+
 .wrapper {
     display: flex;
     width: 25%;
-   
+    background-color: #F8F9FA;
   
+}
+
+
+.wrapperNoturno{
+
+    display: flex;
+    width: 25%;
+    background-color: #343A40;
+
 }
 
 .botaoNoturno {
@@ -90,17 +113,40 @@ span{
 
 a{
     text-decoration: none;
-}
-
-.verMais{
-    background-color: #05a4c4;
-    color: #fff !important;
     
 }
 
-.verMais:hover{
-    background-color: #ed3263;
+.verMais{
+
+    background-color: #05A4C4;
+    border-color: #05A4C4 ;
+    color: white;
+    width: 150px;
+    padding: 0%;
+    padding: 6px 0px 6px 0px;
 }
+
+.verMais:hover{
+
+    background-color: #ed3263;
+    border:none;
+}
+
+
+.verMaisNoturno{
+    background-color: #5C5099;
+    border:none; 
+    color: white;
+    width: 150px;
+    padding: 0%;
+    padding: 6px 0px 6px 0px;
+}
+
+.verMaisNoturno:hover{
+    background-color: #2b215e;
+}
+
+
 
 @media(max-width: 970){
 
@@ -124,3 +170,10 @@ a{
         width:100%
     }
 }
+
+/* @media only screen and (max-width: 550px){
+
+    .statusmobile{
+        display: none !important;
+    }
+} */

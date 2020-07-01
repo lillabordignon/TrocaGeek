@@ -1,4 +1,4 @@
-package com.generation.trocageek.model;
+package com.generation.trocageek.controller.form;
 
 public class UsuarioEditar {
 	private String nome;
