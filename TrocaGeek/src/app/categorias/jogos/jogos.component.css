@@ -6,6 +6,9 @@
     background-color: #232323;
 }
 
+.transition {
+    transition: 0.5s;
+  }
 
 .botaoNoturno {
     position: fixed;

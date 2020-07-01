@@ -6,6 +6,10 @@ body {
   background-color: #232323 !important;
 }
 
+.transition {
+  transition: 0.5s;
+}
+
 .container {
   border-radius: 20px;
 }
@@ -47,7 +51,8 @@ body {
 
 .negociarNoturno:hover {
   background-color: #ed3263;
-  color: #232323 !important;
+  color: #ffffff !important;
+  border: none;
 }
 
 .btncancelar {

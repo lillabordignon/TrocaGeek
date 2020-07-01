@@ -2,6 +2,10 @@
   font-family: 'Libre Franklin', sans-serif;
 }
 
+.transition {
+  transition: 0.5s;
+}
+
 .produtonome {
   height: 70px;
   display: flex;
