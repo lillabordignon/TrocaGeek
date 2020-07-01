@@ -1,5 +1,5 @@
 <div [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : corBodyNaoNoturno}"
-  class="conteiner d-flex">
+  class="conteiner d-flex transition">
 
 
   <div [class.wrapperNoturno]="modoNoturno" class="wrapper">
@@ -81,8 +81,7 @@
                 <td>{{vendas.idProduto.nome }}</td>
                 <td>{{vendas.idProduto.preco | currency:"BRL" }}</td>
                 <td class="statusmobile">{{vendas.statusNegociacao}}</td>
-                <td> <button class="btn" [class.verMais]="!modoNoturno" [class.verMaisNoturno]="modoNoturno"
-                    [routerLink]="['/negociacao-detalhe', vendas.idNegociacao]">Ver
+                <td> <button class="btn verMais" [routerLink]="['/negociacao-detalhe', vendas.idNegociacao]">Ver
                     mais</button></td>
               </tr>
             </tbody>
@@ -129,11 +128,18 @@
         </section>
       </section>
 
-      <img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+      <!-- <img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+        title="Modo noturno" alt="botão para ativar modo noturno"> -->
+    </div>
+
+    <div *ngIf="!modoNoturno">
+      <img src="../../assets/img/botao_noturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
         title="Modo noturno" alt="botão para ativar modo noturno">
     </div>
-    <img src="../../assets/img/botao_noturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
-      title="Modo noturno" alt="botão para ativar modo noturno">
+    <div *ngIf="modoNoturno">
+      <img src="../../../assets/img/botao_noturno-ativo.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+        title="Modo noturno" alt="botão para ativar modo noturno">
+    </div>
   </div>
 
 

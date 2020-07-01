@@ -17,12 +17,11 @@ export class EditarProdutosComponent implements OnInit {
   usuario: Usuario = new Usuario;
   categoria: Categoria = new Categoria;
 
-    //variaveis do modo noturno
-    modoNoturno: boolean = false;
-    corBodyNoturno: string = '#010101'
-    corFontesNoturno: string = '#ffffff'
-  
-    corBodyNaoNoturno: string = '#DBDEE3'
+  //variaveis modo noturno
+  modoNoturno: boolean;
+  corBodyNoturno: string = '#0f0f0f'
+  corFonteNoturno: string = '#ffffff'
+
 
 
   constructor(private produtoService: ProdutoService, private router: ActivatedRoute) { }
@@ -35,12 +34,22 @@ export class EditarProdutosComponent implements OnInit {
     this.usuario.id = parseInt(localStorage.getItem('idUsuario'));
 
     this.buscarProduto(id);
+
+
+    if (localStorage.getItem('noturno') == 'true') {
+      this.modoNoturno = true;
+    }
   }
 
   buscarProduto(id) {
     this.produtoService.getProdutoEspecifico(id).subscribe((resp: Produto) => {
       this.produto = resp;
     })
+  }
+
+  modoNoturnoFunction() {
+    this.modoNoturno = !this.modoNoturno;
+    localStorage.setItem('noturno', this.modoNoturno.toString());
   }
 
 

@@ -306,6 +306,13 @@ body {
 }
 
 @media screen and (max-width:500px) {
+    
+    .divBtnNoturno{
+
+        height: 40px;
+        top:200px;
+    }
+    
     .botaoNoturno {
         height: 40px;
         top: 200px;

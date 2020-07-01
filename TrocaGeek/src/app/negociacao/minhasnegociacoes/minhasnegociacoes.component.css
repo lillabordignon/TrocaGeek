@@ -2,6 +2,11 @@
   font-family: 'Libre Franklin', sans-serif;
 }
 
+.transition {
+  transition: 0.5s;
+}
+
+
 .botaoNoturno {
   position: fixed;
   top: 30%;

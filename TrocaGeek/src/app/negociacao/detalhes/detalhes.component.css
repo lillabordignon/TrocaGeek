@@ -26,30 +26,33 @@ body {
 
 .negociar {
   color: white !important;
+  width: 150px !important;
   padding: 6px 12px !important;
   background-color: #05a4c4;
   border: none;
 }
 
 .negociar:hover {
-  background-color: #232323;
+  background-color: #ed3263;
   border: none;
 }
 
 .negociarNoturno {
   color: white !important;
+  width: 150px !important;
   padding: 6px 12px !important;
   background-color: #05a4c4;
   border: none;
 }
 
 .negociarNoturno:hover {
-  background-color: #DBDEE3;
+  background-color: #ed3263;
   color: #232323 !important;
 }
 
 .btncancelar {
   color: white !important;
+  width: 150px !important;
   padding: 6px 12px !important;
   background-color: #ed3263;
   border: none;
@@ -57,7 +60,7 @@ body {
 }
 
 .btncancelar:hover {
-  background-color: #232323;
+  background-color: #c5c5c5;
   border: none;
 }
 

@@ -6,6 +6,10 @@ body {
     transition: 0.5s;
 }
 
+.transition {
+    transition: 0.5s;
+  }
+
 
 
 .botaoNoturno {
@@ -153,12 +157,18 @@ a:hover{
 
   }
     
-@media screen and (max-width:500px) {
+  @media screen and (max-width:500px) {
+    .divBtnNoturno{
+  
+      height: 40px;
+      top:200px;
+  }
+  
     .botaoNoturno {
-        height: 40px;
-        top: 200px;
+      height: 40px;
+      top: 200px;
     }
-}
+  }
 
   @media only screen and (max-width: 425px){
 

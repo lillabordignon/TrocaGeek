@@ -106,7 +106,13 @@
 
             </div>
         </div>
-        <img src="../../assets/img/botao_noturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
-            title="Modo noturno" alt="botão para ativar modo noturno">
+        <div class="divBtnNoturno" *ngIf="!modoNoturno">
+            <img src="../../assets/img/botao_noturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+                title="Modo noturno" alt="botão para ativar modo noturno">
+        </div>
+        <div class="divBtnNoturno" *ngIf="modoNoturno">
+            <img src="../../../assets/img/botao_noturno-ativo.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+                title="Modo noturno" alt="botão para ativar modo noturno">
+        </div>
     </div>
 </body>

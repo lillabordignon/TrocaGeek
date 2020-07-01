@@ -160,6 +160,13 @@
     <div class="d-flex justify-content-center py-1">
         <span class="text-muted "> Página atual {{pagina + 1}}</span>
     </div>
-    <img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
-        title="Modo noturno" alt="botão para ativar modo noturno">
+
+    <div class="divBtnNoturno" *ngIf="!modoNoturno">
+        <img src="../../assets/img/botao_noturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+            title="Modo noturno" alt="botão para ativar modo noturno">
+    </div>
+    <div class="divBtnNoturno" *ngIf="modoNoturno">
+        <img src="../../../assets/img/botao_noturno-ativo.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+            title="Modo noturno" alt="botão para ativar modo noturno">
+    </div>
 </div>

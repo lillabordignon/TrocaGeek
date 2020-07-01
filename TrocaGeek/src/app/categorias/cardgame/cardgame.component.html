@@ -35,11 +35,15 @@
 
             <div class="d-flex flex-wrap filtros" action="">
 
-                <div class="d-flex justify-content-center filtros-fields">
-                    <label class="control-label">Ordenar:</label>
+                <div class="d-flex justify-content-center filtros-fields ordemfield">
+
+
+                    <label class="ordenartest control-label ">Ordenar:</label>
+
+
                     <div>
 
-                        <select name="txt_order" id="ordenarPor" size="1" class="fFiltro form-control input-sm">
+                        <select name=" txt_order" id="ordenarPor" size="1" class="fFiltro form-control input-sm">
                             <option value="date" selected="Data">Data</option>
                             <option value="preco">Preço</option>
                             <option value="nome">Nome</option>
@@ -62,8 +66,8 @@
 
                 </div>
 
-                <div class="d-flex justify-content-center filtros-fields">
-                    <label class="control-label">Quantidade por página:</label>
+                <div class="d-flex justify-content-center filtros-fields qntpag">
+                    <label class="control-label">Qntd. por página:</label>
                     <div>
 
                         <select name="txt_order" size="1" id="quantidade" class="fFiltro form-control input-sm">
@@ -78,7 +82,7 @@
                 </div>
 
                 <button class="btn btn-outline-primary" type="button" (click)="filtrarProdutos()" name="btFiltrar"
-                    id="filtrar" value="Filtrar">Filtrar
+                    id="filtrar" [class.filtrarNoturno]="modoNoturno" value="Filtrar">Filtrar
                 </button>
 
                 <!-- <button class="btn btn-dark" type="button" (click)="modoNoturnoFunction()"> Modo Nortuno</button> -->
@@ -156,6 +160,12 @@
     <div class="d-flex justify-content-center py-1">
         <span class="text-muted "> Página atual {{pagina + 1}}</span>
     </div>
-    <img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
-        title="Modo noturno" alt="botão para ativar modo noturno">
+    <div class="divBtnNoturno" *ngIf="!modoNoturno">
+        <img src="../../assets/img/botao_noturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+            title="Modo noturno" alt="botão para ativar modo noturno">
+    </div>
+    <div class="divBtnNoturno" *ngIf="modoNoturno">
+        <img src="../../../assets/img/botao_noturno-ativo.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+            title="Modo noturno" alt="botão para ativar modo noturno">
+    </div>
 </body>

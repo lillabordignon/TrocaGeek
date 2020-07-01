@@ -1,139 +1,142 @@
-<div class="conteiner d-flex">
-
-    <div class="wrapper ">
-
-        <!-- Sidebar -->
-
-        <nav id="sidebar">
-            <div class=" pb-5">
-                <h1 class="mb-3 text-center"><img src="../../assets/img/logo-white.png" class="img-fluid logo mt-5"
-                        alt="Logo">
-                </h1>
-            </div>
-
-            <ul class="list-unstyled components">
-
-                <li class=" w-100">
-                    <button class="btn btn-wrapper justify-content-center liwrapper"
-                    [class.btn-dark]="modoNoturno"
-                        [class.btn-light]="!modoNoturno"
-                        routerLink="/usuarios">Minha Área</button>
-                </li>
-                <li class="">
-                    <button class="btn btn-wrapper justify-content-center liwrapper" 
-                        [class.btn-dark]="modoNoturno"
-                        [class.btn-light]="!modoNoturno"
-                        [routerLink]="['/usuarios/editar', usuario.id]">Alterar
-                        Cadastro</button>
-                </li>
-                <li class="">
-                    <button class="btn btn-wrapper justify-content-center liwrapper" 
-                        [class.btn-dark]="modoNoturno"
-                        [class.btn-light]="!modoNoturno"
-                        [routerLink]="['/usuarios/editar', usuario.id]">Alterar Senha</button>
-                </li>
-                <li class="">
-                    <button class="btn btn-wrapper justify-content-center liwrapper"
-                        [class.btn-dark]="modoNoturno"
-                        [class.btn-light]="!modoNoturno"
-                        routerLink='/cadastrar-produto'>Cadastrar
-                        Produtos</button>
-                </li>
-
-                <li class="">
-                    <button class="btn btn-wrapper justify-content-center liwrapper"
-                        [class.btn-dark]="modoNoturno"
-                        [class.btn-light]="!modoNoturno"
-                        routerLink='/usuarios/meusprodutos'>Meus
-                        Produtos</button>
-                </li>
-
-                <li class="">
-                    <button class="btn btn-wrapper justify-content-center liwrapper"
-                        [class.btn-dark]="modoNoturno"
-                        [class.btn-light]="!modoNoturno"
-                        routerLink='/minhas-negociacoes'>Minhas
-                        Negociações</button>
-                </li>
-
-            </ul>
-
-        </nav>
-
-    </div>
+<div [ngStyle]="{'background-color': modoNoturno == true ? corBodyNoturno : 'white'}">
 
 
+    <div class="conteiner d-flex" [ngStyle]="{'color': modoNoturno == true ? corFonteNoturno : 'black'}">
+        <div [class.wrapperNoturno]="modoNoturno" class="wrapper">
 
+            <!-- Sidebar -->
 
-    <div class="d-flex justify-content-center mt-5 w-100 areaCadastrarProduto">
-
-        <div class="form-group formulario pb-5 ">
-
-            <h1 class="text-center my-5">Editar produto</h1>
-
-            <div class="my-5">
-                <p>{{produto.nome}}</p>
-                <p>{{produto.preco | currency: "BRL"}}</p>
-                <p>{{produto.descricao}}</p>
-                <p *ngIf="produto.ativo">Produto ativo</p>
-                <p *ngIf="!produto.ativo">Produto desativado</p>
-            </div>
-
-
-
-            <label class="font-weight-bold" for="nome">Nome:</label>
-            <input type="text" class="form-control mb-4" placeholder="Digite o nome do produto"
-                [(ngModel)]="produtoNovo.nome" id="nome">
-
-
-
-            <label class="font-weight-bold" for="preco">Preço: </label>
-            <input type="text" class="form-control mb-4" id="preco" placeholder="Digite o preço do produto"
-                [(ngModel)]="produtoNovo.preco">
-
-
-
-            <label class="font-weight-bold" for="qtdEstoque">Descrição do Produto</label>
-            <input type="text" class="form-control mb-4" id="qtdEstoque" placeholder="Descreva sobre seu produto"
-                [(ngModel)]="produtoNovo.descricao">
-
-
-            <label class="font-weight-bold" for="imagemProduto">Imagem</label>
-            <input type="text" class="form-control mb-4" id="imagemProduto" placeholder="Digite a URL da imagem"
-                [(ngModel)]="produtoNovo.urlImg">
-
-
-
-
-            <div class="form-group d-flex">
-                <label class="control-label mx-2">Categoria:</label>
-                <div>
-
-                    <select name="txt_order" id="categoria" size="1" class="filtro form-control input-sm">
-                        <option value="1" selected="">Acessórios</option>
-                        <option value="2">Card Game</option>
-                        <option value="3">Consoles</option>
-                        <option value="4">Action Figure</option>
-                        <option value="5">Jogos</option>
-                    </select>
-
-
-
-                </div>
-                <div>
-
-                    <select name="txt_order" id="ativo" size="1" class="filtro form-control input-sm ml-2">
-                        <option value="1" selected="Sim">Ativo?</option>
-                        <option value="2">Sim</option>
-                        <option value="3">Não</option>
-                    </select>
-
-
-
+            <nav id="sidebar">
+                <div class=" pb-5">
+                    <h1 class="mb-3 text-center"><img src="../../assets/img/logo-white.png" class="img-fluid logo mt-5"
+                            alt="Logo">
+                    </h1>
                 </div>
 
+                <ul class="list-unstyled components">
+
+                    <li class=" w-100">
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno" routerLink="/usuarios">Minha Área</button>
+                    </li>
+                    <li class="">
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno" [routerLink]="['/usuarios/editar', usuario.id]">Alterar
+                            Cadastro</button>
+                    </li>
+                    <li class="">
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno"
+                            [routerLink]="['/usuarios/alterarsenha', usuario.id]">Alterar
+                            Senha</button>
+                    </li>
+                    <li class="">
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno" routerLink='/cadastrar-produto'>Cadastrar
+                            Produtos</button>
+                    </li>
+
+                    <li class="">
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno" routerLink='/usuarios/meusprodutos'>Meus
+                            Produtos</button>
+                    </li>
+
+                    <li class="">
+                        <button class="btn btn-wrapper justify-content-center liwrapper" [class.btn-dark]="modoNoturno"
+                            [class.btn-light]="!modoNoturno" routerLink='/minhas-negociacoes'>Minhas
+                            Negociações</button>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <div class="d-flex justify-content-center mt-5 w-100 areaCadastrarProduto">
+
+            <div class="form-group formulario pb-5 ">
+
+                <h1 class="text-center my-5">Editar produto</h1>
+
+                <div class="my-5">
+                    <p>{{produto.nome}}</p>
+                    <p>{{produto.preco | currency: "BRL"}}</p>
+                    <p>{{produto.descricao}}</p>
+                    <p *ngIf="produto.ativo">Produto ativo</p>
+                    <p *ngIf="!produto.ativo">Produto desativado</p>
+                </div>
+
+
+
+                <label class="font-weight-bold" for="nome">Nome:</label>
+                <input type="text" class="form-control mb-4" placeholder="Digite o nome do produto"
+                    [(ngModel)]="produtoNovo.nome" id="nome">
+
+
+
+                <label class="font-weight-bold" for="preco">Preço: </label>
+                <input type="text" class="form-control mb-4" id="preco" placeholder="Digite o preço do produto"
+                    [(ngModel)]="produtoNovo.preco">
+
+
+
+                <label class="font-weight-bold" for="qtdEstoque">Descrição do Produto</label>
+                <input type="text" class="form-control mb-4" id="qtdEstoque" placeholder="Descreva sobre seu produto"
+                    [(ngModel)]="produtoNovo.descricao">
+
+
+                <label class="font-weight-bold" for="imagemProduto">Imagem</label>
+                <input type="text" class="form-control mb-4" id="imagemProduto" placeholder="Digite a URL da imagem"
+                    [(ngModel)]="produtoNovo.urlImg">
+
+
+
+
+                <div class="form-group d-flex">
+                    <label class="control-label mx-2">Categoria:</label>
+                    <div>
+
+                        <select name="txt_order" id="categoria" size="1" class="filtro form-control input-sm">
+                            <option value="1" selected="">Acessórios</option>
+                            <option value="2">Card Game</option>
+                            <option value="3">Consoles</option>
+                            <option value="4">Action Figure</option>
+                            <option value="5">Jogos</option>
+                        </select>
+
+
+
+                    </div>
+                    <div>
+
+                        <select name="txt_order" id="ativo" size="1" class="filtro form-control input-sm ml-2">
+                            <option value="1" selected="Sim">Ativo?</option>
+                            <option value="2">Sim</option>
+                            <option value="3">Não</option>
+                        </select>
+
+
+
+                    </div>
+
+                </div>
+                <button type="button" class="btn btn-primary mb-5 botao" (click)="verificar()">Atualizar</button>
+
             </div>
-            <button type="button" class="btn btn-primary mb-5 botao" (click)="verificar()">Atualizar</button>
+
+            <div class="divBtnNoturno" *ngIf="!modoNoturno">
+                <img src="../../assets/img/botao_noturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+                    title="Modo noturno" alt="botão para ativar modo noturno">
+            </div>
+            <div class="divBtnNoturno" *ngIf="modoNoturno">
+                <img src="../../../assets/img/botao_noturno-ativo.png" class="botaoNoturno"
+                    (click)="modoNoturnoFunction()" title="Modo noturno" alt="botão para ativar modo noturno">
+            </div>
 
         </div>
     </div>
