@@ -10,29 +10,29 @@ import { UsuarioAlterarSenha } from 'src/app/Model/UsuarioAlterarSenha';
   styleUrls: ['./alterarsenha.component.css']
 })
 export class AlterarsenhaComponent implements OnInit {
-    //variaveis modo noturno
-    modoNoturno:boolean ;
-    corBodyNoturno: string = '#010101'
-    corFonteNoturno: string = '#ffffff'
+  //variaveis modo noturno
+  modoNoturno: boolean;
+  corBodyNoturno: string = '#0f0f0f'
+  corFonteNoturno: string = '#ffffff'
 
-    alerta: boolean = false;
-    alertaSenha: boolean = false;
+  alerta: boolean = false;
+  alertaSenha: boolean = false;
 
-    //variaveis usuario
-    usuario:Usuario = new Usuario
-    usuarioSenhaNova: UsuarioAlterarSenha = new UsuarioAlterarSenha
-    idUsuario: number; 
+  //variaveis usuario
+  usuario: Usuario = new Usuario
+  usuarioSenhaNova: UsuarioAlterarSenha = new UsuarioAlterarSenha
+  idUsuario: number;
 
 
-  constructor(private usuarioService: UsuarioService, private route:ActivatedRoute, private router:Router) { }
+  constructor(private usuarioService: UsuarioService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.idUsuario = this.route.snapshot.params['id'];
     this.findUsuario(this.idUsuario);
-    if(localStorage.getItem('idUsuario') == null) {
+    if (localStorage.getItem('idUsuario') == null) {
       this.router.navigate(["/login"]);
     }
-    if(localStorage.getItem('noturno') == 'true') {
+    if (localStorage.getItem('noturno') == 'true') {
       this.modoNoturno = true;
     }
   }
@@ -43,21 +43,21 @@ export class AlterarsenhaComponent implements OnInit {
   }
 
   verificar() {
-   
+
     if (this.usuarioSenhaNova.senhaNova == this.usuarioSenhaNova.confirmaSenha) {
       this.AlterarSenha(this.usuarioSenhaNova, this.idUsuario)
-     } else {
+    } else {
       this.alerta = true;
-       setTimeout(() => { this.alerta = false }, 5000)
-     }
+      setTimeout(() => { this.alerta = false }, 5000)
+    }
 
   }
 
-  modoNoturnoFunction(){
+  modoNoturnoFunction() {
     this.modoNoturno = !this.modoNoturno;
     localStorage.setItem('noturno', this.modoNoturno.toString());
   }
-   
+
   AlterarSenha(usuarioNovo: UsuarioAlterarSenha, id: number) {
     this.usuarioService.putUsuarioSenha(usuarioNovo, id).subscribe((resp: Usuario) => {
       this.alertaSenha = true;

@@ -1,108 +1,141 @@
-*{
-    font-family: 'Libre Franklin', sans-serif;
+* {
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+body {
+  background-color: #DBDEE3 !important;
 }
 
 .botaoNoturno {
-   position: fixed;
-   top: 30%;
-   right: 20px;
-   height: 60px;
-   cursor: pointer;
-   opacity: 0.7;
-   transition: 0.5s;
+  position: fixed;
+  top: 30%;
+  right: 20px;
+  height: 50px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.5s;
 }
+
 .botaoNoturno:hover {
-   opacity: 1;
+  opacity: 1;
 }
 
-h4{
-   font-weight: normal;
+.bg-color {
+  background-color: #dbdee3;
 }
 
-
-.caixas{
-
-   border:none !important;
+h4 {
+  font-weight: normal;
 }
 
+.caixas {
+  padding: 55px 0;
+  border: none !important;
 
-img{
-   max-width:300px;
-   max-height:350px;
-   width: auto;
-   height: auto;
-}
-   
-
-
-
-
-
-.verMais{
-   background-color: #05a4c4;
-   padding: 8px 35px;
-   font-weight: 500;
-   letter-spacing: 0.5px;
-   color: #fff;
-   transition: color .25s ease, background .25s ease;
 }
 
-.verMais:hover{
-   background-color: #ed3263;
+.card-body {
+  justify-content: center;
 }
 
-.verMaisNoturno{
-   background-color: #5C5099;
-   padding: 8px 35px;
-   font-weight: 500;
-   letter-spacing: 0.5px;
-   color: #fff;
-   transition: color .25s ease, background .25s ease;
+.card-content {
+  width: 100%;
 }
 
-.verMaisNoturno:hover{
-   background-color: #2b215e;
+@media(max-width:990px) {
+  .card-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .infoproduto {
+    max-width: initial !important;
+    width: 80% !important;
+    text-align: center;
+    margin-top: 35px;
+  }
+}
+
+@media(min-width:991px) {
+  .limitimg {
+    min-width: 400px;
+  }
+}
+
+.limitimg {
+  display: flex;
+  place-self: center;
+}
+
+img {
+  max-width: 300px;
+  max-height: 350px;
+  width: auto;
+  height: auto;
+}
+
+.infoproduto {
+  width: 100%;
+  padding: 35px;
+  background-color: #fff;
+  border-radius: 15px;
+  max-width: 500px;
+}
+
+.verMais {
+  background-color: #05a4c4;
+  padding: 8px 35px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #fff;
+  transition: color .25s ease, background .25s ease;
+}
+
+.verMais:hover {
+  background-color: #ed3263;
+}
+
+.verMaisNoturno {
+  background-color: #5C5099;
+  padding: 8px 35px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #fff;
+  transition: color .25s ease, background .25s ease;
+}
+
+.verMaisNoturno:hover {
+  background-color: #2b215e;
 }
 
 
 @media only screen and (max-width: 737px) {
 
-h2{
+  h2 {
 
-   font-size: 1.5em;
-   
+    font-size: 1.5em;
+
+  }
+
+  h3 {
+    font-size: 1.25em;
+
+  }
+
+  h4 {
+    font-size: 1em
+  }
+
+  .infoproduto {
+    width: 100% !important;
+  }
+
 }
 
-h3{
-   font-size: 1.25em;
-
-}
-
-h4{
-   font-size: 1em
-}
-
-.infoproduto{
-   width: 100% !important;
-}
-
-}
-
-@media only screen and (max-width: 572px) {
-
-  
-
-   img{
-      max-width:200px;
-      max-height:150px;
-      width: auto;
-      height: auto;
-   }
-}
 
 @media screen and (max-width:500px) {
-   .botaoNoturno {
-       height: 40px;
-       top: 200px;
-   }
+  .botaoNoturno {
+    height: 40px;
+    top: 200px;
+  }
 }

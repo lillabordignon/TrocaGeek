@@ -26,71 +26,47 @@
             <span class="sr-only">Próximo</span>
         </a>
     </div>
-
-
     <section class="d-flex justify-content-around flex-wrap pt-3 pb-3 c-filter-bar">
-
         <div class="d-flex justify-content-between responsivo filtros-content"
             [ngStyle]="{'color': modoNoturno == true ? corFontesNoturno : 'black'}">
-
             <div class="d-flex flex-wrap filtros" action="">
-
                 <div class="d-flex justify-content-center filtros-fields ordemfield">
-
-
                     <label class="ordenartest control-label ">Ordenar:</label>
-
-
                     <div>
-
                         <select name=" txt_order" id="ordenarPor" size="1" class="fFiltro form-control input-sm">
                             <option value="date" selected="Data">Data</option>
                             <option value="preco">Preço</option>
                             <option value="nome">Nome</option>
                         </select>
-
                     </div>
                 </div>
-
                 <div class="d-flex justify-content-center filtros-fields">
                     <label class="control-label">Ordem:</label>
                     <div>
-
                         <select name="txt_order" id="ordem" size="1" class="fFiltro form-control input-sm">
                             <option value="desc" selected="">Decrescente</option>
                             <option value="asc">Crescente</option>
-
                         </select>
-
                     </div>
-
                 </div>
-
                 <div class="d-flex justify-content-center filtros-fields qntpag">
                     <label class="control-label">Qntd. por página:</label>
                     <div>
-
                         <select name="txt_order" size="1" id="quantidade" class="fFiltro form-control input-sm">
                             <option value="8" selected="8">8</option>
                             <option value="14">14</option>
                             <option value="20">20</option>
                             <option value="28">28</option>
-
                         </select>
-
                     </div>
                 </div>
-
                 <button class="btn btn-outline-primary" type="button" (click)="filtrarProdutos()" name="btFiltrar"
                     id="filtrar" [class.filtrarNoturno]="modoNoturno" value="Filtrar">Filtrar
                 </button>
-
                 <!-- <button class="btn btn-dark" type="button" (click)="modoNoturnoFunction()"> Modo Nortuno</button> -->
             </div>
-
         </div>
         <div class="d-flex justify-content-end filtros-search">
-
             <div class="form-inline my-2 my-lg-0 d-flex justify-content-center pesquisa">
                 <input class="form-control pesquisaMobile" type="search" placeholder="Pesquisar" aria-label="Search"
                     [(ngModel)]="barraPesquisa">
@@ -99,27 +75,22 @@
                 </button>
             </div>
         </div>
-
     </section>
 
 
     <section class="d-flex justify-content-around flex-wrap my-3">
-
         <div class="card text-center my-4 mx-3 modoNoturno" *ngFor="let produto of listaProdutos"
             [class.caixasNoturno]="modoNoturno" [class.caixas]="!modoNoturno">
-
             <div class="card-body">
                 <a [routerLink]="['/produtos/detalhar', produto.codigo]">
                     <div class="produtonome">
                         <h4 class="d-flex justify-content-center w-auto">{{produto.nome}}</h4>
                     </div>
                     <hr>
-
                     <div class="divimg d-flex w-100 justify-content-center">
                         <img class="img-fluid img justify-content-center" src="{{produto.urlImg}}"
                             alt="{{produto.descricao}}">
                     </div>
-
                     <hr>
                 </a>
                 <div>
@@ -144,7 +115,6 @@
 
     <div class="d-flex justify-content-center py-5">
         <nav aria-label="Page navigation shadow-lg">
-
             <button class="btn btn-outline-primary" [class.navigationPage]="!modoNoturno"
                 [class.paginacaoNoturno]="modoNoturno">
                 <img src="../../assets/img/arrowleft.png" alt="">
@@ -156,14 +126,11 @@
                 [class.paginacaoNoturno]="modoNoturno">
                 <img src="../../assets/img/arroright.png" alt="">
             </button>
-
         </nav>
-
     </div>
-
     <div class="d-flex justify-content-center py-1">
         <span class="text-muted "> Página atual {{pagina + 1}}</span>
     </div>
-    <img src="../../assets/img/botaoNoturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
+    <img src="../../assets/img/botao_noturno.png" class="botaoNoturno" (click)="modoNoturnoFunction()"
         title="Modo noturno" alt="botão para ativar modo noturno">
 </body>

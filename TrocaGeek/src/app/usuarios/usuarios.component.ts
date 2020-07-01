@@ -14,8 +14,8 @@ export class UsuariosComponent implements OnInit {
   idUsuario: number;
 
   //variaveis modo noturno
-  modoNoturno:boolean ;
-  corBodyNoturno: string = '#010101'
+  modoNoturno: boolean;
+  corBodyNoturno: string = '#0f0f0f'
   corFonteNoturno: string = '#ffffff'
 
   constructor(private usuarioService: UsuarioService, private route: Router) { }
@@ -23,23 +23,23 @@ export class UsuariosComponent implements OnInit {
 
   ngOnInit() {
     this.idUsuario = parseInt(localStorage.getItem('idUsuario'));
-    if(localStorage.getItem('idUsuario') == null) {
+    if (localStorage.getItem('idUsuario') == null) {
       location.assign('/login')
     } else {
-      this.usuarioService.getByIdUsuario(this.idUsuario).subscribe((resp:Usuario)=> {
+      this.usuarioService.getByIdUsuario(this.idUsuario).subscribe((resp: Usuario) => {
         this.usuario = resp;
       })
     }
 
-    if(localStorage.getItem('noturno') == 'true') {
+    if (localStorage.getItem('noturno') == 'true') {
       this.modoNoturno = true;
     }
-  
+
   }
 
   deletarConta() {
-    if(window.confirm("Deseja mesmo deletar sua conta ? essa ação não pode ser revertida !")){
-      this.usuarioService.deleteUsuario(this.idUsuario).subscribe(()=>{})
+    if (window.confirm("Deseja mesmo deletar sua conta ? essa ação não pode ser revertida !")) {
+      this.usuarioService.deleteUsuario(this.idUsuario).subscribe(() => { })
       localStorage.clear();
       location.reload(true);
       this.route.navigate(["/login"]);
@@ -47,11 +47,11 @@ export class UsuariosComponent implements OnInit {
 
   }
 
-  modoNoturnoFunction(){
+  modoNoturnoFunction() {
     this.modoNoturno = !this.modoNoturno;
     localStorage.setItem('noturno', this.modoNoturno.toString());
   }
-  
+
 
 
 

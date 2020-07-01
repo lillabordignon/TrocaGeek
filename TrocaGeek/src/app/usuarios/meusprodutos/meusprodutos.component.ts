@@ -14,12 +14,12 @@ export class MeusprodutosComponent implements OnInit {
   idUsuario: number;
   listaProdutos: Produto[];
 
-  apagado:boolean = false;
+  apagado: boolean = false;
 
-   //variaveis modo noturno
-   modoNoturno:boolean ;
-   corBodyNoturno: string = '#010101'
-   corFonteNoturno: string = '#ffffff'
+  //variaveis modo noturno
+  modoNoturno: boolean;
+  corBodyNoturno: string = '#0f0f0f'
+  corFonteNoturno: string = '#ffffff'
 
 
 
@@ -38,18 +38,18 @@ export class MeusprodutosComponent implements OnInit {
       })
 
     }
-    if(localStorage.getItem('noturno') == 'true') {
+    if (localStorage.getItem('noturno') == 'true') {
       this.modoNoturno = true;
     }
-    window.scroll(0,0)
+    window.scroll(0, 0)
   }
 
   apagarProduto(codigo) {
-    if(window.confirm("Deseja apagar ?")) {
-      this.produtosService.deletarProduto(codigo).subscribe(()=> {
+    if (window.confirm("Deseja apagar ?")) {
+      this.produtosService.deletarProduto(codigo).subscribe(() => {
         this.apagado = true;
-        window.scroll(0,0)
-        
+        window.scroll(0, 0)
+
         setTimeout(() => {
           this.apagado = false;
           location.assign('/usuarios/meusprodutos');
@@ -57,12 +57,12 @@ export class MeusprodutosComponent implements OnInit {
       })
 
     }
-     
+
   }
 
-  modoNoturnoFunction(){
+  modoNoturnoFunction() {
     this.modoNoturno = !this.modoNoturno;
     localStorage.setItem('noturno', this.modoNoturno.toString());
   }
-  
+
 }

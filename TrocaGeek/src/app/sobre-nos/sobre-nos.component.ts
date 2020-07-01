@@ -16,12 +16,10 @@ export class SobreNosComponent implements OnInit {
 
   //variaveis do modo noturno
   modoNoturno: boolean = false;
-  corBodyNoturno: string = '#010101'
+  corBodyNoturno: string = '#0f0f0f'
   corFontesNoturno: string = '#ffffff'
 
   corBodyNaoNoturno: string = '#ffffff'
-
-
 
   constructor() { }
 

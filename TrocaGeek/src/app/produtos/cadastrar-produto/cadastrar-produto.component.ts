@@ -16,11 +16,11 @@ export class CadastrarProdutoComponent implements OnInit {
   usuario: Usuario = new Usuario;
   categoria: Categoria = new Categoria;
 
-  
+
   //variaveis do modo noturno
-  modoNoturno:boolean = false;
-  corBodyNoturno:string = '#010101'
-  corFontesNoturno:string = '#ffffff'
+  modoNoturno: boolean = false;
+  corBodyNoturno: string = '#0f0f0f'
+  corFontesNoturno: string = '#ffffff'
 
 
   constructor(private produtoService: ProdutoService, private usuarioService: UsuarioService) { }
@@ -30,14 +30,14 @@ export class CadastrarProdutoComponent implements OnInit {
       location.assign('/login')
     }
     this.usuario.id = parseInt(localStorage.getItem("idUsuario"));
-    
-    if(localStorage.getItem('noturno') == 'true') {
+
+    if (localStorage.getItem('noturno') == 'true') {
       this.modoNoturno = true;
 
     }
   }
 
-  modoNoturnoFunction(){
+  modoNoturnoFunction() {
     this.modoNoturno = !this.modoNoturno;
     localStorage.setItem('noturno', this.modoNoturno.toString());
   }

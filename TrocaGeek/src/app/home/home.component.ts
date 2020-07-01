@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 
   //variaveis do modo noturno
   modoNoturno: boolean = false;
-  corBodyNoturno: string = '#010101'
+  corBodyNoturno: string = '#0f0f0f'
   corFontesNoturno: string = '#ffffff'
 
   corBodyNaoNoturno: string = '#DBDEE3'
@@ -42,8 +42,8 @@ export class HomeComponent implements OnInit {
       this.barraPesquisa = localStorage.getItem('pesquisaBarra');
       this.buscarPorNomeProduto(this.barraPesquisa, 0, this.quantidade);
     } else {
-    this.findAllProdutos(this.pagina, this.quantidade);
-    this.verificarNumeroDePaginas();
+      this.findAllProdutos(this.pagina, this.quantidade);
+      this.verificarNumeroDePaginas();
     }
 
     // ao iniciar seta as variaveis com os valores do filtro

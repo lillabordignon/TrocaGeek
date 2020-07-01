@@ -66,7 +66,7 @@ export class NegociacaoComponent implements OnInit {
   }
 
   negociar() {
-    if(this.negociacao.idVendedor.id == this.negociacao.idComprador.id) {
+    if (this.negociacao.idVendedor.id == this.negociacao.idComprador.id) {
       return alert("Você não pode comprar seu próprio produto");
     }
     this.negociacaoService.postNegociacao(this.negociacao).subscribe((resp: Negociacao) => {
