@@ -15,6 +15,13 @@ import { getLocaleDirection } from '@angular/common';
 })
 export class NegociacaoComponent implements OnInit {
 
+  //variaveis do modo noturno
+  modoNoturno: boolean = false;
+  corBodyNoturno: string = '#0f0f0f'
+  corFontesNoturno: string = '#ffffff'
+
+  corBodyNaoNoturno: string = '#DBDEE3'
+
   produto: Produto = new Produto;
   usuario: Usuario = new Usuario;
   negociacao: Negociacao = new Negociacao;
@@ -42,6 +49,15 @@ export class NegociacaoComponent implements OnInit {
 
     //chama a negociação
 
+    if (localStorage.getItem('noturno') == 'true') {
+      this.modoNoturno = true;
+    }
+
+  }
+
+  modoNoturnoFunction() {
+    this.modoNoturno = !this.modoNoturno;
+    localStorage.setItem('noturno', this.modoNoturno.toString());
   }
 
   //Busca o produto na API passa passando o ID
@@ -74,7 +90,6 @@ export class NegociacaoComponent implements OnInit {
       location.assign('negociacao-detalhe/' + this.negociacao.idNegociacao)
     })
   }
-
 
   editarNegociacao() {
 
