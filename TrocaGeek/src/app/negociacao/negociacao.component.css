@@ -1,0 +1,92 @@
+* {
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+.container {
+  background-color: #DBDEE3;
+  border-radius: 15px;
+}
+
+.produto {
+  font-size: 24px;
+}
+
+h5 {
+  font-weight: 700;
+  font-size: 16px;
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+.bt-space {
+  margin: 20px 0 0;
+}
+
+.produto-info {
+  background: #DBDEE3;
+  padding: 35px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+}
+
+.descricao {
+  font-size: 20px;
+}
+
+.card-text {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.card-header {
+  font-family: 'Libre Franklin', sans-serif;
+  color: #232323 !important;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  font-size: 32px;
+  padding-bottom: 15px;
+  text-align: center;
+  padding: 25px 0px;
+}
+
+.negociar {
+  color: white !important;
+  padding: 6px 12px !important;
+  background-color: #05a4c4;
+  border: none;
+}
+
+.card-img-top {
+  max-width: 260px;
+  margin: 0 auto;
+  display: block;
+}
+
+.card {
+  box-shadow: 0 0 10px 0 rgba(186, 186, 186, 0.8);
+}
+
+.border {
+  padding: 35px;
+  margin: 15px 0;
+  background: #fff;
+  box-shadow: 0 0 10px 0 rgba(186, 186, 186, 0.8);
+}
+
+.negociar,
+.voltar {
+  min-width: 135px;
+}
+
+.negociar:hover,
+.voltar:hover {
+  background-color: #232323;
+  border: none;
+}
+
+.voltar {
+  color: white !important;
+  padding: 6px 12px !important;
+  background-color: #05a4c4;
+  border: none;
+}

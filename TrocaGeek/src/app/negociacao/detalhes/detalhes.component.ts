@@ -25,7 +25,7 @@ export class DetalhesComponent implements OnInit {
 
   //variaveis do modo noturno
   modoNoturno: boolean = false;
-  corBodyNoturno: string = '#010101'
+  corBodyNoturno: string = '#0f0f0f'
   corFontesNoturno: string = '#ffffff'
 
   corBodyNaoNoturno: string = '#DBDEE3'
@@ -36,7 +36,7 @@ export class DetalhesComponent implements OnInit {
     let id = this.route.snapshot.params['id']
 
     this.buscarNegociacao(id);
-    if(localStorage.getItem('token') == null) {
+    if (localStorage.getItem('token') == null) {
       location.assign('/login')
     }
 

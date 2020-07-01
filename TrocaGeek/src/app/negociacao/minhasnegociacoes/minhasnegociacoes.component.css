@@ -1,174 +1,176 @@
-*{
-    font-family: 'Libre Franklin', sans-serif;
+* {
+  font-family: 'Libre Franklin', sans-serif;
 }
 
 .botaoNoturno {
-    position: fixed;
-    top: 30%;
-    right: 20px;
-    height: 60px;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: 0.5s;
+  position: fixed;
+  top: 30%;
+  right: 20px;
+  height: 60px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.5s;
 }
+
 .botaoNoturno:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 
 .wrapper {
-    display: flex;
-    width: 25%;
-    background-color: #F8F9FA;
-  
+  display: flex;
+  width: 25%;
+  background-color: #F8F9FA;
+
 }
 
 
-.wrapperNoturno{
+.wrapperNoturno {
 
-    display: flex;
-    width: 25%;
-    background-color: #343A40;
+  display: flex;
+  width: 25%;
+  background-color: #343A40;
 
 }
 
 .botaoNoturno {
-    position: fixed;
-    top: 30%;
-    right: 20px;
-    height: 50px;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: 0.5s;
+  position: fixed;
+  top: 30%;
+  right: 20px;
+  height: 50px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.5s;
 }
+
 .botaoNoturno:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 #sidebar {
-    width: 100%;
-    height: 100%;
-    color: black;
+  width: 100%;
+  height: 100%;
+  color: black;
 
 }
 
-.liwrapper{
+.liwrapper {
 
-    width: 100%;
-    
-    margin: none;
-    height: 100%;
+  width: 100%;
+
+  margin: none;
+  height: 100%;
 }
 
-.btn-wrapper{
+.btn-wrapper {
 
-    padding-top: 20px !important;
-    padding-bottom: 20px !important;
-
-}
-
-
-.logo{
-    width: 80%;
-    height: 80%;
-}
-
-.formulario{
-    width: 100%;
-}
-
-.card-body:h4{
-    width: auto !important;
-}
-
-.menuCaixas{
-    border: none;
-    box-shadow: 0px 0px 10px 2px #dbdbdb;
-    transition: box-shadow 0.3s;
-    background-color: #f1f0f0;
-    width: 100%;
-    padding-top: 15px;
-
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
 
 }
 
-.caixas{
-    border: none;
-    box-shadow: 0px 0px 10px 2px #dbdbdb;
-    transition: box-shadow 0.3s;
-    background-color: #f1f0f0;
-    width: 100%;
-    padding-top: 15px;
+
+.logo {
+  width: 80%;
+  height: 80%;
 }
 
-.caixas:hover{
-    box-shadow: 0px 0px 20px 12px #dbdbdb;
+.formulario {
+  width: 100%;
 }
 
-span{
-    font-size: 12px;
-    margin-right: 3px ;
-    margin-top: 7.5px
+.card-body:h4 {
+  width: auto !important;
 }
 
-a{
-    text-decoration: none;
-    
+.menuCaixas {
+  border: none;
+  box-shadow: 0px 0px 10px 2px #dbdbdb;
+  transition: box-shadow 0.3s;
+  background-color: #f1f0f0;
+  width: 100%;
+  padding-top: 15px;
+
+
 }
 
-.verMais{
-
-    background-color: #05A4C4;
-    border-color: #05A4C4 ;
-    color: white;
-    width: 150px;
-    padding: 0%;
-    padding: 6px 0px 6px 0px;
+.caixas {
+  border: none;
+  box-shadow: 0px 0px 10px 2px #dbdbdb;
+  transition: box-shadow 0.3s;
+  background-color: #f1f0f0;
+  width: 100%;
+  padding-top: 15px;
 }
 
-.verMais:hover{
+.caixas:hover {
+  box-shadow: 0px 0px 20px 12px #dbdbdb;
+}
 
-    background-color: #ed3263;
-    border:none;
+span {
+  font-size: 12px;
+  margin-right: 3px;
+  margin-top: 7.5px
+}
+
+a {
+  text-decoration: none;
+
+}
+
+.verMais {
+
+  background-color: #05A4C4;
+  border-color: #05A4C4;
+  color: white;
+  width: 150px;
+  padding: 0%;
+  padding: 6px 0px 6px 0px;
+}
+
+.verMais:hover {
+
+  background-color: #ed3263;
+  border: none;
 }
 
 
-.verMaisNoturno{
-    background-color: #5C5099;
-    border:none; 
-    color: white;
-    width: 150px;
-    padding: 0%;
-    padding: 6px 0px 6px 0px;
+.verMaisNoturno {
+  background-color: #5C5099;
+  border: none;
+  color: white;
+  width: 150px;
+  padding: 0%;
+  padding: 6px 0px 6px 0px;
 }
 
-.verMaisNoturno:hover{
-    background-color: #2b215e;
+.verMaisNoturno:hover {
+  background-color: #2b215e;
 }
 
 
 
-@media(max-width: 970){
+@media(max-width: 970) {
 
-    .sidebar {
-         display: flex;
-         width: 20%;
-       
-     }
- 
- 
- }
+  .sidebar {
+    display: flex;
+    width: 20%;
 
- 
- @media only screen and (max-width: 768px) {
-    .wrapper{
-        display: none;
+  }
 
-    }
 
-    .formulario{
-        width:100%
-    }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    display: none;
+
+  }
+
+  .formulario {
+    width: 100%
+  }
 }
 
 /* @media only screen and (max-width: 550px){
