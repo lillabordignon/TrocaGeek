@@ -24,7 +24,7 @@
 
 .wrapper {
   display: flex;
-  width: 25%;
+  width: 20%;
   background-color: #F8F9FA;
 
 }
@@ -33,7 +33,7 @@
 .wrapperNoturno {
 
   display: flex;
-  width: 25%;
+  width: 20%;
   background-color: #343A40;
 
 }
@@ -184,3 +184,13 @@ a {
         display: none !important;
     }
 } */
+
+
+@media screen and (max-width:500px) {
+
+
+  .botaoNoturno {
+    height: 40px;
+    top: 200px;
+  }
+}

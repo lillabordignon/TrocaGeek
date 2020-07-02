@@ -2,8 +2,8 @@
   font-family: 'Libre Franklin', sans-serif;
 }
 
-body {
-  background-color: #DBDEE3 !important;
+.conteiner {
+  transition: 0.4s;
 }
 
 .imgDetalhar {

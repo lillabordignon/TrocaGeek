@@ -57,6 +57,11 @@
         <div class="d-flex justify-content-center mt-5 w-100  alterarCadastroArea">
 
             <div class="form-group formulario pb-5">
+                <div *ngIf='alertaConcluido'>
+                    <div class="alert alert-success" role="alert">
+                        Dados alterados com sucesso !
+                    </div>
+                </div>
 
                 <h1 class="text-center my-5">Alteração de Cadastro</h1>
 

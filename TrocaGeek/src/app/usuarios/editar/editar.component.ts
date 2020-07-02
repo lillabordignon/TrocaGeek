@@ -20,6 +20,7 @@ export class EditarComponent implements OnInit {
   verificarSenha: string;
 
   alerta: boolean = false;
+  alertaConcluido: boolean = false;
 
   //variaveis modo noturno
   modoNoturno: boolean;
@@ -53,7 +54,11 @@ export class EditarComponent implements OnInit {
   alterarDados() {
     this.usuarioService.putUsuario(this.usuarioEditar, this.idUsuario).subscribe((resp: UsuarioEditar) => {
       this.usuarioEditar = resp;
-      alert("Dados alterados, você será redirecionado a tela de login")
+      this.alertaConcluido = true;
+      
+      setTimeout(()=> {
+        this.alertaConcluido = false;
+      }, 3000)
     }, err => {
       alert(err.error)
     })

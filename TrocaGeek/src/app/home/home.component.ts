@@ -133,10 +133,7 @@ export class HomeComponent implements OnInit {
   }
 
   verificarNumeroDePaginas() {
-    if (this.numeroDePaginas == 0) {
-      return this.arrayDePaginas.splice(0, this.arrayDePaginas.length)
-    }
-    this.arrayDePaginas.splice(0, this.numeroDePaginas)
+    this.arrayDePaginas.splice(0, this.arrayDePaginas.length)
     for (let i = 0; i < this.numeroDePaginas; i++) {
       this.arrayDePaginas[i] = i;
     }
