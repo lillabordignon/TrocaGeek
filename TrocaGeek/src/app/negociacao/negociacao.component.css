@@ -105,7 +105,38 @@ h5 {
   border: none;
 }
 
+@media screen and (max-width:580px){
+
+  .boxresponsiva{
+
+justify-content: center !important;
+
+}
+
+
+
+  .col-5 {
+
+    padding-bottom: 15px !important;
+    min-width: 200px;
+   
+    max-width: auto !important;
+    
+  }
+
+  .col-7{
+
+    width: 90% !important;
+    max-width: 91% !important;
+    padding: 10px;
+    flex: auto !important;
+  }
+}
+
 @media screen and (max-width:500px) {
+
+ 
+
   .divBtnNoturno {
 
     height: 40px;
