@@ -43,7 +43,9 @@ export class CardgameComponent implements OnInit {
   constructor(private produtoService: ProdutoService) { }
 
   ngOnInit() {
-    this.findAllbyCategoria(this.categoria, this.pagina,this.quantidade, this.ordenar, this.ordem);
+    window.scroll(0, 0);
+
+    this.findAllbyCategoria(this.categoria, this.pagina, this.quantidade, this.ordenar, this.ordem);
     this.verificarNumeroDePaginas();
 
     // ao iniciar seta as variaveis com os valores do filtro
@@ -114,7 +116,7 @@ export class CardgameComponent implements OnInit {
   buttonPesquisar() {
     // se a barra de pesquisa for vazia ou menor que 1 ele mostra todos os produtos
     if (this.barraPesquisa == "" || this.barraPesquisa.length < 1 || this.barraPesquisa == null) {
-      this.findAllbyCategoria(this.categoria, 0,this.quantidade, this.ordenar, this.ordem);
+      this.findAllbyCategoria(this.categoria, 0, this.quantidade, this.ordenar, this.ordem);
       this.pagina = 0;
       this.verificarNumeroDePaginas()
     } else {
@@ -135,7 +137,7 @@ export class CardgameComponent implements OnInit {
     }
 
     else {
-      this.findAllbyCategoria(this.categoria, this.pagina,this.quantidade, this.ordenar, this.ordem);
+      this.findAllbyCategoria(this.categoria, this.pagina, this.quantidade, this.ordenar, this.ordem);
       window.scroll(0, 500)
     }
 
@@ -155,7 +157,7 @@ export class CardgameComponent implements OnInit {
     this.ordenar = (<HTMLInputElement>document.getElementById("ordenarPor")).value;
     this.ordem = (<HTMLInputElement>document.getElementById("ordem")).value;
     this.quantidade = parseInt((<HTMLInputElement>document.getElementById("quantidade")).value);
-    this.findAllbyCategoria(this.categoria, this.pagina,this.quantidade, this.ordenar, this.ordem);
+    this.findAllbyCategoria(this.categoria, this.pagina, this.quantidade, this.ordenar, this.ordem);
     this.verificarNumeroDePaginas()
   }
 

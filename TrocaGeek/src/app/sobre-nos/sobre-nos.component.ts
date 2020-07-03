@@ -24,6 +24,8 @@ export class SobreNosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    window.scroll(0, 0);
+
     if (localStorage.getItem('noturno') == 'true') {
       this.modoNoturno = true;
     }

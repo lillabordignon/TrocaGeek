@@ -42,6 +42,8 @@ export class AcessoriosComponent implements OnInit {
   constructor(private produtoService: ProdutoService, private router: Router) { }
 
   ngOnInit() {
+    window.scroll(0, 0);
+
     this.findAllbyCategoria(this.categoria, this.pagina, this.quantidade, this.ordenar, this.ordem);
     this.verificarNumeroDePaginas();
 

@@ -30,6 +30,9 @@ export class EditarComponent implements OnInit {
   //dados usuario 
 
   ngOnInit() {
+
+    window.scroll(0, 0);
+
     this.idUsuario = this.route.snapshot.params['id'];
     this.findUsuario(this.idUsuario);
     if (localStorage.getItem('idUsuario') == null) {
@@ -55,8 +58,8 @@ export class EditarComponent implements OnInit {
     this.usuarioService.putUsuario(this.usuarioEditar, this.idUsuario).subscribe((resp: UsuarioEditar) => {
       this.usuarioEditar = resp;
       this.alertaConcluido = true;
-      
-      setTimeout(()=> {
+
+      setTimeout(() => {
         this.alertaConcluido = false;
       }, 3000)
     }, err => {
