@@ -25,6 +25,9 @@ export class DetalharComponent implements OnInit {
   ngOnInit() {
     let codigo = this.route.snapshot.params['codigo'];
     this.findByCodigo(codigo);
+    if (localStorage.getItem('noturno') == 'true') {
+      this.modoNoturno = true;
+    }
   }
 
   modoNoturnoFunction() {

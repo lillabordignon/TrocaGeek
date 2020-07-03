@@ -33,7 +33,6 @@ export class CadastrarProdutoComponent implements OnInit {
 
     if (localStorage.getItem('noturno') == 'true') {
       this.modoNoturno = true;
-
     }
   }
 
