@@ -92,16 +92,22 @@ h5 {
   min-width: 135px;
 }
 
-.negociar:hover,
-.voltar:hover {
-  background-color: #232323;
-  border: none;
+.negociar:hover{
+
+  background-color: #ed3263 ;
+  border:none ;
 }
+
 
 .voltar {
   color: white !important;
   padding: 6px 12px !important;
-  background-color: #05a4c4;
+  background-color: #ed3263;
+  border: none;
+}
+
+.voltar:hover {
+  background-color: #232323;
   border: none;
 }
 
