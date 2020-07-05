@@ -22,6 +22,9 @@ export class UsuariosComponent implements OnInit {
 
 
   ngOnInit() {
+    window.scroll(0, 0);
+
+
     this.idUsuario = parseInt(localStorage.getItem('idUsuario'));
     if (localStorage.getItem('idUsuario') == null) {
       location.assign('/login')

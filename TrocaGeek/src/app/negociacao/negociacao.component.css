@@ -92,20 +92,57 @@ h5 {
   min-width: 135px;
 }
 
-.negociar:hover,
+.negociar:hover{
+
+  background-color: #ed3263 ;
+  border:none ;
+}
+
+
+.voltar {
+  color: white !important;
+  padding: 6px 12px !important;
+  background-color: #ed3263;
+  border: none;
+}
+
 .voltar:hover {
   background-color: #232323;
   border: none;
 }
 
-.voltar {
-  color: white !important;
-  padding: 6px 12px !important;
-  background-color: #05a4c4;
-  border: none;
+@media screen and (max-width:580px){
+
+  .boxresponsiva{
+
+justify-content: center !important;
+
+}
+
+
+
+  .col-5 {
+
+    padding-bottom: 15px !important;
+    min-width: 200px;
+   
+    max-width: auto !important;
+    
+  }
+
+  .col-7{
+
+    width: 90% !important;
+    max-width: 91% !important;
+    padding: 10px;
+    flex: auto !important;
+  }
 }
 
 @media screen and (max-width:500px) {
+
+ 
+
   .divBtnNoturno {
 
     height: 40px;

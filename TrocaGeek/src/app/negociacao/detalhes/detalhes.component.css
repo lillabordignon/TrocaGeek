@@ -123,7 +123,84 @@ h5 {
   box-shadow: 0 0 10px 0 rgba(186, 186, 186, 0.8);
 }
 
-.negociar,
+
 .btncancelar {
   min-width: 135px;
+}
+
+.negociar{
+
+  max-width: 135px !important;
+}
+
+.negociarNoturno{
+  max-width: 135px !important;
+}
+
+
+@media screen and (max-width: 768px){
+
+
+  .interessados{
+
+    padding: 10px 5px 10px 5px;
+    height: 270px !important;
+  }
+
+  .card.border{
+
+    padding: 20px !important;
+
+    height: 250px;
+  }
+
+
+}
+
+
+@media screen and (max-width:580px){
+
+  h4{
+
+    font-size: 16px !important;
+
+  }
+
+  .boxresponsiva{
+
+justify-content: center !important;
+
+}
+
+
+
+  .col-5 {
+
+    padding-bottom: 15px !important;
+    min-width: 200px;
+   
+    max-width: auto !important;
+    
+  }
+
+  .col-7{
+
+    width: 90% !important;
+    max-width: 91% !important;
+    padding: 10px;
+    flex: auto !important;
+  }
+
+  .interessadossection{
+
+    justify-content: center;
+
+  }
+
+  .col-sm-6{
+
+    width: 100% !important;
+
+  }
+
 }

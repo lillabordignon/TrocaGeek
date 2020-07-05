@@ -27,6 +27,9 @@ export class AlterarsenhaComponent implements OnInit {
   constructor(private usuarioService: UsuarioService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    window.scroll(0, 0);
+
+
     this.idUsuario = this.route.snapshot.params['id'];
     this.findUsuario(this.idUsuario);
     if (localStorage.getItem('idUsuario') == null) {

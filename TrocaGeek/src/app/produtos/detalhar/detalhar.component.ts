@@ -23,6 +23,8 @@ export class DetalharComponent implements OnInit {
   constructor(private produtoService: ProdutoService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    window.scroll(0, 0);
+
     let codigo = this.route.snapshot.params['codigo'];
     this.findByCodigo(codigo);
     if (localStorage.getItem('noturno') == 'true') {

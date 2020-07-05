@@ -6,6 +6,16 @@
   transition: 0.5s;
 }
 
+
+.enviadosrecentes {
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.text-muted {
+  font-size: 15px;
+}
+
 .produtonome {
   height: 70px;
   display: flex;
@@ -15,7 +25,6 @@
 
 .produtonome h4 {
   display: inline-table;
-  font-weight: 600;
   letter-spacing: -0.5px;
   font-weight: 900;
   font-size: 26px;
@@ -316,11 +325,11 @@ span {
 }
 
 @media screen and (max-width:500px) {
-  .divBtnNoturno{
+  .divBtnNoturno {
 
     height: 40px;
-    top:200px;
-}
+    top: 200px;
+  }
 
   .botaoNoturno {
     height: 40px;

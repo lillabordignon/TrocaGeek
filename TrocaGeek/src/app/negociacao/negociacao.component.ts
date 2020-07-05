@@ -30,6 +30,7 @@ export class NegociacaoComponent implements OnInit {
   constructor(private produtoService: ProdutoService, private usuarioService: UsuarioService, private negociacaoService: NegociacaoService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+    window.scroll(0, 0);
 
     //validação se o usuario esta logado
     if (localStorage.getItem('idUsuario') == null) {

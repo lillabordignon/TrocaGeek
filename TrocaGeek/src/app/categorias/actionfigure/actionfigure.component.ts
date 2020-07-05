@@ -42,6 +42,8 @@ export class ActionfigureComponent implements OnInit {
   constructor(private produtoService: ProdutoService) { }
 
   ngOnInit() {
+    window.scroll(0, 0);
+
     this.findAllbyCategoria(this.categoria, this.pagina, this.quantidade, this.ordenar, this.ordem);
     this.verificarNumeroDePaginas();
 

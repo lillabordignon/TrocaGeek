@@ -17,7 +17,7 @@ export class UsuarioService {
 
   //Listar todos os usuarios
   getAllUsuarios() {
-    return this.http.get(this.urlApi + '/user');
+    return this.http.get(this.urlApi + '/usuario');
   }
 
 
