@@ -37,6 +37,7 @@ public class ProdutoController {
 	//Pageable default define o padrão de paginacao caso o usuario não escolhe nada,
 	//sera de 10 itens, ordenado por data de criacao em descresente
 	@GetMapping
+	//Guarda no cache as consultas de produtos
 	@Cacheable(value = "listaProdutos")
 	public Page<Produto> listar (@PageableDefault(page = 0,
 		size = 10, sort = "date" ,direction = Direction.DESC) Pageable paginacao) {
@@ -78,6 +79,7 @@ public class ProdutoController {
 	}
 	
 	@PostMapping
+	//Elimina o cache pois teve alteracoes
 	@CacheEvict(value = "listaProdutos", allEntries = true)
 	public ResponseEntity<Produto> cadastrar (@RequestBody Produto produto, UriComponentsBuilder uriBuilder) {
 		repository.save(produto);
